@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI API Pricing 2026: How Much Does ChatGPT / Claude / Gemini Cost per Token?</title>
+  <meta name="description" content="AI API pricing in 2026, compared: GPT-5, GPT-4o, Claude, Gemini, DeepSeek, Qwen and Llama — input/output prices per 1M tokens, context windows, and a free cost calculator.">
+  <meta name="keywords" content="AI API pricing, GPT-5 price per 1M tokens, Claude API cost, Gemini API pricing, DeepSeek pricing, token price comparison, LLM cost calculator">
+  <link rel="canonical" href="https://tokenestimate.com/blog/ai-api-pricing-2026.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="AI API Pricing 2026: Cost per Token for Every Major LLM">
+  <meta property="og:description" content="Per-1M-token prices for GPT-5, GPT-4o, Claude 4, Gemini, DeepSeek, Qwen and Llama in one table, plus how to compute your real request cost.">
+  <meta property="og:url" content="https://tokenestimate.com/blog/ai-api-pricing-2026.html">
+  <meta property="og:image" content="https://tokenestimate.com/og-cover.png">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="stylesheet" href="../css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI API Pricing 2026: How Much Do the Top LLMs Cost per Token?",
+    "description": "Input and output prices per 1M tokens for GPT-5, GPT-4o, Claude, Gemini, DeepSeek, Qwen and Llama in 2026, with a free cost calculator.",
+    "datePublished": "2026-08-09",
+    "author": { "@type": "Organization", "name": "TokenCalc" },
+    "publisher": { "@type": "Organization", "name": "TokenCalc" },
+    "mainEntityOfPage": "https://tokenestimate.com/blog/ai-api-pricing-2026.html"
+  }
+  </script>
+  <style>
+    .article { max-width: 780px; margin: 28px auto 60px; padding: 0 26px; }
+    .article h1 { font-size: 2rem; line-height: 1.25; margin-bottom: 12px; }
+    .article .meta { color: var(--text-faint); font-size: .85rem; margin-bottom: 26px; }
+    .article h2 { font-size: 1.35rem; margin: 34px 0 12px; }
+    .article h3 { font-size: 1.08rem; margin: 24px 0 8px; }
+    .article p, .article li { color: var(--text-dim); font-size: .98rem; }
+    .article ul, .article ol { margin: 10px 0 14px 22px; }
+    .article li { margin-bottom: 6px; }
+    .article table { width: 100%; border-collapse: collapse; margin: 16px 0 22px; font-size: .9rem; }
+    .article th { text-align: left; font-size: .74rem; text-transform: uppercase; letter-spacing: .07em; color: var(--text-faint); padding: 10px 12px; background: var(--bg-soft); border-bottom: 1px solid var(--border-soft); }
+    .article td { padding: 10px 12px; border-bottom: 1px solid var(--border-soft); color: var(--text-dim); }
+    .article td.best { color: var(--green); font-weight: 600; }
+    .article .tag { font-size: .68rem; }
+    code { font-family: var(--mono); background: var(--bg-input); border: 1px solid var(--border); border-radius: 6px; padding: 1px 6px; font-size: .88em; }
+    .cta { background: var(--bg-soft); border: 1px solid var(--border-soft); border-radius: var(--radius-sm); padding: 18px 22px; margin: 26px 0; }
+    .cta a { font-weight: 600; }
+    .breadcrumb { font-size: .82rem; color: var(--text-faint); margin-bottom: 18px; }
+  </style>
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="../" aria-label="AI Token Calculator home">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#4f8cff" stroke-width="2" aria-hidden="true">
+          <path d="M12 2 4 6v6c0 5 3.4 9.1 8 10 4.6-.9 8-5 8-10V6l-8-4Z"/>
+          <path d="m9 12 2 2 4-4" stroke="#22d3ee" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Token<em>Calc</em></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="../#tool">Calculator</a>
+        <a href="../#models">Supported models</a>
+        <a href="../#faq">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <article class="article">
+        <div class="breadcrumb"><a href="../">Home</a> / Guides / AI API pricing 2026</div>
+        <h1>AI API Pricing in 2026: per-1M-token Prices for Every Major Model</h1>
+        <p class="meta">AI Token Calculator — updated Aug 2026 · 7 min read</p>
+
+        <p>Every serious LLM provider bills <strong>per token</strong>, and the spread is enormous: from <strong>$0.01 per 1M input tokens</strong> (Doubao Flash) to <strong>$15 input / $60 output</strong> (OpenAI o1 / Claude Opus tier). This guide compares 2026 list prices per 1M tokens, shows how to compute a real request cost, and links to a calculator that does the math for you.</p>
+
+        <h2>2026 price comparison (USD per 1M tokens)</h2>
+        <table>
+          <thead>
+            <tr><th>Model</th><th>Input / 1M</th><th>Output / 1M</th><th>Context</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>GPT-5.5</td><td>$2.50</td><td>$15.00</td><td>200K</td></tr>
+            <tr><td>GPT-5</td><td>$1.25</td><td>$10.00</td><td>400K</td></tr>
+            <tr><td>GPT-5 mini</td><td>$0.25</td><td>$2.00</td><td>400K</td></tr>
+            <tr><td>GPT-4o</td><td>$2.50</td><td>$10.00</td><td>128K</td></tr>
+            <tr><td>GPT-4o mini</td><td>$0.15</td><td>$0.60</td><td>128K</td></tr>
+            <tr><td>o1 / o3</td><td>$15.00 / $2.00</td><td>$60.00 / $8.00</td><td>200K</td></tr>
+            <tr><td>Claude Opus 5</td><td>$5.00</td><td>$25.00</td><td>200K</td></tr>
+            <tr><td>Claude Sonnet 5</td><td>$2.00</td><td>$10.00</td><td>200K</td></tr>
+            <tr><td>Gemini 3.1 Pro</td><td>$2.00</td><td>$12.00</td><td>2M</td></tr>
+            <tr><td>Gemini 3.5 Flash</td><td>$1.50</td><td>$9.00</td><td>1M</td></tr>
+            <tr><td class="mono">DeepSeek V4 Pro</td><td>$0.44</td><td>$0.87</td><td>128K</td></tr>
+            <tr><td class="mono">Qwen3 Max</td><td>$0.78</td><td>$3.90</td><td>262K</td></tr>
+            <tr><td class="mono">GLM-5.1</td><td>$0.98</td><td>$3.08</td><td>200K</td></tr>
+            <tr><td class="mono">Doubao Flash</td><td class="mono">$0.01</td><td>$0.11</td><td>128K</td></tr>
+            <tr><td>Llama 4 (open-weight via hosts)</td><td>~$0.15</td><td>~$0.45</td><td>1M</td></tr>
+          </tbody>
+        </table>
+        <p>Prices are list prices as of August 2026 and change often. The calculator on our home page preloads 90+ models so you can always check the latest — and override any number with your own contract price.</p>
+
+        <h2>How to compute the cost of one request</h2>
+        <p>The math is simple once you have the token count:</p>
+        <ol>
+          <li>Count input tokens (system prompt + user messages).</li>
+          <li>Count output tokens (the assistant's reply — you estimate or set a <code>max_tokens</code>).</li>
+          <li>Apply the formula <code>inputTokens × priceIn/1M + outputTokens × priceOut/1M</code>.</li>
+        </ol>
+        <p>Example: a chat with 4,000 input tokens on GPT-4o costs <code>4,000 × $2.50/1,000,000 = $0.01</code> input; a 500-token reply adds <code>500 × $10/1,000,000 = $0.005</code> — about <strong>$0.015 per conversation</strong>. On Claude Opus 5 with a 200K system prompt, the same draft would cost ~$1.00 just for input. That's a 60× difference at the extremes, which is why pricing tables matter.</p>
+
+        <h2>Fine-tuned and “thinking” models cost more</h2>
+        <p>Reasoning models (o1, o3, DeepSeek R1, Gemini with thinking) bill <em>reasoning tokens</em> at output-tier prices. A coding task on o1 can output 8,000 thinking tokens before a single visible character — often making it 5–10× pricier than GPT-5 per real task. Budget with the output column, not the input column.</p>
+
+        <h2>7 ways to cut LLM API bills</h2>
+        <ul>
+          <li>Trim the system prompt — every redundant instruction is billed on every call.</li>
+          <li>Cache prefix (Anthropic prompt caching, Gemini context caching) for repeated system prompts.</li>
+          <li>Move bulk jobs to mini models (GPT-4o mini, Gemini Flash-Lite, Doubao Flash).</li>
+          <li>Set <code>max_tokens</code> — runaway reasoning tokens kill budgets.</li>
+          <li>Batch embeddings instead of calling per-row.</li>
+          <li>Summarize conversation history instead of appending it forever.</li>
+          <li>Use the right tokenizer to size prompts before you ship — that's what a token counter is for.</li>
+        </ul>
+
+        <h2>Compute your own cost with real token counts</h2>
+        <div class="cta">
+          <p>Our <a href="../#tool">token &amp; cost calculator</a> runs the real tiktoken tokenizer locally (nothing is uploaded), preloads 2026 list prices for 90+ models, and shows per-request input, output and total cost live while you type.</p>
+        </div>
+        <p><a href="../#tool">→ Open the cost calculator &nbsp;(free, private)</a></p>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div>
+        <strong>TokenCalc — AI Token Calculator</strong><br>
+        Free, private token counting and API cost estimation for AI developers.
+      </div>
+      <div>
+        Token counts are provided for reference.<br>
+        <a href="../privacy.html">Privacy Policy</a> · © 2026 AI Token Calculator.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
