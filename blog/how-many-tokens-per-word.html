@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How Many Tokens Is a Word? Token-to-Word Cheat Sheet (2026)</title>
+  <meta name="description" content="How many tokens is a word? Exact token-per-word ratios for GPT-5, GPT-4o, Claude, Gemini and Llama — with a free converter that counts your text in real time.">
+  <meta name="keywords" content="how many tokens is a word, tokens per word, token to word ratio, GPT tokens per word, how many tokens in, token calculator">
+  <link rel="canonical" href="https://tokenestimate.com/blog/how-many-tokens-per-word.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="How Many Tokens Is a Word? Token-to-Word Cheat Sheet">
+  <meta property="og:description" content="Exact tokens-per-word ratios for GPT-5, GPT-4o, Claude, Gemini and Llama, plus a free real-time token counter that works in your browser.">
+  <meta property="og:url" content="https://tokenestimate.com/blog/how-many-tokens-per-word.html">
+  <meta property="og:image" content="https://tokenestimate.com/og-cover.png">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="stylesheet" href="../css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How Many Tokens Is a Word? Token-to-Word Cheat",
+    "description": "Tokens-per-word ratios for GPT-5, GPT-4o, Claude, Gemini, Llama and more, with a free in-browser token counter.",
+    "datePublished": "2026-08-09",
+    "author": { "@type": "Organization", "name": "TokenCalc" },
+    "publisher": { "@type": "Organization", "name": "TokenCalc" },
+    "mainEntityOfPage": "https://tokenestimate.com/blog/how-many-tokens-per-word.html"
+  }
+  </script>
+  <style>
+    .article { max-width: 780px; margin: 28px auto 60px; padding: 0 26px; }
+    .article h1 { font-size: 2rem; line-height: 1.25; margin-bottom: 12px; }
+    .article .meta { color: var(--text-faint); font-size: .85rem; margin-bottom: 26px; }
+    .article h2 { font-size: 1.35rem; margin: 34px 0 12px; }
+    .article h3 { font-size: 1.08rem; margin: 24px 0 8px; }
+    .article p, .article li { color: var(--text-dim); font-size: .98rem; }
+    .article ul, .article ol { margin: 10px 0 14px 22px; }
+    .article li { margin-bottom: 6px; }
+    .article table { width: 100%; border-collapse: collapse; margin: 16px 0 22px; font-size: .9rem; }
+    .article .tag { font-size: .68rem; }
+    code { font-family: var(--mono); background: var(--bg-input); border: 1px solid var(--border); border-radius: 6px; padding: 1px 6px; font-size: .88em; }
+    .cta { background: var(--bg-soft); border: 1px solid var(--border-soft); border-radius: var(--radius-sm); padding: 18px 22px; margin: 26px 0; }
+    .cta a { font-weight: 600; }
+    .breadcrumb { font-size: .82rem; color: var(--text-faint); margin-bottom: 18px; }
+  </style>
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="../" aria-label="AI Token Calculator home">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#4f8cff" stroke-width="2" aria-hidden="true">
+          <path d="M12 2 4 6v6c0 5 3.4 9.1 8 10 4.6-.9 8-5 8-10V6l-8-4Z"/>
+          <path d="m9 12 2 2 4-4" stroke="#22d3ee" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Token<em>Calc</em></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="../#tool">Calculator</a>
+        <a href="../#models">Supported models</a>
+        <a href="../#faq">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <article class="article">
+        <div class="breadcrumb"><a href="../">Home</a> / Guides / How many tokens is a word?</div>
+        <h1>How Many Tokens Is a Word? (2026 Cheat Sheet)</h1>
+        <p class="meta">AI Token Calculator — updated Aug 2026 · 6 min read</p>
+
+        <p><strong>Short answer:</strong> one English word averages <strong>1.3 tokens</strong> with OpenAI's o200k tokenizer (roughly 4 characters per token, or ~3 tokens per 4 words). For Chinese text the ratio flips: <strong>1 character ≈ 0.6–1.2 tokens</strong>. Exactly, token counts depend on the model's tokenizer, which is why a word counter is not a token counter.</p>
+
+        <h2>Tokens per word by model family (2026)</h2>
+        <table>
+          <thead>
+            <tr><th>Model family</th><th>Tokenizer</th><th>Tokens per word</th><th>Chars per token</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>GPT-5 / GPT-4o / o1 / o3</td><td><span class="tag">o200k_base</span></td><td>~1.3</td><td>~3.9</td></tr>
+            <tr><td>GPT-4 / GPT-3.5 (legacy)</td><td><span class="tag">cl100k_base</span></td><td>~1.3</td><td>~3.9</td></tr>
+            <tr><td>text-davinci-003</td><td><span class="tag">p50k_base</span></td><td>~1.25</td><td>~4</td></tr>
+            <tr><td>Claude (Opus/Sonnet/Haiku)</td><td><span class="tag">estimate</span></td><td>~1.25</td><td>~4</td></tr>
+            <tr><td>Gemini (Pro/Flash)</td><td><span class="tag">estimate</span></td><td>~1.25</td><td>~4</td></tr>
+            <tr><td>Llama (4 / 3)</td><td><span class="tag">estimate</span></td><td>~1.25</td><td>~4</td></tr>
+            <tr><td>DeepSeek V3/R1 (Chinese)</td><td><span class="tag">estimate</span></td><td>~0.6 per char</td><td>—</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Why the ratio is never exact</h2>
+        <p>Tokenizers split text with Byte-Pair-Encoding, not by words:</p>
+        <ul>
+          <li>Common words like <code>the</code>, <code>and</code>, <code>that</code> are usually a <em>single token</em>.</li>
+          <li>Long or rare words split into several tokens (<code>internationalization</code> ≈ 4 tokens).</li>
+          <li>Whitespace is typically merged into the following token — so indentation and line breaks matter.</li>
+          <li>Code costs more than prose: symbols like <code>{</code>, <code>}</code>, <code>=&gt;</code> tokenize densely.</li>
+          <li>Emoji and non-Latin scripts behave very differently (Chinese: ~0.6–1 token per character).</li>
+        </ul>
+
+        <h2>Quick word → token estimates</h2>
+        <table>
+          <thead><tr><th>English words</th><th>≈ Tokens (o200k)</th></tr></thead>
+          <tbody>
+            <tr><td>100 words</td><td>~133 tokens</td></tr>
+            <tr><td>500 words</td><td>~665 tokens</td></tr>
+            <tr><td>1,000 words</td><td>~1,330 tokens</td></tr>
+            <tr><td>5,000 words</td><td>~6,650 tokens</td></tr>
+            <tr><td>10,000 words</td><td>~13,300 tokens</td></tr>
+          </tbody>
+        </table>
+        <p>Rule of thumb that still works: <strong>tokens ≈ characters ÷ 4</strong> for English, <strong>tokens ≈ characters × 0.6</strong> for Chinese.</p>
+
+        <h2>“Tokens vs words” — why it matters</h2>
+        <p>API providers bill by tokens, and models have hard token limits per context window. A 1,000-word prompt is <strong>~1,330 tokens</strong> of your context budget on GPT-5, Gemini 2.5 Pro (1M window) or Claude 4 (200K window). The same prompt in Chinese is ~800–1,200 tokens depending on the tokenizer. Estimating with words instead of tokens can be off by 30% — enough to reject a prompt that doesn't fit, or to double your invoice.</p>
+
+        <h2>Don't guess — count with the real tokenizer</h2>
+        <div class="cta">
+          <p>Our <a href="../#tool">AI Token Calculator</a> runs the actual tiktoken tokenizer (the same one OpenAI uses) right in your browser — no upload, no API key. Paste your prompt, article or dataset and get invoice-accurate token counts for GPT-5, GPT-4o, o1, o3 and every other OpenAI model, plus proven estimates for Claude, Gemini, Llama, DeepSeek, Qwen and 90+ more.</p>
+        </div>
+        <p><a href="../#tool">→ Open the token counter &nbsp;(free, private)</a></p>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div>
+        <strong>TokenCalc — AI Token Calculator</strong><br>
+        Free, private token counting and API cost estimation for AI developers.
+      </div>
+      <div>
+        Token counts are provided for reference.<br>
+        <a href="../privacy.html">Privacy Policy</a> · © 2026 AI Token Calculator.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
