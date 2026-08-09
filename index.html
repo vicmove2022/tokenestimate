@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO: title & description ===== -->
+  <title>AI Token Calculator — Count Tokens &amp; Estimate API Costs Free</title>
+  <meta name="description" content="Free AI token calculator for developers. Count tokens for GPT-5, GPT-4o, o3, Claude 4, Gemini, Llama and 90+ more models, and estimate API cost instantly. 100% local — your text never leaves your browser.">
+  <meta name="keywords" content="token calculator, AI token calculator, GPT token counter, tiktoken, count tokens, OpenAI token calculator, GPT-4o tokens, GPT-5 tokens, Claude token calculator, Gemini token calculator, API cost estimator, token count, DeepSeek tokens, Qwen tokens, Llama tokens">
+  <meta name="author" content="AI Token Calculator">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+
+  <!-- ===== Canonical: replace with your real domain before going live ===== -->
+  <link rel="canonical" href="https://tokenestimate.com/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AI Token Calculator">
+  <meta property="og:title" content="AI Token Calculator — Count Tokens &amp; Estimate API Costs Free">
+  <meta property="og:description" content="Exact token counts and instant cost estimates for GPT-5, GPT-4o, Claude, Gemini, Llama, DeepSeek and 90+ other models. Runs 100% in your browser — nothing is uploaded.">
+  <meta property="og:url" content="https://tokenestimate.com/">
+  <meta property="og:image" content="https://tokenestimate.com/og-cover.png">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI Token Calculator — Count Tokens &amp; Estimate API Costs Free">
+  <meta name="twitter:description" content="Token counting and API cost estimation for GPT, Claude, Gemini, Llama, DeepSeek, Qwen and more. Runs 100% in your browser.">
+  <meta name="twitter:image" content="https://tokenestimate.com/og-cover.png">
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- ===== Structured data (rich results) ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "AI Token Calculator",
+    "url": "https://tokenestimate.com/",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires modern browser with JavaScript",
+    "description": "Free token and cost calculator for AI developers. Counts tokens for GPT-5, GPT-4o, o3, GPT-4, Claude, Gemini, Llama, DeepSeek and 90+ other models using real tokenizers where possible, then estimates API costs per million tokens.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "featureList": [
+      "Exact tiktoken token counts (o200k_base, cl100k_base, p50k_base)",
+      "Estimate mode for Claude, Gemini, Llama, DeepSeek and other non-OpenAI models",
+      "API cost estimation per 1M tokens for 90+ models",
+      "Custom pricing for any model",
+      "Character, word, line and byte statistics",
+      "100% private — runs locally in the browser"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is an AI token?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A token is the basic unit of text that GPT and other language models read and generate. For English text, 1 token is roughly 0.7 word; for code and symbols the ratio differs. OpenAI bills all API usage in tokens." }
+      },
+      {
+        "@type": "Question",
+        "name": "How accurate is this token calculator?",
+        "acceptedAnswer": { "@type": "Answer", "text": "For OpenAI models it is exact: the calculator runs the actual tiktoken tokenizer locally in your browser — the same Byte-Pair-Encoding implementation used on OpenAI's servers — so your count matches your invoice. For Anthropic, Google, Meta, DeepSeek and other providers, exact tokenizers can't run in a browser, so the calculator switches to a proven estimate mode (about 4 characters per token)." }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does GPT-4o cost per 1M tokens?",
+        "acceptedAnswer": { "@type": "Answer", "text": "GPT-4o costs $2.50 per 1M input tokens and $10 per 1M output tokens. GPT-4o mini costs $0.15 per 1M input and $0.60 per 1M output tokens. Prices are editable inside the tool if they differ in your region or plan." }
+      },
+      {
+        "@type": "Question",
+        "name": "What models are supported?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The calculator covers 90+ models: all OpenAI models (GPT-5, GPT-4o, o1, o3, o4-mini, GPT-4.1, fine-tunes, embeddings), Anthropic Claude (4, Opus, Sonnet, Haiku), Google Gemini (Pro and Flash), Meta Llama, Mistral, DeepSeek, Qwen, Kimi, GLM, Grok and more. Everything is grouped by provider in the 'Supported models' table below." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my text uploaded anywhere?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Everything runs locally in your browser via JavaScript. Your prompts, code and documents are never sent to any server. You can disconnect from the internet and the calculator still works." }
+      },
+      {
+        "@type": "Question",
+        "name": "Why do token counts differ between character counts and token counts?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Tokens are not characters. Common words like 'the' can be a single token, long words are split into several, and whitespace is usually attached to the following token. tiktoken applies this exact Byte-Pair-Encoding so your count matches the provider." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use this for Claude, Gemini or Llama models?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Anthropic, Google and Meta use proprietary tokenizers that can't run in the browser, so the tool switches to its estimate mode for these models (about 4 characters per token — a well-known rule of thumb). You still get exact prices and a usable ballpark token count, plus full model coverage for DeepSeek, Qwen, Grok, Mistral, GLM, Kimi and more." }
+      }
+    ]
+  }
+  </script>
+
+  <!-- =========================================================================
+       GOOGLE ADSENSE SETUP (optional, only if you want ad revenue):
+       1. Sign in at adsense.google.com and add this site to get approved.
+       2. Replace the publisher ID below (ca-pub-XXXX…) with yours.
+       3. Remove the comment markers around the script tag.
+       4. In the AdSense dashboard, create 'Display' ad units and put each
+          ad unit's slot ID into the matching <div class="ad-slot"> below (data-ad-slot).
+       5. Re-submit the site in Search Console after the change.
+  ========================================================================= -->
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0000000000000000" crossorigin="anonymous"></script> -->
+</head>
+<body>
+
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-aurora" aria-hidden="true">
+    <span class="blob blob-1"></span>
+    <span class="blob blob-2"></span>
+    <span class="blob blob-3"></span>
+  </div>
+  <div class="spotlight" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/" aria-label="AI Token Calculator home">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#4f8cff" stroke-width="2" aria-hidden="true">
+          <path d="M12 2 4 6v6c0 5 3.4 9.1 8 10 4.6-.9 8-5 8-10V6l-8-4Z"/>
+          <path d="m9 12 2 2 4-4" stroke="#22d3ee" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Token<em>Calc</em></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="#tool">Calculator</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#models">Supported models</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>The AI <span class="grad">Token Calculator</span> for developers</h1>
+        <p>Count tokens for GPT-5, GPT-4o, Claude 4, Gemini, Llama, DeepSeek and <strong>90+ other models</strong> — exact tiktoken counts for OpenAI, proven estimates for everyone else, with per-call API cost in dollars. Instant, free, 100% in your browser.</p>
+        <div class="badges">
+          <span class="badge"><b>90+</b> models</span>
+          <span class="badge"><b>Exact</b> tiktoken counts</span>
+          <span class="badge"><b>$0</b> setup</span>
+          <span class="badge"><b>Private</b> — nothing uploaded</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- AdSense placement #1: leaderboard under hero -->
+    <div class="ad-slot" data-ad-client="ca-pub-0000000000000000" data-ad-slot="0000000000" aria-label="Advertisement">Advertisement</div>
+
+    <section id="tool" class="tool-section">
+      <div class="container">
+        <div class="tool-card">
+          <div class="tool-grid">
+            <div>
+              <div class="panel">Your text</div>
+              <textarea id="input-text" spellcheck="false" autocomplete="off"
+                placeholder="Paste prompt, code or document here… (you can also paste with Ctrl+V or drag &amp; drop a file)"></textarea>
+              <div class="toolbar">
+                <button class="btn" id="btn-sample" type="button">Sample text</button>
+                <button class="btn" id="btn-clear" type="button">Clear</button>
+                <span class="chars" id="char-count" aria-label="character count">0</span>
+              </div>
+            </div>
+
+            <div>
+              <div class="field">
+                <label for="model-select">Model</label>
+                <select id="model-select" aria-label="Choose model"></select>
+                <div class="hint" id="enc-label"></div>
+              </div>
+
+              <div class="pricing-row">
+                <div class="field">
+                  <label for="price-in">Input USD / 1M tokens</label>
+                  <input type="number" id="price-in" step="0.01" min="0" inputmode="decimal">
+                  <small>Leave defaults, or set your own.</small>
+                </div>
+                <div class="field">
+                  <label for="price-out">Output USD / 1M tokens</label>
+                  <input type="number" id="price-out" step="0.01" min="0" inputmode="decimal">
+                  <small id="price-note">Model defaults filled in.</small>
+                </div>
+                <button class="btn" id="btn-reset-prices" type="button">Reset prices</button>
+              </div>
+
+              <div class="status-banner" id="status" role="status"></div>
+            </div>
+          </div>
+
+          <div class="results" id="results">
+            <div class="results-title" id="results-title">
+              <span class="spin" aria-hidden="true"></span> Results — recalculated live
+            </div>
+
+            <div class="stat-grid">
+              <div class="stat tokens">
+                <div class="label">Tokens</div>
+                <div class="value" id="tokens-val">—</div>
+                <div class="label" id="tokens-k" style="font-family:var(--mono);font-size:.72rem;"></div>
+              </div>
+              <div class="stat">
+                <div class="label">Characters</div>
+                <div class="value" id="chars-val">—</div>
+              </div>
+              <div class="stat">
+                <div class="label">Words</div>
+                <div class="value" id="words-val">—</div>
+              </div>
+              <div class="stat">
+                <div class="label">Lines</div>
+                <div class="value" id="lines-val">—</div>
+              </div>
+              <div class="stat">
+                <div class="label">Bytes (UTF-8)</div>
+                <div class="value" id="bytes-val">—</div>
+              </div>
+              <div class="stat">
+                <div class="label">Tokens / char</div>
+                <div class="value" id="per-char" style="font-size:1.2rem;">—</div>
+              </div>
+            </div>
+
+            <div class="cost-grid">
+              <div class="cost" id="cost-in-box">
+                <div class="label">Input cost</div>
+                <div class="value" id="cost-in">—</div>
+              </div>
+              <div class="cost" id="cost-out-box">
+                <div class="label">Output cost (same volume)</div>
+                <div class="value" id="cost-out">—</div>
+              </div>
+              <div class="cost total">
+                <div class="label">Estimated request cost</div>
+                <div class="value" id="cost-total">—</div>
+              </div>
+            </div>
+
+            <div class="copy-bar">
+              <button class="btn" id="btn-copy" type="button">Copy summary</button>
+              <span class="note" id="copy-feedback"></span>
+              <span class="note"><b>Private by design:</b> text is tokenized locally with <b>tiktoken</b> — nothing is uploaded.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AdSense placement #2: mid page (in-content) -->
+    <div class="ad-slot" data-ad-client="ca-pub-0000000000000000" data-ad-slot="0000000000" aria-label="Advertisement">Advertisement</div>
+
+    <section id="how-it-works" class="section" style="padding-top:10px;">
+      <div class="container">
+        <div class="reveal">
+          <h2>Why developers use this token calculator</h2>
+          <p class="lead">Stop guessing with character counters. Get invoice-accurate token usage before you ship an app or a prompt.</p>
+        </div>
+        <div class="cards">
+          <div class="card reveal">
+            <h3><span class="emoji">Σ</span> Exact tiktoken counts</h3>
+            <p>Uses the same Byte-Pair-Encoding tokenizer that OpenAI runs in production — identical results for GPT-5, GPT-4o, o3, o4-mini, GPT-4.1 and every other OpenAI model. Other providers get a proven estimate mode.</p>
+          </div>
+          <div class="card reveal">
+            <h3><span class="emoji">$</span> Cost before you code</h3>
+            <p>Convert any prompt, context window or dataset dump into a dollar estimate instantly. 90+ models preloaded with official list prices, or set custom per-million-token prices for any provider or plan.</p>
+          </div>
+          <div class="card reveal">
+            <h3><span class="emoji">#</span> 100% local &amp; private</h3>
+            <p>No account, no API key, no upload. The tokenizer runs in your browser, so prompts and code never leave your machine — even offline once loaded.</p>
+          </div>
+          <div class="card reveal">
+            <h3><span class="emoji">⎈</span> Built for AI workflows</h3>
+            <p>Paste or drop any text file, watch token, character, word, line and byte stats update live, and copy one-line summaries into prompts or tickets.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="models" class="section">
+      <div class="container">
+        <div class="reveal">
+          <h2>Supported models &amp; pricing</h2>
+          <p class="lead">90+ models across OpenAI, Anthropic, Google, Meta, Mistral, DeepSeek, Qwen, xAI, Alibaba and more. <span class="tag ok">exact</span> rows are counted with the real tiktoken tokenizer in your browser; <span class="tag">estimate</span> rows cover models whose proprietary tokenizers can't run in a browser (about 4 chars per token). Prices are official list prices per 1M tokens and change over time — the calculator lets you override any of them.</p>
+        </div>
+        <div class="table-wrap reveal">
+          <table>
+            <thead>
+              <tr>
+                <th>Model</th>
+                <th>Precision</th>
+                <th>Context</th>
+                <th>Input / 1M</th>
+                <th>Output / 1M</th>
+              </tr>
+            </thead>
+            <tbody id="model-tbody"></tbody>
+          </table>
+        </div>
+        <p class="lead" style="margin-top:14px;font-size:.85rem;">Tokenizer registry: <span class="tag">o200k_base</span> (GPT-5 / GPT-4o / o1 / o3 / o4-mini / GPT-4.1 / gpt-4o-mini), <span class="tag">cl100k_base</span> (GPT-4 / GPT-3.5 Turbo / embeddings), <span class="tag">p50k_base</span> (text-davinci-003), <span class="tag">r50k_base</span> (davinci-002).</p>
+      </div>
+    </section>
+
+    <!-- AdSense placement #3: above FAQ -->
+    <div class="ad-slot" data-ad-client="ca-pub-0000000000000000" data-ad-slot="0000000000" aria-label="Advertisement">Advertisement</div>
+
+    <section id="guides" class="section" style="padding-top:10px;">
+      <div class="container">
+        <div class="reveal">
+          <h2>Developer guides</h2>
+          <p class="lead">Learn how tokens and token prices actually work before you ship.</p>
+        </div>
+        <div class="cards">
+          <div class="card reveal">
+            <h3><span class="emoji">W</span> How many tokens is a word?</h3>
+            <p>Token-per-word ratios for GPT-5, GPT-4o, Claude, Gemini, Llama and DeepSeek, with quick estimates and exact counts — no more guessing with word counters.</p>
+            <p><a href="blog/how-many-tokens-per-word.html">Read the guide →</a></p>
+          </div>
+          <div class="card reveal">
+            <h3><span class="emoji">$</span> AI API pricing in 2026</h3>
+            <p>Per-1M-token prices for every major model in one table, the exact per-request formula, and seven ways to cut your LLM API bill — including reasoning-token traps.</p>
+            <p><a href="blog/ai-api-pricing-2026.html">Read the guide →</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section">
+      <div class="container">
+        <div class="reveal">
+          <h2>Frequently asked questions</h2>
+          <p class="lead">Everything developers ask before shipping an AI feature.</p>
+        </div>
+        <div class="faq reveal">
+          <details>
+            <summary>What is an AI token?</summary>
+            <p>A token is the smallest unit of text a language model reads and generates. In English, one token is roughly 0.75 words, but code, punctuation and emoji tokenize differently. API providers bill every request in tokens, which is why developers need a proper <strong>token counter</strong> and not a character counter.</p>
+          </details>
+          <details>
+            <summary>How accurate is this token calculator?</summary>
+            <p>For every OpenAI model in the list it is exact: the calculator runs the <strong>tiktoken</strong> tokenizer — the same Byte-Pair-Encoding implementation used on OpenAI's servers — locally in your browser. Your count equals your invoice, down to the last token. For Claude, Gemini, Llama, DeepSeek, Qwen and other providers the tool switches to its <strong>estimate mode</strong> (about 4 characters per token), which is a proven ballpark for prompt sizing and cost planning.</p>
+          </details>
+          <details>
+            <summary>Is my text uploaded or stored?</summary>
+            <p>No. Everything happens client-side with JavaScript. Your prompts, code and documents never leave your device, no analytics are collected from the text you type, and the page keeps working after the tokenizer data loads.</p>
+          </details>
+          <details>
+            <summary>How do I estimate the cost of a chat request?</summary>
+            <p>Pick your model in the calculator, paste your conversation (system prompt + user messages), read the token count, then multiply by the per-1M-input price. Use our output price control for the assistant's reply, or the total estimate for a typical round-trip. You can also enter your own per-million prices if your plan differs.</p>
+          </details>
+          <details>
+            <summary>Why is my token count different from GPT-4o vs GPT-4?</summary>
+            <p>Different model families use different tokenizers. GPT-5, GPT-4o and o-series use <strong>o200k_base</strong>, while GPT-4 and GPT-3.5 use <strong>cl100k_base</strong>. The calculator switches tokenizers automatically when you change models, so compare like for like.</p>
+          </details>
+          <details>
+            <summary>Does it support Claude, Gemini or Llama?</summary>
+            <p>Yes. Those models use proprietary tokenizers, so exact counts aren't possible in a browser. The calculator's “estimate” mode assumes about 4 characters per token (a well-known rule of thumb) so you still get a usable ballpark number — and it covers the whole lineup: Claude 4, Opus, Sonnet and Haiku, Gemini 2.5 Pro and Flash, Llama 4 and 3, DeepSeek V3 and R1, Qwen, Mistral, Grok, Kimi, GLM and dozens more.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div>
+        <strong>TokenCalc — AI Token Calculator</strong><br>
+        Free, private token counting and API cost estimation for AI developers.
+        Built with the open-source tiktoken tokenizer, running 100% locally.
+      </div>
+      <div>
+        Token counts are provided for reference; always verify billing against your provider account.<br>
+        <a href="privacy.html">Privacy Policy</a> · © 2026 AI Token Calculator. All product names and logos are trademarks of their respective owners.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/motion.js" defer></script>
+  <script type="module" src="js/app.js"></script>
+  <!-- AdSense responsive unit script (enable after approval): 
+  <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script> -->
+</body>
+</html>
