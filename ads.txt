@@ -1,0 +1,5 @@
+# AdSense ads.txt — keep this file AFTER your publisher account is approved.
+# Replace the three lines below with the exact block AdSense gives you at
+# https://adsense.google.com -> Account -> ads.txt management, then redeploy.
+#
+# google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
