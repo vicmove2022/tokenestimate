@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO: title & description ===== -->
+  <title>Claude Token Counter — Count Claude Tokens &amp; API Cost Free</title>
+  <meta name="description" content="Count tokens for Claude Opus, Sonnet and Haiku and estimate Anthropic API costs instantly. Free, private, 100% in-browser token counter for Claude 4, Claude 5 and 90+ models.">
+  <meta name="keywords" content="Claude token counter, Claude token calculator, Claude tokens, count Claude tokens, Anthropic token counter, Claude API cost, Claude Opus tokens, Claude Sonnet tokens, Claude Haiku tokens">
+  <meta name="author" content="AI Token Calculator">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+
+  <link rel="canonical" href="https://tokenestimate.com/claude-token-counter.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AI Token Calculator">
+  <meta property="og:title" content="Claude Token Counter — Count Claude Tokens &amp; Estimate API Costs">
+  <meta property="og:description" content="Count tokens for Claude Opus, Sonnet and Haiku and estimate Anthropic API costs. Free and private — runs 100% in your browser.">
+  <meta property="og:url" content="https://tokenestimate.com/claude-token-counter.html">
+  <meta property="og:image" content="https://tokenestimate.com/og-cover.png">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Claude Token Counter — Count Claude Tokens &amp; Estimate API Costs">
+  <meta name="twitter:description" content="Free, private Claude token counter for Opus, Sonnet and Haiku with instant API cost estimates.">
+  <meta name="twitter:image" content="https://tokenestimate.com/og-cover.png">
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- ===== Structured data (rich results) ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Claude Token Counter",
+    "url": "https://tokenestimate.com/claude-token-counter.html",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Any",
+    "description": "Free Claude token counter and Anthropic API cost estimator. Counts tokens for Claude Opus, Sonnet and Haiku and estimates costs per 1M tokens.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "publisher": { "@type": "Organization", "name": "TokenCalc" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How many tokens is a word in Claude?",
+        "acceptedAnswer": { "@type": "Answer", "text": "One English word averages about 1.25 tokens with Claude's tokenizer (roughly 4 characters per token). Chinese text runs around 0.6–1.2 tokens per character. Since Anthropic doesn't ship an offline tokenizer, our counter provides a proven estimate based on the same character statistics." }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does Claude API cost per 1M tokens?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Claude Opus 5 is priced at $5.00 per 1M input tokens and $25.00 per 1M output tokens. Claude Sonnet 5 is $2.00 input / $10.00 output. Both have a 200K context window." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the Claude token counter private?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Everything runs locally in your browser — your text never leaves your device, no uploads, no API keys, no sign-up." }
+      },
+      {
+        "@type": "Question",
+        "name": "Why doesn't the Claude count use the official tokenizer?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Anthropic has not released an offline, browser-runnable tokenizer equivalent to OpenAI's tiktoken. Our counter uses a proven estimate calibrated on Claude's known token behavior — accurate enough for budgeting context windows and forecasting costs." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a token in Claude?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A token is the smallest unit of text Claude's tokenizer processes — roughly one English word equals 1.25 tokens. Claude's 200K context window is measured in tokens." }
+      },
+      {
+        "@type": "Question",
+        "name": "How does the Claude token counter compare to Anthropic's own API?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Anthropic does not ship an offline tokenizer. Our counter uses a proven estimate calibrated on Claude's token behavior — accurate enough for budgeting and cost forecasting; OpenAI models on the same tool return exact official counts." }
+      }
+    ]
+  }
+  </script>
+  <style>
+    .article { max-width: 780px; margin: 28px auto 60px; padding: 0 26px; }
+    .article h1 { font-size: 2rem; line-height: 1.25; margin-bottom: 12px; }
+    .article .meta { color: var(--text-faint); font-size: .85rem; margin-bottom: 26px; }
+    .article h2 { font-size: 1.35rem; margin: 34px 0 12px; }
+    .article h3 { font-size: 1.08rem; margin: 24px 0 8px; }
+    .article p, .article li { color: var(--text-dim); font-size: .98rem; }
+    .article ul, .article ol { margin: 10px 0 14px 22px; }
+    .article li { margin-bottom: 6px; }
+    .article table { width: 100%; border-collapse: collapse; margin: 16px 0 22px; font-size: .9rem; }
+    .article .tag { font-size: .68rem; }
+    code { font-family: var(--mono); background: var(--bg-input); border: 1px solid var(--border); border-radius: 6px; padding: 1px 6px; font-size: .88em; }
+    .cta { background: var(--bg-soft); border: 1px solid var(--border-soft); border-radius: var(--radius-sm); padding: 18px 22px; margin: 26px 0; }
+    .cta a { font-weight: 600; }
+    .breadcrumb { font-size: .82rem; color: var(--text-faint); margin-bottom: 18px; }
+  </style>
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="AI Token Calculator home">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#4f8cff" stroke-width="2" aria-hidden="true">
+          <path d="M12 2 4 6v6c0 5 3.4 9.1 8 10 4.6-.9 8-5 8-10V6l-8-4Z"/>
+          <path d="m9 12 2 2 4-4" stroke="#22d3ee" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Token<em>Calc</em></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html#tool">Calculator</a>
+        <a href="index.html#models">Supported models</a>
+        <a href="index.html#faq">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <article class="article">
+        <div class="breadcrumb"><a href="index.html">Home</a> / Claude Token Counter</div>
+        <h1>Claude Token Counter — Count Tokens &amp; Estimate Anthropic API Cost</h1>
+        <p class="meta">AI Token Calculator — updated Aug 2026</p>
+
+        <p><strong>Claude Token Counter</strong> is a free, browser-based developer tool that estimates token counts for Anthropic's Claude Opus, Sonnet and Haiku models and forecasts API costs in real time. Unlike word-based counters, it calibrates counts on Claude's known tokenizer behavior and works entirely in your browser: no uploads, no API keys, no sign-up. It is one of <strong>90+ models</strong> covered by TokenCalc, a free AI token calculator for developers.</p>
+
+        <div class="cta">
+          <p><a href="index.html#tool">→ Open the Claude token counter</a> — paste any prompt or document, get token counts and cost estimates for every Claude model in seconds.</p>
+        </div>
+
+        <h2>Claude pricing (2026)</h2>
+        <table>
+          <thead>
+            <tr><th>Model</th><th>Token count</th><th>Input / 1M tokens</th><th>Output / 1M tokens</th><th>Context window</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Claude Opus 5</td><td><span class="tag">estimate</span></td><td>$5.00</td><td>$25.00</td><td>200K</td></tr>
+            <tr><td>Claude Sonnet 5</td><td><span class="tag">estimate</span></td><td>$2.00</td><td>$10.00</td><td>200K</td></tr>
+            <tr><td>Claude Haiku 4.5</td><td><span class="tag">estimate</span></td><td>$1.00</td><td>$5.00</td><td>200K</td></tr>
+            <tr><td>Claude Opus 4 / Sonnet 4</td><td><span class="tag">estimate</span></td><td>$15.00 / $3.00</td><td>$75.00 / $15.00</td><td>200K</td></tr>
+          </tbody>
+        </table>
+        <p class="meta">Claude counts are proven estimates — Anthropic doesn't ship an offline tokenizer, so we calibrate on known token behavior.</p>
+
+        <h2>Claude token counter by the numbers</h2>
+        <ul>
+          <li><strong>90+</strong> LLM tokenizers supported in one free tool</li>
+          <li><strong>200K</strong> token context window on Claude Opus 5 and Sonnet 5</li>
+          <li><strong>1.25</strong> average tokens per English word</li>
+          <li><strong>$5.00 / $25.00</strong> per 1M input / output tokens for Claude Opus 5</li>
+          <li><strong>100%</strong> in-browser — your text never leaves the device</li>
+          <li><strong>0</strong> uploads, <strong>0</strong> API keys, <strong>0</strong> cost</li>
+        </ul>
+
+        <h2>How many tokens is a word in Claude?</h2>
+        <p>One English word averages <strong>~1.25 tokens</strong> (roughly 4 characters per token). Just like OpenAI's tokenizers, Claude's uses Byte-Pair-Encoding, so the exact ratio depends on your text:</p>
+        <ul>
+          <li>Common short words are often a <em>single token</em>.</li>
+          <li>Long or technical words split into several tokens.</li>
+          <li>Code and special characters tokenize more densely than prose.</li>
+          <li>Chinese text runs ~0.6–1.2 tokens per character.</li>
+        </ul>
+
+        <h2>Why count Claude tokens?</h2>
+        <p>Anthropic bills by tokens and Claude's context window is 200K tokens. Without an accurate count you risk:</p>
+        <ul>
+          <li><strong>Oversized prompts</strong> — a document that doesn't fit the 200K window gets truncated or rejected.</li>
+          <li><strong>Surprise invoices</strong> — output tokens on Opus 5 cost $25 per 1M, so long generations add up fast.</li>
+          <li><strong>Model mismatch</strong> — the same text tokenizes differently between Claude, GPT-5 and Gemini; the cheapest model for a job isn't always obvious.</li>
+        </ul>
+
+        <h2>Claude token counter — free and private</h2>
+        <div class="cta">
+          <p>Our <a href="index.html#tool">AI Token Calculator</a> covers Claude Opus, Sonnet and Haiku with proven estimates, plus exact token counts for GPT-5, GPT-4o, o1, o3 (official tiktoken) and 90+ more models — all in your browser, no upload, no API key.</p>
+        </div>
+        <p><a href="index.html#tool">→ Open the Claude token counter &nbsp;(free, private)</a></p>
+
+        <h2>Claude token FAQs</h2>
+        <h3>How many tokens does Claude have per word?</h3>
+        <p>About 1.25 tokens per English word, or ~4 characters per token. Always verify with a counter — the ratio varies with vocabulary and code content.</p>
+        <h3>Is the Claude token count exact?</h3>
+        <p>Claude counts are estimates calibrated on Anthropic's tokenizer behavior. OpenAI model counts are exact (official tiktoken). Estimates are accurate enough for budgeting and cost forecasting.</p>
+        <h3>Does the Claude token counter upload my text?</h3>
+        <p>No. Everything runs in your browser. Your text is never sent to any server.</p>
+        <h3>What is a token in Claude?</h3>
+        <p>A token is the smallest unit of text Claude's tokenizer processes — roughly one English word equals 1.25 tokens. Claude's 200K context window is measured in tokens, so an accurate count tells you how much text fits in a prompt.</p>
+        <h3>How does the Claude token counter compare to Anthropic's own API?</h3>
+        <p>Anthropic does not ship an offline, browser-runnable tokenizer. Our counter uses a proven estimate calibrated on Claude's token behavior — accurate enough for context budgeting and cost forecasting, while OpenAI models on the same tool return exact official counts.</p>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div>
+        <strong>TokenCalc — AI Token Calculator</strong><br>
+        Free, private token counting and API cost estimation for AI developers.
+      </div>
+      <div>
+        Token counts are provided for reference.<br>
+        <a href="privacy.html">Privacy Policy</a> · © 2026 AI Token Calculator.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
