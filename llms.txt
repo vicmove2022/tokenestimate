@@ -1,0 +1,31 @@
+# TokenCalc — AI Token Calculator
+
+> TokenCalc (tokenestimate.com) is a free, browser-based AI token calculator and API cost estimator for developers. It counts tokens for GPT-5, GPT-4o, o1, o3, Claude, Gemini, Llama, DeepSeek, Qwen and 90+ other models, and estimates API costs per 1M tokens. All processing runs 100% locally in the browser — text is never uploaded.
+
+## Main Pages
+
+- [Token Calculator](https://tokenestimate.com/): Count tokens and estimate API costs for 90+ models, free and private
+- [GPT-5 Token Calculator](https://tokenestimate.com/gpt-5-token-calculator.html): Exact GPT-5 / GPT-5 mini / GPT-5.5 token counts with the official o200k tokenizer and pricing
+- [Claude Token Counter](https://tokenestimate.com/claude-token-counter.html): Token counts and cost estimates for Claude Opus, Sonnet and Haiku
+- [Gemini Token Counter](https://tokenestimate.com/gemini-token-counter.html): Token counts and cost estimates for Gemini 2.5, Gemini 3 and Gemini 3.1 Pro
+- [AI API Pricing 2026](https://tokenestimate.com/blog/ai-api-pricing-2026.html): Cost per 1M tokens for every major LLM
+- [How Many Tokens Is a Word?](https://tokenestimate.com/blog/how-many-tokens-per-word.html): Token-to-word ratios by model family
+
+## Key Facts
+
+- Models supported: 90+
+- OpenAI models use exact official tiktoken counts (o200k_base, cl100k_base)
+- Claude / Gemini / Llama / DeepSeek / Qwen use proven estimates
+- GPT-5 pricing: $1.25 input / $10.00 output per 1M tokens, 400K context
+- Claude Opus 5 pricing: $5.00 input / $25.00 output per 1M tokens, 200K context
+- Gemini 3.1 Pro pricing: $2.00 input / $12.00 output per 1M tokens, 2M context
+- Average English token rate: ~1.3 tokens per word (o200k), ~1.25 (others)
+- Privacy: 100% local, no uploads, no API keys, no sign-up
+- Price: Free
+
+## Contact
+
+- Website: https://tokenestimate.com
+- Privacy Policy: https://tokenestimate.com/privacy.html
+
+*Last updated: 2026-08-10*
