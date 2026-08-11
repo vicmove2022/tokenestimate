@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Qwen Token Calculator — Count Qwen Tokens &amp; API Cost Free</title>
+  <meta name="description" content="Count tokens for Qwen and estimate API costs instantly. Free, private, 100% in-browser token counter for Qwen and 90+ models.">
+  <meta name="keywords" content="Qwen token calculator, Qwen token counter, Qwen tokens, count Qwen tokens, Qwen API cost">
+  <meta name="author" content="AI Token Calculator">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+
+  <link rel="canonical" href="https://tokenestimate.com/qwen-token-counter.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AI Token Calculator">
+  <meta property="og:title" content="Qwen Token Calculator — Count Qwen Tokens &amp; Estimate API Costs">
+  <meta property="og:description" content="Count tokens for Qwen and estimate API costs. Free and private — runs 100% in your browser.">
+  <meta property="og:url" content="https://tokenestimate.com/qwen-token-counter.html">
+  <meta property="og:image" content="https://tokenestimate.com/og-cover.png">
+  <meta property="og:locale" content="en_US">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Qwen Token Calculator — Count Qwen Tokens &amp; Estimate API Costs">
+  <meta name="twitter:description" content="Free, private Qwen token counter with instant API cost estimates.">
+  <meta name="twitter:image" content="https://tokenestimate.com/og-cover.png">
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Qwen Token Calculator",
+    "url": "https://tokenestimate.com/qwen-token-counter.html",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Any",
+    "description": "Free Qwen token counter and API cost estimator.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "publisher": { "@type": "Organization", "name": "TokenCalc" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How many tokens is a word in Qwen?",
+        "acceptedAnswer": { "@type": "Answer", "text": "One English word averages about 1.25 tokens (roughly 4 characters per token). Chinese text runs around 0.6–1.2 tokens per character. Always verify with a real token counter." }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does Qwen API cost per 1M tokens?",
+        "acceptedAnswer": { "@type": "Answer", "text": "See the pricing table on this page for Qwen input and output rates per 1M tokens." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the Qwen token counter private?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Everything runs locally in your browser — your text never leaves your device, no uploads, no API keys, no sign-up." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a token in Qwen?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A token is the smallest unit of text a model’s tokenizer processes — roughly one English word equals 1.3 tokens. A model’s context window is measured in tokens, so an accurate count tells you how much text fits in a prompt." }
+      },
+      {
+        "@type": "Question",
+        "name": "How does the Qwen token counter handle Chinese text?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Qwen is optimized for Chinese, where one character runs roughly 0.6–1.2 tokens. Our counter applies the correct character-based statistics, so Chinese prompts are budgeted accurately." }
+      }
+    ]
+  }
+  </script>
+  <style>
+    .article { max-width: 780px; margin: 28px auto 60px; padding: 0 26px; }
+    .article h1 { font-size: 2rem; line-height: 1.25; margin-bottom: 12px; }
+    .article .meta { color: var(--text-faint); font-size: .85rem; margin-bottom: 26px; }
+    .article h2 { font-size: 1.35rem; margin: 34px 0 12px; }
+    .article h3 { font-size: 1.08rem; margin: 24px 0 8px; }
+    .article p, .article li { color: var(--text-dim); font-size: .98rem; }
+    .article ul, .article ol { margin: 10px 0 14px 22px; }
+    .article li { margin-bottom: 6px; }
+    .article table { width: 100%; border-collapse: collapse; margin: 16px 0 22px; font-size: .9rem; }
+    .article .tag { font-size: .68rem; }
+    code { font-family: var(--mono); background: var(--bg-input); border: 1px solid var(--border); border-radius: 6px; padding: 1px 6px; font-size: .88em; }
+    .cta { background: var(--bg-soft); border: 1px solid var(--border-soft); border-radius: var(--radius-sm); padding: 18px 22px; margin: 26px 0; }
+    .cta a { font-weight: 600; }
+    .breadcrumb { font-size: .82rem; color: var(--text-faint); margin-bottom: 18px; }
+  </style>
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="AI Token Calculator home">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#4f8cff" stroke-width="2" aria-hidden="true">
+          <path d="M12 2 4 6v6c0 5 3.4 9.1 8 10 4.6-.9 8-5 8-10V6l-8-4Z"/>
+          <path d="m9 12 2 2 4-4" stroke="#22d3ee" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Token<em>Calc</em></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html#tool">Calculator</a>
+        <a href="index.html#models">Supported models</a>
+        <a href="index.html#faq">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <article class="article">
+        <div class="breadcrumb"><a href="index.html">Home</a> / Qwen Token Calculator</div>
+        <h1>Qwen Token Calculator — Count Tokens &amp; Estimate API Cost</h1>
+        <p class="meta">AI Token Calculator — updated Aug 2026</p>
+
+        <p><strong>Qwen Token Calculator</strong> is a free, browser-based developer tool that counts tokens for Qwen using a proven estimate calibrated on Qwen’s tokenizer behavior and forecasts API costs in real time. Unlike word-based counters, it returns reliable token counts and live API cost estimates entirely in your browser: no uploads, no API keys, no sign-up. It is one of <strong>90+ models</strong> covered by TokenCalc, a free AI token calculator for developers.</p>
+
+        <div class="cta">
+          <p><a href="index.html#tool">→ Open the Qwen token counter</a> — paste any prompt or document, get token counts and cost estimates in seconds.</p>
+        </div>
+
+        <h2>Qwen pricing (2026)</h2>
+        <table>
+          <thead>
+            <tr><th>Model</th><th>Tokenizer</th><th>Input / 1M tokens</th><th>Output / 1M tokens</th><th>Context window</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Qwen3 Max</td><td><span class="tag">estimate</span></td><td>$0.78</td><td>$3.90</td><td>262K</td></tr>
+          </tbody>
+        </table>
+        <p class="meta">Counts are proven estimates — no offline tokenizer is shipped by this provider; OpenAI models on the same tool return exact official counts.</p>
+
+        <h2>Qwen token counter by the numbers</h2>
+        <ul>
+          <li><strong>90+</strong> LLM tokenizers supported in one free tool</li>
+          <li><strong>262K</strong> token context window on Qwen</li>
+          <li><strong>1.3</strong> average tokens per English word</li>
+          <li><strong>$0.78 / $3.90</strong> per 1M input / output tokens for Qwen3 Max</li>
+          <li><strong>100%</strong> in-browser — your text never leaves the device</li>
+          <li><strong>0</strong> uploads, <strong>0</strong> API keys, <strong>0</strong> cost</li>
+        </ul>
+
+        <h2>How many tokens is a word in Qwen?</h2>
+        <p>One English word averages <strong>~1.3 tokens</strong> (roughly 4 characters per token). The exact ratio depends on your text:</p>
+        <ul>
+          <li>Common short words are often a <em>single token</em>.</li>
+          <li>Long or technical words split into several tokens.</li>
+          <li>Code and special characters tokenize more densely than prose.</li>
+          <li>Chinese text runs ~0.6–1.2 tokens per character.</li>
+        </ul>
+
+        <h2>Why count Qwen tokens?</h2>
+        <ul>
+          <li><strong>Budget context</strong> — know how many tokens a document takes before it enters your prompt.</li>
+          <li><strong>Forecast costs</strong> — see the exact $ cost of a request at per-1M-token rates.</li>
+          <li><strong>Compare models</strong> — the same text tokenizes differently across model families.</li>
+        </ul>
+
+        <h2>Qwen token counter — free and private</h2>
+        <div class="cta">
+          <p>Our <a href="index.html#tool">AI Token Calculator</a> covers Qwen, plus exact token counts for GPT-5, GPT-4o, o1, o3 (official tiktoken) and 90+ more models — all in your browser, no upload, no API key.</p>
+        </div>
+        <p><a href="index.html#tool">→ Open the Qwen token counter &nbsp;(free, private)</a></p>
+
+        <h2>Qwen token FAQs</h2>
+        <h3>How many tokens is a word in Qwen?</h3>
+        <p>One English word averages about 1.25 tokens (roughly 4 characters per token). Chinese text runs around 0.6–1.2 tokens per character. Always verify with a real token counter.</p>
+        <h3>How much does Qwen API cost per 1M tokens?</h3>
+        <p>See the pricing table on this page for Qwen input and output rates per 1M tokens.</p>
+        <h3>Is the Qwen token counter private?</h3>
+        <p>Yes. Everything runs locally in your browser — your text never leaves your device, no uploads, no API keys, no sign-up.</p>
+        <h3>What is a token in Qwen?</h3>
+        <p>A token is the smallest unit of text a model’s tokenizer processes — roughly one English word equals 1.3 tokens. A model’s context window is measured in tokens, so an accurate count tells you how much text fits in a prompt.</p>
+        <h3>How does the Qwen token counter handle Chinese text?</h3>
+        <p>Qwen is optimized for Chinese, where one character runs roughly 0.6–1.2 tokens. Our counter applies the correct character-based statistics, so Chinese prompts are budgeted accurately.</p>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div>
+        <strong>TokenCalc — AI Token Calculator</strong><br>
+        Free, private token counting and API cost estimation for AI developers.
+      </div>
+      <div>
+        Token counts are provided for reference.<br>
+        <a href="privacy.html">Privacy Policy</a> · © 2026 AI Token Calculator.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
