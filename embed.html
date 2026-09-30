@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO: title & description ===== -->
+  <title>Embed a Free AI Token Calculator on Your Site — One Line of HTML</title>
+  <meta name="description" content="Add the TokenCalc AI token calculator to any website with one script line. Free, no API key, no backend, 70+ models (GPT-5.5, Claude, Gemini, DeepSeek). Live preview, iframe option and copy-ready code.">
+  <meta name="keywords" content="embed token calculator, token counter widget, AI token calculator embed, free embed widget, iframe token counter, tiktoken widget, GPT token counter embed">
+  <meta name="author" content="TokenCalc">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+
+  <link rel="canonical" href="https://tokenestimate.com/embed.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="TokenCalc">
+  <meta property="og:title" content="Embed a Free AI Token Calculator on Your Site — One Line of HTML">
+  <meta property="og:description" content="One script line adds a working token calculator for 70+ AI models to any page. Free, no API key, no backend. Live preview and copy-ready code.">
+  <meta property="og:url" content="https://tokenestimate.com/embed.html">
+  <meta property="og:image" content="https://tokenestimate.com/og-cover.png">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Embed a Free AI Token Calculator on Your Site — One Line of HTML">
+  <meta name="twitter:description" content="Free, no-backend token calculator widget for 70+ AI models. Paste one script tag, or use the iframe version.">
+  <meta name="twitter:image" content="https://tokenestimate.com/og-cover.png">
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- ===== Structured data (rich results) ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "TokenCalc embeddable AI token calculator",
+    "url": "https://tokenestimate.com/embed.html",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Any",
+    "description": "A free embeddable AI token calculator. One script tag adds a working token counter and API cost estimator for 70+ models to any website; no API key, no backend, no sign-up.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "publisher": { "@type": "Organization", "name": "TokenCalc" }
+  }
+  </script>
+  <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is the token calculator widget free to embed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. One line of HTML, free on any site including commercial ones. No API key, no account, no rate limits. The only condition is keeping the link back to tokenestimate.com."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the embed send visitor text to your servers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Tokenization runs in the visitor's browser, and the calculator page has no backend to send anything to. Nothing is uploaded, logged or stored server-side."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I embed it in WordPress, Notion, Shopify or a docs site?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use the iframe version if your platform strips third-party scripts. WordPress (custom HTML block), Shopify (page metafields or a section), Ghost and most static-site generators accept the iframe directly. Notion only accepts embeds of pages it can preview, so link to the tool instead."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I change which model loads first?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Set data-model=\"model-id\" on the script tag, or ?model=model-id in the iframe URL. ids like gpt-5.5, claude-opus-5-5, gemini-3.1-pro and deepseek-v4-pro are listed above."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I remove the \"TokenCalc\" credit line?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "data-credit=\"off\" hides the text under the widget, but the embed stays free on the condition that the page links to tokenestimate.com — keep the in-widget link or add your own."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are the token counts exact?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "OpenAI models use official tiktoken, so counts match what the API bills. Other providers use a calibrated estimate accurate to roughly 5–10%, marked with an \"estimate\" badge inside the widget."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does embedding slow down my page?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Barely. The iframe is loading=\"lazy\", so nothing loads until a visitor scrolls it into view, and the tokenizer only downloads when someone actually counts text."
+        }
+      }
+    ]
+  }
+  </script>
+  <style>
+    .article { max-width: 780px; margin: 28px auto 60px; padding: 0 26px; }
+    .article h1 { font-size: 2rem; line-height: 1.25; margin-bottom: 12px; }
+    .article .meta { color: var(--text-faint); font-size: .85rem; margin-bottom: 26px; }
+    .article h2 { font-size: 1.35rem; margin: 34px 0 12px; }
+    .article h3 { font-size: 1.08rem; margin: 24px 0 8px; }
+    .article p, .article li { color: var(--text-dim); font-size: .98rem; }
+    .article ul, .article ol { margin: 10px 0 14px 22px; }
+    .article li { margin-bottom: 6px; }
+    .article table { width: 100%; border-collapse: collapse; margin: 16px 0 22px; font-size: .9rem; }
+    .article .tag { font-size: .68rem; }
+    .breadcrumb { font-size: .82rem; color: var(--text-faint); margin-bottom: 18px; }
+    .cta { background: var(--bg-soft); border: 1px solid var(--border-soft); border-radius: var(--radius-sm); padding: 18px 22px; margin: 26px 0; }
+    .cta a { font-weight: 600; }
+    pre { background: #0f172a; color: #e6edf7; border-radius: var(--radius-sm); padding: 16px 18px; overflow-x: auto; font-family: var(--mono); font-size: .82rem; line-height: 1.6; margin: 0 0 12px; }
+    code { font-family: var(--mono); background: var(--bg-input); border: 1px solid var(--border); border-radius: 6px; padding: 1px 6px; font-size: .88em; }
+    pre code { background: none; border: none; padding: 0; }
+    .snippet { border: 1px solid var(--border-soft); border-radius: var(--radius); padding: 14px; margin: 16px 0 24px; background: var(--bg-card); }
+    .snippet .bar { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
+    .snippet .bar label { font-size: .82rem; color: var(--text-dim); }
+    .snippet select { font: inherit; font-size: .85rem; padding: 6px 10px; border: 1px solid var(--border); border-radius: 8px; background: #fff; color: var(--text); }
+    .snippet .btn { font-size: .78rem; padding: 6px 12px; margin-left: auto; }
+    .preview { border: 1px solid var(--border-soft); border-radius: var(--radius); overflow: hidden; margin: 16px 0 10px; background: #fff; }
+    .preview iframe { display: block; width: 100%; height: 620px; border: 0; }
+  </style>
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="8f1fd21d-3670-41e7-adf4-20d24de46fd4"></script>
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="AI Token Calculator home">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#4f8cff" stroke-width="2" aria-hidden="true">
+          <path d="M12 2 4 6v6c0 5 3.4 9.1 8 10 4.6-.9 8-5 8-10V6l-8-4Z"/>
+          <path d="m9 12 2 2 4-4" stroke="#22d3ee" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Token<em>Calc</em></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html#tool">Calculator</a>
+        <a href="index.html#models">Supported models</a>
+        <a href="index.html#faq">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <article class="article">
+        <div class="breadcrumb"><a href="index.html">Home</a> / Embed the calculator</div>
+        <h1>Embed a Free AI Token Calculator on Your Site</h1>
+        <p class="meta">TokenCalc embed widget — free, no API key, one line of HTML · updated 2026-09-30</p>
+
+        <p><strong>Paste one line and your page has a working token calculator.</strong> No backend, no API key, no build step, no account. Visitors count tokens and estimate API costs for <strong>70+ models</strong> — GPT-5.5, GPT-4o, Claude Opus 5.5, Gemini 3.1 Pro, DeepSeek V4, Qwen3 — with OpenAI counts computed by the official tiktoken tokenizer, right there in their browser.</p>
+
+        <div class="cta">
+          <p>Jump to <a href="#code">the code</a>, or preview it live below. For data instead of a widget, use the <a href="api.html">pricing JSON endpoint</a>.</p>
+        </div>
+
+        <h2>Live preview</h2>
+        <p>This is the real widget, exactly as your visitors will see it — only the model preset changes with the selector below.</p>
+        <div class="preview">
+          <iframe id="preview-frame" src="index.html?embed=1&amp;model=gpt-5.5" title="TokenCalc calculator preview" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <h2 id="code">The one-line embed</h2>
+        <p>Drop this anywhere in the <code>&lt;body&gt;</code> of the page where you want the calculator. The script creates the iframe and sizes it for you.</p>
+
+        <div class="snippet">
+          <div class="bar">
+            <label for="model-pick">Default model</label>
+            <select id="model-pick">
+              <option value="gpt-5.5">GPT-5.5</option>
+              <option value="gpt-5">GPT-5</option>
+              <option value="gpt-4o">GPT-4o</option>
+              <option value="gpt-4o-mini">GPT-4o mini</option>
+              <option value="o3">o3 (reasoning)</option>
+              <option value="claude-opus-5-5">Claude Opus 5.5</option>
+              <option value="claude-sonnet-5">Claude Sonnet 5</option>
+              <option value="gemini-3.1-pro">Gemini 3.1 Pro</option>
+              <option value="deepseek-v4-pro">DeepSeek V4 Pro</option>
+              <option value="qwen3-max">Qwen3 Max</option>
+              <option value="llama-4">Llama 4</option>
+            </select>
+            <button class="btn" type="button" id="copy-script">Copy</button>
+          </div>
+          <pre><code id="script-code">&lt;script src="https://tokenestimate.com/js/embed.js" data-model="gpt-5.5" data-height="640"&gt;&lt;/script&gt;</code></pre>
+        </div>
+
+        <h2>Options</h2>
+        <table>
+          <thead>
+            <tr><th>Attribute</th><th>Default</th><th>What it does</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>data-model</code></td><td><code>gpt-4o</code></td><td>Model preselected when the widget loads. Use any id from the <a href="#deep-links">deep-link table</a> below.</td></tr>
+            <tr><td><code>data-height</code></td><td><code>640</code></td><td>Iframe height in pixels. 640 fits the calculator plus the pricing table; 520 hides the table behind a scroll.</td></tr>
+            <tr><td><code>data-credit</code></td><td>on</td><td>Set <code>data-credit="off"</code> to drop the small "Token calculator by TokenCalc" line under the widget. Linking back keeps it free.</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Iframe version (no script allowed)</h2>
+        <p>Some CMSs, Shopify themes and docs platforms strip third-party <code>&lt;script&gt;</code> tags. Use the raw iframe instead — it is the same widget:</p>
+        <div class="snippet">
+          <div class="bar"><button class="btn" type="button" id="copy-iframe">Copy</button></div>
+          <pre><code id="iframe-code">&lt;iframe src="https://tokenestimate.com/?embed=1&amp;model=gpt-5.5"
+        title="AI Token Calculator" loading="lazy"
+        style="width:100%;max-width:1080px;height:640px;border:1px solid #dfe6f1;border-radius:16px"&gt;&lt;/iframe&gt;</code></pre>
+        </div>
+
+        <h2 id="deep-links">Model ids</h2>
+        <p>The <code>?model=</code> parameter works on any page and takes a model id. The ids below cover the models people embed most; the full catalog of 70+ is in the calculator's own model dropdown.</p>
+        <table>
+          <thead>
+            <tr><th>Model</th><th>id</th><th>Token count</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>GPT-5.5</td><td><code>gpt-5.5</code></td><td><span class="tag">exact</span></td></tr>
+            <tr><td>GPT-5 / mini / nano</td><td><code>gpt-5</code> · <code>gpt-5-mini</code> · <code>gpt-5-nano</code></td><td><span class="tag">exact</span></td></tr>
+            <tr><td>GPT-4o / mini</td><td><code>gpt-4o</code> · <code>gpt-4o-mini</code></td><td><span class="tag">exact</span></td></tr>
+            <tr><td>GPT-4.1 family</td><td><code>gpt-4.1</code> · <code>gpt-4.1-mini</code> · <code>gpt-4.1-nano</code></td><td><span class="tag">exact</span></td></tr>
+            <tr><td>Reasoning models</td><td><code>o3</code> · <code>o4-mini</code> · <code>o3-mini</code> · <code>o1</code></td><td><span class="tag">exact</span></td></tr>
+            <tr><td>Claude Opus 5.5 / Sonnet 5</td><td><code>claude-opus-5-5</code> · <code>claude-sonnet-5</code></td><td><span class="tag">estimate</span></td></tr>
+            <tr><td>Claude Haiku 4.5</td><td><code>claude-haiku-4.5</code></td><td><span class="tag">estimate</span></td></tr>
+            <tr><td>Gemini 3.1 Pro / Flash</td><td><code>gemini-3.1-pro</code> · <code>gemini-3.6-flash</code></td><td><span class="tag">estimate</span></td></tr>
+            <tr><td>DeepSeek V4 Pro / Flash</td><td><code>deepseek-v4-pro</code> · <code>deepseek-v4-flash</code></td><td><span class="tag">estimate</span></td></tr>
+            <tr><td>Qwen3 Max / Coder</td><td><code>qwen3-max</code> · <code>qwen3-coder</code></td><td><span class="tag">estimate</span></td></tr>
+            <tr><td>Llama 4 / GLM / Kimi</td><td><code>llama-4</code> · <code>glm-5</code> · <code>kimi-k2.6</code></td><td><span class="tag">estimate</span></td></tr>
+          </tbody>
+        </table>
+        <p><code>?embed=1</code> is the other half: it strips our header, footer and ads so only the calculator renders. Use it whenever you point an iframe at us.</p>
+
+        <h2>What the widget gives your visitors</h2>
+        <ul>
+          <li><strong>Exact OpenAI counts</strong> — official <code>o200k_base</code> and <code>cl100k_base</code> BPE tokenizers via js-tiktoken, running in the browser.</li>
+          <li><strong>Calibrated estimates</strong> for Claude, Gemini, DeepSeek, Qwen, Llama, GLM, Kimi, Doubao and more (~5–10% accuracy).</li>
+          <li><strong>Live cost estimates</strong> per run and per 1M tokens, with prices every visitor can edit in the UI.</li>
+          <li><strong>Character / word / line / byte counts</strong> alongside the token total.</li>
+          <li><strong>Privacy</strong> — input never leaves the visitor's browser, so nothing on your site collects it either.</li>
+        </ul>
+
+        <h2>Terms</h2>
+        <ul>
+          <li>Free for any site, commercial included. No rate limits, no key.</li>
+          <li>Keep the credit link, or link to <code>https://tokenestimate.com/</code> somewhere on the page. That is the whole price.</li>
+          <li>Do not present the widget as your own product, and do not frame it behind a paywall.</li>
+          <li>Prices are public list prices, verified <strong>2026-09-30</strong> — not contract, batch or cached-rate pricing. Machine-readable data with its own verification date lives at <a href="api.html">/api.html</a>.</li>
+        </ul>
+
+        <h2>Troubleshooting</h2>
+        <ul>
+          <li><strong>The widget is blank</strong> — your host may block iframes. Check for <code>X-Frame-Options</code> or a CSP <code>frame-src</code> rule; our site sends neither, so the restriction is on your side.</li>
+          <li><strong>It is cut off</strong> — raise <code>data-height</code>. The pricing table under the calculator needs the extra room.</li>
+          <li><strong>Counts look wrong</strong> — confirm the <code>data-model</code> id actually exists in the table above; an unknown id silently falls back to GPT-4o.</li>
+          <li><strong>First count is slow</strong> — the OpenAI dictionary downloads once (~2.3 MB) and is then cached in that visitor's browser.</li>
+        </ul>
+
+        <h2>Embed FAQ</h2>
+        <h3>Is the token calculator widget free to embed?</h3>
+        <p>Yes. One line of HTML, free on any site including commercial ones. No API key, no account, no rate limits. The only condition is keeping the link back to tokenestimate.com.</p>
+        <h3>Does the embed send visitor text to your servers?</h3>
+        <p>No. Tokenization runs in the visitor's browser, and the calculator page has no backend to send anything to. Nothing is uploaded, logged or stored server-side.</p>
+        <h3>Can I embed it in WordPress, Notion, Shopify or a docs site?</h3>
+        <p>Use the iframe version if your platform strips third-party scripts. WordPress (custom HTML block), Shopify (page metafields or a section), Ghost and most static-site generators accept the iframe directly. Notion only accepts embeds of pages it can preview, so link to the tool instead.</p>
+        <h3>How do I change which model loads first?</h3>
+        <p>Set <code>data-model="model-id"</code> on the script tag, or <code>?model=model-id</code> in the iframe URL. ids like <code>gpt-5.5</code>, <code>claude-opus-5-5</code>, <code>gemini-3.1-pro</code> and <code>deepseek-v4-pro</code> are listed above.</p>
+        <h3>Can I remove the "TokenCalc" credit line?</h3>
+        <p><code>data-credit="off"</code> hides the text under the widget, but the embed stays free on the condition that the page links to tokenestimate.com — keep the in-widget link or add your own.</p>
+        <h3>Are the token counts exact?</h3>
+        <p>OpenAI models use official tiktoken, so counts match what the API bills. Other providers use a calibrated estimate accurate to roughly 5–10%, marked with an "estimate" badge inside the widget.</p>
+        <h3>Does embedding slow down my page?</h3>
+        <p>Barely. The iframe is <code>loading="lazy"</code>, so nothing loads until a visitor scrolls it into view, and the tokenizer only downloads when someone actually counts text.</p>
+
+        <div class="cta">
+          <p>Want the numbers rather than the UI? The same 70-model price table is available as machine-readable JSON under CC BY 4.0: <a href="api.html">AI model pricing data →</a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div>
+        <strong>TokenCalc — AI Token Calculator</strong><br>
+        Free, private token counting and API cost estimation for AI developers.
+      </div>
+      <div>
+        <a href="index.html">Calculator</a> · <a href="api.html">Pricing data</a> · <a href="privacy.html">Privacy Policy</a><br>
+        © 2026 AI Token Calculator
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var pick = document.getElementById("model-pick");
+      var frame = document.getElementById("preview-frame");
+      var scriptCode = document.getElementById("script-code");
+      var iframeCode = document.getElementById("iframe-code");
+
+      function render(id) {
+        scriptCode.textContent = '<script src="https://tokenestimate.com/js/embed.js" data-model="' + id + '" data-height="640"><\/script>';
+        iframeCode.textContent = '<iframe src="https://tokenestimate.com/?embed=1&model=' + id + '"\n        title="AI Token Calculator" loading="lazy"\n        style="width:100%;max-width:1080px;height:640px;border:1px solid #dfe6f1;border-radius:16px"></iframe>';
+        frame.src = "index.html?embed=1&model=" + encodeURIComponent(id);
+      }
+      pick.addEventListener("change", function () { render(pick.value); });
+
+      function wire(btnId, target) {
+        var btn = document.getElementById(btnId);
+        btn.addEventListener("click", function () {
+          navigator.clipboard.writeText(target.textContent).then(function () {
+            btn.textContent = "Copied";
+            setTimeout(function () { btn.textContent = "Copy"; }, 1600);
+          });
+        });
+      }
+      wire("copy-script", scriptCode);
+      wire("copy-iframe", iframeCode);
+    })();
+  </script>
+</body>
+</html>

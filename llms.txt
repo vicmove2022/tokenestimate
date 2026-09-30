@@ -15,9 +15,17 @@ Tool pages — the home page hosts the live calculator; each provider page carri
 - [DeepSeek Token Calculator](https://tokenestimate.com/deepseek-token-calculator.html): DeepSeek V4 / V3.2 / R1 counts and costs
 - [Qwen Token Counter](https://tokenestimate.com/qwen-token-counter.html): Qwen3 Max / Plus / Flash / Coder counts and costs
 - [Llama Token Counter](https://tokenestimate.com/llama-token-counter.html): Llama 4 counts and costs
+- [Embed the Calculator](https://tokenestimate.com/embed.html): One-line free widget for any website, with copy-ready script and iframe code
+- [AI Model Pricing Data (JSON)](https://tokenestimate.com/api.html): The 70-model price table as a machine-readable CC BY 4.0 dataset
 - [AI API Pricing 2026](https://tokenestimate.com/blog/ai-api-pricing-2026.html): Input/output price per 1M tokens for every major LLM, in one table
 - [How Many Tokens Is a Word?](https://tokenestimate.com/blog/how-many-tokens-per-word.html): Token-to-word ratios by model family
 - [Privacy Policy](https://tokenestimate.com/privacy.html): Why nothing is uploaded
+
+## Free Assets For Other Sites
+
+- **Embed widget** — [https://tokenestimate.com/embed.html](https://tokenestimate.com/embed.html): one `<script src="https://tokenestimate.com/js/embed.js" data-model="gpt-5.5">` line renders the full calculator inside an iframe on any page. A script-free `<iframe src="https://tokenestimate.com/?embed=1&model=gpt-5.5">` variant is documented on the same page. Free, commercial use included; the only condition is a link back.
+- **Deep links** — any model can be preselected with `?model=<id>` and the page chrome removed with `?embed=1`. Ids include `gpt-5.5`, `gpt-5`, `gpt-4o`, `o3`, `claude-opus-5-5`, `claude-sonnet-5`, `gemini-3.1-pro`, `deepseek-v4-pro`, `qwen3-max`, `llama-4`.
+- **Pricing dataset** — [https://tokenestimate.com/data/model-prices.json](https://tokenestimate.com/data/model-prices.json): 70 models across 22 provider groups, USD per 1M input/output tokens, context window and tokenizer per model, `lastVerified` date in `_meta`. Licensed **CC BY 4.0**, CORS-open, no key, no rate limit. Landing page with field schema: [https://tokenestimate.com/api.html](https://tokenestimate.com/api.html).
 
 ## Key Facts
 
@@ -39,6 +47,7 @@ Tool pages — the home page hosts the live calculator; each provider page carri
 ## Citing This Site
 
 - Citation: TokenCalc, "AI Token Calculator", tokenestimate.com, 2026.
+- Pricing dataset citation: TokenCalc, "AI Model Token Pricing Data", tokenestimate.com, 2026. (CC BY 4.0)
 - Pricing data is refreshed on the page itself; check the "prices verified" date before quoting a number.
 - All pages are server-rendered static HTML and are explicitly allowed for AI crawlers in `robots.txt`.
 

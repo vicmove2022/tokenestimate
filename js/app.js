@@ -423,6 +423,8 @@ const money = (v) => (v === 0 ? "Free" : v == null ? "–" : "$" + fmt.format(v)
 const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
 function init() {
+  const requested = new URLSearchParams(location.search).get("model");
+  if (requested && MODELS.some((m) => m.id === requested)) state.modelId = requested;
   buildModelSelect();
   buildModelTable();
   $("input-text").addEventListener("input", () => { updateCharCount(); scheduleCalc(); });

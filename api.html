@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO: title & description ===== -->
+  <title>AI Model Pricing Data — Free JSON for 70+ LLMs (CC BY 4.0)</title>
+  <meta name="description" content="Free machine-readable JSON of input and output prices per 1M tokens for 70+ AI models across 22 providers: OpenAI, Anthropic, Google, DeepSeek, Qwen, GLM, Kimi, Doubao and more. CC BY 4.0, cited by name, verified 2026-09-30.">
+  <meta name="keywords" content="LLM pricing data, AI API prices JSON, model pricing dataset, token price per 1M, OpenAI pricing JSON, Claude pricing, Gemini pricing, DeepSeek pricing, LLM cost data, free pricing API">
+  <meta name="author" content="TokenCalc">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+
+  <link rel="canonical" href="https://tokenestimate.com/api.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="TokenCalc">
+  <meta property="og:title" content="AI Model Pricing Data — Free JSON for 70+ LLMs (CC BY 4.0)">
+  <meta property="og:description" content="Input/output price per 1M tokens, context window and tokenizer for 70 models across 22 providers. Free to reuse with attribution.">
+  <meta property="og:url" content="https://tokenestimate.com/api.html">
+  <meta property="og:image" content="https://tokenestimate.com/og-cover.png">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI Model Pricing Data — Free JSON for 70+ LLMs (CC BY 4.0)">
+  <meta name="twitter:description" content="One static JSON file: prices per 1M tokens, context windows and tokenizers for 70 models across 22 providers.">
+  <meta name="twitter:image" content="https://tokenestimate.com/og-cover.png">
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- ===== Structured data (rich results) ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "AI model pricing dataset",
+    "url": "https://tokenestimate.com/api.html",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Any",
+    "description": "Free machine-readable JSON dataset of AI model API pricing: input and output price per 1M tokens, context window and tokenizer for 70+ models across 22 providers. Licensed CC BY 4.0.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "publisher": { "@type": "Organization", "name": "TokenCalc" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "name": "AI Model Token Pricing Data",
+    "description": "USD input and output list prices per 1,000,000 tokens, context windows and tokenizer information for 70 LLMs across 22 providers, verified against provider list prices on 2026-09-30.",
+    "url": "https://tokenestimate.com/data/model-prices.json",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "creator": { "@type": "Organization", "name": "TokenCalc", "url": "https://tokenestimate.com/" },
+    "dateModified": "2026-09-30",
+    "keywords": "LLM pricing, token prices, API cost, OpenAI, Anthropic Claude, Google Gemini, DeepSeek, Qwen",
+    "measurementTechnique": "public provider list price collection"
+  }
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is the AI model pricing JSON free to use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. It is licensed CC BY 4.0: use it commercially, modify it, redistribute it. The only requirement is attribution — a link to tokenestimate.com or the citation line TokenCalc, \"AI Model Token Pricing Data\", tokenestimate.com, 2026."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many models and providers does the dataset cover?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "70 models across 22 provider groups as of 2026-09-30, spanning OpenAI, Anthropic, Google, Meta, xAI, Mistral, Amazon and the major Chinese labs (DeepSeek, Qwen, GLM, Kimi, Doubao, ERNIE, Hunyuan, Spark, MiniMax, 01.AI, StepFun, SenseTime, Baichuan, Kunlun, Xiaomi, Huawei)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are the prices exact?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "They are the providers' published list prices, verified 2026-09-30, in USD per 1M tokens. Discounted tiers — batch, cached input, long-context surcharges, contract pricing — are not modelled, so check the provider page before you publish a number or send a bill."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often is the dataset updated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Whenever model pricing changes; the file carries its own _meta.lastVerified date, so you can decide for yourself whether a value is current instead of trusting a changelog."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do some records say \"estimate\" in the tokenizer field?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "OpenAI publishes tiktoken, so 18 of the records are counted with the official BPE tokenizer. Other vendors do not publish their tokenizer, so token counts for them are calibrated character-ratio estimates (about 4 characters per English token), accurate to roughly 5–10%. The tokenizer field tells you which case a record is in."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I hotlink the JSON from my app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, and it is served with permissive CORS. The URL is stable, and because it is a plain static file it will keep working without a key, quota or plan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does a null priceOutputPer1M mean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The model has no output price because it produces embeddings rather than generated text — e.g. text-embedding-3-small at $0.02 per 1M input tokens. Treat null as \"not applicable\", not as \"free\"."
+      }
+    }
+  ]
+}
+</script>
+  <style>
+    .article { max-width: 780px; margin: 28px auto 60px; padding: 0 26px; }
+    .article h1 { font-size: 2rem; line-height: 1.25; margin-bottom: 12px; }
+    .article .meta { color: var(--text-faint); font-size: .85rem; margin-bottom: 26px; }
+    .article h2 { font-size: 1.35rem; margin: 34px 0 12px; }
+    .article h3 { font-size: 1.08rem; margin: 24px 0 8px; }
+    .article p, .article li { color: var(--text-dim); font-size: .98rem; }
+    .article ul, .article ol { margin: 10px 0 14px 22px; }
+    .article li { margin-bottom: 6px; }
+    .article table { width: 100%; border-collapse: collapse; margin: 16px 0 22px; font-size: .9rem; }
+    .article .tag { font-size: .68rem; }
+    .breadcrumb { font-size: .82rem; color: var(--text-faint); margin-bottom: 18px; }
+    .cta { background: var(--bg-soft); border: 1px solid var(--border-soft); border-radius: var(--radius-sm); padding: 18px 22px; margin: 26px 0; }
+    .cta a { font-weight: 600; }
+    pre { background: #0f172a; color: #e6edf7; border-radius: var(--radius-sm); padding: 16px 18px; overflow-x: auto; font-family: var(--mono); font-size: .8rem; line-height: 1.6; margin: 0 0 12px; }
+    code { font-family: var(--mono); background: var(--bg-input); border: 1px solid var(--border); border-radius: 6px; padding: 1px 6px; font-size: .88em; }
+    pre code { background: none; border: none; padding: 0; }
+    .snippet { border: 1px solid var(--border-soft); border-radius: var(--radius); padding: 14px; margin: 16px 0 24px; background: var(--bg-card); }
+    .snippet .bar { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
+    .snippet .bar code { flex: 1 1 260px; min-width: 0; overflow-x: auto; white-space: nowrap; }
+    .snippet .btn { font-size: .78rem; padding: 6px 12px; margin-left: auto; }
+    .endpoint { font-family: var(--mono); font-size: .95rem; background: #0f172a; color: #7fd6ff; border-radius: var(--radius-sm); padding: 14px 18px; overflow-x: auto; }
+  </style>
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="8f1fd21d-3670-41e7-adf4-20d24de46fd4"></script>
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="AI Token Calculator home">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#4f8cff" stroke-width="2" aria-hidden="true">
+          <path d="M12 2 4 6v6c0 5 3.4 9.1 8 10 4.6-.9 8-5 8-10V6l-8-4Z"/>
+          <path d="m9 12 2 2 4-4" stroke="#22d3ee" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Token<em>Calc</em></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html#tool">Calculator</a>
+        <a href="index.html#models">Supported models</a>
+        <a href="index.html#faq">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <article class="article">
+        <div class="breadcrumb"><a href="index.html">Home</a> / Pricing data</div>
+        <h1>AI Model Pricing Data — 70+ Models, One JSON File</h1>
+        <p class="meta">CC BY 4.0 · USD per 1M tokens · prices verified 2026-09-30</p>
+
+        <p>A single static JSON file with the <strong>input and output price per 1,000,000 tokens</strong>, context window and tokenizer for <strong>70 models across 22 providers</strong> — OpenAI, Anthropic, Google, Meta, xAI, Mistral, Amazon, DeepSeek, Qwen, GLM, Kimi, Doubao, ERNIE, Hunyuan, Spark and more. Free to reuse in your app, dashboard, docs or article, no key and no rate limit. It is the same dataset that powers the <a href="index.html#tool">AI Token Calculator</a>.</p>
+
+        <div class="endpoint">https://tokenestimate.com/data/model-prices.json</div>
+
+        <div class="cta">
+          <p><a href="data/model-prices.json">→ Open the raw JSON</a> &nbsp;·&nbsp; prefer a UI instead of data? <a href="embed.html">Embed the calculator on your site</a>.</p>
+        </div>
+
+        <h2>Fetch it</h2>
+        <div class="snippet">
+          <div class="bar"><code>curl -s https://tokenestimate.com/data/model-prices.json | jq '.models[] | select(.provider=="OpenAI")'</code><button class="btn" type="button" id="copy-curl">Copy</button></div>
+        </div>
+        <pre><code>import json, urllib.request
+data = json.loads(urllib.request.urlopen(
+    "https://tokenestimate.com/data/model-prices.json").read())
+for m in data["models"]:
+    print(m["label"], m["priceInputPer1M"], m["priceOutputPer1M"])</code></pre>
+
+        <h2>What each record contains</h2>
+        <table>
+          <thead>
+            <tr><th>Field</th><th>Type</th><th>Meaning</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>id</code></td><td>string</td><td>Stable slug, also the calculator's <code>?model=</code> parameter (e.g. <code>gpt-5.5</code>).</td></tr>
+            <tr><td><code>label</code></td><td>string</td><td>Display name as providers write it.</td></tr>
+            <tr><td><code>provider</code></td><td>string</td><td>Vendor grouping; 22 values, e.g. <code>OpenAI</code>, <code>Anthropic Claude</code>, <code>DeepSeek (深度求索)</code>.</td></tr>
+            <tr><td><code>tokenizer</code></td><td>string</td><td><code>tiktoken:o200k_base</code> / <code>tiktoken:cl100k_base</code> = exact official BPE; <code>estimate</code> = calibrated character ratio.</td></tr>
+            <tr><td><code>estimate</code></td><td>object</td><td>Only for estimated models: <code>charsPerToken</code> for Latin text and <code>tokensPerCJKChar</code>.</td></tr>
+            <tr><td><code>contextWindow</code></td><td>string</td><td>Max input context as published (e.g. <code>1M</code>, <code>200K</code>).</td></tr>
+            <tr><td><code>priceInputPer1M</code></td><td>number</td><td>USD per 1M input tokens.</td></tr>
+            <tr><td><code>priceOutputPer1M</code></td><td>number|null</td><td>USD per 1M output tokens; <code>null</code> for output-free models such as embeddings.</td></tr>
+            <tr><td><code>note</code></td><td>string?</td><td>21 records carry caveats — <code>reasoning</code>, <code>intro pricing</code>, <code>free</code>, <code>tiered</code>, <code>open-weight</code>, launch dates.</td></tr>
+            <tr><td><code>_meta</code></td><td>object</td><td>License, citation string, <code>lastVerified</code> date, unit, and counting-method notes.</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Sample</h2>
+        <pre><code>{
+  "_meta": {
+    "name": "AI model token pricing table",
+    "endpoint": "https://tokenestimate.com/data/model-prices.json",
+    "license": "CC BY 4.0",
+    "lastVerified": "2026-09-30",
+    "currency": "USD",
+    "unit": "price per 1,000,000 tokens",
+    "citation": "TokenCalc, \"AI Model Token Pricing Data\", tokenestimate.com, 2026."
+  },
+  "models": [
+    {
+      "id": "gpt-5.5",
+      "label": "GPT-5.5",
+      "provider": "OpenAI",
+      "tokenizer": "tiktoken:o200k_base",
+      "contextWindow": "1M",
+      "priceInputPer1M": 5,
+      "priceOutputPer1M": 30
+    },
+    {
+      "id": "claude-opus-5-5",
+      "label": "Claude Opus 5.5",
+      "provider": "Anthropic Claude",
+      "tokenizer": "estimate",
+      "estimate": { "tokensPerCJKChar": 1.2, "charsPerToken": 4 },
+      "contextWindow": "1M",
+      "priceInputPer1M": 4,
+      "priceOutputPer1M": 20,
+      "note": "flagship, from 2026-09-22"
+    },
+    {
+      "id": "embedding-3-small",
+      "label": "text-embedding-3-small",
+      "provider": "OpenAI embedding",
+      "tokenizer": "tiktoken:cl100k_base",
+      "contextWindow": "–",
+      "priceInputPer1M": 0.02,
+      "priceOutputPer1M": null
+    }
+  ]
+}</code></pre>
+
+        <h2>Coverage</h2>
+        <table>
+          <thead>
+            <tr><th>Provider group</th><th>Models</th><th>Counting</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>OpenAI (incl. legacy + embeddings)</td><td>18</td><td><span class="tag">exact</span> tiktoken</td></tr>
+            <tr><td>Anthropic Claude</td><td>7</td><td><span class="tag">estimate</span></td></tr>
+            <tr><td>Google Gemini</td><td>8</td><td><span class="tag">estimate</span></td></tr>
+            <tr><td>DeepSeek</td><td>4</td><td><span class="tag">estimate</span></td></tr>
+            <tr><td>Alibaba Qwen</td><td>4</td><td><span class="tag">estimate</span></td></tr>
+            <tr><td>Zhipu GLM</td><td>4</td><td><span class="tag">estimate</span></td></tr>
+            <tr><td>Moonshot Kimi</td><td>3</td><td><span class="tag">estimate</span></td></tr>
+            <tr><td>ByteDance Doubao</td><td>3</td><td><span class="tag">estimate</span></td></tr>
+            <tr><td>Baidu ERNIE · Tencent Hunyuan · iFlytek Spark</td><td>2 each</td><td><span class="tag">estimate</span></td></tr>
+            <tr><td>US &amp; EU (xAI Grok, Meta Llama, Mistral, Amazon Nova)</td><td>4</td><td><span class="tag">estimate</span></td></tr>
+            <tr><td>MiniMax · 01.AI · StepFun · SenseTime · Baichuan · Kunlun · Xiaomi MiMo · Huawei PanGu</td><td>1–2 each</td><td><span class="tag">estimate</span></td></tr>
+          </tbody>
+        </table>
+
+        <h2>License and citation</h2>
+        <ul>
+          <li><strong>CC BY 4.0</strong> — copy it, transform it, sell a product built on it.</li>
+          <li>Attribution: a link to <code>https://tokenestimate.com/</code> or the citation line below, wherever you publish the data.</li>
+          <li><code>Access-Control-Allow-Origin: *</code> — no CORS workaround needed.</li>
+          <li>It is a static file: cache-bust with a query string if you poll it, and re-check <code>_meta.lastVerified</code> rather than assuming freshness.</li>
+        </ul>
+        <div class="snippet">
+          <div class="bar"><code>TokenCalc, "AI Model Token Pricing Data", tokenestimate.com, 2026.</code><button class="btn" type="button" id="copy-cite">Copy</button></div>
+        </div>
+
+        <h2>How the numbers are gathered</h2>
+        <p>Each price is the provider's <strong>public list price</strong> in USD, read from the vendor's own pricing page and cross-checked against a second source where one exists. The verification date in <code>_meta.lastVerified</code> applies to the whole file. Not included: batch, cached-input, fine-tuned, provisioned-throughput or contract rates, and image/video/audio billing that some providers express per second or per image instead of per token. Prices move — treat this as a dated snapshot, not a live feed.</p>
+
+        <h2>Pricing data FAQ</h2>
+        <h3>Is the AI model pricing JSON free to use?</h3>
+        <p>Yes. It is licensed CC BY 4.0: use it commercially, modify it, redistribute it. The only requirement is attribution — a link to tokenestimate.com or the citation line <code>TokenCalc, "AI Model Token Pricing Data", tokenestimate.com, 2026.</code></p>
+        <h3>How many models and providers does the dataset cover?</h3>
+        <p>70 models across 22 provider groups as of 2026-09-30, spanning OpenAI, Anthropic, Google, Meta, xAI, Mistral, Amazon and the major Chinese labs (DeepSeek, Qwen, GLM, Kimi, Doubao, ERNIE, Hunyuan, Spark, MiniMax, 01.AI, StepFun, SenseTime, Baichuan, Kunlun, Xiaomi, Huawei).</p>
+        <h3>Are the prices exact?</h3>
+        <p>They are the providers' published list prices, verified 2026-09-30, in USD per 1M tokens. Discounted tiers — batch, cached input, long-context surcharges, contract pricing — are not modelled, so check the provider page before you publish a number or send a bill.</p>
+        <h3>How often is the dataset updated?</h3>
+        <p>Whenever model pricing changes; the file carries its own <code>_meta.lastVerified</code> date, so you can decide for yourself whether a value is current instead of trusting a changelog.</p>
+        <h3>Why do some records say "estimate" in the tokenizer field?</h3>
+        <p>OpenAI publishes tiktoken, so 18 of the records are counted with the official BPE tokenizer. Other vendors do not publish their tokenizer, so token counts for them are calibrated character-ratio estimates (about 4 characters per English token), accurate to roughly 5–10%. The <code>tokenizer</code> field tells you which case a record is in.</p>
+        <h3>Can I hotlink the JSON from my app?</h3>
+        <p>Yes, and it is served with permissive CORS. The URL is stable, and because it is a plain static file it will keep working without a key, quota or plan.</p>
+        <h3>What does a null priceOutputPer1M mean?</h3>
+        <p>The model has no output price because it produces embeddings rather than generated text — e.g. text-embedding-3-small at $0.02 per 1M input tokens. Treat null as "not applicable", not as "free".</p>
+
+        <div class="cta">
+          <p>Need the calculator rather than the table? <a href="embed.html">Embed it on your own site with one line</a> — free, no backend, same 70 models.</p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div>
+        <strong>TokenCalc — AI Token Calculator</strong><br>
+        Free, private token counting and API cost estimation for AI developers.
+      </div>
+      <div>
+        <a href="index.html">Calculator</a> · <a href="embed.html">Embed</a> · <a href="privacy.html">Privacy Policy</a><br>
+        © 2026 AI Token Calculator
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      function wire(btnId, text) {
+        var btn = document.getElementById(btnId);
+        btn.addEventListener("click", function () {
+          navigator.clipboard.writeText(text).then(function () {
+            btn.textContent = "Copied";
+            setTimeout(function () { btn.textContent = "Copy"; }, 1400);
+          });
+        });
+      }
+      wire("copy-curl", "curl -s https://tokenestimate.com/data/model-prices.json | jq '.models[] | select(.provider==\"OpenAI\")'");
+      wire("copy-cite", 'TokenCalc, "AI Model Token Pricing Data", tokenestimate.com, 2026.');
+    })();
+  </script>
+</body>
+</html>

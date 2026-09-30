@@ -1,0 +1,881 @@
+{
+  "_meta": {
+    "name": "AI model token pricing table",
+    "source": "https://tokenestimate.com/",
+    "endpoint": "https://tokenestimate.com/data/model-prices.json",
+    "homepage": "https://tokenestimate.com/api.html",
+    "embed": "https://tokenestimate.com/embed.html",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "lastVerified": "2026-09-30",
+    "currency": "USD",
+    "unit": "price per 1,000,000 tokens",
+    "citation": "TokenCalc, \"AI Model Token Pricing Data\", tokenestimate.com, 2026.",
+    "notes": "Public list prices, not contract or batch/discounted rates. Verify against the provider before publishing; refresh the date when you reuse it.",
+    "counting": {
+      "exact": "OpenAI models are counted with the official tiktoken BPE tokenizer (js-tiktoken, o200k_base / cl100k_base) running client-side.",
+      "estimate": "Other providers use a calibrated character-ratio estimate, accurate to roughly 5-10%. tokenizer field says which."
+    }
+  },
+  "models": [
+    {
+      "id": "gpt-5.5",
+      "label": "GPT-5.5",
+      "provider": "OpenAI",
+      "tokenizer": "tiktoken:o200k_base",
+      "contextWindow": "1M",
+      "priceInputPer1M": 5,
+      "priceOutputPer1M": 30
+    },
+    {
+      "id": "gpt-5",
+      "label": "GPT-5",
+      "provider": "OpenAI",
+      "tokenizer": "tiktoken:o200k_base",
+      "contextWindow": "400K",
+      "priceInputPer1M": 1.25,
+      "priceOutputPer1M": 10
+    },
+    {
+      "id": "gpt-5-mini",
+      "label": "GPT-5 mini",
+      "provider": "OpenAI",
+      "tokenizer": "tiktoken:o200k_base",
+      "contextWindow": "400K",
+      "priceInputPer1M": 0.25,
+      "priceOutputPer1M": 2
+    },
+    {
+      "id": "gpt-5-nano",
+      "label": "GPT-5 nano",
+      "provider": "OpenAI",
+      "tokenizer": "tiktoken:o200k_base",
+      "contextWindow": "400K",
+      "priceInputPer1M": 0.05,
+      "priceOutputPer1M": 0.4
+    },
+    {
+      "id": "gpt-4o",
+      "label": "GPT-4o",
+      "provider": "OpenAI",
+      "tokenizer": "tiktoken:o200k_base",
+      "contextWindow": "128K",
+      "priceInputPer1M": 2.5,
+      "priceOutputPer1M": 10
+    },
+    {
+      "id": "gpt-4o-mini",
+      "label": "GPT-4o mini",
+      "provider": "OpenAI",
+      "tokenizer": "tiktoken:o200k_base",
+      "contextWindow": "128K",
+      "priceInputPer1M": 0.15,
+      "priceOutputPer1M": 0.6
+    },
+    {
+      "id": "gpt-4.1",
+      "label": "GPT-4.1",
+      "provider": "OpenAI",
+      "tokenizer": "tiktoken:o200k_base",
+      "contextWindow": "1M",
+      "priceInputPer1M": 2,
+      "priceOutputPer1M": 8
+    },
+    {
+      "id": "gpt-4.1-mini",
+      "label": "GPT-4.1 mini",
+      "provider": "OpenAI",
+      "tokenizer": "tiktoken:o200k_base",
+      "contextWindow": "1M",
+      "priceInputPer1M": 0.4,
+      "priceOutputPer1M": 1.6
+    },
+    {
+      "id": "gpt-4.1-nano",
+      "label": "GPT-4.1 nano",
+      "provider": "OpenAI",
+      "tokenizer": "tiktoken:o200k_base",
+      "contextWindow": "1M",
+      "priceInputPer1M": 0.1,
+      "priceOutputPer1M": 0.4
+    },
+    {
+      "id": "o3",
+      "label": "o3",
+      "provider": "OpenAI",
+      "tokenizer": "tiktoken:o200k_base",
+      "contextWindow": "200K",
+      "priceInputPer1M": 2,
+      "priceOutputPer1M": 8,
+      "note": "reasoning"
+    },
+    {
+      "id": "o4-mini",
+      "label": "o4-mini",
+      "provider": "OpenAI",
+      "tokenizer": "tiktoken:o200k_base",
+      "contextWindow": "200K",
+      "priceInputPer1M": 1.1,
+      "priceOutputPer1M": 4.4,
+      "note": "reasoning"
+    },
+    {
+      "id": "o3-mini",
+      "label": "o3-mini",
+      "provider": "OpenAI",
+      "tokenizer": "tiktoken:o200k_base",
+      "contextWindow": "200K",
+      "priceInputPer1M": 1.1,
+      "priceOutputPer1M": 4.4,
+      "note": "reasoning"
+    },
+    {
+      "id": "o1",
+      "label": "o1",
+      "provider": "OpenAI",
+      "tokenizer": "tiktoken:o200k_base",
+      "contextWindow": "200K",
+      "priceInputPer1M": 15,
+      "priceOutputPer1M": 60,
+      "note": "reasoning"
+    },
+    {
+      "id": "gpt-4-turbo",
+      "label": "GPT-4 Turbo",
+      "provider": "OpenAI (legacy)",
+      "tokenizer": "tiktoken:cl100k_base",
+      "contextWindow": "128K",
+      "priceInputPer1M": 10,
+      "priceOutputPer1M": 30
+    },
+    {
+      "id": "gpt-4",
+      "label": "GPT-4",
+      "provider": "OpenAI (legacy)",
+      "tokenizer": "tiktoken:cl100k_base",
+      "contextWindow": "8K",
+      "priceInputPer1M": 30,
+      "priceOutputPer1M": 60
+    },
+    {
+      "id": "gpt-3.5-turbo",
+      "label": "GPT-3.5 Turbo",
+      "provider": "OpenAI (legacy)",
+      "tokenizer": "tiktoken:cl100k_base",
+      "contextWindow": "16K",
+      "priceInputPer1M": 0.5,
+      "priceOutputPer1M": 1.5
+    },
+    {
+      "id": "embedding-3-small",
+      "label": "text-embedding-3-small",
+      "provider": "OpenAI embedding",
+      "tokenizer": "tiktoken:cl100k_base",
+      "contextWindow": "–",
+      "priceInputPer1M": 0.02,
+      "priceOutputPer1M": null
+    },
+    {
+      "id": "embedding-3-large",
+      "label": "text-embedding-3-large",
+      "provider": "OpenAI embedding",
+      "tokenizer": "tiktoken:cl100k_base",
+      "contextWindow": "–",
+      "priceInputPer1M": 0.13,
+      "priceOutputPer1M": null
+    },
+    {
+      "id": "claude-opus-5-5",
+      "label": "Claude Opus 5.5",
+      "provider": "Anthropic Claude",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 1.2,
+        "charsPerToken": 4
+      },
+      "contextWindow": "1M",
+      "priceInputPer1M": 4,
+      "priceOutputPer1M": 20,
+      "note": "flagship, from 2026-09-22"
+    },
+    {
+      "id": "claude-opus-5",
+      "label": "Claude Opus 5",
+      "provider": "Anthropic Claude",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 1.2,
+        "charsPerToken": 4
+      },
+      "contextWindow": "200K",
+      "priceInputPer1M": 5,
+      "priceOutputPer1M": 25
+    },
+    {
+      "id": "claude-sonnet-5",
+      "label": "Claude Sonnet 5",
+      "provider": "Anthropic Claude",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 1.2,
+        "charsPerToken": 4
+      },
+      "contextWindow": "200K",
+      "priceInputPer1M": 2,
+      "priceOutputPer1M": 10,
+      "note": "intro pricing"
+    },
+    {
+      "id": "claude-haiku-4.5",
+      "label": "Claude Haiku 4.5",
+      "provider": "Anthropic Claude",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 1.2,
+        "charsPerToken": 4
+      },
+      "contextWindow": "200K",
+      "priceInputPer1M": 1,
+      "priceOutputPer1M": 5
+    },
+    {
+      "id": "claude-fable-5",
+      "label": "Claude Fable 5",
+      "provider": "Anthropic Claude",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 1.2,
+        "charsPerToken": 4
+      },
+      "contextWindow": "1M",
+      "priceInputPer1M": 10,
+      "priceOutputPer1M": 50,
+      "note": "agentic"
+    },
+    {
+      "id": "claude-opus-4.6",
+      "label": "Claude Opus 4.6",
+      "provider": "Anthropic Claude",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 1.2,
+        "charsPerToken": 4
+      },
+      "contextWindow": "200K",
+      "priceInputPer1M": 5,
+      "priceOutputPer1M": 25
+    },
+    {
+      "id": "claude-sonnet-4.6",
+      "label": "Claude Sonnet 4.6",
+      "provider": "Anthropic Claude",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 1.2,
+        "charsPerToken": 4
+      },
+      "contextWindow": "200K",
+      "priceInputPer1M": 3,
+      "priceOutputPer1M": 15
+    },
+    {
+      "id": "gemini-3.1-pro",
+      "label": "Gemini 3.1 Pro",
+      "provider": "Google Gemini",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 1.2,
+        "charsPerToken": 4
+      },
+      "contextWindow": "2M",
+      "priceInputPer1M": 2,
+      "priceOutputPer1M": 12,
+      "note": "≤200K ctx"
+    },
+    {
+      "id": "gemini-3.6-flash",
+      "label": "Gemini 3.6 Flash",
+      "provider": "Google Gemini",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 1.2,
+        "charsPerToken": 4
+      },
+      "contextWindow": "1M",
+      "priceInputPer1M": 1.5,
+      "priceOutputPer1M": 7.5
+    },
+    {
+      "id": "gemini-3.5-flash",
+      "label": "Gemini 3.5 Flash",
+      "provider": "Google Gemini",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 1.2,
+        "charsPerToken": 4
+      },
+      "contextWindow": "1M",
+      "priceInputPer1M": 1.5,
+      "priceOutputPer1M": 9
+    },
+    {
+      "id": "gemini-3-flash",
+      "label": "Gemini 3 Flash",
+      "provider": "Google Gemini",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 1.2,
+        "charsPerToken": 4
+      },
+      "contextWindow": "1M",
+      "priceInputPer1M": 0.5,
+      "priceOutputPer1M": 3
+    },
+    {
+      "id": "gemini-3.5-flash-lite",
+      "label": "Gemini 3.5 Flash-Lite",
+      "provider": "Google Gemini",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 1.2,
+        "charsPerToken": 4
+      },
+      "contextWindow": "1M",
+      "priceInputPer1M": 0.3,
+      "priceOutputPer1M": 2.5
+    },
+    {
+      "id": "gemini-2.5-pro",
+      "label": "Gemini 2.5 Pro",
+      "provider": "Google Gemini",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 1.2,
+        "charsPerToken": 4
+      },
+      "contextWindow": "2M",
+      "priceInputPer1M": 1.25,
+      "priceOutputPer1M": 10
+    },
+    {
+      "id": "gemini-2.5-flash",
+      "label": "Gemini 2.5 Flash",
+      "provider": "Google Gemini",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 1.2,
+        "charsPerToken": 4
+      },
+      "contextWindow": "1M",
+      "priceInputPer1M": 0.3,
+      "priceOutputPer1M": 2.5
+    },
+    {
+      "id": "gemini-2.5-flash-lite",
+      "label": "Gemini 2.5 Flash-Lite",
+      "provider": "Google Gemini",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 1.2,
+        "charsPerToken": 4
+      },
+      "contextWindow": "1M",
+      "priceInputPer1M": 0.1,
+      "priceOutputPer1M": 0.4
+    },
+    {
+      "id": "grok-4.1",
+      "label": "Grok 4.1 (xAI)",
+      "provider": "US & EU",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 1.2,
+        "charsPerToken": 4
+      },
+      "contextWindow": "1M",
+      "priceInputPer1M": 0.2,
+      "priceOutputPer1M": 1
+    },
+    {
+      "id": "llama-4",
+      "label": "Llama 4 (Meta)",
+      "provider": "US & EU",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 1,
+        "charsPerToken": 4
+      },
+      "contextWindow": "1M",
+      "priceInputPer1M": 0.15,
+      "priceOutputPer1M": 0.45,
+      "note": "open-weight"
+    },
+    {
+      "id": "mistral-large",
+      "label": "Mistral Large 3",
+      "provider": "US & EU",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 1,
+        "charsPerToken": 4
+      },
+      "contextWindow": "128K",
+      "priceInputPer1M": 2,
+      "priceOutputPer1M": 6
+    },
+    {
+      "id": "amazon-nova-pro",
+      "label": "Amazon Nova Pro",
+      "provider": "US & EU",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 1,
+        "charsPerToken": 4
+      },
+      "contextWindow": "300K",
+      "priceInputPer1M": 0.8,
+      "priceOutputPer1M": 3.2
+    },
+    {
+      "id": "deepseek-v4-pro",
+      "label": "DeepSeek V4 Pro",
+      "provider": "DeepSeek (深度求索)",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 0.6,
+        "charsPerToken": 3.3
+      },
+      "contextWindow": "128K",
+      "priceInputPer1M": 0.44,
+      "priceOutputPer1M": 0.87,
+      "note": "deepseek-chat"
+    },
+    {
+      "id": "deepseek-v4-flash",
+      "label": "DeepSeek V4 Flash",
+      "provider": "DeepSeek (深度求索)",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 0.6,
+        "charsPerToken": 3.3
+      },
+      "contextWindow": "400K",
+      "priceInputPer1M": 0.14,
+      "priceOutputPer1M": 0.28
+    },
+    {
+      "id": "deepseek-v3.2",
+      "label": "DeepSeek V3.2",
+      "provider": "DeepSeek (深度求索)",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 0.6,
+        "charsPerToken": 3.3
+      },
+      "contextWindow": "128K",
+      "priceInputPer1M": 0.35,
+      "priceOutputPer1M": 0.42
+    },
+    {
+      "id": "deepseek-r1",
+      "label": "DeepSeek R1",
+      "provider": "DeepSeek (深度求索)",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 0.6,
+        "charsPerToken": 3.3
+      },
+      "contextWindow": "64K",
+      "priceInputPer1M": 0.56,
+      "priceOutputPer1M": 2.5,
+      "note": "reasoning"
+    },
+    {
+      "id": "qwen3-max",
+      "label": "Qwen3 Max (通义千问)",
+      "provider": "Alibaba Qwen (阿里通义)",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 0.9,
+        "charsPerToken": 3.8
+      },
+      "contextWindow": "262K",
+      "priceInputPer1M": 0.78,
+      "priceOutputPer1M": 3.9
+    },
+    {
+      "id": "qwen3-plus",
+      "label": "Qwen3 Plus",
+      "provider": "Alibaba Qwen (阿里通义)",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 0.9,
+        "charsPerToken": 3.8
+      },
+      "contextWindow": "128K",
+      "priceInputPer1M": 0.4,
+      "priceOutputPer1M": 1.2
+    },
+    {
+      "id": "qwen3-flash",
+      "label": "Qwen3 Flash",
+      "provider": "Alibaba Qwen (阿里通义)",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 0.9,
+        "charsPerToken": 3.8
+      },
+      "contextWindow": "128K",
+      "priceInputPer1M": 0.15,
+      "priceOutputPer1M": 1.5
+    },
+    {
+      "id": "qwen3-coder",
+      "label": "Qwen3 Coder",
+      "provider": "Alibaba Qwen (阿里通义)",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 0.9,
+        "charsPerToken": 3.8
+      },
+      "contextWindow": "128K",
+      "priceInputPer1M": 0.3,
+      "priceOutputPer1M": 0.9,
+      "note": "coding"
+    },
+    {
+      "id": "glm-5",
+      "label": "GLM-5 (智谱)",
+      "provider": "Zhipu GLM (智谱)",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 0.9,
+        "charsPerToken": 3.8
+      },
+      "contextWindow": "200K",
+      "priceInputPer1M": 1,
+      "priceOutputPer1M": 3.2
+    },
+    {
+      "id": "glm-5.1",
+      "label": "GLM-5.1",
+      "provider": "Zhipu GLM (智谱)",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 0.9,
+        "charsPerToken": 3.8
+      },
+      "contextWindow": "200K",
+      "priceInputPer1M": 0.98,
+      "priceOutputPer1M": 3.08
+    },
+    {
+      "id": "glm-4.7",
+      "label": "GLM-4.7",
+      "provider": "Zhipu GLM (智谱)",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 0.9,
+        "charsPerToken": 3.8
+      },
+      "contextWindow": "200K",
+      "priceInputPer1M": 0.5,
+      "priceOutputPer1M": 2.2
+    },
+    {
+      "id": "glm-4-flash",
+      "label": "GLM-4-Flash",
+      "provider": "Zhipu GLM (智谱)",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 0.9,
+        "charsPerToken": 3.8
+      },
+      "contextWindow": "128K",
+      "priceInputPer1M": 0,
+      "priceOutputPer1M": 0,
+      "note": "free"
+    },
+    {
+      "id": "kimi-k2.6",
+      "label": "Kimi K2.6 (月之暗面)",
+      "provider": "Moonshot Kimi (月之暗面)",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 0.9,
+        "charsPerToken": 3.8
+      },
+      "contextWindow": "256K",
+      "priceInputPer1M": 1,
+      "priceOutputPer1M": 2.5,
+      "note": "tiered"
+    },
+    {
+      "id": "kimi-k2.5",
+      "label": "Kimi K2.5",
+      "provider": "Moonshot Kimi (月之暗面)",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 0.9,
+        "charsPerToken": 3.8
+      },
+      "contextWindow": "128K",
+      "priceInputPer1M": 0.6,
+      "priceOutputPer1M": 3
+    },
+    {
+      "id": "kimi-k3",
+      "label": "Kimi K3",
+      "provider": "Moonshot Kimi (月之暗面)",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 0.9,
+        "charsPerToken": 3.8
+      },
+      "contextWindow": "256K",
+      "priceInputPer1M": 7,
+      "priceOutputPer1M": 14,
+      "note": "premium"
+    },
+    {
+      "id": "doubao-1.6-pro",
+      "label": "Doubao 1.6 Pro (豆包)",
+      "provider": "ByteDance Doubao (火山引擎)",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 0.9,
+        "charsPerToken": 3.8
+      },
+      "contextWindow": "256K",
+      "priceInputPer1M": 0.11,
+      "priceOutputPer1M": 0.45
+    },
+    {
+      "id": "doubao-1.6-flash",
+      "label": "Doubao 1.6 Flash",
+      "provider": "ByteDance Doubao (火山引擎)",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 0.9,
+        "charsPerToken": 3.8
+      },
+      "contextWindow": "128K",
+      "priceInputPer1M": 0.01,
+      "priceOutputPer1M": 0.11,
+      "note": "cheapest"
+    },
+    {
+      "id": "doubao-1.6-lite",
+      "label": "Doubao 1.6 Lite",
+      "provider": "ByteDance Doubao (火山引擎)",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 0.9,
+        "charsPerToken": 3.8
+      },
+      "contextWindow": "128K",
+      "priceInputPer1M": 0.02,
+      "priceOutputPer1M": 0.04
+    },
+    {
+      "id": "ernie-4.5",
+      "label": "ERNIE 4.5 (文心一言)",
+      "provider": "Baidu ERNIE (百度)",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 0.9,
+        "charsPerToken": 3.8
+      },
+      "contextWindow": "128K",
+      "priceInputPer1M": 0.2,
+      "priceOutputPer1M": 0.55
+    },
+    {
+      "id": "ernie-x1",
+      "label": "ERNIE X1",
+      "provider": "Baidu ERNIE (百度)",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 0.9,
+        "charsPerToken": 3.8
+      },
+      "contextWindow": "128K",
+      "priceInputPer1M": 0.006,
+      "priceOutputPer1M": 0.02,
+      "note": "reasoning · ultra cheap"
+    },
+    {
+      "id": "hunyuan-2-pro",
+      "label": "Hunyuan 2 Pro (混元)",
+      "provider": "Tencent Hunyuan (腾讯)",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 0.9,
+        "charsPerToken": 3.8
+      },
+      "contextWindow": "128K",
+      "priceInputPer1M": 1,
+      "priceOutputPer1M": 4
+    },
+    {
+      "id": "hunyuan-lite",
+      "label": "Hunyuan Lite",
+      "provider": "Tencent Hunyuan (腾讯)",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 0.9,
+        "charsPerToken": 3.8
+      },
+      "contextWindow": "32K",
+      "priceInputPer1M": 0,
+      "priceOutputPer1M": 0,
+      "note": "free"
+    },
+    {
+      "id": "spark-max-x1",
+      "label": "Spark Max / X1 (讯飞星火)",
+      "provider": "iFlytek Spark (讯飞星火)",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 0.9,
+        "charsPerToken": 3.8
+      },
+      "contextWindow": "128K",
+      "priceInputPer1M": 0.5,
+      "priceOutputPer1M": 1.7
+    },
+    {
+      "id": "spark-lite",
+      "label": "Spark Lite",
+      "provider": "iFlytek Spark (讯飞星火)",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 0.9,
+        "charsPerToken": 3.8
+      },
+      "contextWindow": "32K",
+      "priceInputPer1M": 0,
+      "priceOutputPer1M": 0,
+      "note": "free"
+    },
+    {
+      "id": "minimax-2.5",
+      "label": "MiniMax M2.5",
+      "provider": "MiniMax (稀宇科技)",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 0.9,
+        "charsPerToken": 3.8
+      },
+      "contextWindow": "197K",
+      "priceInputPer1M": 0.29,
+      "priceOutputPer1M": 1.18,
+      "note": "agent"
+    },
+    {
+      "id": "yi-lightning",
+      "label": "Yi-Lightning (零一万物)",
+      "provider": "01.AI (零一万物)",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 0.9,
+        "charsPerToken": 3.8
+      },
+      "contextWindow": "128K",
+      "priceInputPer1M": 0.4,
+      "priceOutputPer1M": 1.2
+    },
+    {
+      "id": "step-3",
+      "label": "Step-3 (阶跃星辰)",
+      "provider": "StepFun (阶跃星辰)",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 0.9,
+        "charsPerToken": 3.8
+      },
+      "contextWindow": "128K",
+      "priceInputPer1M": 0.5,
+      "priceOutputPer1M": 1.5
+    },
+    {
+      "id": "sensetime-5.1",
+      "label": "SenseNova 5.1 (商汤)",
+      "provider": "SenseTime (商汤)",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 0.9,
+        "charsPerToken": 3.8
+      },
+      "contextWindow": "128K",
+      "priceInputPer1M": 0.04,
+      "priceOutputPer1M": 0.7
+    },
+    {
+      "id": "baichuan-4",
+      "label": "Baichuan 4 (百川)",
+      "provider": "Baichuan (百川智能)",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 0.9,
+        "charsPerToken": 3.8
+      },
+      "contextWindow": "128K",
+      "priceInputPer1M": 1.2,
+      "priceOutputPer1M": 2.8
+    },
+    {
+      "id": "skyclaw-1.0",
+      "label": "SkyClaw 1.0 (昆仑万维)",
+      "provider": "Kunlun (昆仑万维)",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 0.9,
+        "charsPerToken": 3.8
+      },
+      "contextWindow": "1M",
+      "priceInputPer1M": 0.5,
+      "priceOutputPer1M": 1.5,
+      "note": "agent"
+    },
+    {
+      "id": "mimo-v2.5-pro",
+      "label": "MiMo V2.5 Pro (小米)",
+      "provider": "Xiaomi MiMo (小米)",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 0.9,
+        "charsPerToken": 3.8
+      },
+      "contextWindow": "1M",
+      "priceInputPer1M": 0.44,
+      "priceOutputPer1M": 0.87
+    },
+    {
+      "id": "mimo-v2.5",
+      "label": "MiMo V2.5",
+      "provider": "Xiaomi MiMo (小米)",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 0.9,
+        "charsPerToken": 3.8
+      },
+      "contextWindow": "1M",
+      "priceInputPer1M": 0.14,
+      "priceOutputPer1M": 0.28
+    },
+    {
+      "id": "pangu-4.7",
+      "label": "PanGu 4.7 (盘古)",
+      "provider": "Huawei PanGu (华为云)",
+      "tokenizer": "estimate",
+      "estimate": {
+        "tokensPerCJKChar": 0.9,
+        "charsPerToken": 3.8
+      },
+      "contextWindow": "128K",
+      "priceInputPer1M": 0.5,
+      "priceOutputPer1M": 1.5
+    }
+  ]
+}

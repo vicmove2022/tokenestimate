@@ -41,6 +41,7 @@
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="css/style.css">
+  <script>if (new URLSearchParams(location.search).get("embed") === "1") document.documentElement.classList.add("embed");</script>
 
   <!-- ===== Structured Data: WebApplication ===== -->
   <script type="application/ld+json">
@@ -355,6 +356,10 @@
               </div>
             </div>
 
+            <div class="embed-bar">
+              Free to embed on your own site — <a href="embed.html" target="_top">get the code</a>.
+              Data: <a href="api.html" target="_top">model pricing JSON</a>.
+            </div>
             <div class="copy-bar">
               <button type="button" class="btn" id="btn-copy">Copy summary</button>
               <span class="note" id="copy-feedback"></span>
@@ -602,6 +607,7 @@
         <h2>Start counting tokens for free</h2>
         <p class="lead">No signup required. Your text never leaves your browser.</p>
         <a href="#tool" class="btn btn-primary">Try the calculator</a>
+        <p class="lead">Building something with these numbers? <a href="embed.html">Embed this calculator on your own site</a> with one line of HTML, or take the <a href="api.html">70-model pricing table as JSON</a> under CC BY 4.0.</p>
       </div>
     </section>
   </main>
@@ -615,7 +621,7 @@
         </div>
         <div>
           <a href="gpt-5-token-calculator.html">GPT-5</a> · <a href="gpt-4o-token-calculator.html">GPT-4o</a> · <a href="o1-o3-token-calculator.html">o1 &amp; o3</a> · <a href="claude-token-counter.html">Claude</a> · <a href="gemini-token-counter.html">Gemini</a> · <a href="llama-token-counter.html">Llama</a> · <a href="deepseek-token-calculator.html">DeepSeek</a> · <a href="qwen-token-counter.html">Qwen</a><br>
-          <a href="blog/how-many-tokens-per-word.html">Tokens per word</a> · <a href="blog/ai-api-pricing-2026.html">API pricing 2026</a> · <a href="#faq">FAQ</a> · <a href="mailto:contact@tokenestimate.com">Contact</a>
+          <a href="blog/how-many-tokens-per-word.html">Tokens per word</a> · <a href="blog/ai-api-pricing-2026.html">API pricing 2026</a> · <a href="#faq">FAQ</a> · <a href="embed.html">Embed the calculator</a> · <a href="api.html">Pricing data (JSON)</a> · <a href="mailto:contact@tokenestimate.com">Contact</a>
         </div>
       </div>
       <div>

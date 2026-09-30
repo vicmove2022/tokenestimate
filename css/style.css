@@ -472,3 +472,13 @@ td.mono { font-family: var(--mono); color: var(--text); }
   .stat .value { font-size: 1.25rem; }
   .tool-card { padding: 17px; }
 }
+
+/* ---------- Embed mode (?embed=1 inside our iframe; never crawled: robots blocks ?) ---------- */
+html.embed .skip-link, html.embed .breadcrumb, html.embed .site-header, html.embed .bg-aurora,
+html.embed .spotlight, html.embed .ad-slot,
+html.embed main > section:not(#tool), html.embed .site-footer { display: none !important; }
+html.embed body { background: #fff; }
+html.embed .tool-card { animation: none; opacity: 1; transform: none; box-shadow: none; border: none; margin: 0; padding: 18px; border-radius: 0; }
+html.embed .embed-bar { display: flex; }
+.embed-bar { display: none; margin-top: 16px; font-size: 0.78rem; color: var(--text-faint); border-top: 1px dashed var(--border); padding-top: 12px; }
+.embed-bar a { color: var(--accent); }
