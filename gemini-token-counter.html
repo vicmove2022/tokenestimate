@@ -6,7 +6,7 @@
 
   <!-- ===== SEO: title & description ===== -->
   <title>Gemini Token Counter — Count Gemini Tokens &amp; API Cost Free</title>
-  <meta name="description" content="Count tokens for Gemini 2.5, Gemini 3 and Gemini 3.1 Pro, and estimate Google AI API costs instantly. Free, private, 100% in-browser token counter for Gemini and 90+ models.">
+  <meta name="description" content="Count tokens for Gemini 2.5, Gemini 3 and Gemini 3.1 Pro, and estimate Google AI API costs instantly. Free, private, 100% in-browser token counter for Gemini and 70+ models.">
   <meta name="keywords" content="Gemini token counter, Gemini token calculator, Gemini tokens, count Gemini tokens, Gemini API cost, Gemini 3.1 Pro tokens, Gemini 2.5 tokens, Google AI token counter">
   <meta name="author" content="AI Token Calculator">
   <meta name="robots" content="index, follow, max-image-preview:large">
@@ -46,39 +46,49 @@
   }
   </script>
   <script type="application/ld+json">
-  {
+{
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "How many tokens is a word in Gemini?",
-        "acceptedAnswer": { "@type": "Answer", "text": "One English word averages about 1.25 tokens with Gemini's tokenizer (roughly 4 characters per token). Chinese text runs around 0.6–1.2 tokens per character. Our counter provides a proven estimate based on tokenizer statistics." }
+        "name": "How many tokens does Gemini have per word?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "About 1.25 tokens per English word, or ~4 characters per token. Always verify with a counter — the ratio varies with vocabulary and code content."
+        }
       },
       {
         "@type": "Question",
-        "name": "How much does Gemini API cost per 1M tokens?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Gemini 3.1 Pro is priced at $2.00 per 1M input tokens and $12.00 per 1M output tokens with a 2M context window. Gemini 3.5 Flash is $1.50 input / $9.00 output with a 1M window." }
+        "name": "Is the Gemini token count exact?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Gemini counts are estimates calibrated on Google's tokenizer behavior. OpenAI model counts are exact (official tiktoken). Estimates are accurate enough for budgeting and cost forecasting."
+        }
       },
       {
         "@type": "Question",
-        "name": "Is the Gemini token counter private?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Everything runs locally in your browser — your text never leaves your device, no uploads, no API keys, no sign-up." }
-      },
-      {
-        "@type": "Question",
-        "name": "Does the Gemini token counter work for multimodal input?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Text token counts are supported for all Gemini models. Note that Gemini also bills image and video input in tokens; our calculator focuses on text token counting and cost estimation." }
+        "name": "Does the Gemini token counter upload my text?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Everything runs in your browser. Your text is never sent to any server."
+        }
       },
       {
         "@type": "Question",
         "name": "What is a token in Gemini?",
-        "acceptedAnswer": { "@type": "Answer", "text": "A token is the smallest unit of text Gemini's tokenizer processes — roughly one English word equals 1.25 tokens. Gemini 3.1 Pro's 2M context window is measured in tokens." }
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A token is the smallest unit of text Gemini's tokenizer processes — roughly one English word equals 1.25 tokens. Gemini 3.1 Pro's 2M context window is measured in tokens, so an accurate count tells you how much text fits in a prompt."
+        }
       },
       {
         "@type": "Question",
         "name": "How does the Gemini token counter compare to Google's own tokenizer API?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Google's tokenizer is available via API, but that requires sending text to Google. Our counter runs locally with a proven estimate — no network calls — and covers 90+ other models in the same tool." }
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Google's tokenizer is available via its API, but that requires sending text to Google. Our counter runs locally with a proven estimate — no network calls — and also covers 70+ other models in the same tool."
+        }
       }
     ]
   }
@@ -127,7 +137,7 @@
         <h1>Gemini Token Counter — Count Tokens &amp; Estimate Google AI API Cost</h1>
         <p class="meta">AI Token Calculator — updated Aug 2026</p>
 
-        <p><strong>Gemini Token Counter</strong> is a free, browser-based developer tool that estimates token counts for Google's Gemini 2.5, Gemini 3 and Gemini 3.1 Pro models and forecasts API costs in real time. Unlike word-based counters, it calibrates counts on Gemini's known tokenizer behavior and works entirely in your browser: no uploads, no API keys, no sign-up. It is one of <strong>90+ models</strong> covered by TokenCalc, a free AI token calculator for developers.</p>
+        <p><strong>Gemini Token Counter</strong> is a free, browser-based developer tool that estimates token counts for Google's Gemini 2.5, Gemini 3 and Gemini 3.1 Pro models and forecasts API costs in real time. Unlike word-based counters, it calibrates counts on Gemini's known tokenizer behavior and works entirely in your browser: no uploads, no API keys, no sign-up. It is one of <strong>70+ models</strong> covered by TokenCalc, a free AI token calculator for developers.</p>
 
         <div class="cta">
           <p><a href="index.html#tool">→ Open the Gemini token counter</a> — paste any prompt or document, get token counts and cost estimates for every Gemini model in seconds.</p>
@@ -149,7 +159,7 @@
 
         <h2>Gemini token counter by the numbers</h2>
         <ul>
-          <li><strong>90+</strong> LLM tokenizers supported in one free tool</li>
+          <li><strong>70+</strong> LLM tokenizers supported in one free tool</li>
           <li><strong>2M</strong> token context window on Gemini 3.1 Pro</li>
           <li><strong>1.25</strong> average tokens per English word</li>
           <li><strong>$2.00 / $12.00</strong> per 1M input / output tokens for Gemini 3.1 Pro</li>
@@ -176,7 +186,7 @@
 
         <h2>Gemini token counter — free and private</h2>
         <div class="cta">
-          <p>Our <a href="index.html#tool">AI Token Calculator</a> covers Gemini 2.5, Gemini 3 and Gemini 3.1 Pro with proven estimates, plus exact token counts for GPT-5, GPT-4o, o1, o3 (official tiktoken) and 90+ more models — all in your browser, no upload, no API key.</p>
+          <p>Our <a href="index.html#tool">AI Token Calculator</a> covers Gemini 2.5, Gemini 3 and Gemini 3.1 Pro with proven estimates, plus exact token counts for GPT-5, GPT-4o, o1, o3 (official tiktoken) and 70+ more models — all in your browser, no upload, no API key.</p>
         </div>
         <p><a href="index.html#tool">→ Open the Gemini token counter &nbsp;(free, private)</a></p>
 
@@ -190,7 +200,7 @@
         <h3>What is a token in Gemini?</h3>
         <p>A token is the smallest unit of text Gemini's tokenizer processes — roughly one English word equals 1.25 tokens. Gemini 3.1 Pro's 2M context window is measured in tokens, so an accurate count tells you how much text fits in a prompt.</p>
         <h3>How does the Gemini token counter compare to Google's own tokenizer API?</h3>
-        <p>Google's tokenizer is available via its API, but that requires sending text to Google. Our counter runs locally with a proven estimate — no network calls — and also covers 90+ other models in the same tool.</p>
+        <p>Google's tokenizer is available via its API, but that requires sending text to Google. Our counter runs locally with a proven estimate — no network calls — and also covers 70+ other models in the same tool.</p>
       </article>
     </div>
   </main>

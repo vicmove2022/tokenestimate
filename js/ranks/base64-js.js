@@ -1,4 +1,4 @@
-'use strict'
+var exports = {}
 
 exports.byteLength = byteLength
 exports.toByteArray = toByteArray
@@ -148,3 +148,4 @@ function fromByteArray (uint8) {
 
   return parts.join('')
 }
+export default exports;

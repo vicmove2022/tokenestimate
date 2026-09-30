@@ -8,12 +8,12 @@
   <title>AI Token Calculator — Count Tokens for GPT-4o, Claude & Gemini | tokenestimate</title>
   
   <!-- ===== SEO: Optimized Meta Description ===== -->
-  <meta name="description" content="Free AI token calculator for developers. Count tokens for GPT-5, GPT-4o, Claude, Gemini, Llama, DeepSeek & 90+ models. Estimate API costs instantly. 100% private — runs in your browser.">
+  <meta name="description" content="Free AI token calculator for developers. Count tokens for GPT-5, GPT-4o, Claude, Gemini, Llama, DeepSeek & 70+ models. Estimate API costs instantly. 100% private — runs in your browser.">
   
   <!-- ===== SEO: Keywords ===== -->
   <meta name="keywords" content="token calculator, AI token calculator, GPT token counter, tiktoken, count tokens, OpenAI token calculator, GPT-4o tokens, GPT-5 tokens, Claude token calculator, Gemini token calculator, API cost estimator, token count, DeepSeek tokens, Qwen tokens, Llama tokens">
   
-  <meta name="author" content="tokenestimate">
+  <meta name="author" content="TokenCalc">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
   <!-- ===== Canonical ===== -->
@@ -21,9 +21,9 @@
 
   <!-- ===== Open Graph ===== -->
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="tokenestimate">
+  <meta property="og:site_name" content="TokenCalc">
   <meta property="og:title" content="AI Token Calculator — Count Tokens for GPT-4o, Claude & Gemini">
-  <meta property="og:description" content="Free AI token calculator for developers. Count tokens for GPT-5, GPT-4o, Claude, Gemini, Llama, DeepSeek & 90+ models. Estimate API costs instantly.">
+  <meta property="og:description" content="Free AI token calculator for developers. Count tokens for GPT-5, GPT-4o, Claude, Gemini, Llama, DeepSeek & 70+ models. Estimate API costs instantly.">
   <meta property="og:url" content="https://tokenestimate.com/">
   <meta property="og:image" content="https://tokenestimate.com/og-cover.png">
   <meta property="og:locale" content="en_US">
@@ -31,11 +31,11 @@
   <!-- ===== Twitter Card ===== -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="AI Token Calculator — Count Tokens for GPT-4o, Claude & Gemini">
-  <meta name="twitter:description" content="Free AI token calculator for developers. Count tokens for GPT-5, GPT-4o, Claude, Gemini, Llama, DeepSeek & 90+ models.">
+  <meta name="twitter:description" content="Free AI token calculator for developers. Count tokens for GPT-5, GPT-4o, Claude, Gemini, Llama, DeepSeek & 70+ models.">
   <meta name="twitter:image" content="https://tokenestimate.com/og-cover.png">
 
   <!-- ===== Additional SEO Tags ===== -->
-  <meta name="theme-color" content="#0f172a">
+  <meta name="theme-color" content="#f6f8fc">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
@@ -44,16 +44,16 @@
 
   <!-- ===== Structured Data: WebApplication ===== -->
   <script type="application/ld+json">
-  {
+{
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "AI Token Calculator",
+    "name": "TokenCalc — AI Token Calculator",
     "alternateName": "tokenestimate",
     "url": "https://tokenestimate.com",
     "applicationCategory": "DeveloperApplication",
     "operatingSystem": "Any",
     "browserRequirements": "Requires JavaScript",
-    "description": "Free AI token calculator for developers. Count tokens for GPT-5, GPT-4o, Claude, Gemini, Llama, DeepSeek and 90+ other models. Estimate API costs instantly. Runs 100% in your browser.",
+    "description": "Free AI token calculator for developers. Count tokens for GPT-5, GPT-4o, Claude, Gemini, Llama, DeepSeek and 70+ other models. Estimate API costs instantly. Runs 100% in your browser.",
     "offers": {
       "@type": "Offer",
       "price": "0",
@@ -69,31 +69,19 @@
     ],
     "author": {
       "@type": "Organization",
-      "name": "tokenestimate",
+      "name": "TokenCalc",
       "url": "https://tokenestimate.com",
       "logo": {
         "@type": "ImageObject",
         "url": "https://tokenestimate.com/favicon.svg"
       }
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "ratingCount": "1250",
-      "bestRating": "5",
-      "worstRating": "1",
-      "reviewCount": "1250"
-    },
-    "sameAs": [
-      "https://twitter.com/tokenestimate",
-      "https://github.com/tokenestimate"
-    ]
+    }
   }
   </script>
 
   <!-- ===== Structured Data: FAQPage ===== -->
   <script type="application/ld+json">
-  {
+{
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
@@ -102,7 +90,7 @@
         "name": "What is an AI token?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A token is the basic unit of text that GPT and other language models read and generate. For English text, 1 token is roughly 0.7 word. For Chinese text, 1 character equals about 0.6-1.2 tokens. OpenAI bills all API usage in tokens."
+          "text": "A token is the basic unit of text that language models read and generate. For English text, one word is roughly 1.3 tokens (about 4 characters per token). OpenAI bills all API usage in tokens, so understanding token counts helps you estimate costs."
         }
       },
       {
@@ -110,15 +98,15 @@
         "name": "How many tokens is a word?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "On average, one English word equals approximately 1.3 tokens with OpenAI's o200k tokenizer. The exact ratio varies by language: English ~1.3 tokens/word, Chinese ~0.6-1.2 tokens/character, Japanese ~1.5 tokens/word."
+          "text": "On average, one English word equals approximately 1.3 tokens with OpenAI's o200k tokenizer. For Chinese text, one character equals about 0.6-1.2 tokens. The exact ratio depends on the model's tokenizer and the text content."
         }
       },
       {
         "@type": "Question",
-        "name": "How accurate is the token estimate calculator?",
+        "name": "How accurate is this token calculator?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "For OpenAI models (GPT-4o, GPT-5, o1, o3), the calculator uses exact tiktoken tokenization — the same implementation as OpenAI's servers. For Anthropic, Google, Meta, and other providers, it uses estimate mode (approximately 4 characters per token), which is accurate within 5-10%."
+          "text": "For OpenAI models, the calculator is exact — it uses the actual tiktoken tokenizer (same as OpenAI's servers). For Claude, Gemini, Llama, and other providers, it uses estimate mode (approximately 4 characters per token), accurate within 5-10%."
         }
       },
       {
@@ -126,15 +114,15 @@
         "name": "How much does GPT-4o cost per 1M tokens?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "As of 2026, GPT-4o costs $2.50 per 1M input tokens and $10 per 1M output tokens. GPT-4o mini is $0.15 per 1M input and $0.60 per 1M output. GPT-5 pricing varies by model variant. All prices are editable in the tool."
+          "text": "GPT-4o costs $2.50 per 1M input tokens and $10 per 1M output tokens. GPT-4o mini is much cheaper at $0.15 per 1M input and $0.60 per 1M output. All prices are editable in the calculator."
         }
       },
       {
         "@type": "Question",
-        "name": "Which AI models are supported?",
+        "name": "Which models are supported?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "We support 90+ models across all major providers: OpenAI (GPT-5, GPT-4o, o1, o3, GPT-4.1, fine-tunes), Anthropic (Claude 4, Opus, Sonnet, Haiku), Google (Gemini Pro, Flash), Meta (Llama 3, Llama 4), DeepSeek, Qwen, Mistral, Kimi, GLM, Grok and more."
+          "text": "We cover 70 models plus a custom-pricing slot: OpenAI GPT-5.5 down to GPT-5 nano, GPT-4o, GPT-4.1, o1/o3/o4 and the embedding models (all exact tiktoken); Anthropic Claude Opus 5.5, Opus 5, Sonnet 5 and Haiku 4.5; Google Gemini 3.1 Pro through Flash-Lite; Meta Llama 4, xAI Grok, Mistral and Amazon Nova; plus DeepSeek, Qwen, GLM, Kimi, Doubao, ERNIE, Hunyuan, Spark, MiniMax, StepFun, SenseTime, Baichuan, Kunlun, MiMo and PanGu."
         }
       },
       {
@@ -147,10 +135,10 @@
       },
       {
         "@type": "Question",
-        "name": "How do I estimate API costs?",
+        "name": "Can I use custom pricing?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Enter your text, select your model, and the calculator shows the token count and estimated API cost. You can customize the price per 1M tokens for any model. The calculator supports both input and output token costs."
+          "text": "Yes! You can edit the price per 1M tokens for any model. This is useful for enterprise pricing, custom fine-tunes, or when prices change. Your custom prices are saved in your browser for future sessions."
         }
       },
       {
@@ -158,7 +146,7 @@
         "name": "Why do token counts differ from word counts?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Tokens are not words. Common words like 'the' may be single tokens, while long words are split into multiple tokens. Whitespace is usually attached to the following token. The tiktoken tokenizer uses Byte-Pair Encoding (BPE) to split text into tokens."
+          "text": "Tokens are not words. Common words like 'the' may be single tokens, while long words are split into multiple tokens. Whitespace is usually attached to the following token. The tokenizer uses Byte-Pair Encoding (BPE) to split text."
         }
       }
     ]
@@ -183,16 +171,13 @@
 
   <!-- ===== Structured Data: Organization ===== -->
   <script type="application/ld+json">
-  {
+{
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "tokenestimate",
+    "name": "TokenCalc",
+    "alternateName": "tokenestimate",
     "url": "https://tokenestimate.com",
     "logo": "https://tokenestimate.com/favicon.svg",
-    "sameAs": [
-      "https://twitter.com/tokenestimate",
-      "https://github.com/tokenestimate"
-    ],
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "customer support",
@@ -201,21 +186,24 @@
   }
   </script>
 
-  <!-- ===== Structured Data: WebSite (for Sitelinks Search) ===== -->
+  <!-- ===== Structured Data: WebSite ===== -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "tokenestimate",
-    "url": "https://tokenestimate.com",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://tokenestimate.com/?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
+    "name": "TokenCalc",
+    "alternateName": "tokenestimate",
+    "url": "https://tokenestimate.com"
   }
   </script>
 
+  <style>
+    .skip-link { position: absolute; left: -9999px; top: 0; background: #fff; padding: 10px 16px; z-index: 100; }
+    .skip-link:focus { left: 12px; top: 12px; }
+    .breadcrumb { font-size: .82rem; color: var(--text-faint); max-width: 1080px; margin: 0 auto; padding: 10px 20px 0; }
+    .tool-card h2 { font-size: 1.3rem; margin-bottom: 14px; }
+  </style>
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="8f1fd21d-3670-41e7-adf4-20d24de46fd4"></script>
 </head>
 <body>
   <!-- ===== Skip to main content (Accessibility) ===== -->
@@ -234,21 +222,27 @@
   </nav>
 
   <div class="bg-grid" aria-hidden="true"></div>
-  <div class="bg-aurora" aria-hidden="true"></div>
+  <div class="bg-aurora" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
   <div class="spotlight" aria-hidden="true"></div>
 
   <header class="site-header">
     <div class="container">
+      <a class="brand" href="/" aria-label="AI Token Calculator home">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#4f8cff" stroke-width="2" aria-hidden="true">
+          <path d="M12 2 4 6v6c0 5 3.4 9.1 8 10 4.6-.9 8-5 8-10V6l-8-4Z"/>
+          <path d="m9 12 2 2 4-4" stroke="#22d3ee" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Token<em>Calc</em></span>
+      </a>
       <nav class="site-nav" aria-label="Main navigation">
-        <a class="brand" href="/" aria-label="AI Token Calculator home">
-          tokenestimate
-        </a>
-        <div class="nav-links">
-          <a href="#tool">Calculator</a>
-          <a href="#models">Models</a>
-          <a href="#guides">Guides</a>
-          <a href="#faq">FAQ</a>
-        </div>
+        <a href="#tool">Calculator</a>
+        <a href="#models">Supported models</a>
+        <a href="#guides">Guides</a>
+        <a href="#faq">FAQ</a>
       </nav>
     </div>
   </header>
@@ -259,13 +253,13 @@
       <div class="container">
         <h1>Free AI Token Calculator — Count Tokens &amp; Estimate API Costs</h1>
         <p class="hero-subtitle">
-          Count tokens for GPT-5, GPT-4o, Claude, Gemini, Llama, DeepSeek and 90+ models. 
+          Count tokens for GPT-5, GPT-4o, Claude, Gemini, Llama, DeepSeek and 70+ models. 
           All calculations run locally in your browser — your text never leaves your computer.
         </p>
-        <div class="hero-badges">
+        <div class="badges">
           <span class="badge">100% Free</span>
           <span class="badge">No Upload</span>
-          <span class="badge">90+ Models</span>
+          <span class="badge">70+ Models</span>
           <span class="badge">Instant Results</span>
         </div>
       </div>
@@ -276,7 +270,97 @@
       <div class="container">
         <div class="tool-card">
           <h2>AI Token Calculator</h2>
-          <!-- Calculator UI will be here -->
+          <div class="status-banner" id="status"></div>
+
+          <div class="tool-grid">
+            <div>
+              <p class="panel">Your text</p>
+              <textarea id="input-text" spellcheck="false" placeholder="Paste a prompt, document or code — mixed Chinese and English works too. Nothing is uploaded; counting runs in your browser."></textarea>
+              <div class="toolbar">
+                <button type="button" class="btn btn-primary" id="btn-sample">Load sample</button>
+                <button type="button" class="btn" id="btn-clear">Clear</button>
+                <span class="chars"><span id="char-count">0</span> characters</span>
+              </div>
+            </div>
+
+            <div>
+              <p class="panel">Model &amp; pricing</p>
+              <div class="field">
+                <label for="model-select">Model</label>
+                <select id="model-select"></select>
+                <p class="hint">OpenAI models use the real tiktoken tokenizer; every other provider uses a calibrated estimate.</p>
+              </div>
+              <div class="pricing-row">
+                <div class="field">
+                  <label for="price-in">Input price</label>
+                  <input type="number" id="price-in" step="0.01" min="0" placeholder="USD / 1M input">
+                  <small>USD per 1M input tokens</small>
+                </div>
+                <div class="field">
+                  <label for="price-out">Output price</label>
+                  <input type="number" id="price-out" step="0.01" min="0" placeholder="USD / 1M output">
+                  <small>USD per 1M output tokens</small>
+                </div>
+              </div>
+              <div class="toolbar">
+                <button type="button" class="btn" id="btn-reset-prices">Reset prices</button>
+                <span class="chars" id="price-note"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="results">
+            <p class="results-title" id="results-title"><span class="spin"></span>Token count<span id="enc-label"> · o200k_base</span></p>
+
+            <div class="stat-grid">
+              <div class="stat tokens">
+                <p class="label">Tokens</p>
+                <p class="value" id="tokens-val">—</p>
+                <small class="hint" id="tokens-k"></small>
+              </div>
+              <div class="stat">
+                <p class="label">Characters</p>
+                <p class="value" id="chars-val">0</p>
+              </div>
+              <div class="stat">
+                <p class="label">Words</p>
+                <p class="value" id="words-val">0</p>
+              </div>
+              <div class="stat">
+                <p class="label">Lines</p>
+                <p class="value" id="lines-val">0</p>
+              </div>
+              <div class="stat">
+                <p class="label">Bytes (UTF-8)</p>
+                <p class="value" id="bytes-val">0</p>
+              </div>
+              <div class="stat">
+                <p class="label">Tokens per char</p>
+                <p class="value" id="per-char">—</p>
+              </div>
+            </div>
+
+            <div class="cost-grid">
+              <div class="cost">
+                <p class="label">Input cost</p>
+                <p class="value" id="cost-in">—</p>
+              </div>
+              <div class="cost">
+                <p class="label">Output cost</p>
+                <p class="value" id="cost-out">—</p>
+              </div>
+              <div class="cost total">
+                <p class="label">Total</p>
+                <p class="value" id="cost-total">—</p>
+              </div>
+            </div>
+
+            <div class="copy-bar">
+              <button type="button" class="btn" id="btn-copy">Copy summary</button>
+              <span class="note" id="copy-feedback"></span>
+              <span class="note">List prices per 1M tokens, last verified 2026-09-30 — <b>edit them for your own contract.</b></span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -285,21 +369,21 @@
     <section id="how-it-works" class="section">
       <div class="container">
         <h2>Why developers use tokenestimate</h2>
-        <div class="features-grid">
-          <div class="feature-card">
-            <h3>Σ Exact tiktoken counts</h3>
+        <div class="cards">
+          <div class="card">
+            <h3><span class="emoji">Σ</span>Exact tiktoken counts</h3>
             <p>Uses the same Byte-Pair Encoding tokenizer as OpenAI's servers for accurate results.</p>
           </div>
-          <div class="feature-card">
-            <h3>$ Cost before you code</h3>
+          <div class="card">
+            <h3><span class="emoji">$</span>Cost before you code</h3>
             <p>Estimate API costs before making requests. Supports custom pricing for any model.</p>
           </div>
-          <div class="feature-card">
-            <h3># 100% local &amp; private</h3>
+          <div class="card">
+            <h3><span class="emoji">#</span>100% local &amp; private</h3>
             <p>All calculations run in your browser. No data uploaded, no tracking, no accounts needed.</p>
           </div>
-          <div class="feature-card">
-            <h3>⎈ Built for AI workflows</h3>
+          <div class="card">
+            <h3><span class="emoji">⎈</span>Built for AI workflows</h3>
             <p>Designed for developers, researchers, and AI engineers who need quick token estimates.</p>
           </div>
         </div>
@@ -310,65 +394,144 @@
     <section id="models" class="section">
       <div class="container">
         <h2>Supported models &amp; pricing</h2>
-        <p class="section-desc">Count tokens and estimate costs for 90+ models across all major AI providers.</p>
+        <p class="lead">Count tokens and estimate costs for 70+ models across every major AI provider. Prices are USD per 1M tokens, last verified 2026-09-30.</p>
         
-        <div class="models-grid">
-          <!-- OpenAI -->
-          <div class="model-group">
-            <h3>OpenAI</h3>
-            <ul>
-              <li><a href="gpt-5-token-calculator.html">GPT-5 Token Calculator</a></li>
-              <li><a href="gpt-4o-token-calculator.html">GPT-4o Token Calculator</a></li>
-              <li><a href="o1-o3-token-calculator.html">o1 &amp; o3 Token Calculator</a></li>
-              <li><a href="#">GPT-4.1 Token Calculator</a></li>
-              <li><a href="#">Fine-tunes Token Calculator</a></li>
-            </ul>
-          </div>
-          
-          <!-- Anthropic -->
-          <div class="model-group">
-            <h3>Anthropic</h3>
-            <ul>
-              <li><a href="claude-token-counter.html">Claude Token Calculator</a></li>
-              <li><a href="#">Claude 4 Token Calculator</a></li>
-              <li><a href="#">Claude Opus Token Calculator</a></li>
-              <li><a href="#">Claude Sonnet Token Calculator</a></li>
-              <li><a href="#">Claude Haiku Token Calculator</a></li>
-            </ul>
-          </div>
-          
-          <!-- Google -->
-          <div class="model-group">
-            <h3>Google</h3>
-            <ul>
-              <li><a href="gemini-token-counter.html">Gemini Token Calculator</a></li>
-              <li><a href="#">Gemini Pro Token Calculator</a></li>
-              <li><a href="#">Gemini Flash Token Calculator</a></li>
-            </ul>
-          </div>
-          
-          <!-- Meta -->
-          <div class="model-group">
-            <h3>Meta</h3>
-            <ul>
-              <li><a href="llama-token-counter.html">Llama Token Calculator</a></li>
-              <li><a href="#">Llama 3 Token Calculator</a></li>
-              <li><a href="#">Llama 4 Token Calculator</a></li>
-            </ul>
-          </div>
-          
-          <!-- Others -->
-          <div class="model-group">
-            <h3>Others</h3>
-            <ul>
-              <li><a href="deepseek-token-calculator.html">DeepSeek Token Calculator</a></li>
-              <li><a href="qwen-token-counter.html">Qwen Token Calculator</a></li>
-              <li><a href="#">Mistral Token Calculator</a></li>
-              <li><a href="#">Kimi Token Calculator</a></li>
-              <li><a href="#">GLM Token Calculator</a></li>
-              <li><a href="#">Grok Token Calculator</a></li>
-            </ul>
-          </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Model</th><th>Counting</th><th>Context</th><th>Input $ / 1M</th><th>Output $ / 1M</th></tr>
+            </thead>
+            <tbody id="model-tbody">
+            <tr class="group-row"><td colspan="5"><strong>OpenAI</strong></td></tr>
+            <tr><td class="mono">GPT-5.5</td><td><span class="tag ok">exact tiktoken</span></td><td>1M</td><td>$5</td><td>$30</td></tr>
+            <tr><td class="mono">GPT-5</td><td><span class="tag ok">exact tiktoken</span></td><td>400K</td><td>$1.25</td><td>$10</td></tr>
+            <tr><td class="mono">GPT-5 mini</td><td><span class="tag ok">exact tiktoken</span></td><td>400K</td><td>$0.25</td><td>$2</td></tr>
+            <tr><td class="mono">GPT-5 nano</td><td><span class="tag ok">exact tiktoken</span></td><td>400K</td><td>$0.05</td><td>$0.4</td></tr>
+            <tr><td class="mono">GPT-4o</td><td><span class="tag ok">exact tiktoken</span></td><td>128K</td><td>$2.5</td><td>$10</td></tr>
+            <tr><td class="mono">GPT-4o mini</td><td><span class="tag ok">exact tiktoken</span></td><td>128K</td><td>$0.15</td><td>$0.6</td></tr>
+            <tr><td class="mono">GPT-4.1</td><td><span class="tag ok">exact tiktoken</span></td><td>1M</td><td>$2</td><td>$8</td></tr>
+            <tr><td class="mono">GPT-4.1 mini</td><td><span class="tag ok">exact tiktoken</span></td><td>1M</td><td>$0.4</td><td>$1.6</td></tr>
+            <tr><td class="mono">GPT-4.1 nano</td><td><span class="tag ok">exact tiktoken</span></td><td>1M</td><td>$0.1</td><td>$0.4</td></tr>
+            <tr><td class="mono">o3 <span class="tag">reasoning</span></td><td><span class="tag ok">exact tiktoken</span></td><td>200K</td><td>$2</td><td>$8</td></tr>
+            <tr><td class="mono">o4-mini <span class="tag">reasoning</span></td><td><span class="tag ok">exact tiktoken</span></td><td>200K</td><td>$1.1</td><td>$4.4</td></tr>
+            <tr><td class="mono">o3-mini <span class="tag">reasoning</span></td><td><span class="tag ok">exact tiktoken</span></td><td>200K</td><td>$1.1</td><td>$4.4</td></tr>
+            <tr><td class="mono">o1 <span class="tag">reasoning</span></td><td><span class="tag ok">exact tiktoken</span></td><td>200K</td><td>$15</td><td>$60</td></tr>
+            <tr class="group-row"><td colspan="5"><strong>OpenAI (legacy)</strong></td></tr>
+            <tr><td class="mono">GPT-4 Turbo</td><td><span class="tag ok">exact tiktoken</span></td><td>128K</td><td>$10</td><td>$30</td></tr>
+            <tr><td class="mono">GPT-4</td><td><span class="tag ok">exact tiktoken</span></td><td>8K</td><td>$30</td><td>$60</td></tr>
+            <tr><td class="mono">GPT-3.5 Turbo</td><td><span class="tag ok">exact tiktoken</span></td><td>16K</td><td>$0.5</td><td>$1.5</td></tr>
+            <tr class="group-row"><td colspan="5"><strong>OpenAI embedding</strong></td></tr>
+            <tr><td class="mono">text-embedding-3-small</td><td><span class="tag ok">exact tiktoken</span></td><td>–</td><td>$0.02</td><td>–</td></tr>
+            <tr><td class="mono">text-embedding-3-large</td><td><span class="tag ok">exact tiktoken</span></td><td>–</td><td>$0.13</td><td>–</td></tr>
+            <tr class="group-row"><td colspan="5"><strong>Anthropic Claude</strong></td></tr>
+            <tr><td class="mono">Claude Opus 5.5 <span class="tag">flagship, from 2026-09-22</span></td><td><span class="tag">estimate</span></td><td>1M</td><td>$4</td><td>$20</td></tr>
+            <tr><td class="mono">Claude Opus 5</td><td><span class="tag">estimate</span></td><td>200K</td><td>$5</td><td>$25</td></tr>
+            <tr><td class="mono">Claude Sonnet 5 <span class="tag">intro pricing</span></td><td><span class="tag">estimate</span></td><td>200K</td><td>$2</td><td>$10</td></tr>
+            <tr><td class="mono">Claude Haiku 4.5</td><td><span class="tag">estimate</span></td><td>200K</td><td>$1</td><td>$5</td></tr>
+            <tr><td class="mono">Claude Fable 5 <span class="tag">agentic</span></td><td><span class="tag">estimate</span></td><td>1M</td><td>$10</td><td>$50</td></tr>
+            <tr><td class="mono">Claude Opus 4.6</td><td><span class="tag">estimate</span></td><td>200K</td><td>$5</td><td>$25</td></tr>
+            <tr><td class="mono">Claude Sonnet 4.6</td><td><span class="tag">estimate</span></td><td>200K</td><td>$3</td><td>$15</td></tr>
+            <tr class="group-row"><td colspan="5"><strong>Google Gemini</strong></td></tr>
+            <tr><td class="mono">Gemini 3.1 Pro <span class="tag">≤200K ctx</span></td><td><span class="tag">estimate</span></td><td>2M</td><td>$2</td><td>$12</td></tr>
+            <tr><td class="mono">Gemini 3.6 Flash</td><td><span class="tag">estimate</span></td><td>1M</td><td>$1.5</td><td>$7.5</td></tr>
+            <tr><td class="mono">Gemini 3.5 Flash</td><td><span class="tag">estimate</span></td><td>1M</td><td>$1.5</td><td>$9</td></tr>
+            <tr><td class="mono">Gemini 3 Flash</td><td><span class="tag">estimate</span></td><td>1M</td><td>$0.5</td><td>$3</td></tr>
+            <tr><td class="mono">Gemini 3.5 Flash-Lite</td><td><span class="tag">estimate</span></td><td>1M</td><td>$0.3</td><td>$2.5</td></tr>
+            <tr><td class="mono">Gemini 2.5 Pro</td><td><span class="tag">estimate</span></td><td>2M</td><td>$1.25</td><td>$10</td></tr>
+            <tr><td class="mono">Gemini 2.5 Flash</td><td><span class="tag">estimate</span></td><td>1M</td><td>$0.3</td><td>$2.5</td></tr>
+            <tr><td class="mono">Gemini 2.5 Flash-Lite</td><td><span class="tag">estimate</span></td><td>1M</td><td>$0.1</td><td>$0.4</td></tr>
+            <tr class="group-row"><td colspan="5"><strong>US &amp; EU</strong></td></tr>
+            <tr><td class="mono">Grok 4.1 (xAI)</td><td><span class="tag">estimate</span></td><td>1M</td><td>$0.2</td><td>$1</td></tr>
+            <tr><td class="mono">Llama 4 (Meta) <span class="tag">open-weight</span></td><td><span class="tag">estimate</span></td><td>1M</td><td>$0.15</td><td>$0.45</td></tr>
+            <tr><td class="mono">Mistral Large 3</td><td><span class="tag">estimate</span></td><td>128K</td><td>$2</td><td>$6</td></tr>
+            <tr><td class="mono">Amazon Nova Pro</td><td><span class="tag">estimate</span></td><td>300K</td><td>$0.8</td><td>$3.2</td></tr>
+            <tr class="group-row"><td colspan="5"><strong>DeepSeek (深度求索)</strong></td></tr>
+            <tr><td class="mono">DeepSeek V4 Pro <span class="tag">deepseek-chat</span></td><td><span class="tag">estimate</span></td><td>128K</td><td>$0.44</td><td>$0.87</td></tr>
+            <tr><td class="mono">DeepSeek V4 Flash</td><td><span class="tag">estimate</span></td><td>400K</td><td>$0.14</td><td>$0.28</td></tr>
+            <tr><td class="mono">DeepSeek V3.2</td><td><span class="tag">estimate</span></td><td>128K</td><td>$0.35</td><td>$0.42</td></tr>
+            <tr><td class="mono">DeepSeek R1 <span class="tag">reasoning</span></td><td><span class="tag">estimate</span></td><td>64K</td><td>$0.56</td><td>$2.5</td></tr>
+            <tr class="group-row"><td colspan="5"><strong>Alibaba Qwen (阿里通义)</strong></td></tr>
+            <tr><td class="mono">Qwen3 Max (通义千问)</td><td><span class="tag">estimate</span></td><td>262K</td><td>$0.78</td><td>$3.9</td></tr>
+            <tr><td class="mono">Qwen3 Plus</td><td><span class="tag">estimate</span></td><td>128K</td><td>$0.4</td><td>$1.2</td></tr>
+            <tr><td class="mono">Qwen3 Flash</td><td><span class="tag">estimate</span></td><td>128K</td><td>$0.15</td><td>$1.5</td></tr>
+            <tr><td class="mono">Qwen3 Coder <span class="tag">coding</span></td><td><span class="tag">estimate</span></td><td>128K</td><td>$0.3</td><td>$0.9</td></tr>
+            <tr class="group-row"><td colspan="5"><strong>Zhipu GLM (智谱)</strong></td></tr>
+            <tr><td class="mono">GLM-5 (智谱)</td><td><span class="tag">estimate</span></td><td>200K</td><td>$1</td><td>$3.2</td></tr>
+            <tr><td class="mono">GLM-5.1</td><td><span class="tag">estimate</span></td><td>200K</td><td>$0.98</td><td>$3.08</td></tr>
+            <tr><td class="mono">GLM-4.7</td><td><span class="tag">estimate</span></td><td>200K</td><td>$0.5</td><td>$2.2</td></tr>
+            <tr><td class="mono">GLM-4-Flash <span class="tag">free</span></td><td><span class="tag">estimate</span></td><td>128K</td><td>Free</td><td>Free</td></tr>
+            <tr class="group-row"><td colspan="5"><strong>Moonshot Kimi (月之暗面)</strong></td></tr>
+            <tr><td class="mono">Kimi K2.6 (月之暗面) <span class="tag">tiered</span></td><td><span class="tag">estimate</span></td><td>256K</td><td>$1</td><td>$2.5</td></tr>
+            <tr><td class="mono">Kimi K2.5</td><td><span class="tag">estimate</span></td><td>128K</td><td>$0.6</td><td>$3</td></tr>
+            <tr><td class="mono">Kimi K3 <span class="tag">premium</span></td><td><span class="tag">estimate</span></td><td>256K</td><td>$7</td><td>$14</td></tr>
+            <tr class="group-row"><td colspan="5"><strong>ByteDance Doubao (火山引擎)</strong></td></tr>
+            <tr><td class="mono">Doubao 1.6 Pro (豆包)</td><td><span class="tag">estimate</span></td><td>256K</td><td>$0.11</td><td>$0.45</td></tr>
+            <tr><td class="mono">Doubao 1.6 Flash <span class="tag">cheapest</span></td><td><span class="tag">estimate</span></td><td>128K</td><td>$0.01</td><td>$0.11</td></tr>
+            <tr><td class="mono">Doubao 1.6 Lite</td><td><span class="tag">estimate</span></td><td>128K</td><td>$0.02</td><td>$0.04</td></tr>
+            <tr class="group-row"><td colspan="5"><strong>Baidu ERNIE (百度)</strong></td></tr>
+            <tr><td class="mono">ERNIE 4.5 (文心一言)</td><td><span class="tag">estimate</span></td><td>128K</td><td>$0.2</td><td>$0.55</td></tr>
+            <tr><td class="mono">ERNIE X1 <span class="tag">reasoning · ultra cheap</span></td><td><span class="tag">estimate</span></td><td>128K</td><td>$0.006</td><td>$0.02</td></tr>
+            <tr class="group-row"><td colspan="5"><strong>Tencent Hunyuan (腾讯)</strong></td></tr>
+            <tr><td class="mono">Hunyuan 2 Pro (混元)</td><td><span class="tag">estimate</span></td><td>128K</td><td>$1</td><td>$4</td></tr>
+            <tr><td class="mono">Hunyuan Lite <span class="tag">free</span></td><td><span class="tag">estimate</span></td><td>32K</td><td>Free</td><td>Free</td></tr>
+            <tr class="group-row"><td colspan="5"><strong>iFlytek Spark (讯飞星火)</strong></td></tr>
+            <tr><td class="mono">Spark Max / X1 (讯飞星火)</td><td><span class="tag">estimate</span></td><td>128K</td><td>$0.5</td><td>$1.7</td></tr>
+            <tr><td class="mono">Spark Lite <span class="tag">free</span></td><td><span class="tag">estimate</span></td><td>32K</td><td>Free</td><td>Free</td></tr>
+            <tr class="group-row"><td colspan="5"><strong>MiniMax (稀宇科技)</strong></td></tr>
+            <tr><td class="mono">MiniMax M2.5 <span class="tag">agent</span></td><td><span class="tag">estimate</span></td><td>197K</td><td>$0.29</td><td>$1.18</td></tr>
+            <tr class="group-row"><td colspan="5"><strong>01.AI (零一万物)</strong></td></tr>
+            <tr><td class="mono">Yi-Lightning (零一万物)</td><td><span class="tag">estimate</span></td><td>128K</td><td>$0.4</td><td>$1.2</td></tr>
+            <tr class="group-row"><td colspan="5"><strong>StepFun (阶跃星辰)</strong></td></tr>
+            <tr><td class="mono">Step-3 (阶跃星辰)</td><td><span class="tag">estimate</span></td><td>128K</td><td>$0.5</td><td>$1.5</td></tr>
+            <tr class="group-row"><td colspan="5"><strong>SenseTime (商汤)</strong></td></tr>
+            <tr><td class="mono">SenseNova 5.1 (商汤)</td><td><span class="tag">estimate</span></td><td>128K</td><td>$0.04</td><td>$0.7</td></tr>
+            <tr class="group-row"><td colspan="5"><strong>Baichuan (百川智能)</strong></td></tr>
+            <tr><td class="mono">Baichuan 4 (百川)</td><td><span class="tag">estimate</span></td><td>128K</td><td>$1.2</td><td>$2.8</td></tr>
+            <tr class="group-row"><td colspan="5"><strong>Kunlun (昆仑万维)</strong></td></tr>
+            <tr><td class="mono">SkyClaw 1.0 (昆仑万维) <span class="tag">agent</span></td><td><span class="tag">estimate</span></td><td>1M</td><td>$0.5</td><td>$1.5</td></tr>
+            <tr class="group-row"><td colspan="5"><strong>Xiaomi MiMo (小米)</strong></td></tr>
+            <tr><td class="mono">MiMo V2.5 Pro (小米)</td><td><span class="tag">estimate</span></td><td>1M</td><td>$0.44</td><td>$0.87</td></tr>
+            <tr><td class="mono">MiMo V2.5</td><td><span class="tag">estimate</span></td><td>1M</td><td>$0.14</td><td>$0.28</td></tr>
+            <tr class="group-row"><td colspan="5"><strong>Huawei PanGu (华为云)</strong></td></tr>
+            <tr><td class="mono">PanGu 4.7 (盘古)</td><td><span class="tag">estimate</span></td><td>128K</td><td>$0.5</td><td>$1.5</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 style="margin:34px 0 14px;font-size:1.1rem">Dedicated calculators</h3>
+        <div class="cards">
+          <a class="card" href="gpt-5-token-calculator.html">
+            <h3><span class="emoji">5</span>GPT-5 calculator</h3>
+            <p>Exact o200k_base counts plus GPT-5.5 / GPT-5 / mini / nano pricing.</p>
+          </a>
+          <a class="card" href="gpt-4o-token-calculator.html">
+            <h3><span class="emoji">4o</span>GPT-4o calculator</h3>
+            <p>GPT-4o and 4o mini token counts with per-call cost estimates.</p>
+          </a>
+          <a class="card" href="o1-o3-token-calculator.html">
+            <h3><span class="emoji">o1</span>o1 &amp; o3 calculator</h3>
+            <p>Reasoning models: context windows, input and output rates.</p>
+          </a>
+          <a class="card" href="claude-token-counter.html">
+            <h3><span class="emoji">C</span>Claude calculator</h3>
+            <p>Opus 5.5, Sonnet 5 and Haiku 4.5 estimates in one place.</p>
+          </a>
+          <a class="card" href="gemini-token-counter.html">
+            <h3><span class="emoji">G</span>Gemini calculator</h3>
+            <p>Gemini 3.1 Pro through Flash-Lite pricing and counts.</p>
+          </a>
+          <a class="card" href="llama-token-counter.html">
+            <h3><span class="emoji">L</span>Llama calculator</h3>
+            <p>Open-weight Llama 4 counting for self-hosted cost maths.</p>
+          </a>
+          <a class="card" href="deepseek-token-calculator.html">
+            <h3><span class="emoji">D</span>DeepSeek calculator</h3>
+            <p>V4 Pro / Flash and R1 with the CJK-calibrated estimate.</p>
+          </a>
+          <a class="card" href="qwen-token-counter.html">
+            <h3><span class="emoji">Q</span>Qwen calculator</h3>
+            <p>Qwen Max / Plus / Turbo counts and list prices.</p>
+          </a>
         </div>
       </div>
     </section>
@@ -377,39 +540,29 @@
     <section id="guides" class="section">
       <div class="container">
         <h2>Developer guides</h2>
-        <div class="guides-grid">
-          <article class="guide-card">
-            <h3>How many tokens is a word?</h3>
-            <p>Token-to-word ratios for GPT-5, GPT-4o, Claude, Gemini and Llama with real-time converter.</p>
-            <a href="blog/how-many-tokens-per-word.html" class="guide-link">Read the guide →</a>
-          </article>
-          <article class="guide-card">
-            <h3>AI API pricing in 2026</h3>
-            <p>Complete pricing comparison for all major AI models with cost optimization tips.</p>
-            <a href="blog/ai-api-pricing-2026.html" class="guide-link">Read the guide →</a>
-          </article>
-          <article class="guide-card">
-            <h3>How to reduce AI API costs</h3>
-            <p>Practical tips for token optimization, prompt engineering, and cost reduction strategies.</p>
-            <a href="blog/how-to-reduce-api-costs.html" class="guide-link">Read the guide →</a>
-          </article>
-          <article class="guide-card">
-            <h3>Complete guide to AI tokenization</h3>
-            <p>Understanding BPE, tokenizers, and how different models split text into tokens.</p>
-            <a href="blog/complete-guide-tokenization.html" class="guide-link">Read the guide →</a>
-          </article>
+        <div class="cards">
+          <div class="card">
+            <h3><span class="emoji">1.3</span>How many tokens is a word?</h3>
+            <p>Token-to-word ratios for GPT-5, GPT-4o, Claude, Gemini and Llama, with the character ratios behind them.</p>
+            <p><a href="blog/how-many-tokens-per-word.html">Read the guide →</a></p>
+          </div>
+          <div class="card">
+            <h3><span class="emoji">$</span>AI API pricing in 2026</h3>
+            <p>Side-by-side list prices for every major model, plus how to cut input cost with caching and shorter prompts.</p>
+            <p><a href="blog/ai-api-pricing-2026.html">Read the guide →</a></p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ===== FAQ Section ===== -->
-    <section id="faq" class="section">
+    <section id="faq" class="section faq">
       <div class="container">
         <h2>Frequently asked questions</h2>
         <div class="faq-list">
           <details>
             <summary>What is an AI token?</summary>
-            <p>A token is the basic unit of text that language models read and generate. For English text, 1 token is roughly 0.7 word (or 4 characters). OpenAI bills all API usage in tokens, so understanding token counts helps you estimate costs.</p>
+            <p>A token is the basic unit of text that language models read and generate. For English text, one word is roughly 1.3 tokens (about 4 characters per token). OpenAI bills all API usage in tokens, so understanding token counts helps you estimate costs.</p>
           </details>
           <details>
             <summary>How many tokens is a word?</summary>
@@ -425,7 +578,7 @@
           </details>
           <details>
             <summary>Which models are supported?</summary>
-            <p>We support 90+ models including all OpenAI models (GPT-5, GPT-4o, o1, o3), Anthropic Claude (4, Opus, Sonnet, Haiku), Google Gemini (Pro, Flash), Meta Llama, DeepSeek, Qwen, Mistral, Kimi, GLM, Grok and more.</p>
+            <p>We cover 70 models plus a custom-pricing slot: OpenAI GPT-5.5 down to GPT-5 nano, GPT-4o, GPT-4.1, o1/o3/o4 and the embedding models (all exact tiktoken); Anthropic Claude Opus 5.5, Opus 5, Sonnet 5 and Haiku 4.5; Google Gemini 3.1 Pro through Flash-Lite; Meta Llama 4, xAI Grok, Mistral and Amazon Nova; plus DeepSeek, Qwen, GLM, Kimi, Doubao, ERNIE, Hunyuan, Spark, MiniMax, StepFun, SenseTime, Baichuan, Kunlun, MiMo and PanGu.</p>
           </details>
           <details>
             <summary>Is my text uploaded anywhere?</summary>
@@ -444,54 +597,30 @@
     </section>
 
     <!-- ===== CTA Section ===== -->
-    <section class="cta-section">
+    <section class="section" id="start">
       <div class="container">
         <h2>Start counting tokens for free</h2>
-        <p>No signup required. Your text never leaves your browser.</p>
-        <a href="#tool" class="cta-button">Try the Calculator</a>
+        <p class="lead">No signup required. Your text never leaves your browser.</p>
+        <a href="#tool" class="btn btn-primary">Try the calculator</a>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-content">
-        <div class="footer-brand">
-          <a href="/" class="brand">tokenestimate</a>
-          <p>Free AI token calculator for developers. Count tokens and estimate API costs for 90+ models.</p>
+      <div class="cols">
+        <div>
+          <strong>TokenCalc — AI Token Calculator</strong><br>
+          Free, private token counting and API cost estimation for 70 AI models. Your text never leaves your browser.
         </div>
-        <div class="footer-links">
-          <div class="footer-column">
-            <h4>Calculators</h4>
-            <ul>
-              <li><a href="gpt-4o-token-calculator.html">GPT-4o Token Calculator</a></li>
-              <li><a href="claude-token-counter.html">Claude Token Calculator</a></li>
-              <li><a href="gemini-token-counter.html">Gemini Token Calculator</a></li>
-              <li><a href="deepseek-token-calculator.html">DeepSeek Token Calculator</a></li>
-            </ul>
-          </div>
-          <div class="footer-column">
-            <h4>Guides</h4>
-            <ul>
-              <li><a href="blog/how-many-tokens-per-word.html">Tokens per Word Guide</a></li>
-              <li><a href="blog/ai-api-pricing-2026.html">API Pricing 2026</a></li>
-              <li><a href="blog/how-to-reduce-api-costs.html">Reduce API Costs</a></li>
-              <li><a href="blog/complete-guide-tokenization.html">Tokenization Guide</a></li>
-            </ul>
-          </div>
-          <div class="footer-column">
-            <h4>Resources</h4>
-            <ul>
-              <li><a href="#faq">FAQ</a></li>
-              <li><a href="privacy.html">Privacy Policy</a></li>
-              <li><a href="mailto:contact@tokenestimate.com">Contact</a></li>
-            </ul>
-          </div>
+        <div>
+          <a href="gpt-5-token-calculator.html">GPT-5</a> · <a href="gpt-4o-token-calculator.html">GPT-4o</a> · <a href="o1-o3-token-calculator.html">o1 &amp; o3</a> · <a href="claude-token-counter.html">Claude</a> · <a href="gemini-token-counter.html">Gemini</a> · <a href="llama-token-counter.html">Llama</a> · <a href="deepseek-token-calculator.html">DeepSeek</a> · <a href="qwen-token-counter.html">Qwen</a><br>
+          <a href="blog/how-many-tokens-per-word.html">Tokens per word</a> · <a href="blog/ai-api-pricing-2026.html">API pricing 2026</a> · <a href="#faq">FAQ</a> · <a href="mailto:contact@tokenestimate.com">Contact</a>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 tokenestimate. All rights reserved. | <a href="privacy.html">Privacy</a>
-        <p class="disclaimer">Product names and logos are trademarks of their respective owners.</p>
+      <div>
+        Token counts are provided for reference; list prices last verified 2026-09-30.<br>
+        <a href="privacy.html">Privacy Policy</a> · © 2026 TokenCalc (tokenestimate.com). Product names and logos are trademarks of their respective owners.
       </div>
     </div>
   </footer>

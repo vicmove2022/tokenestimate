@@ -321,6 +321,7 @@ select:focus, input[type="number"]:focus {
 .stat.tokens { border-color: rgba(37, 99, 235, 0.45); background: linear-gradient(160deg, #f2f6ff, #f6fbff); }
 .stat.tokens .value { color: var(--accent); }
 .stat.pulse { animation: stat-pulse 0.5s ease; }
+.stat .value.pulse { animation: stat-pulse 0.5s ease; }
 @keyframes stat-pulse { 0% { transform: scale(1); } 35% { transform: scale(1.045); } 100% { transform: scale(1); } }
 
 .cost-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-top: 13px; }

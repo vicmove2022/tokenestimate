@@ -1,18 +1,19 @@
 const RANK_CDN = "https://cdn.jsdelivr.net/npm/js-tiktoken@1.0.21/dist/ranks";
-const ENGINE_URL = "https://cdn.jsdelivr.net/npm/js-tiktoken@1.0.21/dist/lite.js";
-const RANK_LOCAL = "./js/ranks/";
-const ENGINE_LOCAL = "./js/ranks/lite.js";
+const ENGINE_URL = "https://cdn.jsdelivr.net/npm/js-tiktoken@1.0.21/+esm";
+// specifiers below resolve relative to this module (js/app.js), i.e. js/ranks/
+const RANK_LOCAL = "./ranks/";
+const ENGINE_LOCAL = "./ranks/lite.js";
 
 // type: "exact" = real tiktoken tokenizer | "est" = rule-of-thumb estimate
 // est.cjk  = tokens per Chinese character, est.ascii = characters per English token
-// estimated prices: public list prices per 1M tokens (USD), Aug 2026 — user-editable in the UI
+// estimated prices: public list prices per 1M tokens (USD), last verified 2026-09-30 — user-editable in the UI
 const MODELS = [
   // ---------- OpenAI (exact tiktoken) ----------
-  { id: "gpt-5.5", label: "GPT-5.5", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 2.5, priceOut: 15.0, ctx: "200K", note: "" },
+  { id: "gpt-5.5", label: "GPT-5.5", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 5.0, priceOut: 30.0, ctx: "1M", note: "" },
   { id: "gpt-5", label: "GPT-5", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 1.25, priceOut: 10.0, ctx: "400K", note: "" },
   { id: "gpt-5-mini", label: "GPT-5 mini", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 0.25, priceOut: 2.0, ctx: "400K", note: "" },
   { id: "gpt-5-nano", label: "GPT-5 nano", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 0.05, priceOut: 0.4, ctx: "400K", note: "" },
-  { id: "gpt-4o", label: "GPT-4o", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 2.25, priceOut: 10.0, ctx: "128K", note: "" },
+  { id: "gpt-4o", label: "GPT-4o", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 2.5, priceOut: 10.0, ctx: "128K", note: "" },
   { id: "gpt-4o-mini", label: "GPT-4o mini", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 0.15, priceOut: 0.6, ctx: "128K", note: "" },
   { id: "gpt-4.1", label: "GPT-4.1", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 2.0, priceOut: 8.0, ctx: "1M", note: "" },
   { id: "gpt-4.1-mini", label: "GPT-4.1 mini", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 0.4, priceOut: 1.6, ctx: "1M", note: "" },
@@ -28,6 +29,7 @@ const MODELS = [
   { id: "embedding-3-large", label: "text-embedding-3-large", group: "OpenAI embedding", type: "exact", encoding: "cl100k_base", priceIn: 0.13, priceOut: 0, ctx: "–", note: "" },
 
   // ---------- Anthropic ----------
+  { id: "claude-opus-5-5", label: "Claude Opus 5.5", group: "Anthropic Claude", type: "est", est: { cjk: 1.2, ascii: 4 }, priceIn: 4.0, priceOut: 20.0, ctx: "1M", note: "flagship, from 2026-09-22" },
   { id: "claude-opus-5", label: "Claude Opus 5", group: "Anthropic Claude", type: "est", est: { cjk: 1.2, ascii: 4 }, priceIn: 5.0, priceOut: 25.0, ctx: "200K", note: "" },
   { id: "claude-sonnet-5", label: "Claude Sonnet 5", group: "Anthropic Claude", type: "est", est: { cjk: 1.2, ascii: 4 }, priceIn: 2.0, priceOut: 10.0, ctx: "200K", note: "intro pricing" },
   { id: "claude-haiku-4.5", label: "Claude Haiku 4.5", group: "Anthropic Claude", type: "est", est: { cjk: 1.2, ascii: 4 }, priceIn: 1.0, priceOut: 5.0, ctx: "200K", note: "" },
@@ -117,7 +119,7 @@ const usd = (v, digits) => new Intl.NumberFormat("en-US", { style: "currency", c
 
 function fmtUSD(v) {
   if (!isFinite(v)) return "—";
-  if (v > 0 && v < 0.01) return "$" + (v * 1000).toFixed(3) + "k";
+  if (v > 0 && v < 0.01) return "$" + v.toFixed(6).replace(/0+$/, "").replace(/\.$/, "");
   return usd(v, v >= 100 ? 0 : 4);
 }
 
