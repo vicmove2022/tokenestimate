@@ -17,7 +17,7 @@
       "estimate": "Other providers use a calibrated character-ratio estimate, accurate to roughly 5-10%. tokenizer field says which."
     },
     "previousLastVerified": "2026-10-02",
-    "revisionNote": "Updated 2026-10-02: 3 models added, 0 field corrections. Per-model sources are listed in the repository's pricing-patch files. Cite this date, not the old one.",
+    "revisionNote": "Updated 2026-10-02: 5 models added, 0 field corrections. Per-model sources are listed in the repository's pricing-patch files. Cite this date, not the old one.",
     "revisions": [
       {
         "date": "2026-10-02",
@@ -30,6 +30,12 @@
         "added": 3,
         "corrected": 0,
         "patchFile": "pricing-patch-2026-10-02b.json"
+      },
+      {
+        "date": "2026-10-02",
+        "added": 5,
+        "corrected": 0,
+        "patchFile": "pricing-patch-2026-10-02c.json"
       }
     ]
   },
@@ -1048,6 +1054,59 @@
       "priceOutputPer1M": 50,
       "maxOutputTokens": "128K",
       "note": "Fast mode is 2x the token price for roughly 2.5x the speed. Trade throughput against unit cost deliberately."
+    },
+    {
+      "id": "gpt-6-luna",
+      "label": "GPT-6 Luna",
+      "provider": "OpenAI",
+      "tokenizer": "tiktoken:o200k_base",
+      "contextWindow": "1M",
+      "priceInputPer1M": 0.1,
+      "priceOutputPer1M": 0.5,
+      "note": "Cheapest route into a 1.05M-token window. Best-corroborated figure in this set: three independent sources agree on $0.10/$0.50, one of them quoting OpenAI's own announcement. Above 272K input the rate for the ENTIRE request doubles on input/cache and rises 1.5x on output."
+    },
+    {
+      "id": "gpt-6-sol",
+      "label": "GPT-6 Sol",
+      "provider": "OpenAI",
+      "tokenizer": "tiktoken:o200k_base",
+      "contextWindow": "1M",
+      "priceInputPer1M": 2,
+      "priceOutputPer1M": 10,
+      "priceCachedInputPer1M": 0.2,
+      "note": "Mid tier. Cache reads are $0.20/M. Long-context threshold applies: above 272K input, input and cache double and output rises 1.5x for the whole request. Fast tier is 2x these rates."
+    },
+    {
+      "id": "gpt-6.1-sol",
+      "label": "GPT-6.1 Sol",
+      "provider": "OpenAI",
+      "tokenizer": "tiktoken:o200k_base",
+      "contextWindow": "1M",
+      "priceInputPer1M": 2,
+      "priceOutputPer1M": 10,
+      "priceCachedInputPer1M": 0.1,
+      "note": "Same list rate as GPT-6 Sol but cache reads are half ($0.10/M vs $0.20/M). If your workload has high cache hit rate, 6.1 Sol is strictly cheaper than Sol at identical token prices."
+    },
+    {
+      "id": "gpt-6-astra",
+      "label": "GPT-6 Astra",
+      "provider": "OpenAI",
+      "tokenizer": "tiktoken:o200k_base",
+      "contextWindow": "1M",
+      "priceInputPer1M": 10,
+      "priceOutputPer1M": 50,
+      "note": "Premium tier, priced to match Anthropic Fable 5. Single source for the rate; the same 0.80x ratio seen across the GPT-6 family holds here, which is consistent with it being the list price rather than another discount. Long-context threshold applies above 272K input."
+    },
+    {
+      "id": "gpt-6-astra-ultrafast",
+      "label": "GPT-6 Astra (Ultrafast)",
+      "provider": "OpenAI",
+      "tokenizer": "tiktoken:o200k_base",
+      "contextWindow": "1M",
+      "priceInputPer1M": 60,
+      "priceOutputPer1M": 300,
+      "priceCachedInputPer1M": 6,
+      "note": "Six times the standard Astra rate on output. Two constraints that are not in the price at all: low default rate limits, and NO EU data residency. Do not select this tier for a latency target without first confirming the request volume and the jurisdiction. Single source."
     }
   ]
 }

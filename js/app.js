@@ -112,6 +112,12 @@ const MODELS = [
 { id: "claude-sonnet-5.5", label: "Claude Sonnet 5.5", group: "Anthropic Claude", type: "est", priceIn: 2, priceOut: 10, ctx: "1M", est: { cjk: 1.2, ascii: 4 }, },
 { id: "claude-mythos-5", label: "Claude Mythos 5", group: "Anthropic Claude", type: "est", priceIn: 11, priceOut: 55, ctx: "1M", est: { cjk: 1.2, ascii: 4 }, },
 { id: "claude-opus-5-fast", label: "Claude Opus 5 (Fast mode)", group: "Anthropic Claude", type: "est", priceIn: 10, priceOut: 50, ctx: "1M", est: { cjk: 1.2, ascii: 4 }, }
+,
+{ id: "gpt-6-luna", label: "GPT-6 Luna", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 0.1, priceOut: 0.5, ctx: "1M", },
+{ id: "gpt-6-sol", label: "GPT-6 Sol", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 2, priceOut: 10, ctx: "1M", },
+{ id: "gpt-6.1-sol", label: "GPT-6.1 Sol", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 2, priceOut: 10, ctx: "1M", },
+{ id: "gpt-6-astra", label: "GPT-6 Astra", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 10, priceOut: 50, ctx: "1M", },
+{ id: "gpt-6-astra-ultrafast", label: "GPT-6 Astra (Ultrafast)", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 60, priceOut: 300, ctx: "1M", }
 ];
 
 const SAMPLE = `Tokens are how GPT models read text: nine English words usually cost about twelve tokens.

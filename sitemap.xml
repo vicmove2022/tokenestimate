@@ -595,6 +595,36 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://tokenestimate.com/models/gpt-6-luna/</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://tokenestimate.com/models/gpt-6-sol/</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://tokenestimate.com/models/gpt-6-1-sol/</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://tokenestimate.com/models/gpt-6-astra/</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://tokenestimate.com/models/gpt-6-astra-ultrafast/</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://tokenestimate.com/providers/openai/</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
