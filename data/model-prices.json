@@ -16,14 +16,20 @@
       "exact": "OpenAI models are counted with the official tiktoken BPE tokenizer (js-tiktoken, o200k_base / cl100k_base) running client-side.",
       "estimate": "Other providers use a calibrated character-ratio estimate, accurate to roughly 5-10%. tokenizer field says which."
     },
-    "previousLastVerified": "2026-09-30",
-    "revisionNote": "Updated 2026-10-02: 11 models added, 3 field corrections. Per-model sources are listed in the repository's pricing-patch files. Cite this date, not the old one.",
+    "previousLastVerified": "2026-10-02",
+    "revisionNote": "Updated 2026-10-02: 3 models added, 0 field corrections. Per-model sources are listed in the repository's pricing-patch files. Cite this date, not the old one.",
     "revisions": [
       {
         "date": "2026-10-02",
         "added": 11,
         "corrected": 3,
         "patchFile": "pricing-patch-2026-10-02.json"
+      },
+      {
+        "date": "2026-10-02",
+        "added": 3,
+        "corrected": 0,
+        "patchFile": "pricing-patch-2026-10-02b.json"
       }
     ]
   },
@@ -1008,6 +1014,40 @@
       "priceCachedInputPer1M": 0.2,
       "maxOutputTokens": "32K",
       "note": "Cheaper than Grok 4.5 AND has a larger context window. Rates double on prompts over 200K tokens."
+    },
+    {
+      "id": "claude-sonnet-5.5",
+      "label": "Claude Sonnet 5.5",
+      "provider": "Anthropic Claude",
+      "tokenizer": "estimate",
+      "contextWindow": "1M",
+      "priceInputPer1M": 2,
+      "priceOutputPer1M": 10,
+      "priceCachedInputPer1M": 0.2,
+      "maxOutputTokens": "128K",
+      "note": "Released 2026-09-28, four days before this snapshot, which is why it was missing from the first pass. Anthropic says up to 30% less per task than Sonnet 5; the per-token rate is the same $2/$10. Two independent trackers updated Sep 29 2026 agree on both figures."
+    },
+    {
+      "id": "claude-mythos-5",
+      "label": "Claude Mythos 5",
+      "provider": "Anthropic Claude",
+      "tokenizer": "estimate",
+      "contextWindow": "1M",
+      "priceInputPer1M": 11,
+      "priceOutputPer1M": 55,
+      "maxOutputTokens": "128K",
+      "note": "Restricted frontier tier above Fable. Single source; treat the rate as indicative until Anthropic publishes it on a public pricing page."
+    },
+    {
+      "id": "claude-opus-5-fast",
+      "label": "Claude Opus 5 (Fast mode)",
+      "provider": "Anthropic Claude",
+      "tokenizer": "estimate",
+      "contextWindow": "1M",
+      "priceInputPer1M": 10,
+      "priceOutputPer1M": 50,
+      "maxOutputTokens": "128K",
+      "note": "Fast mode is 2x the token price for roughly 2.5x the speed. Trade throughput against unit cost deliberately."
     }
   ]
 }

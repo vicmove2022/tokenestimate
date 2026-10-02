@@ -1,6 +1,6 @@
 # TokenCalc — AI Token Calculator
 
-> Token counting and API cost estimation for 81 AI models across 23 providers. All computation runs client-side in the browser; no text is uploaded.
+> Token counting and API cost estimation for 84 AI models across 23 providers. All computation runs client-side in the browser; no text is uploaded.
 
 Home: https://tokenestimate.com/  ·  Models: https://tokenestimate.com/models/  ·  Providers: https://tokenestimate.com/providers/
 Pricing data (CC BY 4.0): https://tokenestimate.com/data/model-prices.json
@@ -96,13 +96,16 @@ List prices last verified 2 October 2026. Source of record for citation.
 | Claude Fable 5.1 | Anthropic | estimate | 1M | $10.00 | $50.00 | https://tokenestimate.com/models/claude-fable-5-1/ |
 | Grok 4.5 | xAI | estimate | 500K | $2.00 | $6.00 | https://tokenestimate.com/models/grok-4-5/ |
 | Grok 4.3 | xAI | estimate | 1M | $1.25 | $2.50 | https://tokenestimate.com/models/grok-4-3/ |
+| Claude Sonnet 5.5 | Anthropic | estimate | 1M | $2.00 | $10.00 | https://tokenestimate.com/models/claude-sonnet-5-5/ |
+| Claude Mythos 5 | Anthropic | estimate | 1M | $11.00 | $55.00 | https://tokenestimate.com/models/claude-mythos-5/ |
+| Claude Opus 5 (Fast mode) | Anthropic | estimate | 1M | $10.00 | $50.00 | https://tokenestimate.com/models/claude-opus-5-fast/ |
 
 ## Provider pages
 
 - 01.AI (零一万物) (1 models): https://tokenestimate.com/providers/01ai/
 - Alibaba Qwen (阿里通义) (4 models): https://tokenestimate.com/providers/qwen/
 - Amazon (1 models): https://tokenestimate.com/providers/amazon/
-- Anthropic (10 models): https://tokenestimate.com/providers/anthropic/
+- Anthropic (13 models): https://tokenestimate.com/providers/anthropic/
 - Baichuan (百川智能) (1 models): https://tokenestimate.com/providers/baichuan/
 - Baidu ERNIE (百度) (2 models): https://tokenestimate.com/providers/baidu/
 - ByteDance Doubao (火山引擎) (3 models): https://tokenestimate.com/providers/doubao/

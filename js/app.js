@@ -108,7 +108,10 @@ const MODELS = [
 { id: "claude-opus-4.8", label: "Claude Opus 4.8", group: "Anthropic Claude", type: "est", priceIn: 5, priceOut: 25, ctx: "1M", est: { cjk: 1.2, ascii: 4 }, note: "Fast Mode available", },
 { id: "claude-fable-5.1", label: "Claude Fable 5.1", group: "Anthropic Claude", type: "est", priceIn: 10, priceOut: 50, ctx: "1M", est: { cjk: 1.2, ascii: 4 }, note: "latest Fable", },
 { id: "grok-4.5", label: "Grok 4.5", group: "US & EU", type: "est", priceIn: 2, priceOut: 6, ctx: "500K", est: { cjk: 1.2, ascii: 4 }, note: "xAI flagship", },
-{ id: "grok-4.3", label: "Grok 4.3", group: "US & EU", type: "est", priceIn: 1.25, priceOut: 2.5, ctx: "1M", est: { cjk: 1.2, ascii: 4 }, note: "bigger context, cheaper", }
+{ id: "grok-4.3", label: "Grok 4.3", group: "US & EU", type: "est", priceIn: 1.25, priceOut: 2.5, ctx: "1M", est: { cjk: 1.2, ascii: 4 }, note: "bigger context, cheaper", },
+{ id: "claude-sonnet-5.5", label: "Claude Sonnet 5.5", group: "Anthropic Claude", type: "est", priceIn: 2, priceOut: 10, ctx: "1M", est: { cjk: 1.2, ascii: 4 }, },
+{ id: "claude-mythos-5", label: "Claude Mythos 5", group: "Anthropic Claude", type: "est", priceIn: 11, priceOut: 55, ctx: "1M", est: { cjk: 1.2, ascii: 4 }, },
+{ id: "claude-opus-5-fast", label: "Claude Opus 5 (Fast mode)", group: "Anthropic Claude", type: "est", priceIn: 10, priceOut: 50, ctx: "1M", est: { cjk: 1.2, ascii: 4 }, }
 ];
 
 const SAMPLE = `Tokens are how GPT models read text: nine English words usually cost about twelve tokens.
