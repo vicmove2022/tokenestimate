@@ -15,9 +15,9 @@ moves only when someone has actually re-checked a provider page.
 them publish *movement*. If you are writing about how LLM prices are changing,
 this is the citable record:
 
-> TokenCalc, "LLM Pricing Changelog", tokenestimate.com, 2026-10-02
+> TokenCalc, "LLM Pricing Changelog", tokenestimate.com, 2026-10-02c
 
-**Totals so far:** 11 models added, 3 corrections, 5 entries flagged unverified.
+**Totals so far:** 19 models added, 3 corrections, 11 entries flagged unverified.
 
 ---
 
@@ -133,3 +133,87 @@ rather than guessed at — a wrong rate is worse than a missing row.
 | `gpt-6-astra / gpt-6-luna` | appear in OpenAI pricing-page snippets but I could not open the page to confirm tiers | Fragments mentioned $10/$50 for Astra and $0.10/$0.50 for Luna. Verify on developers.openai.com/api/docs/pricing before adding. |
 | `claude-opus-5` | currently 200K, could not confirm | Price $5/$25 is right. Every other model in the Opus 4.6+ line is 1M, so 200K is suspicious, but I found no direct statement of Opus 5's context. Verify before changing. |
 | `grok-4.1` | currently 1M at $0.20/$1.00, likely conflates Grok 4.1 with Grok 4.1 Fast | benchlm.ai describes 'Grok 4.1 Fast' as having a 2M context at near-DeepSeek pricing, which matches this row. Grok 4.5 and 4.3 are in the lineup; is 4.1 still sold? Check x.ai before keeping or dropping it. |
+
+## 2026-10-02
+
+### Added
+
+| Model | Provider | Input / 1M | Output / 1M | Cached / 1M | Context |
+|---|---|---|---|---|---|
+| Claude Sonnet 5.5 | Anthropic Claude | $2 | $10 | $0.2 | 1M |
+| Claude Mythos 5 | Anthropic Claude | $11 | $55 | — | 1M |
+| Claude Opus 5 (Fast mode) | Anthropic Claude | $10 | $50 | — | 1M |
+
+**Claude Sonnet 5.5**
+- Released 2026-09-28, four days before this snapshot, which is why it was missing from the first pass. Anthropic says up to 30% less per task than Sonnet 5; the per-token rate is the same $2/$10. Two independent trackers updated Sep 29 2026 agree on both figures.
+- source: costgoat.com/compare/llm-api (last updated Sep 29 2026: anthropic/claude-sonnet-5.5, 1.0M context, In $2.00 / Out $10.00)
+- source: llmprice.gitlab.io (updated Sep 29 2026: Claude Sonnet 5.5 | $2 | $10 | $0.2 | 1.0M)
+- source: anthropic.com/claude/sonnet (Anthropic: Sonnet 5.5 is a clear upgrade over Sonnet 5 at up to 30% less per task)
+
+**Claude Mythos 5**
+- Restricted frontier tier above Fable. Single source; treat the rate as indicative until Anthropic publishes it on a public pricing page.
+- source: pricepertoken.com/compare/provider/anthropic-vs-google (Claude Mythos 5 | $11.00 | $55.00)
+- source: platform.claude.com/docs/en/build-with-claude/context-windows (lists Claude Mythos 5 among the 1M-token models)
+
+**Claude Opus 5 (Fast mode)**
+- Fast mode is 2x the token price for roughly 2.5x the speed. Trade throughput against unit cost deliberately.
+- source: pricepertoken.com/compare/provider/anthropic-vs-google (Claude Opus 5 Fast | $10.00 | $50.00 | 1.0M)
+
+### Published but unverified
+
+Models or fields we could not confirm from a source we trust. Listed here
+rather than guessed at — a wrong rate is worse than a missing row.
+
+| Model | Status | Why not filled in |
+|---|---|---|
+| `gpt-6-sol / gpt-6-luna / gpt-6-astra` | three OpenAI models in wide circulation, rates contradictory across sources | costgoat.com and llmprice.gitlab.io (both updated Sep 29 2026) give Sol $1.60/$8.00, Luna $0.08/$0.40, Astra $8.00/$40. But a third source quotes OpenAI's own announcement for GPT-6 Luna as $0.10/$0.50, and costgoat separately lists OpenRouter batch rates that differ from those figures again. A first-party list price cannot be established from sources that disagree with each other, and publishing a reseller rate as a list rate would be the exact class of error this dataset exists to prevent. Left out on purpose. |
+| `gemini-3.8-flash / gemini-3.7-flash` | present in two Sep 2026 trackers, absent from this dataset | llmprice.gitlab.io lists Gemini 3.8 Flash at $0.75/$3.75 and 3.7 Flash at the same rate, both 1.0M. Single corroborating source for a Google model. Verify on ai.google.dev before adding. |
+| `gemini-3.1-pro` | sources conflict: $2.00 vs $1.35 vs $1.50 | pricepertoken.com gives $2.00/$12.00 for the standard tier. siliconanalysts.com gives $1.35/$6.75. Another siliconanalysts row shows the tiered price moving $0.75 -> $1.00 and $1.38 -> $1.50 within one week. Gemini's long-context tiers make a single headline number misleading. Needs the tier structure modelled before the headline figure changes. |
+
+## 2026-10-02
+
+### Added
+
+| Model | Provider | Input / 1M | Output / 1M | Cached / 1M | Context |
+|---|---|---|---|---|---|
+| GPT-6 Luna | OpenAI | $0.1 | $0.5 | — | 1M |
+| GPT-6 Sol | OpenAI | $2 | $10 | $0.2 | 1M |
+| GPT-6.1 Sol | OpenAI | $2 | $10 | $0.1 | 1M |
+| GPT-6 Astra | OpenAI | $10 | $50 | — | 1M |
+| GPT-6 Astra (Ultrafast) | OpenAI | $60 | $300 | $6 | 1M |
+
+**GPT-6 Luna**
+- Cheapest route into a 1.05M-token window. Best-corroborated figure in this set: three independent sources agree on $0.10/$0.50, one of them quoting OpenAI's own announcement. Above 272K input the rate for the ENTIRE request doubles on input/cache and rises 1.5x on output.
+- source: getapipulse.com/openai.html (GPT-6 rates checked 2026-09-30: GPT-6 Luna | Budget | $0.10 | $0.50 | 1.05M)
+- source: inworld.ai/models/openai-gpt-5-mini (GPT 6 Luna | $0.10 | $0.50 | 1.1M)
+- source: callmissed.com blog quoting OpenAI's own GPT-6 announcement: GPT-6 Luna $0.10/$0.50
+- source: costgoat.com and llmprice.gitlab.io (both 2026-09-29) give $0.08/$0.40 for all three GPT-6 models, i.e. exactly 0.80x every list price here. A flat 80% ratio across the whole family is a channel or promotional discount, not three independent quotes. Batch and Flex are documented at 50%, so this is not batch pricing either.
+
+**GPT-6 Sol**
+- Mid tier. Cache reads are $0.20/M. Long-context threshold applies: above 272K input, input and cache double and output rises 1.5x for the whole request. Fast tier is 2x these rates.
+- source: getapipulse.com/openai.html (GPT-6 rates checked 2026-09-30: GPT-6 Sol | Mid | $2.00 | $10.00 | 1.05M; billing scope: 'the earlier GPT-6 Sol is $0.20/M' cache reads)
+
+**GPT-6.1 Sol**
+- Same list rate as GPT-6 Sol but cache reads are half ($0.10/M vs $0.20/M). If your workload has high cache hit rate, 6.1 Sol is strictly cheaper than Sol at identical token prices.
+- source: getapipulse.com/openai.html (GPT-6.1 Sol | Mid | $2.00 | $10.00 | 1.05M; billing scope: 'GPT-6.1 Sol cache reads are $0.10/M')
+- source: inworld.ai/models/openai-gpt-5-mini (GPT 6.1 Sol | $2.00 | $10.00 | 1.1M)
+
+**GPT-6 Astra**
+- Premium tier, priced to match Anthropic Fable 5. Single source for the rate; the same 0.80x ratio seen across the GPT-6 family holds here, which is consistent with it being the list price rather than another discount. Long-context threshold applies above 272K input.
+- source: getapipulse.com/openai.html (GPT-6 Astra | Premium | $10.00 | $50.00 | 1.05M)
+- source: cross-check: getapipulse's own Fable 5 vs GPT-5.5 comparison quotes Fable 5 at $10/$50, putting Astra at the same premium rung
+
+**GPT-6 Astra (Ultrafast)**
+- Six times the standard Astra rate on output. Two constraints that are not in the price at all: low default rate limits, and NO EU data residency. Do not select this tier for a latency target without first confirming the request volume and the jurisdiction. Single source.
+- source: getapipulse.com/openai.html (billing scope: 'Astra Ultrafast short-context input/cache-read/cache-write/output rates are $60/$6/$75/$300, with low default limits and no EU residency')
+
+### Published but unverified
+
+Models or fields we could not confirm from a source we trust. Listed here
+rather than guessed at — a wrong rate is worse than a missing row.
+
+| Model | Status | Why not filled in |
+|---|---|---|
+| `gemini-3.8-flash / gemini-3.7-flash` | present in two Sep 2026 trackers, absent from this dataset | llmprice.gitlab.io lists Gemini 3.8 Flash at $0.75/$3.75 and 3.7 Flash at the same rate, both 1.0M. Still a single corroborating source for a Google model, and the same flat-discount pattern that cleared GPT-6 has not been tested here. Verify on ai.google.dev before adding. |
+| `gemini-3.1-pro` | sources conflict: $2.00 vs $1.35 vs $1.50 | pricepertoken.com gives $2.00/$12.00 for the standard tier. siliconanalysts.com gives $1.35/$6.75. Another siliconanalysts row shows the tiered price moving $0.75 -> $1.00 and $1.38 -> $1.50 within one week. The 1.35 figure is not a clean fraction of 2.00, so the flat-discount explanation that resolved GPT-6 does not apply. Needs the tier structure modelled before the headline figure changes. |
+| `gpt-6-astra output price` | $50.00 rests on one source | Astra is the only GPT-6 model without a second independent confirmation. The two corroborated models (Luna, 6.1 Sol) both check out, and the internal 0.80x consistency is reassuring, but if you quote Astra in a customer-facing budget, re-check platform.openai.com first. |

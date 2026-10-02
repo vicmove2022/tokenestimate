@@ -46,7 +46,12 @@ from pathlib import Path
 
 ROOT = Path(__file__).parent
 REPO = ROOT / "repo"
-APPJS = REPO / "js" / "app.js"
+SITE = ROOT / "site"
+REPO_APPJS = REPO / "js" / "app.js"
+# site/js/app.js is the unpatched upstream mirror that site/ was built from.
+# Writing to both makes an overwrite of one by the other harmless; this drift
+# has silently broken the calculator three times.
+MIRROR_APPJS = SITE / "js" / "app.js"
 DATA = ROOT / "site" / "data" / "model-prices.json"
 
 CHECK = "--check" in sys.argv
@@ -59,6 +64,9 @@ EST_INHERIT = {
     "claude-fable-5.1": "claude-fable-5",
     "grok-4.5": "grok-4.1",
     "grok-4.3": "grok-4.1",
+    "claude-sonnet-5.5": "claude-sonnet-5",
+    "claude-mythos-5": "claude-fable-5",
+    "claude-opus-5-fast": "claude-opus-5",
 }
 
 # Short suffix for the <select> option text. The JSON's `note` fields are
@@ -143,9 +151,9 @@ def build_entry(m, src):
 
 
 def main():
-    if not APPJS.exists():
-        raise SystemExit("repo/js/app.js not found - see the repo setup steps in 交付说明.md")
-    src = APPJS.read_text(encoding="utf-8")
+    if not REPO_APPJS.exists():
+        raise SystemExit("repo/js/app.js not found")
+    src = REPO_APPJS.read_text(encoding="utf-8")
 
     start = src.index("{ id:")
     end = src.index("];", start)
@@ -160,7 +168,14 @@ def main():
     print("model-prices.json     : %d" % len(wanted))
     print("to insert             : %d" % len(todo))
     if not todo:
-        print("\nnothing to do - app.js is already in sync")
+        # Still mirror repo -> site. site/js/app.js is the stale copy that
+        # site/ was built from, and an overwrite in either direction must be
+        # harmless; skipping this write is what made the drift come back.
+        MIRROR_APPJS.parent.mkdir(parents=True, exist_ok=True)
+        MIRROR_APPJS.write_text(src, encoding="utf-8")
+        print("\nnothing to insert - app.js already in sync")
+        for f in (REPO_APPJS, MIRROR_APPJS):
+            print("mirrored    : %s" % f.relative_to(ROOT))
         return 0
 
     lines = []
@@ -180,9 +195,11 @@ def main():
         print("\n--check: nothing written")
         return 0
 
-    APPJS.write_text(out, encoding="utf-8")
+    REPO_APPJS.write_text(out, encoding="utf-8")
+    MIRROR_APPJS.parent.mkdir(parents=True, exist_ok=True)
+    MIRROR_APPJS.write_text(out, encoding="utf-8")
 
-    chk = APPJS.read_text(encoding="utf-8")
+    chk = REPO_APPJS.read_text(encoding="utf-8")
     s2 = chk.index("{ id:")
     e2 = chk.index("];", s2)
     now = re.findall(r'\{\s*id:\s*"([^"]+)"', chk[s2:e2])
@@ -194,7 +211,8 @@ def main():
     print("donors kept : %s" % ("yes" if donors_ok else "NO - INVESTIGATE"))
     if still_missing:
         raise SystemExit("post-write verification failed, missing: %s" % still_missing)
-    print("written     : %s" % APPJS.relative_to(ROOT))
+    for f in (REPO_APPJS, MIRROR_APPJS):
+        print("written     : %s" % f.relative_to(ROOT))
     return 0
 
 

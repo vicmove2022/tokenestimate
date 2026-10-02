@@ -1,0 +1,78 @@
+{
+  "_patch": {
+    "date": "2026-10-02",
+    "appliedTo": "model-prices.json",
+    "note": "Second pass, same day. Found while researching outreach targets. Two independent aggregators updated Sep 29 2026 agree on Sonnet 5.5. The GPT-6 family is present in the wild but sources disagree on list vs batch vs reseller pricing, so it is documented as unverified rather than asserted.",
+
+    "corrections": [],
+
+    "additions": [
+      {
+        "id": "claude-sonnet-5.5",
+        "label": "Claude Sonnet 5.5",
+        "provider": "Anthropic Claude",
+        "tokenizer": "estimate",
+        "contextWindow": "1M",
+        "priceInputPer1M": 2,
+        "priceOutputPer1M": 10,
+        "priceCachedInputPer1M": 0.2,
+        "maxOutputTokens": "128K",
+        "note": "Released 2026-09-28, four days before this snapshot, which is why it was missing from the first pass. Anthropic says up to 30% less per task than Sonnet 5; the per-token rate is the same $2/$10. Two independent trackers updated Sep 29 2026 agree on both figures.",
+        "sources": [
+          "costgoat.com/compare/llm-api (last updated Sep 29 2026: anthropic/claude-sonnet-5.5, 1.0M context, In $2.00 / Out $10.00)",
+          "llmprice.gitlab.io (updated Sep 29 2026: Claude Sonnet 5.5 | $2 | $10 | $0.2 | 1.0M)",
+          "anthropic.com/claude/sonnet (Anthropic: Sonnet 5.5 is a clear upgrade over Sonnet 5 at up to 30% less per task)"
+        ]
+      },
+      {
+        "id": "claude-mythos-5",
+        "label": "Claude Mythos 5",
+        "provider": "Anthropic Claude",
+        "tokenizer": "estimate",
+        "contextWindow": "1M",
+        "priceInputPer1M": 11,
+        "priceOutputPer1M": 55,
+        "maxOutputTokens": "128K",
+        "note": "Restricted frontier tier above Fable. Single source; treat the rate as indicative until Anthropic publishes it on a public pricing page.",
+        "sources": [
+          "pricepertoken.com/compare/provider/anthropic-vs-google (Claude Mythos 5 | $11.00 | $55.00)",
+          "platform.claude.com/docs/en/build-with-claude/context-windows (lists Claude Mythos 5 among the 1M-token models)"
+        ]
+      },
+      {
+        "id": "claude-opus-5-fast",
+        "label": "Claude Opus 5 (Fast mode)",
+        "provider": "Anthropic Claude",
+        "tokenizer": "estimate",
+        "contextWindow": "1M",
+        "priceInputPer1M": 10,
+        "priceOutputPer1M": 50,
+        "maxOutputTokens": "128K",
+        "note": "Fast mode is 2x the token price for roughly 2.5x the speed. Trade throughput against unit cost deliberately.",
+        "sources": ["pricepertoken.com/compare/provider/anthropic-vs-google (Claude Opus 5 Fast | $10.00 | $50.00 | 1.0M)"]
+      }
+    ],
+
+    "flagged_not_changed": [
+      {
+        "id": "gpt-6-sol / gpt-6-luna / gpt-6-astra",
+        "status": "three OpenAI models in wide circulation, rates contradictory across sources",
+        "why": "costgoat.com and llmprice.gitlab.io (both updated Sep 29 2026) give Sol $1.60/$8.00, Luna $0.08/$0.40, Astra $8.00/$40. But a third source quotes OpenAI's own announcement for GPT-6 Luna as $0.10/$0.50, and costgoat separately lists OpenRouter batch rates that differ from those figures again. A first-party list price cannot be established from sources that disagree with each other, and publishing a reseller rate as a list rate would be the exact class of error this dataset exists to prevent. Left out on purpose.",
+        "searchableUrl": "https://tokenestimate.com/models/gpt-5-6-sol/"
+      },
+      {
+        "id": "gemini-3.8-flash / gemini-3.7-flash",
+        "status": "present in two Sep 2026 trackers, absent from this dataset",
+        "why": "llmprice.gitlab.io lists Gemini 3.8 Flash at $0.75/$3.75 and 3.7 Flash at the same rate, both 1.0M. Single corroborating source for a Google model. Verify on ai.google.dev before adding.",
+        "searchableUrl": "https://tokenestimate.com/providers/google/"
+      },
+      {
+        "id": "gemini-3.1-pro",
+        "field": "priceInputPer1M",
+        "status": "sources conflict: $2.00 vs $1.35 vs $1.50",
+        "why": "pricepertoken.com gives $2.00/$12.00 for the standard tier. siliconanalysts.com gives $1.35/$6.75. Another siliconanalysts row shows the tiered price moving $0.75 -> $1.00 and $1.38 -> $1.50 within one week. Gemini's long-context tiers make a single headline number misleading. Needs the tier structure modelled before the headline figure changes.",
+        "searchableUrl": "https://tokenestimate.com/models/gemini-3-1-pro/"
+      }
+    ]
+  }
+}

@@ -20,10 +20,16 @@ Usage:  python gen_changelog.py
 
 import json
 import re
+import hashlib
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).parent
-OUT = ROOT / "repo" / "CHANGELOG.md"
+# Written to BOTH on purpose. deploy.ps1 robocopies site/ over repo/, so if these
+# two ever diverge the copy silently reverts to whichever is older -- which is how
+# a freshly generated changelog ends up back on the 7 KB version without anyone
+# noticing. Same one-write-two-targets rule as js/app.js.
+OUTS = [ROOT / "repo" / "CHANGELOG.md", ROOT / "site" / "CHANGELOG.md"]
 
 # Grouping so the changelog reads as a story, not a dump.
 CORRECTION_KIND = "correction"
@@ -165,10 +171,18 @@ this is the citable record:
 """
 
     body = "\n".join(sections)
-    OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text(head + body, encoding="utf-8")
+    for out in OUTS:
+        out.parent.mkdir(parents=True, exist_ok=True)
+        out.write_text(head + body, encoding="utf-8")
+        print(f"wrote {out.relative_to(ROOT)}")
 
-    print(f"wrote {OUT.relative_to(ROOT)}")
+    # A divergence here means someone hand-edited one side. robocopy would pick
+    # the wrong one, so fail loudly rather than shipping a stale changelog.
+    written = {hashlib.md5(o.read_bytes()).hexdigest() for o in OUTS}
+    if len(written) != 1:
+        print("ERROR: changelog copies disagree", file=sys.stderr)
+        return 1
+
     print(f"  {total_a} additions, {total_c} corrections, {total_f} flagged")
     print(f"  {len(body.splitlines())} lines")
     return 0

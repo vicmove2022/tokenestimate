@@ -130,8 +130,8 @@ def patch(path, pairs, label):
 
 def main():
     print("patching:")
+    write_robots()
     patch(INDEX, [(NAV_ANCHOR, NAV_NEW), (TAIL_ANCHOR, TAIL_NEW), (START_ANCHOR, START_NEW)], "index.html")
-    patch(ROBOTS, [("", ROBOTS_FULL)], "robots.txt")
 
     # llms.txt: point at the full-text version and the new hubs.
     if LLMS.exists():
@@ -157,6 +157,26 @@ def main():
     print("homepage internal links now pointing at new trees:")
     for m in sorted(set(re.findall(r'href="(/models/[^"]*|/providers/[^"]*)"', idx))):
         print(f"  {m}")
+
+
+
+
+def write_robots():
+    """Overwrite robots.txt wholesale.
+
+    A write, not patch(). The earlier version passed an empty anchor to patch(),
+    and str.replace("", new, 1) INSERTS at position 0 instead of replacing,
+    which silently duplicated the entire file on every run. That shipped once.
+    """
+    ROBOTS.parent.mkdir(parents=True, exist_ok=True)
+    ROBOTS.write_text(ROBOTS_FULL, encoding="utf-8")
+    text = ROBOTS.read_text(encoding="utf-8")
+    wildcards = len(re.findall(r"(?m)^User-agent: \*", text))
+    assert wildcards == 1, "robots.txt has %d wildcard groups, expected 1" % wildcards
+    assert text.count("Sitemap:") == 1, "expected exactly one Sitemap line"
+    assert "\ufffd" not in text, "robots.txt contains a replacement character"
+    print("  robots.txt: %d bytes, single wildcard group, one Sitemap line, no mojibake"
+          % len(text.encode("utf-8")))
 
 
 if __name__ == "__main__":

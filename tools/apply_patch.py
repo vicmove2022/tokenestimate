@@ -20,7 +20,17 @@ import shutil
 from pathlib import Path
 
 ROOT = Path(__file__).parent
-DATA = ROOT / "_baseline" / "data" / "model-prices.json"
+# Patches are cumulative: apply the next one on top of the current shipping file.
+# Reading the pristine baseline every time would make a second patch silently
+# drop everything the first one added, which is exactly what happened once.
+SHIPPING = ROOT / "site" / "data" / "model-prices.json"
+PRISTINE = ROOT / "_baseline" / "data" / "model-prices.json"
+if len(sys.argv) > 2:
+    DATA = Path(sys.argv[2])
+elif SHIPPING.exists():
+    DATA = SHIPPING
+else:
+    DATA = PRISTINE
 OUT = ROOT / "site" / "data" / "model-prices.json"
 
 

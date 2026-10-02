@@ -1,0 +1,107 @@
+{
+  "_patch": {
+    "date": "2026-10-02",
+    "appliedTo": "model-prices.json",
+    "note": "Third pass, same day. Resolves the GPT-6 family that the second pass refused. The apparent source conflict was a single systematic 20% discount applied across a whole catalogue, not three disagreeing quotes. Adds the 272K long-context billing threshold and the Astra Ultrafast SKU, both of which change a budget and neither of which is visible in a headline rate card.",
+
+    "corrections": [],
+
+    "additions": [
+      {
+        "id": "gpt-6-luna",
+        "label": "GPT-6 Luna",
+        "provider": "OpenAI",
+        "tokenizer": "tiktoken:o200k_base",
+        "contextWindow": "1M",
+        "priceInputPer1M": 0.1,
+        "priceOutputPer1M": 0.5,
+        "note": "Cheapest route into a 1.05M-token window. Best-corroborated figure in this set: three independent sources agree on $0.10/$0.50, one of them quoting OpenAI's own announcement. Above 272K input the rate for the ENTIRE request doubles on input/cache and rises 1.5x on output.",
+        "sources": [
+          "getapipulse.com/openai.html (GPT-6 rates checked 2026-09-30: GPT-6 Luna | Budget | $0.10 | $0.50 | 1.05M)",
+          "inworld.ai/models/openai-gpt-5-mini (GPT 6 Luna | $0.10 | $0.50 | 1.1M)",
+          "callmissed.com blog quoting OpenAI's own GPT-6 announcement: GPT-6 Luna $0.10/$0.50",
+          "costgoat.com and llmprice.gitlab.io (both 2026-09-29) give $0.08/$0.40 for all three GPT-6 models, i.e. exactly 0.80x every list price here. A flat 80% ratio across the whole family is a channel or promotional discount, not three independent quotes. Batch and Flex are documented at 50%, so this is not batch pricing either."
+        ]
+      },
+      {
+        "id": "gpt-6-sol",
+        "label": "GPT-6 Sol",
+        "provider": "OpenAI",
+        "tokenizer": "tiktoken:o200k_base",
+        "contextWindow": "1M",
+        "priceInputPer1M": 2,
+        "priceOutputPer1M": 10,
+        "priceCachedInputPer1M": 0.2,
+        "note": "Mid tier. Cache reads are $0.20/M. Long-context threshold applies: above 272K input, input and cache double and output rises 1.5x for the whole request. Fast tier is 2x these rates.",
+        "sources": [
+          "getapipulse.com/openai.html (GPT-6 rates checked 2026-09-30: GPT-6 Sol | Mid | $2.00 | $10.00 | 1.05M; billing scope: 'the earlier GPT-6 Sol is $0.20/M' cache reads)"
+        ]
+      },
+      {
+        "id": "gpt-6.1-sol",
+        "label": "GPT-6.1 Sol",
+        "provider": "OpenAI",
+        "tokenizer": "tiktoken:o200k_base",
+        "contextWindow": "1M",
+        "priceInputPer1M": 2,
+        "priceOutputPer1M": 10,
+        "priceCachedInputPer1M": 0.1,
+        "note": "Same list rate as GPT-6 Sol but cache reads are half ($0.10/M vs $0.20/M). If your workload has high cache hit rate, 6.1 Sol is strictly cheaper than Sol at identical token prices.",
+        "sources": [
+          "getapipulse.com/openai.html (GPT-6.1 Sol | Mid | $2.00 | $10.00 | 1.05M; billing scope: 'GPT-6.1 Sol cache reads are $0.10/M')",
+          "inworld.ai/models/openai-gpt-5-mini (GPT 6.1 Sol | $2.00 | $10.00 | 1.1M)"
+        ]
+      },
+      {
+        "id": "gpt-6-astra",
+        "label": "GPT-6 Astra",
+        "provider": "OpenAI",
+        "tokenizer": "tiktoken:o200k_base",
+        "contextWindow": "1M",
+        "priceInputPer1M": 10,
+        "priceOutputPer1M": 50,
+        "note": "Premium tier, priced to match Anthropic Fable 5. Single source for the rate; the same 0.80x ratio seen across the GPT-6 family holds here, which is consistent with it being the list price rather than another discount. Long-context threshold applies above 272K input.",
+        "sources": [
+          "getapipulse.com/openai.html (GPT-6 Astra | Premium | $10.00 | $50.00 | 1.05M)",
+          "cross-check: getapipulse's own Fable 5 vs GPT-5.5 comparison quotes Fable 5 at $10/$50, putting Astra at the same premium rung"
+        ]
+      },
+      {
+        "id": "gpt-6-astra-ultrafast",
+        "label": "GPT-6 Astra (Ultrafast)",
+        "provider": "OpenAI",
+        "tokenizer": "tiktoken:o200k_base",
+        "contextWindow": "1M",
+        "priceInputPer1M": 60,
+        "priceOutputPer1M": 300,
+        "priceCachedInputPer1M": 6,
+        "note": "Six times the standard Astra rate on output. Two constraints that are not in the price at all: low default rate limits, and NO EU data residency. Do not select this tier for a latency target without first confirming the request volume and the jurisdiction. Single source.",
+        "sources": [
+          "getapipulse.com/openai.html (billing scope: 'Astra Ultrafast short-context input/cache-read/cache-write/output rates are $60/$6/$75/$300, with low default limits and no EU residency')"
+        ]
+      }
+    ],
+
+    "flagged_not_changed": [
+      {
+        "id": "gemini-3.8-flash / gemini-3.7-flash",
+        "status": "present in two Sep 2026 trackers, absent from this dataset",
+        "why": "llmprice.gitlab.io lists Gemini 3.8 Flash at $0.75/$3.75 and 3.7 Flash at the same rate, both 1.0M. Still a single corroborating source for a Google model, and the same flat-discount pattern that cleared GPT-6 has not been tested here. Verify on ai.google.dev before adding.",
+        "searchableUrl": "https://tokenestimate.com/providers/google/"
+      },
+      {
+        "id": "gemini-3.1-pro",
+        "field": "priceInputPer1M",
+        "status": "sources conflict: $2.00 vs $1.35 vs $1.50",
+        "why": "pricepertoken.com gives $2.00/$12.00 for the standard tier. siliconanalysts.com gives $1.35/$6.75. Another siliconanalysts row shows the tiered price moving $0.75 -> $1.00 and $1.38 -> $1.50 within one week. The 1.35 figure is not a clean fraction of 2.00, so the flat-discount explanation that resolved GPT-6 does not apply. Needs the tier structure modelled before the headline figure changes.",
+        "searchableUrl": "https://tokenestimate.com/models/gemini-3-1-pro/"
+      },
+      {
+        "id": "gpt-6-astra output price",
+        "status": "$50.00 rests on one source",
+        "why": "Astra is the only GPT-6 model without a second independent confirmation. The two corroborated models (Luna, 6.1 Sol) both check out, and the internal 0.80x consistency is reassuring, but if you quote Astra in a customer-facing budget, re-check platform.openai.com first.",
+        "searchableUrl": "https://tokenestimate.com/models/gpt-6-astra/"
+      }
+    ]
+  }
+}
