@@ -1,0 +1,128 @@
+# TokenCalc — AI Token Calculator
+
+> Token counting and API cost estimation for 81 AI models across 23 providers. All computation runs client-side in the browser; no text is uploaded.
+
+Home: https://tokenestimate.com/  ·  Models: https://tokenestimate.com/models/  ·  Providers: https://tokenestimate.com/providers/
+Pricing data (CC BY 4.0): https://tokenestimate.com/data/model-prices.json
+List prices last verified 2 October 2026. Source of record for citation.
+
+## Exact vs estimated counting
+
+- **Exact**: OpenAI models, counted with the official tiktoken BPE tokenizer (o200k_base / cl100k_base) in-browser.
+- **Estimate**: every other vendor, from calibrated character ratios, ~5-10% accurate on English text.
+
+## Models
+
+| Model | Provider | Counting | Context | Input /1M | Output /1M | Page |
+|---|---|---|---|---|---|---|
+| GPT-5.5 | OpenAI | exact | 1M | $5.00 | $30.00 | https://tokenestimate.com/models/gpt-5-5/ |
+| GPT-5 | OpenAI | exact | 400K | $1.25 | $10.00 | https://tokenestimate.com/models/gpt-5/ |
+| GPT-5 mini | OpenAI | exact | 400K | $0.25 | $2.00 | https://tokenestimate.com/models/gpt-5-mini/ |
+| GPT-5 nano | OpenAI | exact | 400K | $0.05 | $0.4 | https://tokenestimate.com/models/gpt-5-nano/ |
+| GPT-4o | OpenAI | exact | 128K | $2.50 | $10.00 | https://tokenestimate.com/models/gpt-4o/ |
+| GPT-4o mini | OpenAI | exact | 128K | $0.15 | $0.6 | https://tokenestimate.com/models/gpt-4o-mini/ |
+| GPT-4.1 | OpenAI | exact | 1M | $2.00 | $8.00 | https://tokenestimate.com/models/gpt-4-1/ |
+| GPT-4.1 mini | OpenAI | exact | 1M | $0.4 | $1.60 | https://tokenestimate.com/models/gpt-4-1-mini/ |
+| GPT-4.1 nano | OpenAI | exact | 1M | $0.1 | $0.4 | https://tokenestimate.com/models/gpt-4-1-nano/ |
+| o3 | OpenAI | exact | 200K | $2.00 | $8.00 | https://tokenestimate.com/models/o3/ |
+| o4-mini | OpenAI | exact | 200K | $1.10 | $4.40 | https://tokenestimate.com/models/o4-mini/ |
+| o3-mini | OpenAI | exact | 200K | $1.10 | $4.40 | https://tokenestimate.com/models/o3-mini/ |
+| o1 | OpenAI | exact | 200K | $15.00 | $60.00 | https://tokenestimate.com/models/o1/ |
+| GPT-4 Turbo | OpenAI | exact | 128K | $10.00 | $30.00 | https://tokenestimate.com/models/gpt-4-turbo/ |
+| GPT-4 | OpenAI | exact | 8K | $30.00 | $60.00 | https://tokenestimate.com/models/gpt-4/ |
+| GPT-3.5 Turbo | OpenAI | exact | 16K | $0.5 | $1.50 | https://tokenestimate.com/models/gpt-3-5-turbo/ |
+| text-embedding-3-small | OpenAI | exact | – | $0.02 | — | https://tokenestimate.com/models/embedding-3-small/ |
+| text-embedding-3-large | OpenAI | exact | – | $0.13 | — | https://tokenestimate.com/models/embedding-3-large/ |
+| Claude Opus 5.5 | Anthropic | estimate | 1M | $4.00 | $20.00 | https://tokenestimate.com/models/claude-opus-5-5/ |
+| Claude Opus 5 | Anthropic | estimate | 200K | $5.00 | $25.00 | https://tokenestimate.com/models/claude-opus-5/ |
+| Claude Sonnet 5 | Anthropic | estimate | 1M | $2.00 | $10.00 | https://tokenestimate.com/models/claude-sonnet-5/ |
+| Claude Haiku 4.5 | Anthropic | estimate | 200K | $1.00 | $5.00 | https://tokenestimate.com/models/claude-haiku-4-5/ |
+| Claude Fable 5 | Anthropic | estimate | 1M | $10.00 | $50.00 | https://tokenestimate.com/models/claude-fable-5/ |
+| Claude Opus 4.6 | Anthropic | estimate | 1M | $5.00 | $25.00 | https://tokenestimate.com/models/claude-opus-4-6/ |
+| Claude Sonnet 4.6 | Anthropic | estimate | 1M | $3.00 | $15.00 | https://tokenestimate.com/models/claude-sonnet-4-6/ |
+| Gemini 3.1 Pro | Google | estimate | 2M | $2.00 | $12.00 | https://tokenestimate.com/models/gemini-3-1-pro/ |
+| Gemini 3.6 Flash | Google | estimate | 1M | $1.50 | $7.50 | https://tokenestimate.com/models/gemini-3-6-flash/ |
+| Gemini 3.5 Flash | Google | estimate | 1M | $1.50 | $9.00 | https://tokenestimate.com/models/gemini-3-5-flash/ |
+| Gemini 3 Flash | Google | estimate | 1M | $0.5 | $3.00 | https://tokenestimate.com/models/gemini-3-flash/ |
+| Gemini 3.5 Flash-Lite | Google | estimate | 1M | $0.3 | $2.50 | https://tokenestimate.com/models/gemini-3-5-flash-lite/ |
+| Gemini 2.5 Pro | Google | estimate | 2M | $1.25 | $10.00 | https://tokenestimate.com/models/gemini-2-5-pro/ |
+| Gemini 2.5 Flash | Google | estimate | 1M | $0.3 | $2.50 | https://tokenestimate.com/models/gemini-2-5-flash/ |
+| Gemini 2.5 Flash-Lite | Google | estimate | 1M | $0.1 | $0.4 | https://tokenestimate.com/models/gemini-2-5-flash-lite/ |
+| Grok 4.1 (xAI) | xAI | estimate | 1M | $0.2 | $1.00 | https://tokenestimate.com/models/grok-4-1/ |
+| Llama 4 (Meta) | Meta | estimate | 1M | $0.15 | $0.45 | https://tokenestimate.com/models/llama-4/ |
+| Mistral Large 3 | Mistral AI | estimate | 128K | $2.00 | $6.00 | https://tokenestimate.com/models/mistral-large/ |
+| Amazon Nova Pro | Amazon | estimate | 300K | $0.8 | $3.20 | https://tokenestimate.com/models/amazon-nova-pro/ |
+| DeepSeek V4 Pro | DeepSeek (深度求索) | estimate | 128K | $0.44 | $0.87 | https://tokenestimate.com/models/deepseek-v4-pro/ |
+| DeepSeek V4 Flash | DeepSeek (深度求索) | estimate | 400K | $0.14 | $0.28 | https://tokenestimate.com/models/deepseek-v4-flash/ |
+| DeepSeek V3.2 | DeepSeek (深度求索) | estimate | 128K | $0.35 | $0.42 | https://tokenestimate.com/models/deepseek-v3-2/ |
+| DeepSeek R1 | DeepSeek (深度求索) | estimate | 64K | $0.56 | $2.50 | https://tokenestimate.com/models/deepseek-r1/ |
+| Qwen3 Max (通义千问) | Alibaba Qwen (阿里通义) | estimate | 262K | $0.78 | $3.90 | https://tokenestimate.com/models/qwen3-max/ |
+| Qwen3 Plus | Alibaba Qwen (阿里通义) | estimate | 128K | $0.4 | $1.20 | https://tokenestimate.com/models/qwen3-plus/ |
+| Qwen3 Flash | Alibaba Qwen (阿里通义) | estimate | 128K | $0.15 | $1.50 | https://tokenestimate.com/models/qwen3-flash/ |
+| Qwen3 Coder | Alibaba Qwen (阿里通义) | estimate | 128K | $0.3 | $0.9 | https://tokenestimate.com/models/qwen3-coder/ |
+| GLM-5 (智谱) | Zhipu GLM (智谱) | estimate | 200K | $1.00 | $3.20 | https://tokenestimate.com/models/glm-5/ |
+| GLM-5.1 | Zhipu GLM (智谱) | estimate | 200K | $0.98 | $3.08 | https://tokenestimate.com/models/glm-5-1/ |
+| GLM-4.7 | Zhipu GLM (智谱) | estimate | 200K | $0.5 | $2.20 | https://tokenestimate.com/models/glm-4-7/ |
+| GLM-4-Flash | Zhipu GLM (智谱) | estimate | 128K | Free | Free | https://tokenestimate.com/models/glm-4-flash/ |
+| Kimi K2.6 (月之暗面) | Moonshot Kimi (月之暗面) | estimate | 256K | $1.00 | $2.50 | https://tokenestimate.com/models/kimi-k2-6/ |
+| Kimi K2.5 | Moonshot Kimi (月之暗面) | estimate | 128K | $0.6 | $3.00 | https://tokenestimate.com/models/kimi-k2-5/ |
+| Kimi K3 | Moonshot Kimi (月之暗面) | estimate | 256K | $7.00 | $14.00 | https://tokenestimate.com/models/kimi-k3/ |
+| Doubao 1.6 Pro (豆包) | ByteDance Doubao (火山引擎) | estimate | 256K | $0.11 | $0.45 | https://tokenestimate.com/models/doubao-1-6-pro/ |
+| Doubao 1.6 Flash | ByteDance Doubao (火山引擎) | estimate | 128K | $0.01 | $0.11 | https://tokenestimate.com/models/doubao-1-6-flash/ |
+| Doubao 1.6 Lite | ByteDance Doubao (火山引擎) | estimate | 128K | $0.02 | $0.04 | https://tokenestimate.com/models/doubao-1-6-lite/ |
+| ERNIE 4.5 (文心一言) | Baidu ERNIE (百度) | estimate | 128K | $0.2 | $0.55 | https://tokenestimate.com/models/ernie-4-5/ |
+| ERNIE X1 | Baidu ERNIE (百度) | estimate | 128K | $0.006 | $0.02 | https://tokenestimate.com/models/ernie-x1/ |
+| Hunyuan 2 Pro (混元) | Tencent Hunyuan (腾讯) | estimate | 128K | $1.00 | $4.00 | https://tokenestimate.com/models/hunyuan-2-pro/ |
+| Hunyuan Lite | Tencent Hunyuan (腾讯) | estimate | 32K | Free | Free | https://tokenestimate.com/models/hunyuan-lite/ |
+| Spark Max / X1 (讯飞星火) | iFlytek Spark (讯飞星火) | estimate | 128K | $0.5 | $1.70 | https://tokenestimate.com/models/spark-max-x1/ |
+| Spark Lite | iFlytek Spark (讯飞星火) | estimate | 32K | Free | Free | https://tokenestimate.com/models/spark-lite/ |
+| MiniMax M2.5 | MiniMax (稀宇科技) | estimate | 197K | $0.29 | $1.18 | https://tokenestimate.com/models/minimax-2-5/ |
+| Yi-Lightning (零一万物) | 01.AI (零一万物) | estimate | 128K | $0.4 | $1.20 | https://tokenestimate.com/models/yi-lightning/ |
+| Step-3 (阶跃星辰) | StepFun (阶跃星辰) | estimate | 128K | $0.5 | $1.50 | https://tokenestimate.com/models/step-3/ |
+| SenseNova 5.1 (商汤) | SenseTime (商汤) | estimate | 128K | $0.04 | $0.7 | https://tokenestimate.com/models/sensetime-5-1/ |
+| Baichuan 4 (百川) | Baichuan (百川智能) | estimate | 128K | $1.20 | $2.80 | https://tokenestimate.com/models/baichuan-4/ |
+| SkyClaw 1.0 (昆仑万维) | Kunlun (昆仑万维) | estimate | 1M | $0.5 | $1.50 | https://tokenestimate.com/models/skyclaw-1-0/ |
+| MiMo V2.5 Pro (小米) | Xiaomi MiMo (小米) | estimate | 1M | $0.44 | $0.87 | https://tokenestimate.com/models/mimo-v2-5-pro/ |
+| MiMo V2.5 | Xiaomi MiMo (小米) | estimate | 1M | $0.14 | $0.28 | https://tokenestimate.com/models/mimo-v2-5/ |
+| PanGu 4.7 (盘古) | Huawei PanGu (华为云) | estimate | 128K | $0.5 | $1.50 | https://tokenestimate.com/models/pangu-4-7/ |
+| GPT-5.6 Sol | OpenAI | exact | 1M | $4.00 | $20.00 | https://tokenestimate.com/models/gpt-5-6-sol/ |
+| GPT-5.6 Terra | OpenAI | exact | 1M | $2.00 | $12.00 | https://tokenestimate.com/models/gpt-5-6-terra/ |
+| GPT-5.6 Luna | OpenAI | exact | 1M | $0.2 | $1.20 | https://tokenestimate.com/models/gpt-5-6-luna/ |
+| GPT-5.4 | OpenAI | exact | 400K | $2.50 | $15.00 | https://tokenestimate.com/models/gpt-5-4/ |
+| GPT-5.4 mini | OpenAI | exact | 400K | $0.75 | $4.50 | https://tokenestimate.com/models/gpt-5-4-mini/ |
+| GPT-5.4 nano | OpenAI | exact | 400K | $0.2 | $1.25 | https://tokenestimate.com/models/gpt-5-4-nano/ |
+| Claude Opus 4.7 | Anthropic | estimate | 1M | $5.00 | $25.00 | https://tokenestimate.com/models/claude-opus-4-7/ |
+| Claude Opus 4.8 | Anthropic | estimate | 1M | $5.00 | $25.00 | https://tokenestimate.com/models/claude-opus-4-8/ |
+| Claude Fable 5.1 | Anthropic | estimate | 1M | $10.00 | $50.00 | https://tokenestimate.com/models/claude-fable-5-1/ |
+| Grok 4.5 | xAI | estimate | 500K | $2.00 | $6.00 | https://tokenestimate.com/models/grok-4-5/ |
+| Grok 4.3 | xAI | estimate | 1M | $1.25 | $2.50 | https://tokenestimate.com/models/grok-4-3/ |
+
+## Provider pages
+
+- 01.AI (零一万物) (1 models): https://tokenestimate.com/providers/01ai/
+- Alibaba Qwen (阿里通义) (4 models): https://tokenestimate.com/providers/qwen/
+- Amazon (1 models): https://tokenestimate.com/providers/amazon/
+- Anthropic (10 models): https://tokenestimate.com/providers/anthropic/
+- Baichuan (百川智能) (1 models): https://tokenestimate.com/providers/baichuan/
+- Baidu ERNIE (百度) (2 models): https://tokenestimate.com/providers/baidu/
+- ByteDance Doubao (火山引擎) (3 models): https://tokenestimate.com/providers/doubao/
+- DeepSeek (深度求索) (4 models): https://tokenestimate.com/providers/deepseek/
+- Google (8 models): https://tokenestimate.com/providers/google/
+- Huawei PanGu (华为云) (1 models): https://tokenestimate.com/providers/huawei/
+- Kunlun (昆仑万维) (1 models): https://tokenestimate.com/providers/kunlun/
+- Meta (1 models): https://tokenestimate.com/providers/meta/
+- MiniMax (稀宇科技) (1 models): https://tokenestimate.com/providers/minimax/
+- Mistral AI (1 models): https://tokenestimate.com/providers/mistral/
+- Moonshot Kimi (月之暗面) (3 models): https://tokenestimate.com/providers/moonshot/
+- OpenAI (24 models): https://tokenestimate.com/providers/openai/
+- SenseTime (商汤) (1 models): https://tokenestimate.com/providers/sensetime/
+- StepFun (阶跃星辰) (1 models): https://tokenestimate.com/providers/stepfun/
+- Tencent Hunyuan (腾讯) (2 models): https://tokenestimate.com/providers/tencent/
+- Xiaomi MiMo (小米) (2 models): https://tokenestimate.com/providers/xiaomi/
+- Zhipu GLM (智谱) (4 models): https://tokenestimate.com/providers/zhipu/
+- iFlytek Spark (讯飞星火) (2 models): https://tokenestimate.com/providers/iflytek/
+- xAI (3 models): https://tokenestimate.com/providers/xai/
+
+## Citation
+
+TokenCalc, "AI Model Token Pricing Data", tokenestimate.com, 2 October 2026. CC BY 4.0.

@@ -1,0 +1,248 @@
+{
+  "_patch": {
+    "date": "2026-10-02",
+    "appliedTo": "model-prices.json",
+    "previousLastVerified": "2026-09-30",
+    "note": "Every line here is sourced. Sources are the providers' own pages where reachable, otherwise named aggregators with a retrieval date. Nothing in this file is estimated. Review before shipping.",
+
+    "corrections": [
+      {
+        "id": "claude-opus-4.6",
+        "field": "contextWindow",
+        "from": "200K",
+        "to": "1M",
+        "why": "Opus 4.6 shipped Feb 5 2026 with the full 1M context at standard pricing, no long-context surcharge. The 200K figure was stale.",
+        "sources": [
+          "anthropic.com/claude/opus",
+          "cloudzero.com/blog/claude-api-pricing (Opus 4.6: context 1M)",
+          "pricepertoken.com/pricing-page/model/anthropic-claude-opus-4.6"
+        ]
+      },
+      {
+        "id": "claude-sonnet-4.6",
+        "field": "contextWindow",
+        "from": "200K",
+        "to": "1M",
+        "why": "Sonnet 4.6 shipped Feb 17 2026 at 1M context. The 200K figure was stale.",
+        "sources": [
+          "pricepertoken.com/pricing-page/model/anthropic-claude-sonnet-4.6 (released 2026-02-17, context 1.0M)",
+          "cloudzero.com/blog/claude-api-pricing (Sonnet 4.6 includes full 1M at standard pricing)"
+        ]
+      },
+      {
+        "id": "claude-sonnet-5",
+        "field": "contextWindow",
+        "from": "200K",
+        "to": "1M",
+        "why": "Sonnet 5 price ($2/$10) was already correct, but its context is 1M, not 200K.",
+        "sources": [
+          "anthropic.com/claude/sonnet (Sonnet 5 at $2/$10)",
+          "pricepertoken.com/pricing-page/model/xai-grok-4.5 comparison table (Claude Sonnet 5, context 1,000,000)"
+        ]
+      }
+    ],
+
+    "additions": [
+      {
+        "id": "gpt-5.6-sol",
+        "label": "GPT-5.6 Sol",
+        "provider": "OpenAI",
+        "tokenizer": "tiktoken:o200k_base",
+        "contextWindow": "1M",
+        "priceInputPer1M": 4,
+        "priceOutputPer1M": 20,
+        "priceCachedInputPer1M": 0.4,
+        "note": "Promotional rate, published by OpenAI as available at least through 2026-11-21. Standard tier is $5/$30. Flag this on the page so nobody hard-codes $4 into a budget.",
+        "sources": [
+          "developers.openai.com/api/docs/pricing",
+          "aws.amazon.com/about-aws/whats-new/2026/08/bedrock-openai-gpt-56-sol-reduced-pricing/ (Aug 21 2026: now $4/$20, 20% input / 33.3% output cut)",
+          "pricepertoken.com/token-counter/model/openai-gpt-5.6-sol"
+        ]
+      },
+      {
+        "id": "gpt-5.6-terra",
+        "label": "GPT-5.6 Terra",
+        "provider": "OpenAI",
+        "tokenizer": "tiktoken:o200k_base",
+        "contextWindow": "1M",
+        "priceInputPer1M": 2,
+        "priceOutputPer1M": 12,
+        "priceCachedInputPer1M": 0.2,
+        "note": "Cut 20% on 2026-07-30 from $2.50/$15. Balanced tier between Sol and Luna.",
+        "sources": [
+          "cometapi.com/gpt-5-6-pricing (2026-07-30 update: Terra $2/$12)",
+          "pricepertoken.com/pricing-page/model/xai-grok-4.5 (GPT-5.6 Terra $2.000/$12.000, context 1,050,000)"
+        ]
+      },
+      {
+        "id": "gpt-5.6-luna",
+        "label": "GPT-5.6 Luna",
+        "provider": "OpenAI",
+        "tokenizer": "tiktoken:o200k_base",
+        "contextWindow": "1M",
+        "priceInputPer1M": 0.2,
+        "priceOutputPer1M": 1.2,
+        "priceCachedInputPer1M": 0.02,
+        "note": "Cut 80% on 2026-07-30 from $1/$6. Cheapest frontier OpenAI route.",
+        "sources": [
+          "callmissed.com/blog/gpt-luna-api-pricing-context-window-benchmarks (OpenAI docs, Sept 2026: $0.20 in / $0.02 cached / $1.20 out)",
+          "cometapi.com/gpt-5-6-pricing",
+          "benchlm.ai/openai/api-pricing"
+        ]
+      },
+      {
+        "id": "gpt-5.4",
+        "label": "GPT-5.4",
+        "provider": "OpenAI",
+        "tokenizer": "tiktoken:o200k_base",
+        "contextWindow": "400K",
+        "priceInputPer1M": 2.5,
+        "priceOutputPer1M": 15,
+        "priceCachedInputPer1M": 0.25,
+        "sources": [
+          "cometapi.com/gpt-5-6-pricing (gpt-5.4 $2.50 / $0.25 cached / $15.00)",
+          "tokencalc.org/models/gpt-5-4-nano"
+        ]
+      },
+      {
+        "id": "gpt-5.4-mini",
+        "label": "GPT-5.4 mini",
+        "provider": "OpenAI",
+        "tokenizer": "tiktoken:o200k_base",
+        "contextWindow": "400K",
+        "priceInputPer1M": 0.75,
+        "priceOutputPer1M": 4.5,
+        "priceCachedInputPer1M": 0.075,
+        "sources": ["cometapi.com/gpt-5-6-pricing (gpt-5.4-mini $0.75 / $0.075 cached / $4.50)"]
+      },
+      {
+        "id": "gpt-5.4-nano",
+        "label": "GPT-5.4 nano",
+        "provider": "OpenAI",
+        "tokenizer": "tiktoken:o200k_base",
+        "contextWindow": "400K",
+        "priceInputPer1M": 0.2,
+        "priceOutputPer1M": 1.25,
+        "priceCachedInputPer1M": 0.02,
+        "sources": ["cometapi.com/gpt-5-6-pricing (gpt-5.4-nano $0.20 / $0.02 cached / $1.25)"]
+      },
+      {
+        "id": "claude-opus-4.7",
+        "label": "Claude Opus 4.7",
+        "provider": "Anthropic Claude",
+        "tokenizer": "estimate",
+        "contextWindow": "1M",
+        "priceInputPer1M": 5,
+        "priceOutputPer1M": 25,
+        "priceCachedInputPer1M": 0.5,
+        "maxOutputTokens": "300K",
+        "note": "Same sticker price as Opus 4.6 but shipped a tokenizer change that can inflate the same text by up to 35%. Worth calling out on the page.",
+        "sources": [
+          "anthropic.com/claude/opus (Opus 4.7, released 2026-04-16)",
+          "finout.io/blog/claude-opus-4.7-pricing-the-real-cost-story-behind-the-unchanged-price-tag",
+          "cloudzero.com/blog/claude-api-pricing"
+        ]
+      },
+      {
+        "id": "claude-opus-4.8",
+        "label": "Claude Opus 4.8",
+        "provider": "Anthropic Claude",
+        "tokenizer": "estimate",
+        "contextWindow": "1M",
+        "priceInputPer1M": 5,
+        "priceOutputPer1M": 25,
+        "priceCachedInputPer1M": 0.5,
+        "maxOutputTokens": "300K",
+        "note": "Released 2026-05-28. Same $5/$25 as 4.7. Fast Mode is 3x cheaper per token at $10/$50.",
+        "sources": [
+          "anthropic.com/claude/opus (Opus 4.8, released 2026-05-28)",
+          "metacto.com/blogs/anthropic-api-pricing"
+        ]
+      },
+      {
+        "id": "claude-fable-5.1",
+        "label": "Claude Fable 5.1",
+        "provider": "Anthropic Claude",
+        "tokenizer": "estimate",
+        "contextWindow": "1M",
+        "priceInputPer1M": 10,
+        "priceOutputPer1M": 50,
+        "maxOutputTokens": "128K",
+        "note": "Released 2026-09-01. Same rate as Fable 5. Current Fable-tier flagship.",
+        "sources": [
+          "anthropic.com/claude/opus (references Fable 5.1)",
+          "mashable.com/tech/claude-opus-launch-promises-better-performance-cheaper-price (Fable 5.1 released 2026-09-01, lower prices, tighter safeguards)",
+          "blackbox.ai/models/blackboxai/anthropic/claude-fable-5 (Fable 5.1: 1M context, $10/$50)"
+        ]
+      },
+      {
+        "id": "grok-4.5",
+        "label": "Grok 4.5",
+        "provider": "US & EU",
+        "tokenizer": "estimate",
+        "contextWindow": "500K",
+        "priceInputPer1M": 2,
+        "priceOutputPer1M": 6,
+        "priceCachedInputPer1M": 0.3,
+        "maxOutputTokens": "64K",
+        "note": "xAI flagship, released 2026-07-08. Only a 3x output-to-input ratio where rivals charge 5-6x.",
+        "sources": [
+          "pricepertoken.com/pricing-page/model/xai-grok-4.5 (released 2026-07-08, $2/$6, 500K context)",
+          "cometapi.com/grok-api-pricing-cost-guide/ (2026-07-10: grok-4.5 $2 / $0.50 cached / $6, 500k context)",
+          "openrouter.ai/x-ai/grok-4.5"
+        ]
+      },
+      {
+        "id": "grok-4.3",
+        "label": "Grok 4.3",
+        "provider": "US & EU",
+        "tokenizer": "estimate",
+        "contextWindow": "1M",
+        "priceInputPer1M": 1.25,
+        "priceOutputPer1M": 2.5,
+        "priceCachedInputPer1M": 0.2,
+        "maxOutputTokens": "32K",
+        "note": "Cheaper than Grok 4.5 AND has a larger context window. Rates double on prompts over 200K tokens.",
+        "sources": [
+          "cometapi.com/grok-api-pricing-cost-guide/ (grok-4.3 $1.25 / $0.20 / $2.50, 1M context)",
+          "requesty.ai/models/compare/xai--grok-4.3/xai--grok-4.5",
+          "pricepertoken.com/pricing-page/model/xai-grok-4.3"
+        ]
+      }
+    ],
+
+    "flagged_not_changed": [
+      {
+        "id": "claude-sonnet-5.5",
+        "status": "announced 2026-09-28, rates not yet in the sources I could reach",
+        "why": "Anthropic published only 'up to 30% less per task than Sonnet 5', which is a per-task figure, not a per-token rate. Adding a guessed rate would be worse than omitting the model. Check anthropic.com/claude/sonnet and add it there.",
+        "searchableUrl": "https://tokenestimate.com/models/claude-sonnet-5/"
+      },
+      {
+        "id": "claude-mythos-5.1",
+        "status": "referenced by Anthropic but restricted; no public rate card",
+        "why": "Do not publish a rate you cannot verify."
+      },
+      {
+        "id": "gpt-6-astra / gpt-6-luna",
+        "status": "appear in OpenAI pricing-page snippets but I could not open the page to confirm tiers",
+        "why": "Fragments mentioned $10/$50 for Astra and $0.10/$0.50 for Luna. Verify on developers.openai.com/api/docs/pricing before adding.",
+        "searchableUrl": "https://tokenestimate.com/models/gpt-5-6-sol/"
+      },
+      {
+        "id": "claude-opus-5",
+        "field": "contextWindow",
+        "status": "currently 200K, could not confirm",
+        "why": "Price $5/$25 is right. Every other model in the Opus 4.6+ line is 1M, so 200K is suspicious, but I found no direct statement of Opus 5's context. Verify before changing.",
+        "searchableUrl": "https://tokenestimate.com/models/claude-opus-5/"
+      },
+      {
+        "id": "grok-4.1",
+        "field": "contextWindow",
+        "status": "currently 1M at $0.20/$1.00, likely conflates Grok 4.1 with Grok 4.1 Fast",
+        "why": "benchlm.ai describes 'Grok 4.1 Fast' as having a 2M context at near-DeepSeek pricing, which matches this row. Grok 4.5 and 4.3 are in the lineup; is 4.1 still sold? Check x.ai before keeping or dropping it.",
+        "searchableUrl": "https://tokenestimate.com/models/grok-4-1/"
+      }
+    ]
+  }
+}

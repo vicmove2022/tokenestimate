@@ -97,6 +97,18 @@ const MODELS = [
   { id: "pangu-4.7", label: "PanGu 4.7 (盘古)", group: "Huawei PanGu (华为云)", type: "est", est: { cjk: 0.9, ascii: 3.8 }, priceIn: 0.5, priceOut: 1.5, ctx: "128K", note: "" },
 
   { id: "custom", label: "Custom (any model)", group: "Custom", type: "exact", encoding: "o200k_base", priceIn: 1.0, priceOut: 1.0, ctx: "–", note: "" }
+,
+{ id: "gpt-5.6-sol", label: "GPT-5.6 Sol", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 4, priceOut: 20, ctx: "1M", note: "promo price", },
+{ id: "gpt-5.6-terra", label: "GPT-5.6 Terra", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 2, priceOut: 12, ctx: "1M", note: "price cut Jul 2026", },
+{ id: "gpt-5.6-luna", label: "GPT-5.6 Luna", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 0.2, priceOut: 1.2, ctx: "1M", note: "cheapest GPT-5.6", },
+{ id: "gpt-5.4", label: "GPT-5.4", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 2.5, priceOut: 15, ctx: "400K", },
+{ id: "gpt-5.4-mini", label: "GPT-5.4 mini", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 0.75, priceOut: 4.5, ctx: "400K", },
+{ id: "gpt-5.4-nano", label: "GPT-5.4 nano", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 0.2, priceOut: 1.25, ctx: "400K", },
+{ id: "claude-opus-4.7", label: "Claude Opus 4.7", group: "Anthropic Claude", type: "est", priceIn: 5, priceOut: 25, ctx: "1M", est: { cjk: 1.2, ascii: 4 }, note: "tokenizer changed", },
+{ id: "claude-opus-4.8", label: "Claude Opus 4.8", group: "Anthropic Claude", type: "est", priceIn: 5, priceOut: 25, ctx: "1M", est: { cjk: 1.2, ascii: 4 }, note: "Fast Mode available", },
+{ id: "claude-fable-5.1", label: "Claude Fable 5.1", group: "Anthropic Claude", type: "est", priceIn: 10, priceOut: 50, ctx: "1M", est: { cjk: 1.2, ascii: 4 }, note: "latest Fable", },
+{ id: "grok-4.5", label: "Grok 4.5", group: "US & EU", type: "est", priceIn: 2, priceOut: 6, ctx: "500K", est: { cjk: 1.2, ascii: 4 }, note: "xAI flagship", },
+{ id: "grok-4.3", label: "Grok 4.3", group: "US & EU", type: "est", priceIn: 1.25, priceOut: 2.5, ctx: "1M", est: { cjk: 1.2, ascii: 4 }, note: "bigger context, cheaper", }
 ];
 
 const SAMPLE = `Tokens are how GPT models read text: nine English words usually cost about twelve tokens.

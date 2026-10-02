@@ -7,7 +7,7 @@
     "embed": "https://tokenestimate.com/embed.html",
     "license": "CC BY 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-    "lastVerified": "2026-09-30",
+    "lastVerified": "2026-10-02",
     "currency": "USD",
     "unit": "price per 1,000,000 tokens",
     "citation": "TokenCalc, \"AI Model Token Pricing Data\", tokenestimate.com, 2026.",
@@ -15,7 +15,17 @@
     "counting": {
       "exact": "OpenAI models are counted with the official tiktoken BPE tokenizer (js-tiktoken, o200k_base / cl100k_base) running client-side.",
       "estimate": "Other providers use a calibrated character-ratio estimate, accurate to roughly 5-10%. tokenizer field says which."
-    }
+    },
+    "previousLastVerified": "2026-09-30",
+    "revisionNote": "Updated 2026-10-02: 11 models added, 3 field corrections. Per-model sources are listed in the repository's pricing-patch files. Cite this date, not the old one.",
+    "revisions": [
+      {
+        "date": "2026-10-02",
+        "added": 11,
+        "corrected": 3,
+        "patchFile": "pricing-patch-2026-10-02.json"
+      }
+    ]
   },
   "models": [
     {
@@ -220,7 +230,7 @@
         "tokensPerCJKChar": 1.2,
         "charsPerToken": 4
       },
-      "contextWindow": "200K",
+      "contextWindow": "1M",
       "priceInputPer1M": 2,
       "priceOutputPer1M": 10,
       "note": "intro pricing"
@@ -261,7 +271,7 @@
         "tokensPerCJKChar": 1.2,
         "charsPerToken": 4
       },
-      "contextWindow": "200K",
+      "contextWindow": "1M",
       "priceInputPer1M": 5,
       "priceOutputPer1M": 25
     },
@@ -274,7 +284,7 @@
         "tokensPerCJKChar": 1.2,
         "charsPerToken": 4
       },
-      "contextWindow": "200K",
+      "contextWindow": "1M",
       "priceInputPer1M": 3,
       "priceOutputPer1M": 15
     },
@@ -876,6 +886,128 @@
       "contextWindow": "128K",
       "priceInputPer1M": 0.5,
       "priceOutputPer1M": 1.5
+    },
+    {
+      "id": "gpt-5.6-sol",
+      "label": "GPT-5.6 Sol",
+      "provider": "OpenAI",
+      "tokenizer": "tiktoken:o200k_base",
+      "contextWindow": "1M",
+      "priceInputPer1M": 4,
+      "priceOutputPer1M": 20,
+      "priceCachedInputPer1M": 0.4,
+      "note": "Promotional rate, published by OpenAI as available at least through 2026-11-21. Standard tier is $5/$30. Flag this on the page so nobody hard-codes $4 into a budget."
+    },
+    {
+      "id": "gpt-5.6-terra",
+      "label": "GPT-5.6 Terra",
+      "provider": "OpenAI",
+      "tokenizer": "tiktoken:o200k_base",
+      "contextWindow": "1M",
+      "priceInputPer1M": 2,
+      "priceOutputPer1M": 12,
+      "priceCachedInputPer1M": 0.2,
+      "note": "Cut 20% on 2026-07-30 from $2.50/$15. Balanced tier between Sol and Luna."
+    },
+    {
+      "id": "gpt-5.6-luna",
+      "label": "GPT-5.6 Luna",
+      "provider": "OpenAI",
+      "tokenizer": "tiktoken:o200k_base",
+      "contextWindow": "1M",
+      "priceInputPer1M": 0.2,
+      "priceOutputPer1M": 1.2,
+      "priceCachedInputPer1M": 0.02,
+      "note": "Cut 80% on 2026-07-30 from $1/$6. Cheapest frontier OpenAI route."
+    },
+    {
+      "id": "gpt-5.4",
+      "label": "GPT-5.4",
+      "provider": "OpenAI",
+      "tokenizer": "tiktoken:o200k_base",
+      "contextWindow": "400K",
+      "priceInputPer1M": 2.5,
+      "priceOutputPer1M": 15,
+      "priceCachedInputPer1M": 0.25
+    },
+    {
+      "id": "gpt-5.4-mini",
+      "label": "GPT-5.4 mini",
+      "provider": "OpenAI",
+      "tokenizer": "tiktoken:o200k_base",
+      "contextWindow": "400K",
+      "priceInputPer1M": 0.75,
+      "priceOutputPer1M": 4.5,
+      "priceCachedInputPer1M": 0.075
+    },
+    {
+      "id": "gpt-5.4-nano",
+      "label": "GPT-5.4 nano",
+      "provider": "OpenAI",
+      "tokenizer": "tiktoken:o200k_base",
+      "contextWindow": "400K",
+      "priceInputPer1M": 0.2,
+      "priceOutputPer1M": 1.25,
+      "priceCachedInputPer1M": 0.02
+    },
+    {
+      "id": "claude-opus-4.7",
+      "label": "Claude Opus 4.7",
+      "provider": "Anthropic Claude",
+      "tokenizer": "estimate",
+      "contextWindow": "1M",
+      "priceInputPer1M": 5,
+      "priceOutputPer1M": 25,
+      "priceCachedInputPer1M": 0.5,
+      "maxOutputTokens": "300K",
+      "note": "Same sticker price as Opus 4.6 but shipped a tokenizer change that can inflate the same text by up to 35%. Worth calling out on the page."
+    },
+    {
+      "id": "claude-opus-4.8",
+      "label": "Claude Opus 4.8",
+      "provider": "Anthropic Claude",
+      "tokenizer": "estimate",
+      "contextWindow": "1M",
+      "priceInputPer1M": 5,
+      "priceOutputPer1M": 25,
+      "priceCachedInputPer1M": 0.5,
+      "maxOutputTokens": "300K",
+      "note": "Released 2026-05-28. Same $5/$25 as 4.7. Fast Mode is 3x cheaper per token at $10/$50."
+    },
+    {
+      "id": "claude-fable-5.1",
+      "label": "Claude Fable 5.1",
+      "provider": "Anthropic Claude",
+      "tokenizer": "estimate",
+      "contextWindow": "1M",
+      "priceInputPer1M": 10,
+      "priceOutputPer1M": 50,
+      "maxOutputTokens": "128K",
+      "note": "Released 2026-09-01. Same rate as Fable 5. Current Fable-tier flagship."
+    },
+    {
+      "id": "grok-4.5",
+      "label": "Grok 4.5",
+      "provider": "US & EU",
+      "tokenizer": "estimate",
+      "contextWindow": "500K",
+      "priceInputPer1M": 2,
+      "priceOutputPer1M": 6,
+      "priceCachedInputPer1M": 0.3,
+      "maxOutputTokens": "64K",
+      "note": "xAI flagship, released 2026-07-08. Only a 3x output-to-input ratio where rivals charge 5-6x."
+    },
+    {
+      "id": "grok-4.3",
+      "label": "Grok 4.3",
+      "provider": "US & EU",
+      "tokenizer": "estimate",
+      "contextWindow": "1M",
+      "priceInputPer1M": 1.25,
+      "priceOutputPer1M": 2.5,
+      "priceCachedInputPer1M": 0.2,
+      "maxOutputTokens": "32K",
+      "note": "Cheaper than Grok 4.5 AND has a larger context window. Rates double on prompts over 200K tokens."
     }
   ]
 }

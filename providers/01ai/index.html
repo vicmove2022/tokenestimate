@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>01.AI (零一万物) Pricing — 1 Models, Rates &amp;amp; Token Calculator (2026)</title>
+  <meta name="description" content="All 1 01.AI (零一万物) models: list price per 1M input and output tokens, context windows and tokenizer behaviour, verified 2 October 2026. Free in-browser calculators for each model.">
+  <meta name="keywords" content="01.AI (零一万物) pricing, 01.AI (零一万物) API pricing, 01.AI (零一万物) token cost, 01.AI (零一万物) models list">
+  <meta name="author" content="TokenCalc">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+
+  <link rel="canonical" href="https://tokenestimate.com/providers/01ai/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="TokenCalc">
+  <meta property="og:title" content="01.AI (零一万物) Pricing — 1 Models, Rates &amp;amp; Token Calculator (2026)">
+  <meta property="og:description" content="All 1 01.AI (零一万物) models: list price per 1M input and output tokens, context windows and tokenizer behaviour, verified 2 October 2026. Free in-browser calculators for each model.">
+  <meta property="og:url" content="https://tokenestimate.com/providers/01ai/">
+  <meta property="og:image" content="https://tokenestimate.com/og-cover.png">
+  <meta property="og:locale" content="en_US">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="01.AI (零一万物) Pricing — 1 Models, Rates &amp;amp; Token Calculator (2026)">
+  <meta name="twitter:description" content="All 1 01.AI (零一万物) models: list price per 1M input and output tokens, context windows and tokenizer behaviour, verified 2 October 2026. Free in-browser calculators for each model.">
+  <meta name="twitter:image" content="https://tokenestimate.com/og-cover.png">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "01.AI (零一万物) model token pricing",
+  "description": "Input and output price per 1M tokens for 1 01.AI (零一万物) models, verified 2 October 2026.",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "creator": {
+    "@type": "Organization",
+    "name": "TokenCalc"
+  },
+  "distribution": {
+    "@type": "DataDownload",
+    "contentUrl": "https://tokenestimate.com/data/model-prices.json",
+    "encodingFormat": "application/json"
+  }
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How many 01.AI (零一万物) models can I count tokens for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "1 on TokenCalc, each with its own page and its own preselected calculator: Yi-Lightning (零一万物)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are 01.AI (零一万物) token counts exact?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "01.AI (零一万物) does not publish a public tokenizer, so TokenCalc estimates from calibrated character ratios at 5–10% accuracy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which 01.AI (零一万物) model is cheapest per 1M input tokens?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Among the models tracked here: ERNIE X1 at $0.006/1M, Doubao 1.6 Flash at $0.01/1M, text-embedding-3-small at $0.02/1M, Doubao 1.6 Lite at $0.02/1M, SenseNova 5.1 (商汤) at $0.04/1M. Prices verified 2 October 2026."
+      }
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://tokenestimate.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Providers",
+      "item": "https://tokenestimate.com/providers/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "01.AI (零一万物)"
+    }
+  ]
+}
+  </script>
+  <style>
+    .article { max-width: 820px; margin: 24px auto 60px; padding: 0 26px; }
+    .article h1 { font-size: 2rem; line-height: 1.25; margin-bottom: 10px; }
+    .article h2 { font-size: 1.4rem; margin: 36px 0 12px; }
+    .article h3 { font-size: 1.05rem; margin: 22px 0 6px; }
+    .article p, .article li { color: var(--text-dim); font-size: .98rem; }
+    .article ul, .article ol { margin: 10px 0 14px 22px; }
+    .article li { margin-bottom: 6px; }
+    .article table { width: 100%; border-collapse: collapse; margin: 16px 0 22px; font-size: .9rem; }
+    .article th, .article td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); }
+    .article th { color: var(--text); font-weight: 600; }
+    .article .meta { color: var(--text-faint); font-size: .85rem; margin-bottom: 24px; }
+    .tag { font-size: .68rem; }
+    code { font-family: var(--mono); background: var(--bg-input); border: 1px solid var(--border); border-radius: 6px; padding: 1px 6px; font-size: .88em; }
+    .cta { background: var(--bg-soft); border: 1px solid var(--border-soft); border-radius: var(--radius-sm); padding: 18px 22px; margin: 26px 0; }
+    .cta a { font-weight: 600; }
+    .breadcrumb { font-size: .82rem; color: var(--text-faint); margin-bottom: 16px; }
+    .calc { margin: 26px 0 8px; }
+    .calc iframe { display: block; width: 100%; height: 660px; border: 1px solid #dfe6f1; border-radius: 16px; background: #fff; }
+    .exact { color: #16a34a; font-weight: 600; }
+    .approx { color: #b45309; font-weight: 600; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; margin: 18px 0 26px; }
+    .stat { background: var(--bg-soft); border: 1px solid var(--border-soft); border-radius: var(--radius-sm); padding: 14px 16px; }
+    .stat b { display: block; font-size: 1.15rem; color: var(--text); }
+    .stat span { font-size: .78rem; color: var(--text-faint); }
+    .note { background: var(--bg-soft); border-left: 3px solid var(--accent); border-radius: var(--radius-sm); padding: 13px 16px; margin: 18px 0 22px; font-size: .92rem; color: var(--text-dim); }
+.note b { color: var(--text); }
+.links { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 26px; }
+    .links a { font-size: .82rem; padding: 5px 11px; border: 1px solid var(--border); border-radius: 999px; text-decoration: none; }
+  </style>
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="8f1fd21d-3670-41e7-adf4-20d24de46fd4"></script>
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/index.html" aria-label="AI Token Calculator home">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#4f8cff" stroke-width="2" aria-hidden="true">
+          <path d="M12 2 4 6v6c0 5 3.4 9.1 8 10 4.6-.9 8-5 8-10V6l-8-4Z"/>
+          <path d="m9 12 2 2 4-4" stroke="#22d3ee" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Token<em>Calc</em></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/index.html#tool">Calculator</a>
+        <a href="/models/">Models</a>
+        <a href="/providers/">Providers</a>
+        <a href="/api.html">Pricing data</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <article class="article">
+        <div class="breadcrumb"><a href="/">Home</a> / <a href="/providers/">Providers</a> / 01.AI (零一万物)</div>
+        <h1>01.AI (零一万物) Pricing &amp; Token Calculator</h1>
+        <p class="meta">1 models · prices verified 2 October 2026</p>
+
+        <p>All 1 01.AI (零一万物) models on one page: context windows, tokenizer behaviour and
+        list price per 1M input and output tokens. Each row links to a dedicated calculator already
+        preselected to that model.</p>
+
+        <p>Every rate below is list pricing per 1M tokens, cross-checked against 01.AI (零一万物)'s published docs and re-verified on 2 October 2026. The same data is available as <a href="/api.html">machine-readable JSON under CC BY 4.0</a> if you would rather not scrape it.</p>
+
+        <h2>01.AI (零一万物) model pricing table</h2>
+        <table>
+          <thead><tr><th>Model</th><th>Tokenizer</th><th>Context</th><th>Input / 1M</th><th>Output / 1M</th></tr></thead>
+          <tbody>
+            <tr><td><a href="/models/yi-lightning/">Yi-Lightning (零一万物)</a></td><td><span class="tag">estimate</span></td><td>128K</td><td>$0.4</td><td>$1.20</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Cheapest 01.AI (零一万物) models per 1M input tokens</h2>
+        <p>ERNIE X1 at $0.006/1M, Doubao 1.6 Flash at $0.01/1M, text-embedding-3-small at $0.02/1M, Doubao 1.6 Lite at $0.02/1M, SenseNova 5.1 (商汤) at $0.04/1M. Output rates run several times higher than input rates on most vendors, so a
+        token-heavy workflow with long generations is priced by the output column.</p>
+
+        <h2>Largest 01.AI (零一万物) context windows</h2>
+        <p>Gemini 3.1 Pro (2M), Gemini 2.5 Pro (2M), GPT-5.5 (1M). Context headroom is usually the binding constraint before price is — check it first.</p>
+
+        <h2>Count tokens for any 01.AI (零一万物) model</h2>
+        <div class="calc">
+          <iframe src="/?embed=1" title="01.AI (零一万物) token calculator" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <p>Pick the model from the dropdown, or open any row above for a page preselected to it.</p>
+
+        <h2>01.AI (零一万物) pricing FAQs</h2>
+        <h3>How many 01.AI (零一万物) models can I count tokens for?</h3>
+        <p>1 on TokenCalc, each with its own page and its own preselected calculator: Yi-Lightning (零一万物).</p>
+        <h3>Are 01.AI (零一万物) token counts exact?</h3>
+        <p>01.AI (零一万物) does not publish a public tokenizer, so TokenCalc estimates from calibrated character ratios at 5–10% accuracy.</p>
+        <h3>Which 01.AI (零一万物) model is cheapest per 1M input tokens?</h3>
+        <p>Among the models tracked here: ERNIE X1 at $0.006/1M, Doubao 1.6 Flash at $0.01/1M, text-embedding-3-small at $0.02/1M, Doubao 1.6 Lite at $0.02/1M, SenseNova 5.1 (商汤) at $0.04/1M. Prices verified 2 October 2026.</p>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div>
+        <strong>TokenCalc — AI Token Calculator</strong><br>
+        Free, private token counting and API cost estimation for 81 AI models.
+      </div>
+      <div>
+        List prices last verified 2 October 2026.<br>
+        <a href="/privacy.html">Privacy Policy</a> · <a href="/models/">All models</a> · <a href="/api.html">Pricing JSON</a> · © 2026 TokenCalc.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

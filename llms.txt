@@ -2,6 +2,11 @@
 
 > TokenCalc (tokenestimate.com) is a free, browser-based AI token calculator and API cost estimator for developers. It counts tokens for GPT-5.5, GPT-5, GPT-4o, o1/o3, Claude Opus 5.5, Gemini, Llama, DeepSeek, Qwen, GLM, Kimi, Doubao and 60+ other models, and estimates API costs per 1M tokens. All processing runs 100% locally in the browser — text is never uploaded, no API key and no sign-up required.
 
+- [Every model calculator](https://tokenestimate.com/models/)
+- [Pricing by provider](https://tokenestimate.com/providers/)
+
+Full-text version of this data: https://tokenestimate.com/llms-full.txt
+Machine-readable pricing: https://tokenestimate.com/data/model-prices.json
 ## Main Pages
 
 Tool pages — the home page hosts the live calculator; each provider page carries its own pricing table, guide and FAQ:
