@@ -59,27 +59,54 @@ def set_dates(iso):
     VERIFIED_HUMAN = f"{d} {_month(m)} {y}"
     human = VERIFIED_HUMAN
 
-# Vendor resolution lives in vendors.py so build.py, apply_patch.py and
-# verify.py cannot drift apart. It used to be a private copy here, which meant
-# the site and the published dataset could disagree about what a vendor is --
-# and they did, because `provider` in the JSON carries product lines and a
-# hosting region as well as companies.
-from vendors import VENDOR_BY_ID_PREFIX as _PREFIXES, VENDOR_SLUG
+# "US & EU" is a bucket, not a vendor. Split it so each vendor gets its own page.
+# Matched by id prefix so newly added models land in the right vendor bucket
+# automatically instead of falling into "other".
+VENDOR_BY_ID_PREFIX = [
+    ("grok-", "xAI"),
+    ("llama-", "Meta"),
+    ("mistral-", "Mistral AI"),
+    ("magistral-", "Mistral AI"),
+    ("amazon-nova", "Amazon"),
+    ("nova-", "Amazon"),
+]
 
 
 def vendor_of(m):
-    pid = str(m.get("id", "")).lower()
-    for prefix, vendor in _PREFIXES:
+    pid = m["id"].lower()
+    for prefix, vendor in VENDOR_BY_ID_PREFIX:
         if pid.startswith(prefix):
             return vendor
-    provider = m.get("provider", "")
-    if provider in ("US & EU", "Other", "", None):
-        return "Unattributed"
-    return provider
+    return m["provider"]
 
-# VENDOR_SLUG is imported from vendors.py above; it used to be duplicated here,
-# which is how the site and the dataset ended up disagreeing. VENDOR_DISPLAY
-# stays local: it is presentation, not resolution.
+# URL slug per vendor. Display name comes from the model rows themselves.
+VENDOR_SLUG = {
+    "OpenAI": "openai",
+    "OpenAI (legacy)": "openai",
+    "OpenAI embedding": "openai",
+    "Anthropic Claude": "anthropic",
+    "Google Gemini": "google",
+    "xAI": "xai",
+    "Meta": "meta",
+    "Mistral AI": "mistral",
+    "Amazon": "amazon",
+    "DeepSeek (深度求索)": "deepseek",
+    "Alibaba Qwen (阿里通义)": "qwen",
+    "Zhipu GLM (智谱)": "zhipu",
+    "Moonshot Kimi (月之暗面)": "moonshot",
+    "ByteDance Doubao (火山引擎)": "doubao",
+    "Baidu ERNIE (百度)": "baidu",
+    "Tencent Hunyuan (腾讯)": "tencent",
+    "iFlytek Spark (讯飞星火)": "iflytek",
+    "MiniMax (稀宇科技)": "minimax",
+    "01.AI (零一万物)": "01ai",
+    "StepFun (阶跃星辰)": "stepfun",
+    "SenseTime (商汤)": "sensetime",
+    "Baichuan (百川智能)": "baichuan",
+    "Kunlun (昆仑万维)": "kunlun",
+    "Xiaomi MiMo (小米)": "xiaomi",
+    "Huawei PanGu (华为云)": "huawei",
+}
 
 VENDOR_DISPLAY = {
     "openai": "OpenAI",

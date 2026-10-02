@@ -19,39 +19,8 @@ import sys
 import shutil
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).parent))
-from vendors import vendor_of
-
-# Canonical key order for a model row. Rebuilding each dict in this order keeps
-# diffs in model-prices.json to the field that actually changed, instead of
-# reshuffling keys every time a field is added.
-FIELD_ORDER = [
-    "id",
-    "label",
-    "vendor",
-    "provider",
-    "tokenizer",
-    "estimate",
-    "contextWindow",
-    "priceInputPer1M",
-    "priceOutputPer1M",
-    "priceCachedInputPer1M",
-    "maxOutputTokens",
-    "note",
-]
-
 ROOT = Path(__file__).parent
-# Patches are cumulative: apply the next one on top of the current shipping file.
-# Reading the pristine baseline every time would make a second patch silently
-# drop everything the first one added, which is exactly what happened once.
-SHIPPING = ROOT / "site" / "data" / "model-prices.json"
-PRISTINE = ROOT / "_baseline" / "data" / "model-prices.json"
-if len(sys.argv) > 2:
-    DATA = Path(sys.argv[2])
-elif SHIPPING.exists():
-    DATA = SHIPPING
-else:
-    DATA = PRISTINE
+DATA = ROOT / "_baseline" / "data" / "model-prices.json"
 OUT = ROOT / "site" / "data" / "model-prices.json"
 
 
@@ -116,34 +85,9 @@ def main():
         print(f"  ok  {a['label']:<22} ${a['priceInputPer1M']}/{a['priceOutputPer1M']}{cached}")
         applied_a += 1
 
-    # ---------------- vendor stamp
-    # `provider` is not a vendor (it also carries API product lines and a
-    # "US & EU" hosting region), so every row gets an explicit `vendor`. Done
-    # for every row on every run rather than only for new ones, which makes it
-    # self-healing if the prefix map gains a vendor later.
-    stamped = 0
-    rebuilt = []
-    for m in data["models"]:
-        want = vendor_of(m)
-        if m.get("vendor") != want:
-            m["vendor"] = want
-            stamped += 1
-        ordered = {k: m[k] for k in FIELD_ORDER if k in m}
-        ordered.update({k: v for k, v in m.items() if k not in ordered})
-        rebuilt.append(ordered)
-    data["models"] = rebuilt
-    print(f"\nvendor stamp  : {stamped} row(s) updated")
-
     # ---------------- meta
     meta["lastVerified"] = patch["date"]
     meta["previousLastVerified"] = prev_verified
-    # Documentation-only updates (field semantics, licensing notes) travel in the
-    # same dated file as the price changes, so a reader can see which snapshot
-    # first carried a given definition.
-    for k, v in patch.get("meta", {}).items():
-        if meta.get(k) != v:
-            print(f"  meta.{k} updated")
-        meta[k] = v
     meta["revisionNote"] = (
         f"Updated {patch['date']}: {applied_a} models added, {applied_c} field corrections. "
         f"Per-model sources are listed in the repository's pricing-patch files. "

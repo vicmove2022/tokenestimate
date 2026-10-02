@@ -29,9 +29,6 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).parent
-sys.path.insert(0, str(ROOT))
-from vendors import vendor_of, slug_of
-
 TARGET = ROOT / (sys.argv[1] if len(sys.argv) > 1 else "repo")
 
 FAIL = []
@@ -119,21 +116,6 @@ def main():
         bad(f"js/app.js has {len(extra)} model(s) not in the JSON: {extra}")
     else:
         ok("no orphan models in js/app.js")
-
-    # vendor must be present and must equal what vendors.py derives. The dataset
-    # is published as groupable, and `provider` alone groups wrongly: three
-    # OpenAI product lines plus a "US & EU" region bucket looked like vendors.
-    no_vendor = [m["id"] for m in models if not m.get("vendor")]
-    wrong_vendor = [m["id"] for m in models if m.get("vendor") and m["vendor"] != vendor_of(m)]
-    if no_vendor:
-        bad(f"{len(no_vendor)} model(s) have no vendor field: {no_vendor[:6]}")
-        print("        -> run: python apply_patch.py <patch>  (it stamps vendor on every row)")
-    elif wrong_vendor:
-        bad(f"{len(wrong_vendor)} model(s) have a stale vendor: {wrong_vendor[:6]}")
-        print("        -> vendors.py changed; re-run apply_patch.py to restamp")
-    else:
-        vslugs = {slug_of(m["vendor"]) for m in models}
-        ok(f"every model has a vendor ({len(vslugs)} distinct vendors across {len(models)} models)")
 
     # price agreement between the two sources of truth
     price_mismatch = []

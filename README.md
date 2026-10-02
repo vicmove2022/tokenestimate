@@ -2,7 +2,7 @@
 
 # TokenCalc
 
-**Free, CC BY 4.0 pricing data for 81 LLM models — plus an in-browser token counter that needs no backend.**
+**Free, CC BY 4.0 pricing data for 92 LLM models — plus an in-browser token counter that needs no backend.**
 
 [![CC BY 4.0](https://img.shields.io/badge/data-CC%20BY%204.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![prices verified](https://img.shields.io/badge/prices%20verified-2026--10--02-brightgreen.svg)](https://tokenestimate.com/api.html)
@@ -27,7 +27,7 @@ So this repo publishes three things:
 
 | | |
 |---|---|
-| **A dated snapshot** | [`data/model-prices.json`](data/model-prices.json) — 81 models, CC BY 4.0, CORS-open, no key |
+| **A dated snapshot** | [`data/model-prices.json`](data/model-prices.json) — 92 models, CC BY 4.0, CORS-open, no key |
 | **A change log** | [`CHANGELOG.md`](CHANGELOG.md) — every price movement and correction, with the source URL for each |
 | **A counter** | [tokenestimate.com](https://tokenestimate.com) — counts tokens in the browser, uploads nothing |
 
@@ -68,7 +68,7 @@ print("verified:", data["_meta"]["lastVerified"])
 const res = await fetch("https://tokenestimate.com/data/model-prices.json");
 const { models, _meta } = await res.json();
 console.log(`${models.length} models, verified ${_meta.lastVerified}`);
-// → 81 models, verified 2026-10-02
+// → 92 models, verified 2026-10-02
 ```
 
 ## Schema
@@ -110,7 +110,7 @@ long-context surcharges and enterprise contracts are not modelled.
 | OpenAI counts | Exact. `js/ranks/` vendors the real tiktoken rank tables, so it works offline. |
 | Everyone else's counts | Estimate, ~5–10%. Labelled as such everywhere, never dressed up as exact. |
 | Price accuracy | Only as good as `_meta.lastVerified`. Check it. |
-| Coverage | 81 models, 23 vendors. Not exhaustive, and we say so rather than padding it. |
+| Coverage | 92 models, 23 vendors. Not exhaustive, and we say so rather than padding it. |
 
 ## Citations
 
@@ -183,7 +183,7 @@ cd tools
 python apply_patch.py ../pricing-patch/pricing-patch-YYYY-MM-DD.json
 
 # 2. regenerate everything that is derived from the data
-python build.py             # 81 model pages, 23 provider pages, hubs, sitemap
+python build.py             # 92 model pages, 23 provider pages, hubs, sitemap
 python gen_compare.py       # the /compare/ cuts
 python sync_homepage.py     # homepage pricing table from the data
 python sweep_legacy.py      # clear stale counts from hand-written pages
