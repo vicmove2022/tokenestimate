@@ -9,48 +9,48 @@ const ENGINE_LOCAL = "./ranks/lite.js";
 // estimated prices: public list prices per 1M tokens (USD), last verified 2026-09-30 — user-editable in the UI
 const MODELS = [
   // ---------- OpenAI (exact tiktoken) ----------
-  { id: "gpt-5.5", label: "GPT-5.5", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 5.0, priceOut: 30.0, ctx: "1M", note: "" },
-  { id: "gpt-5", label: "GPT-5", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 1.25, priceOut: 10.0, ctx: "400K", note: "" },
-  { id: "gpt-5-mini", label: "GPT-5 mini", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 0.25, priceOut: 2.0, ctx: "400K", note: "" },
+  { id: "gpt-5.5", label: "GPT-5.5", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 5, priceOut: 30, ctx: "1M", note: "" },
+  { id: "gpt-5", label: "GPT-5", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 1.25, priceOut: 10, ctx: "400K", note: "" },
+  { id: "gpt-5-mini", label: "GPT-5 mini", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 0.25, priceOut: 2, ctx: "400K", note: "" },
   { id: "gpt-5-nano", label: "GPT-5 nano", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 0.05, priceOut: 0.4, ctx: "400K", note: "" },
-  { id: "gpt-4o", label: "GPT-4o", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 2.5, priceOut: 10.0, ctx: "128K", note: "" },
+  { id: "gpt-4o", label: "GPT-4o", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 2.5, priceOut: 10, ctx: "128K", note: "" },
   { id: "gpt-4o-mini", label: "GPT-4o mini", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 0.15, priceOut: 0.6, ctx: "128K", note: "" },
-  { id: "gpt-4.1", label: "GPT-4.1", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 2.0, priceOut: 8.0, ctx: "1M", note: "" },
+  { id: "gpt-4.1", label: "GPT-4.1", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 2, priceOut: 8, ctx: "1M", note: "" },
   { id: "gpt-4.1-mini", label: "GPT-4.1 mini", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 0.4, priceOut: 1.6, ctx: "1M", note: "" },
   { id: "gpt-4.1-nano", label: "GPT-4.1 nano", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 0.1, priceOut: 0.4, ctx: "1M", note: "" },
-  { id: "o3", label: "o3", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 2.0, priceOut: 8.0, ctx: "200K", note: "reasoning" },
+  { id: "o3", label: "o3", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 2, priceOut: 8, ctx: "200K", note: "reasoning" },
   { id: "o4-mini", label: "o4-mini", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 1.1, priceOut: 4.4, ctx: "200K", note: "reasoning" },
   { id: "o3-mini", label: "o3-mini", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 1.1, priceOut: 4.4, ctx: "200K", note: "reasoning" },
-  { id: "o1", label: "o1", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 15.0, priceOut: 60.0, ctx: "200K", note: "reasoning" },
-  { id: "gpt-4-turbo", label: "GPT-4 Turbo", group: "OpenAI (legacy)", type: "exact", encoding: "cl100k_base", priceIn: 10.0, priceOut: 30.0, ctx: "128K", note: "" },
-  { id: "gpt-4", label: "GPT-4", group: "OpenAI (legacy)", type: "exact", encoding: "cl100k_base", priceIn: 30.0, priceOut: 60.0, ctx: "8K", note: "" },
+  { id: "o1", label: "o1", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 15, priceOut: 60, ctx: "200K", note: "reasoning" },
+  { id: "gpt-4-turbo", label: "GPT-4 Turbo", group: "OpenAI (legacy)", type: "exact", encoding: "cl100k_base", priceIn: 10, priceOut: 30, ctx: "128K", note: "" },
+  { id: "gpt-4", label: "GPT-4", group: "OpenAI (legacy)", type: "exact", encoding: "cl100k_base", priceIn: 30, priceOut: 60, ctx: "8K", note: "" },
   { id: "gpt-3.5-turbo", label: "GPT-3.5 Turbo", group: "OpenAI (legacy)", type: "exact", encoding: "cl100k_base", priceIn: 0.5, priceOut: 1.5, ctx: "16K", note: "" },
   { id: "embedding-3-small", label: "text-embedding-3-small", group: "OpenAI embedding", type: "exact", encoding: "cl100k_base", priceIn: 0.02, priceOut: 0, ctx: "–", note: "" },
   { id: "embedding-3-large", label: "text-embedding-3-large", group: "OpenAI embedding", type: "exact", encoding: "cl100k_base", priceIn: 0.13, priceOut: 0, ctx: "–", note: "" },
 
   // ---------- Anthropic ----------
-  { id: "claude-opus-5-5", label: "Claude Opus 5.5", group: "Anthropic Claude", type: "est", est: { cjk: 1.2, ascii: 4 }, priceIn: 4.0, priceOut: 20.0, ctx: "1M", note: "flagship, from 2026-09-22" },
-  { id: "claude-opus-5", label: "Claude Opus 5", group: "Anthropic Claude", type: "est", est: { cjk: 1.2, ascii: 4 }, priceIn: 5.0, priceOut: 25.0, ctx: "200K", note: "" },
-  { id: "claude-sonnet-5", label: "Claude Sonnet 5", group: "Anthropic Claude", type: "est", est: { cjk: 1.2, ascii: 4 }, priceIn: 2.0, priceOut: 10.0, ctx: "200K", note: "intro pricing" },
-  { id: "claude-haiku-4.5", label: "Claude Haiku 4.5", group: "Anthropic Claude", type: "est", est: { cjk: 1.2, ascii: 4 }, priceIn: 1.0, priceOut: 5.0, ctx: "200K", note: "" },
-  { id: "claude-fable-5", label: "Claude Fable 5", group: "Anthropic Claude", type: "est", est: { cjk: 1.2, ascii: 4 }, priceIn: 10.0, priceOut: 50.0, ctx: "1M", note: "agentic" },
-  { id: "claude-opus-4.6", label: "Claude Opus 4.6", group: "Anthropic Claude", type: "est", est: { cjk: 1.2, ascii: 4 }, priceIn: 5.0, priceOut: 25.0, ctx: "200K", note: "" },
-  { id: "claude-sonnet-4.6", label: "Claude Sonnet 4.6", group: "Anthropic Claude", type: "est", est: { cjk: 1.2, ascii: 4 }, priceIn: 3.0, priceOut: 15.0, ctx: "200K", note: "" },
+  { id: "claude-opus-5-5", label: "Claude Opus 5.5", group: "Anthropic Claude", type: "est", est: { cjk: 1.2, ascii: 4 }, priceIn: 4, priceOut: 20, ctx: "1M", note: "flagship, from 2026-09-22" },
+  { id: "claude-opus-5", label: "Claude Opus 5", group: "Anthropic Claude", type: "est", est: { cjk: 1.2, ascii: 4 }, priceIn: 5, priceOut: 25, ctx: "200K", note: "" },
+  { id: "claude-sonnet-5", label: "Claude Sonnet 5", group: "Anthropic Claude", type: "est", est: { cjk: 1.2, ascii: 4 }, priceIn: 2, priceOut: 10, ctx: "1M", note: "intro pricing" },
+  { id: "claude-haiku-4.5", label: "Claude Haiku 4.5", group: "Anthropic Claude", type: "est", est: { cjk: 1.2, ascii: 4 }, priceIn: 1, priceOut: 5, ctx: "200K", note: "" },
+  { id: "claude-fable-5", label: "Claude Fable 5", group: "Anthropic Claude", type: "est", est: { cjk: 1.2, ascii: 4 }, priceIn: 10, priceOut: 50, ctx: "1M", note: "agentic" },
+  { id: "claude-opus-4.6", label: "Claude Opus 4.6", group: "Anthropic Claude", type: "est", est: { cjk: 1.2, ascii: 4 }, priceIn: 5, priceOut: 25, ctx: "1M", note: "" },
+  { id: "claude-sonnet-4.6", label: "Claude Sonnet 4.6", group: "Anthropic Claude", type: "est", est: { cjk: 1.2, ascii: 4 }, priceIn: 3, priceOut: 15, ctx: "1M", note: "" },
 
   // ---------- Google Gemini ----------
-  { id: "gemini-3.1-pro", label: "Gemini 3.1 Pro", group: "Google Gemini", type: "est", est: { cjk: 1.2, ascii: 4 }, priceIn: 2.0, priceOut: 12.0, ctx: "2M", note: "≤200K ctx" },
-  { id: "gemini-3.6-flash", label: "Gemini 3.6 Flash", group: "Google Gemini", type: "est", est: { cjk: 1.2, ascii: 4 }, priceIn: 1.5, priceOut: 7.5, ctx: "1M", note: "" },
-  { id: "gemini-3.5-flash", label: "Gemini 3.5 Flash", group: "Google Gemini", type: "est", est: { cjk: 1.2, ascii: 4 }, priceIn: 1.5, priceOut: 9.0, ctx: "1M", note: "" },
-  { id: "gemini-3-flash", label: "Gemini 3 Flash", group: "Google Gemini", type: "est", est: { cjk: 1.2, ascii: 4 }, priceIn: 0.5, priceOut: 3.0, ctx: "1M", note: "" },
+  { id: "gemini-3.1-pro", label: "Gemini 3.1 Pro", group: "Google Gemini", type: "est", est: { cjk: 1.2, ascii: 4 }, priceIn: 2, priceOut: 12, ctx: "1M", note: "≤200K ctx" },
+  { id: "gemini-3.6-flash", label: "Gemini 3.6 Flash", group: "Google Gemini", type: "est", est: { cjk: 1.2, ascii: 4 }, priceIn: 0.75, priceOut: 3.75, ctx: "1M", note: "" },
+  { id: "gemini-3.5-flash", label: "Gemini 3.5 Flash", group: "Google Gemini", type: "est", est: { cjk: 1.2, ascii: 4 }, priceIn: 1.5, priceOut: 9, ctx: "1M", note: "" },
+  { id: "gemini-3-flash", label: "Gemini 3 Flash", group: "Google Gemini", type: "est", est: { cjk: 1.2, ascii: 4 }, priceIn: 0.5, priceOut: 3, ctx: "1M", note: "" },
   { id: "gemini-3.5-flash-lite", label: "Gemini 3.5 Flash-Lite", group: "Google Gemini", type: "est", est: { cjk: 1.2, ascii: 4 }, priceIn: 0.3, priceOut: 2.5, ctx: "1M", note: "" },
-  { id: "gemini-2.5-pro", label: "Gemini 2.5 Pro", group: "Google Gemini", type: "est", est: { cjk: 1.2, ascii: 4 }, priceIn: 1.25, priceOut: 10.0, ctx: "2M", note: "" },
+  { id: "gemini-2.5-pro", label: "Gemini 2.5 Pro", group: "Google Gemini", type: "est", est: { cjk: 1.2, ascii: 4 }, priceIn: 1.25, priceOut: 10, ctx: "2M", note: "" },
   { id: "gemini-2.5-flash", label: "Gemini 2.5 Flash", group: "Google Gemini", type: "est", est: { cjk: 1.2, ascii: 4 }, priceIn: 0.3, priceOut: 2.5, ctx: "1M", note: "" },
   { id: "gemini-2.5-flash-lite", label: "Gemini 2.5 Flash-Lite", group: "Google Gemini", type: "est", est: { cjk: 1.2, ascii: 4 }, priceIn: 0.1, priceOut: 0.4, ctx: "1M", note: "" },
 
   // ---------- US / EU others ----------
-  { id: "grok-4.1", label: "Grok 4.1 (xAI)", group: "US & EU", type: "est", est: { cjk: 1.2, ascii: 4 }, priceIn: 0.2, priceOut: 1.0, ctx: "1M", note: "" },
+  { id: "grok-4.1", label: "Grok 4.1 (xAI)", group: "US & EU", type: "est", est: { cjk: 1.2, ascii: 4 }, priceIn: 0.2, priceOut: 1, ctx: "1M", note: "" },
   { id: "llama-4", label: "Llama 4 (Meta)", group: "US & EU", type: "est", est: { cjk: 1.0, ascii: 4 }, priceIn: 0.15, priceOut: 0.45, ctx: "1M", note: "open-weight" },
-  { id: "mistral-large", label: "Mistral Large 3", group: "US & EU", type: "est", est: { cjk: 1.0, ascii: 4 }, priceIn: 2.0, priceOut: 6.0, ctx: "128K", note: "" },
+  { id: "mistral-large", label: "Mistral Large 3", group: "US & EU", type: "est", est: { cjk: 1.0, ascii: 4 }, priceIn: 2, priceOut: 6, ctx: "128K", note: "" },
   { id: "amazon-nova-pro", label: "Amazon Nova Pro", group: "US & EU", type: "est", est: { cjk: 1.0, ascii: 4 }, priceIn: 0.8, priceOut: 3.2, ctx: "300K", note: "" },
 
   // ---------- China ----------
@@ -64,14 +64,14 @@ const MODELS = [
   { id: "qwen3-flash", label: "Qwen3 Flash", group: "Alibaba Qwen (阿里通义)", type: "est", est: { cjk: 0.9, ascii: 3.8 }, priceIn: 0.15, priceOut: 1.5, ctx: "128K", note: "" },
   { id: "qwen3-coder", label: "Qwen3 Coder", group: "Alibaba Qwen (阿里通义)", type: "est", est: { cjk: 0.9, ascii: 3.8 }, priceIn: 0.3, priceOut: 0.9, ctx: "128K", note: "coding" },
 
-  { id: "glm-5", label: "GLM-5 (智谱)", group: "Zhipu GLM (智谱)", type: "est", est: { cjk: 0.9, ascii: 3.8 }, priceIn: 1.0, priceOut: 3.2, ctx: "200K", note: "" },
+  { id: "glm-5", label: "GLM-5 (智谱)", group: "Zhipu GLM (智谱)", type: "est", est: { cjk: 0.9, ascii: 3.8 }, priceIn: 1, priceOut: 3.2, ctx: "200K", note: "" },
   { id: "glm-5.1", label: "GLM-5.1", group: "Zhipu GLM (智谱)", type: "est", est: { cjk: 0.9, ascii: 3.8 }, priceIn: 0.98, priceOut: 3.08, ctx: "200K", note: "" },
   { id: "glm-4.7", label: "GLM-4.7", group: "Zhipu GLM (智谱)", type: "est", est: { cjk: 0.9, ascii: 3.8 }, priceIn: 0.5, priceOut: 2.2, ctx: "200K", note: "" },
   { id: "glm-4-flash", label: "GLM-4-Flash", group: "Zhipu GLM (智谱)", type: "est", est: { cjk: 0.9, ascii: 3.8 }, priceIn: 0, priceOut: 0, ctx: "128K", note: "free" },
 
-  { id: "kimi-k2.6", label: "Kimi K2.6 (月之暗面)", group: "Moonshot Kimi (月之暗面)", type: "est", est: { cjk: 0.9, ascii: 3.8 }, priceIn: 1.0, priceOut: 2.5, ctx: "256K", note: "tiered" },
-  { id: "kimi-k2.5", label: "Kimi K2.5", group: "Moonshot Kimi (月之暗面)", type: "est", est: { cjk: 0.9, ascii: 3.8 }, priceIn: 0.6, priceOut: 3.0, ctx: "128K", note: "" },
-  { id: "kimi-k3", label: "Kimi K3", group: "Moonshot Kimi (月之暗面)", type: "est", est: { cjk: 0.9, ascii: 3.8 }, priceIn: 7.0, priceOut: 14.0, ctx: "256K", note: "premium" },
+  { id: "kimi-k2.6", label: "Kimi K2.6 (月之暗面)", group: "Moonshot Kimi (月之暗面)", type: "est", est: { cjk: 0.9, ascii: 3.8 }, priceIn: 1, priceOut: 2.5, ctx: "256K", note: "tiered" },
+  { id: "kimi-k2.5", label: "Kimi K2.5", group: "Moonshot Kimi (月之暗面)", type: "est", est: { cjk: 0.9, ascii: 3.8 }, priceIn: 0.6, priceOut: 3, ctx: "128K", note: "" },
+  { id: "kimi-k3", label: "Kimi K3", group: "Moonshot Kimi (月之暗面)", type: "est", est: { cjk: 0.9, ascii: 3.8 }, priceIn: 7, priceOut: 14, ctx: "256K", note: "premium" },
 
   { id: "doubao-1.6-pro", label: "Doubao 1.6 Pro (豆包)", group: "ByteDance Doubao (火山引擎)", type: "est", est: { cjk: 0.9, ascii: 3.8 }, priceIn: 0.11, priceOut: 0.45, ctx: "256K", note: "" },
   { id: "doubao-1.6-flash", label: "Doubao 1.6 Flash", group: "ByteDance Doubao (火山引擎)", type: "est", est: { cjk: 0.9, ascii: 3.8 }, priceIn: 0.01, priceOut: 0.11, ctx: "128K", note: "cheapest" },
@@ -80,7 +80,7 @@ const MODELS = [
   { id: "ernie-4.5", label: "ERNIE 4.5 (文心一言)", group: "Baidu ERNIE (百度)", type: "est", est: { cjk: 0.9, ascii: 3.8 }, priceIn: 0.2, priceOut: 0.55, ctx: "128K", note: "" },
   { id: "ernie-x1", label: "ERNIE X1", group: "Baidu ERNIE (百度)", type: "est", est: { cjk: 0.9, ascii: 3.8 }, priceIn: 0.006, priceOut: 0.02, ctx: "128K", note: "reasoning · ultra cheap" },
 
-  { id: "hunyuan-2-pro", label: "Hunyuan 2 Pro (混元)", group: "Tencent Hunyuan (腾讯)", type: "est", est: { cjk: 0.9, ascii: 3.8 }, priceIn: 1.0, priceOut: 4.0, ctx: "128K", note: "" },
+  { id: "hunyuan-2-pro", label: "Hunyuan 2 Pro (混元)", group: "Tencent Hunyuan (腾讯)", type: "est", est: { cjk: 0.9, ascii: 3.8 }, priceIn: 1, priceOut: 4, ctx: "128K", note: "" },
   { id: "hunyuan-lite", label: "Hunyuan Lite", group: "Tencent Hunyuan (腾讯)", type: "est", est: { cjk: 0.9, ascii: 3.8 }, priceIn: 0, priceOut: 0, ctx: "32K", note: "free" },
 
   { id: "spark-max-x1", label: "Spark Max / X1 (讯飞星火)", group: "iFlytek Spark (讯飞星火)", type: "est", est: { cjk: 0.9, ascii: 3.8 }, priceIn: 0.5, priceOut: 1.7, ctx: "128K", note: "" },
@@ -118,6 +118,10 @@ const MODELS = [
 { id: "gpt-6.1-sol", label: "GPT-6.1 Sol", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 2, priceOut: 10, ctx: "1M", },
 { id: "gpt-6-astra", label: "GPT-6 Astra", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 10, priceOut: 50, ctx: "1M", },
 { id: "gpt-6-astra-ultrafast", label: "GPT-6 Astra (Ultrafast)", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 60, priceOut: 300, ctx: "1M", }
+,
+{ id: "gemini-3.8-flash", label: "Gemini 3.8 Flash", group: "Google Gemini", type: "est", priceIn: 0.75, priceOut: 3.75, ctx: "1M", est: { cjk: 1.2, ascii: 4 }, note: "promo until Dec 31", },
+{ id: "gemini-3.7-flash", label: "Gemini 3.7 Flash", group: "Google Gemini", type: "est", priceIn: 0.75, priceOut: 3.75, ctx: "1M", est: { cjk: 1.2, ascii: 4 }, note: "promo until Dec 31", },
+{ id: "gemini-3.1-flash-lite", label: "Gemini 3.1 Flash-Lite", group: "Google Gemini", type: "est", priceIn: 0.25, priceOut: 1.5, ctx: "1M", est: { cjk: 1.2, ascii: 4 }, }
 ];
 
 const SAMPLE = `Tokens are how GPT models read text: nine English words usually cost about twelve tokens.

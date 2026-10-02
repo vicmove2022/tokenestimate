@@ -15,9 +15,9 @@ moves only when someone has actually re-checked a provider page.
 them publish *movement*. If you are writing about how LLM prices are changing,
 this is the citable record:
 
-> TokenCalc, "LLM Pricing Changelog", tokenestimate.com, 2026-10-02c
+> TokenCalc, "LLM Pricing Changelog", tokenestimate.com, 2026-10-02d
 
-**Totals so far:** 19 models added, 3 corrections, 11 entries flagged unverified.
+**Totals so far:** 22 models added, 6 corrections, 14 entries flagged unverified.
 
 ---
 
@@ -217,3 +217,59 @@ rather than guessed at — a wrong rate is worse than a missing row.
 | `gemini-3.8-flash / gemini-3.7-flash` | present in two Sep 2026 trackers, absent from this dataset | llmprice.gitlab.io lists Gemini 3.8 Flash at $0.75/$3.75 and 3.7 Flash at the same rate, both 1.0M. Still a single corroborating source for a Google model, and the same flat-discount pattern that cleared GPT-6 has not been tested here. Verify on ai.google.dev before adding. |
 | `gemini-3.1-pro` | sources conflict: $2.00 vs $1.35 vs $1.50 | pricepertoken.com gives $2.00/$12.00 for the standard tier. siliconanalysts.com gives $1.35/$6.75. Another siliconanalysts row shows the tiered price moving $0.75 -> $1.00 and $1.38 -> $1.50 within one week. The 1.35 figure is not a clean fraction of 2.00, so the flat-discount explanation that resolved GPT-6 does not apply. Needs the tier structure modelled before the headline figure changes. |
 | `gpt-6-astra output price` | $50.00 rests on one source | Astra is the only GPT-6 model without a second independent confirmation. The two corroborated models (Luna, 6.1 Sol) both check out, and the internal 0.80x consistency is reassuring, but if you quote Astra in a customer-facing budget, re-check platform.openai.com first. |
+
+## 2026-10-02
+
+### Corrected
+
+Figures that were published wrong and are now fixed. These are the ones that
+mattered: an understated context window sends people to the wrong model.
+
+| Model | Field | Was | Now | Why |
+|---|---|---|---|---|
+| `gemini-3.1-pro` | `contextWindow` | `2M` | `1M` | Our error. Eight independent sources state 1M (morphllm, tokencost.app, tokenando.ai, gemini3.us which gives the exact 1,048,576, computeprices.com, costgoat.com, serenitiesai.com, orcarouter.ai). We published 2M, which would have led people to chunk for no reason. |
+| `gemini-3.6-flash` | `priceInputPer1M` | `1.5` | `0.75` | We had the post-promotion price. morphllm and costgoat both list gemini-3.6-flash at $0.75/$3.75 today, with the rate doubling to $1.50/$7.50 on 2027-01-01. |
+| `gemini-3.6-flash` | `priceOutputPer1M` | `7.5` | `3.75` | Same as above; $3.75 today, $7.50 after 2027-01-01. |
+
+**`gemini-3.1-pro` source**
+
+**`gemini-3.6-flash` source**
+
+**`gemini-3.6-flash` source**
+
+### Added
+
+| Model | Provider | Input / 1M | Output / 1M | Cached / 1M | Context |
+|---|---|---|---|---|---|
+| Gemini 3.8 Flash | Google Gemini | $0.75 | $3.75 | — | 1M |
+| Gemini 3.7 Flash | Google Gemini | $0.75 | $3.75 | — | 1M |
+| Gemini 3.1 Flash-Lite | Google Gemini | $0.25 | $1.5 | — | 1M |
+
+**Gemini 3.8 Flash**
+- Promotional rate, 50% off through 2026-12-31 per costgoat. Three independent trackers agree on $0.75/$3.75 today. Budget against $1.50/$7.50 unless you can confirm the promo renews.
+- source: costgoat.com/pricing/gemini-api (Sep 2026: '3.8 Flash ($0.75/$3.75, 50% off to Dec 31)', context 1M)
+- source: morphllm.com/gemini-api-pricing ('gemini-3.7-flash runs $0.75/1M input and $3.75/1M output')
+- source: llmprice.gitlab.io (updated Sep 29 2026: Gemini 3.8 Flash $0.75/$3.75, 1.0M)
+- source: serenitiesai.com/benchmark/compare/gemini-3-1-pro-vs-gemini-3-8-flash ($0.75 input / $3.75 output)
+
+**Gemini 3.7 Flash**
+- Same promotional rate as 3.8 Flash: $0.75/$3.75 now, doubling to $1.50/$7.50 on 2027-01-01. Note this contradicts what we previously published for 3.6 Flash, which we had recorded at the post-promo rate.
+- source: costgoat.com/pricing/gemini-api (Sep 2026: Gemini 3.7 Flash, 1M context, $0.75/$3.75)
+- source: morphllm.com/gemini-api-pricing ('gemini-3.7-flash and 3.6-flash prices double on January 1, 2027')
+- source: llmprice.gitlab.io (updated Sep 29 2026: Gemini 3.7 Flash $0.75/$3.75, 1.0M)
+
+**Gemini 3.1 Flash-Lite**
+- Cheapest Google route above the 2.5 Flash-Lite tier. Two sources agree on $0.25/$1.50.
+- source: costgoat.com/pricing/gemini-api ('3.1 Flash-Lite ($0.25/$1.50)', context 1M)
+- source: tokencost.app/blog/gemini-3-1-pro-pricing-benchmarks (comparison table: Gemini 3.1 Flash-Lite $0.25 / $1.50 / 1M)
+
+### Published but unverified
+
+Models or fields we could not confirm from a source we trust. Listed here
+rather than guessed at — a wrong rate is worse than a missing row.
+
+| Model | Status | Why not filled in |
+|---|---|---|
+| `gemini-3.1-pro long-context tier` | base rate confirmed at $2/$12; the above-200k tier is now sourced but not yet modelled as a field | Two sources give the full structure: morphllm and tokencost.app both say input doubles to $4.00 and output rises to $18.00 above 200k, and both state the higher rate applies to the ENTIRE request rather than only the tokens past 200k. That is a real budget cliff (a 201k request costs twice the input of a 199k one) and it needs its own field, not a note. Recorded here rather than guessed into the JSON. The contextWindow correction above is independent of this. |
+| `gemini-2.5-pro` | we publish 2M, no source found to confirm or deny | Left alone deliberately. gemini-3.1-pro turned out to be wrong on context, which is exactly why an unsourced 2M should not be 'corrected' to 1M on a hunch. Nothing in this round addresses 2.5 Pro. Needs a first-party check on ai.google.dev. |
+| `gpt-6-1-sol contextWindow` | we publish 1M, contextwindows.dev reports 922K | getapipulse, inworld.ai and OpenAI's own tiers all point at a 1.05M window, but contextwindows.dev gives 922,000 tokens specifically. 1,048,576 is a familiar power-of-two figure and 922K is not, so this is probably a distinct effective limit rather than a typo. Not changing it, but not deleting the discrepancy either. Verify on platform.openai.com. |

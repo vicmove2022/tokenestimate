@@ -17,7 +17,7 @@
       "estimate": "Other providers use a calibrated character-ratio estimate, accurate to roughly 5-10%. tokenizer field says which."
     },
     "previousLastVerified": "2026-10-02",
-    "revisionNote": "Updated 2026-10-02: 5 models added, 0 field corrections. Per-model sources are listed in the repository's pricing-patch files. Cite this date, not the old one.",
+    "revisionNote": "Updated 2026-10-02: 3 models added, 3 field corrections. Per-model sources are listed in the repository's pricing-patch files. Cite this date, not the old one.",
     "revisions": [
       {
         "date": "2026-10-02",
@@ -36,6 +36,12 @@
         "added": 5,
         "corrected": 0,
         "patchFile": "pricing-patch-2026-10-02c.json"
+      },
+      {
+        "date": "2026-10-02",
+        "added": 3,
+        "corrected": 3,
+        "patchFile": "pricing-patch-2026-10-02d.json"
       }
     ]
   },
@@ -309,7 +315,7 @@
         "tokensPerCJKChar": 1.2,
         "charsPerToken": 4
       },
-      "contextWindow": "2M",
+      "contextWindow": "1M",
       "priceInputPer1M": 2,
       "priceOutputPer1M": 12,
       "note": "≤200K ctx"
@@ -324,8 +330,8 @@
         "charsPerToken": 4
       },
       "contextWindow": "1M",
-      "priceInputPer1M": 1.5,
-      "priceOutputPer1M": 7.5
+      "priceInputPer1M": 0.75,
+      "priceOutputPer1M": 3.75
     },
     {
       "id": "gemini-3.5-flash",
@@ -1107,6 +1113,36 @@
       "priceOutputPer1M": 300,
       "priceCachedInputPer1M": 6,
       "note": "Six times the standard Astra rate on output. Two constraints that are not in the price at all: low default rate limits, and NO EU data residency. Do not select this tier for a latency target without first confirming the request volume and the jurisdiction. Single source."
+    },
+    {
+      "id": "gemini-3.8-flash",
+      "label": "Gemini 3.8 Flash",
+      "provider": "Google Gemini",
+      "tokenizer": "estimate",
+      "contextWindow": "1M",
+      "priceInputPer1M": 0.75,
+      "priceOutputPer1M": 3.75,
+      "note": "Promotional rate, 50% off through 2026-12-31 per costgoat. Three independent trackers agree on $0.75/$3.75 today. Budget against $1.50/$7.50 unless you can confirm the promo renews."
+    },
+    {
+      "id": "gemini-3.7-flash",
+      "label": "Gemini 3.7 Flash",
+      "provider": "Google Gemini",
+      "tokenizer": "estimate",
+      "contextWindow": "1M",
+      "priceInputPer1M": 0.75,
+      "priceOutputPer1M": 3.75,
+      "note": "Same promotional rate as 3.8 Flash: $0.75/$3.75 now, doubling to $1.50/$7.50 on 2027-01-01. Note this contradicts what we previously published for 3.6 Flash, which we had recorded at the post-promo rate."
+    },
+    {
+      "id": "gemini-3.1-flash-lite",
+      "label": "Gemini 3.1 Flash-Lite",
+      "provider": "Google Gemini",
+      "tokenizer": "estimate",
+      "contextWindow": "1M",
+      "priceInputPer1M": 0.25,
+      "priceOutputPer1M": 1.5,
+      "note": "Cheapest Google route above the 2.5 Flash-Lite tier. Two sources agree on $0.25/$1.50."
     }
   ]
 }

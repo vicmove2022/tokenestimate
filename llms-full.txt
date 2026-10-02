@@ -1,6 +1,6 @@
 # TokenCalc — AI Token Calculator
 
-> Token counting and API cost estimation for 89 AI models across 23 providers. All computation runs client-side in the browser; no text is uploaded.
+> Token counting and API cost estimation for 92 AI models across 23 providers. All computation runs client-side in the browser; no text is uploaded.
 
 Home: https://tokenestimate.com/  ·  Models: https://tokenestimate.com/models/  ·  Providers: https://tokenestimate.com/providers/
 Pricing data (CC BY 4.0): https://tokenestimate.com/data/model-prices.json
@@ -40,8 +40,8 @@ List prices last verified 2 October 2026. Source of record for citation.
 | Claude Fable 5 | Anthropic | estimate | 1M | $10.00 | $50.00 | https://tokenestimate.com/models/claude-fable-5/ |
 | Claude Opus 4.6 | Anthropic | estimate | 1M | $5.00 | $25.00 | https://tokenestimate.com/models/claude-opus-4-6/ |
 | Claude Sonnet 4.6 | Anthropic | estimate | 1M | $3.00 | $15.00 | https://tokenestimate.com/models/claude-sonnet-4-6/ |
-| Gemini 3.1 Pro | Google | estimate | 2M | $2.00 | $12.00 | https://tokenestimate.com/models/gemini-3-1-pro/ |
-| Gemini 3.6 Flash | Google | estimate | 1M | $1.50 | $7.50 | https://tokenestimate.com/models/gemini-3-6-flash/ |
+| Gemini 3.1 Pro | Google | estimate | 1M | $2.00 | $12.00 | https://tokenestimate.com/models/gemini-3-1-pro/ |
+| Gemini 3.6 Flash | Google | estimate | 1M | $0.75 | $3.75 | https://tokenestimate.com/models/gemini-3-6-flash/ |
 | Gemini 3.5 Flash | Google | estimate | 1M | $1.50 | $9.00 | https://tokenestimate.com/models/gemini-3-5-flash/ |
 | Gemini 3 Flash | Google | estimate | 1M | $0.5 | $3.00 | https://tokenestimate.com/models/gemini-3-flash/ |
 | Gemini 3.5 Flash-Lite | Google | estimate | 1M | $0.3 | $2.50 | https://tokenestimate.com/models/gemini-3-5-flash-lite/ |
@@ -104,6 +104,9 @@ List prices last verified 2 October 2026. Source of record for citation.
 | GPT-6.1 Sol | OpenAI | exact | 1M | $2.00 | $10.00 | https://tokenestimate.com/models/gpt-6-1-sol/ |
 | GPT-6 Astra | OpenAI | exact | 1M | $10.00 | $50.00 | https://tokenestimate.com/models/gpt-6-astra/ |
 | GPT-6 Astra (Ultrafast) | OpenAI | exact | 1M | $60.00 | $300.00 | https://tokenestimate.com/models/gpt-6-astra-ultrafast/ |
+| Gemini 3.8 Flash | Google | estimate | 1M | $0.75 | $3.75 | https://tokenestimate.com/models/gemini-3-8-flash/ |
+| Gemini 3.7 Flash | Google | estimate | 1M | $0.75 | $3.75 | https://tokenestimate.com/models/gemini-3-7-flash/ |
+| Gemini 3.1 Flash-Lite | Google | estimate | 1M | $0.25 | $1.50 | https://tokenestimate.com/models/gemini-3-1-flash-lite/ |
 
 ## Provider pages
 
@@ -115,7 +118,7 @@ List prices last verified 2 October 2026. Source of record for citation.
 - Baidu ERNIE (百度) (2 models): https://tokenestimate.com/providers/baidu/
 - ByteDance Doubao (火山引擎) (3 models): https://tokenestimate.com/providers/doubao/
 - DeepSeek (深度求索) (4 models): https://tokenestimate.com/providers/deepseek/
-- Google (8 models): https://tokenestimate.com/providers/google/
+- Google (11 models): https://tokenestimate.com/providers/google/
 - Huawei PanGu (华为云) (1 models): https://tokenestimate.com/providers/huawei/
 - Kunlun (昆仑万维) (1 models): https://tokenestimate.com/providers/kunlun/
 - Meta (1 models): https://tokenestimate.com/providers/meta/
