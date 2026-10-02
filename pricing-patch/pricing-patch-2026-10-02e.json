@@ -1,0 +1,25 @@
+{
+  "_patch": {
+    "date": "2026-10-02",
+    "appliedTo": "model-prices.json",
+    "note": "Metadata-only pass. No price moves. Adds a `vendor` field to every row and documents the difference from `provider`, because the two were being conflated and the dataset is advertised as groupable and citable.",
+
+    "meta": {
+      "notes": "Public list prices, not contract or batch/discounted rates. Verify against the provider before publishing; refresh the date when you reuse it.",
+      "fields": {
+        "vendor": "The company that makes the model. This is the field to group by. 23 distinct values across this snapshot, e.g. xAI, Meta, Anthropic, Zhipu.",
+        "provider": "How the model is reached or billed, and it is NOT one company per value. It carries API product lines ('OpenAI (legacy)', 'OpenAI embedding') and, historically, a hosting region ('US & EU' held Nova Pro, Llama 4 and the Grok models). Three values are OpenAI. Group by vendor instead; keep provider only if you want per-product-line or per-region cuts.",
+        "priceInputPer1M": "List price per 1,000,000 input tokens, USD.",
+        "priceOutputPer1M": "List price per 1,000,000 output tokens, USD.",
+        "priceCachedInputPer1M": "Cache-read price where the vendor publishes one. Absent means not published, not free.",
+        "contextWindow": "Advertised maximum context. Several vendors bill long context at a higher rate above a threshold; that threshold is in the model's note when it applies.",
+        "tokenizer": "'tiktoken:<encoding>' means token counts are exact. 'estimate' means a calibrated character ratio, roughly 5-10% off.",
+        "note": "Editorial, per model. Dates, promotions and billing traps that a rate card hides."
+      }
+    },
+
+    "corrections": [],
+    "additions": [],
+    "flagged_not_changed": []
+  }
+}

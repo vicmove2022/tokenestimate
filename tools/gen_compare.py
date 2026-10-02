@@ -206,8 +206,12 @@ def main():
     # cut would otherwise linger as a duplicate-title page forever.
     if (SITE / "compare").exists():
         shutil.rmtree(SITE / "compare")
+    # Drop repo-side compare directories whose page no longer exists. is_dir()
+    # first: this runs right after SITE/compare was rmtree'd, so the counterpart
+    # is usually missing and iterdir() would raise FileNotFoundError.
     for stale in (REPO / "compare").glob("*/"):
-        if not any((SITE / "compare" / stale.name).iterdir()):
+        live = SITE / "compare" / stale.name
+        if not live.is_dir() or not any(live.iterdir()):
             shutil.rmtree(stale)
 
     priced = [m for m in models if m.get("priceInputPer1M") is not None
