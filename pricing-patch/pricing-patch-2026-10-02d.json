@@ -1,0 +1,101 @@
+{
+  "_patch": {
+    "date": "2026-10-02",
+    "appliedTo": "model-prices.json",
+    "note": "Fourth pass, same day. Triggered by building the correction-email list: auditing third-party claims is what surfaced two errors in this dataset, one of them a 2x context overstatement. Both corrections below are against ourselves, not against a source. Resolves the gemini-3.7/3.8-flash flag from patch b (now three sources) and supplies the tier structure patch b said was required before gemini-3.1-pro's headline figure could be trusted.",
+
+    "corrections": [
+      {
+        "id": "gemini-3.1-pro",
+        "field": "contextWindow",
+        "from": "2M",
+        "to": "1M",
+        "why": "Our error. Eight independent sources state 1M (morphllm, tokencost.app, tokenando.ai, gemini3.us which gives the exact 1,048,576, computeprices.com, costgoat.com, serenitiesai.com, orcarouter.ai). We published 2M, which would have led people to chunk for no reason."
+      },
+      {
+        "id": "gemini-3.6-flash",
+        "field": "priceInputPer1M",
+        "from": 1.5,
+        "to": 0.75,
+        "why": "We had the post-promotion price. morphllm and costgoat both list gemini-3.6-flash at $0.75/$3.75 today, with the rate doubling to $1.50/$7.50 on 2027-01-01."
+      },
+      {
+        "id": "gemini-3.6-flash",
+        "field": "priceOutputPer1M",
+        "from": 7.5,
+        "to": 3.75,
+        "why": "Same as above; $3.75 today, $7.50 after 2027-01-01."
+      }
+    ],
+
+    "additions": [
+      {
+        "id": "gemini-3.8-flash",
+        "label": "Gemini 3.8 Flash",
+        "provider": "Google Gemini",
+        "tokenizer": "estimate",
+        "contextWindow": "1M",
+        "priceInputPer1M": 0.75,
+        "priceOutputPer1M": 3.75,
+        "note": "Promotional rate, 50% off through 2026-12-31 per costgoat. Three independent trackers agree on $0.75/$3.75 today. Budget against $1.50/$7.50 unless you can confirm the promo renews.",
+        "sources": [
+          "costgoat.com/pricing/gemini-api (Sep 2026: '3.8 Flash ($0.75/$3.75, 50% off to Dec 31)', context 1M)",
+          "morphllm.com/gemini-api-pricing ('gemini-3.7-flash runs $0.75/1M input and $3.75/1M output')",
+          "llmprice.gitlab.io (updated Sep 29 2026: Gemini 3.8 Flash $0.75/$3.75, 1.0M)",
+          "serenitiesai.com/benchmark/compare/gemini-3-1-pro-vs-gemini-3-8-flash ($0.75 input / $3.75 output)"
+        ]
+      },
+      {
+        "id": "gemini-3.7-flash",
+        "label": "Gemini 3.7 Flash",
+        "provider": "Google Gemini",
+        "tokenizer": "estimate",
+        "contextWindow": "1M",
+        "priceInputPer1M": 0.75,
+        "priceOutputPer1M": 3.75,
+        "note": "Same promotional rate as 3.8 Flash: $0.75/$3.75 now, doubling to $1.50/$7.50 on 2027-01-01. Note this contradicts what we previously published for 3.6 Flash, which we had recorded at the post-promo rate.",
+        "sources": [
+          "costgoat.com/pricing/gemini-api (Sep 2026: Gemini 3.7 Flash, 1M context, $0.75/$3.75)",
+          "morphllm.com/gemini-api-pricing ('gemini-3.7-flash and 3.6-flash prices double on January 1, 2027')",
+          "llmprice.gitlab.io (updated Sep 29 2026: Gemini 3.7 Flash $0.75/$3.75, 1.0M)"
+        ]
+      },
+      {
+        "id": "gemini-3.1-flash-lite",
+        "label": "Gemini 3.1 Flash-Lite",
+        "provider": "Google Gemini",
+        "tokenizer": "estimate",
+        "contextWindow": "1M",
+        "priceInputPer1M": 0.25,
+        "priceOutputPer1M": 1.5,
+        "note": "Cheapest Google route above the 2.5 Flash-Lite tier. Two sources agree on $0.25/$1.50.",
+        "sources": [
+          "costgoat.com/pricing/gemini-api ('3.1 Flash-Lite ($0.25/$1.50)', context 1M)",
+          "tokencost.app/blog/gemini-3-1-pro-pricing-benchmarks (comparison table: Gemini 3.1 Flash-Lite $0.25 / $1.50 / 1M)"
+        ]
+      }
+    ],
+
+    "flagged_not_changed": [
+      {
+        "id": "gemini-3.1-pro long-context tier",
+        "status": "base rate confirmed at $2/$12; the above-200k tier is now sourced but not yet modelled as a field",
+        "why": "Two sources give the full structure: morphllm and tokencost.app both say input doubles to $4.00 and output rises to $18.00 above 200k, and both state the higher rate applies to the ENTIRE request rather than only the tokens past 200k. That is a real budget cliff (a 201k request costs twice the input of a 199k one) and it needs its own field, not a note. Recorded here rather than guessed into the JSON. The contextWindow correction above is independent of this.",
+        "searchableUrl": "https://tokenestimate.com/models/gemini-3-1-pro/"
+      },
+      {
+        "id": "gemini-2.5-pro",
+        "field": "contextWindow",
+        "status": "we publish 2M, no source found to confirm or deny",
+        "why": "Left alone deliberately. gemini-3.1-pro turned out to be wrong on context, which is exactly why an unsourced 2M should not be 'corrected' to 1M on a hunch. Nothing in this round addresses 2.5 Pro. Needs a first-party check on ai.google.dev.",
+        "searchableUrl": "https://tokenestimate.com/models/gemini-2-5-pro/"
+      },
+      {
+        "id": "gpt-6-1-sol contextWindow",
+        "status": "we publish 1M, contextwindows.dev reports 922K",
+        "why": "getapipulse, inworld.ai and OpenAI's own tiers all point at a 1.05M window, but contextwindows.dev gives 922,000 tokens specifically. 1,048,576 is a familiar power-of-two figure and 922K is not, so this is probably a distinct effective limit rather than a typo. Not changing it, but not deleting the discrepancy either. Verify on platform.openai.com.",
+        "searchableUrl": "https://tokenestimate.com/models/gpt-6-1-sol/"
+      }
+    ]
+  }
+}

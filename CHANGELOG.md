@@ -15,7 +15,7 @@ moves only when someone has actually re-checked a provider page.
 them publish *movement*. If you are writing about how LLM prices are changing,
 this is the citable record:
 
-> TokenCalc, "LLM Pricing Changelog", tokenestimate.com, 2026-10-02d
+> TokenCalc, "LLM Pricing Changelog", tokenestimate.com, 2026-10-02e
 
 **Totals so far:** 22 models added, 6 corrections, 14 entries flagged unverified.
 
@@ -273,3 +273,5 @@ rather than guessed at — a wrong rate is worse than a missing row.
 | `gemini-3.1-pro long-context tier` | base rate confirmed at $2/$12; the above-200k tier is now sourced but not yet modelled as a field | Two sources give the full structure: morphllm and tokencost.app both say input doubles to $4.00 and output rises to $18.00 above 200k, and both state the higher rate applies to the ENTIRE request rather than only the tokens past 200k. That is a real budget cliff (a 201k request costs twice the input of a 199k one) and it needs its own field, not a note. Recorded here rather than guessed into the JSON. The contextWindow correction above is independent of this. |
 | `gemini-2.5-pro` | we publish 2M, no source found to confirm or deny | Left alone deliberately. gemini-3.1-pro turned out to be wrong on context, which is exactly why an unsourced 2M should not be 'corrected' to 1M on a hunch. Nothing in this round addresses 2.5 Pro. Needs a first-party check on ai.google.dev. |
 | `gpt-6-1-sol contextWindow` | we publish 1M, contextwindows.dev reports 922K | getapipulse, inworld.ai and OpenAI's own tiers all point at a 1.05M window, but contextwindows.dev gives 922,000 tokens specifically. 1,048,576 is a familiar power-of-two figure and 922K is not, so this is probably a distinct effective limit rather than a typo. Not changing it, but not deleting the discrepancy either. Verify on platform.openai.com. |
+
+## 2026-10-02
