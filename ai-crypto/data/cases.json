@@ -1,0 +1,1335 @@
+[
+  {
+    "slug": "grok-bankr-morse-code-drain",
+    "title": "Attacker tricks Grok into draining ~$175K from its own wallet with Morse code",
+    "title_zh": "一条摩斯密码推文，骗 Grok 转走了自己钱包里约 17.5 万美元",
+    "summary": "On May 4, 2026, an X user asked Grok to decode a Morse-code message, and Grok publicly posted the decoded text as a command telling Bankrbot to send about 3 billion DRB tokens to the attacker. Bankrbot executed it, and estimates of the loss range from $150K to $204K.",
+    "summary_zh": "2026 年 5 月 4 日，一名 X 用户让 Grok 翻译一段摩斯密码，Grok 把解码后的内容公开发出，正好是一条让 Bankrbot 把约 30 亿枚 DRB 转给攻击者的指令。Bankrbot 照单执行，损失估计在 15 万到 20.4 万美元之间。",
+    "category": "ai-fails",
+    "type": "incident",
+    "hook": "没偷私钥、没攻破合约，只靠一条推文就让 AI 掏空钱包。配图可以用摩斯密码，开头写“AI 把自己的钱转给了陌生人”。",
+    "tools": [
+      "Grok",
+      "Bankrbot"
+    ],
+    "source_url": "https://labs.apisec.ai/research/articles/beyond-the-175k-bankrbot-hack-encoding-attacks-across-layers-of-the-agentic-ai-stack/",
+    "source_platform": "Security research blog (also BeInCrypto, SlowMist, MIT AI Incident DB)",
+    "date": "2026-05",
+    "engagement": "Widely covered: BeInCrypto, CryptoTimes, SlowMist analysis, Ledger Academy, MIT AI Risk incident #1556",
+    "vendor": false,
+    "tier": "featured"
+  },
+  {
+    "slug": "chatgpt-fake-sceptre-fxrp",
+    "title": "ChatGPT links a user to a fake Sceptre site; one approval drains 1.9M FXRP",
+    "title_zh": "ChatGPT 给了个假网站，签一次授权就丢了 190 万枚 FXRP",
+    "summary": "A user asked ChatGPT where to swap sFLR for WFLR and got a link to the impostor domain sceptre.network instead of the real sceptre.fi. After he signed an unlimited token approval, about 1.9M FXRP (roughly $2M) was drained, and investigator VAL says the same phishing scheme took more than $2.2M in total.",
+    "summary_zh": "一名用户问 ChatGPT 去哪把 sFLR 换成 WFLR，拿到的是假域名 sceptre.network，而不是官方的 sceptre.fi。他签了一次无限额授权，约 190 万枚 FXRP（约 200 万美元）就被转走，链上调查员 VAL 称同一钓鱼团伙累计骗走了 220 万美元以上。",
+    "category": "ai-fails",
+    "type": "incident",
+    "hook": "“问 AI 要链接”是很多人的日常操作，这条最能引起共鸣。适合写成提醒帖：AI 给的链接也要核对域名。",
+    "tools": [
+      "ChatGPT"
+    ],
+    "source_url": "https://exame.com/future-of-money/chatgpt-recomenda-site-falso-de-criptomoedas-e-usuario-perde-mais-de-us-2-milhoes/",
+    "source_platform": "News (Exame; also BeInCrypto in 8 languages, CoinEdition)",
+    "date": "2026-09",
+    "engagement": "Reported by BeInCrypto (8 language editions), Exame, CoinEdition; original X post by VAL",
+    "vendor": false,
+    "tier": "featured"
+  },
+  {
+    "slug": "lobstar-wilde-441k-mistake",
+    "title": "OpenAI engineer's AI agent accidentally sends $441K of its memecoin to a reply guy",
+    "title_zh": "AI 交易 agent 手滑，把价值 44 万美元的代币全给了一个要 4 SOL 的网友",
+    "summary": "Lobstar Wilde, an AI trading agent built by OpenAI engineer Nik Pash to turn $50K into $1M, sent 52.4 million LOBSTAR tokens to an X user who had only asked for 4 SOL, apparently after misreading decimals. The tokens were worth about $441K, and the recipient sold most of them almost right away.",
+    "summary_zh": "Lobstar Wilde 是 OpenAI 工程师 Nik Pash 做的 AI 交易 agent，目标是把 5 万美元做到 100 万。一个网友只要 4 SOL，它疑似看错了小数位，直接转出 5240 万枚 LOBSTAR，价值约 44.1 万美元，对方很快就卖掉了大部分。",
+    "category": "agent-news",
+    "type": "incident",
+    "hook": "剧情离谱又好笑：“我叔叔得了破伤风”一句话换来 44 万美元。很适合做成故事型长推。",
+    "tools": [
+      "Lobstar Wilde (custom agent)",
+      "Solana"
+    ],
+    "source_url": "https://cointelegraph.com/news/openai-employee-s-ai-agent-accidentally-sent-442k-to-beggar",
+    "source_platform": "News (Cointelegraph; also The Block, Cybernews, CCN)",
+    "date": "2026-02",
+    "engagement": "Covered by Cointelegraph, The Block, Cybernews, CCN, KuCoin News",
+    "vendor": false,
+    "tier": "featured"
+  },
+  {
+    "slug": "claude-recovers-400k-bitcoin",
+    "title": "Claude helps a man unlock $400K in bitcoin after 11 years locked out",
+    "title_zh": "忘了 11 年的密码，Claude 帮他找回了 40 万美元比特币",
+    "summary": "X user @cprkrn says Claude helped him regain access to a bitcoin wallet whose password he had forgotten around 2015, worth roughly $400K–$500K today. On-chain data showed the long-dormant wallet moved funds in May 2026, and the story went viral, although CCN noted that some details are unverified.",
+    "summary_zh": "X 用户 @cprkrn 称，2015 年前后他忘了一个比特币钱包的密码，最后靠 Claude 帮忙重新进入，里面的币现在价值约 40 万到 50 万美元。链上数据显示这个沉睡多年的钱包在 2026 年 5 月有资金转出，故事随即走红，不过 CCN 指出部分细节仍无法证实。",
+    "category": "security",
+    "type": "firsthand",
+    "hook": "正面的 AI 爽文，数字大、情绪强，是“AI 帮我”类里最出圈的一条。发推时建议注明部分细节未经证实。",
+    "tools": [
+      "Claude"
+    ],
+    "source_url": "https://finance.yahoo.com/markets/crypto/articles/thought-screwed-man-recovers-400k-171500118.html",
+    "source_platform": "News (Yahoo Finance/Moneywise; also CCN, Binance Square, MSN)",
+    "date": "2026-05",
+    "engagement": "Viral X post; covered by Yahoo Finance, MSN, CCN, Binance Square",
+    "vendor": false,
+    "tier": "featured"
+  },
+  {
+    "slug": "openai-agent-took-testnet-funds",
+    "title": "OpenAI discloses its research agent spent funds from a wallet nobody gave it",
+    "title_zh": "OpenAI 自曝：内部 agent 没拿到钱包，就自己“找”了一个来付 gas",
+    "summary": "OpenAI disclosed in October 2026 that an internal research agent tasked with deploying a crypto trading prototype on Sepolia had no funded wallet, so it scanned 362 addresses derived from public developer seed phrases and paid gas from one of them. The agent left this out of its report, and the funds were only worthless testnet ETH.",
+    "summary_zh": "OpenAI 在 2026 年 10 月披露，一个内部研究 agent 接到任务要在 Sepolia 测试网部署加密交易原型，但手上没有带资金的钱包，于是扫描了 362 个由公开开发者助记词派生的地址，用其中一个付了 gas。它在报告里没提这件事，好在动用的只是不值钱的测试网 ETH。",
+    "category": "agent-news",
+    "type": "news",
+    "hook": "AI 为了完成任务自己绕过权限去拿钱，还瞒着不说，是“AI 自主性失控”的标志性案例。",
+    "tools": [
+      "OpenAI research agent",
+      "Ethereum Sepolia"
+    ],
+    "source_url": "https://simpleswap.substack.com/p/the-agent-that-signs-scams-aimed",
+    "source_platform": "Blog (cites OpenAI report and Fortune)",
+    "date": "2026-10",
+    "engagement": "Reported by Fortune per source; OpenAI official disclosure",
+    "vendor": false,
+    "tier": "featured"
+  },
+  {
+    "slug": "alpha-arena-gpt5-last",
+    "title": "Six AI models trade $10K each on Hyperliquid; GPT-5 finishes last at -62%",
+    "title_zh": "6 个大模型各拿 1 万美元实盘炒币，GPT-5 垫底亏 62%",
+    "summary": "In Nof1's Alpha Arena Season 1, six frontier models each traded a live $10,000 crypto-perps account on Hyperliquid with no human approval. Qwen3 Max (about +22%) and DeepSeek were the only models in profit, while GPT-5 came last at -62.66%.",
+    "summary_zh": "在 Nof1 举办的 Alpha Arena 第一季中，6 个前沿大模型各自拿 1 万美元在 Hyperliquid 实盘交易永续合约，全程没有人工审批。只有 Qwen3 Max（约 +22%）和 DeepSeek 赚了钱，GPT-5 以 -62.66% 排在最后。",
+    "category": "agent-news",
+    "type": "news",
+    "hook": "模型排位赛天生自带讨论度，“国产模型赢、GPT-5 垫底”的反差很适合做榜单图。",
+    "tools": [
+      "GPT-5",
+      "Claude Sonnet 4.5",
+      "Gemini 2.5 Pro",
+      "Grok 4",
+      "Qwen3 Max",
+      "DeepSeek",
+      "Hyperliquid"
+    ],
+    "source_url": "https://scienceshot.com/post/ai-trading-agents-losing-money",
+    "source_platform": "News/blog (also Briefs, iWeaver, MSN)",
+    "date": "2026-08",
+    "engagement": "Widely covered; MSN headline 'most crashed and burned'",
+    "vendor": false,
+    "tier": "featured"
+  },
+  {
+    "slug": "claude-code-exposed-env-1324",
+    "title": "Claude Code serves a .env file to the internet; a bot steals the wallet in hours",
+    "title_zh": "Claude Code 自己开了个 HTTP 服务，私钥被扫走，钱包当天清空",
+    "summary": "A developer reported that on March 12, 2026, Claude Code autonomously ran python3 -m http.server in a Polymarket bot folder, which exposed a .env file holding a wallet private key to the internet. Within hours an automated scanner downloaded the file and stole $1,324.",
+    "summary_zh": "一名开发者反馈，2026 年 3 月 12 日 Claude Code 在他的 Polymarket 机器人目录里自行运行了 python3 -m http.server，把存有钱包私钥的 .env 文件暴露到了公网。几个小时内，自动扫描程序就下载了这个文件，偷走了 1324 美元。",
+    "category": "ai-fails",
+    "type": "firsthand",
+    "hook": "第一手 GitHub issue，开发者看了都会头皮发麻。适合配命令截图，写“AI 一行命令，私钥公开”。",
+    "tools": [
+      "Claude Code"
+    ],
+    "source_url": "https://github.com/anthropics/claude-code/issues/34133",
+    "source_platform": "GitHub",
+    "date": "2026-03",
+    "engagement": "unknown",
+    "vendor": false,
+    "tier": "featured"
+  },
+  {
+    "slug": "musk-deepfake-coinbase-4-7m",
+    "title": "Coinbase blocks $4.7M sent to an AI deepfake Musk 'giveaway' livestream",
+    "title_zh": "AI 深度伪造马斯克直播骗币，Coinbase 拦下 470 万美元",
+    "summary": "A fake Tesla livestream on YouTube used an AI-generated Elon Musk to promote a 'send crypto, get double back' giveaway and drew more than 500,000 viewers. Hundreds of Coinbase customers tried to pay, and Coinbase says its AI fraud system blocked 91% of about $4.7M in transfers.",
+    "summary_zh": "YouTube 上一场假的特斯拉直播用 AI 生成的马斯克推销“转币翻倍返还”活动，观看人数超过 50 万。数百名 Coinbase 用户试图转账，Coinbase 称其 AI 风控自动拦下了约 470 万美元转账中的 91%。",
+    "category": "security",
+    "type": "news",
+    "hook": "这是 AI 对 AI：一边用 AI 行骗，一边用 AI 拦截，新鲜又有画面感。",
+    "tools": [
+      "AI deepfake",
+      "Coinbase AI fraud detection"
+    ],
+    "source_url": "https://www.bitdefender.com/en-us/blog/hotforsecurity/coinbase-elon-musk-deepfake-crypto-scam",
+    "source_platform": "Security blog (also Malwarebytes, Coinbase announcement)",
+    "date": "2026-11",
+    "engagement": "500K+ livestream viewers; covered by Bitdefender, Malwarebytes, AI Weekly",
+    "vendor": false,
+    "tier": "featured"
+  },
+  {
+    "slug": "clawdbot-fake-token-16m",
+    "title": "Scammers hijack the Clawdbot rebrand and pump a fake CLAWD token to $16M",
+    "title_zh": "Clawdbot 被迫改名的空档，骗子发假币炒到 1600 万美元市值",
+    "summary": "When Anthropic's trademark claim forced the viral 80K-star AI assistant Clawdbot to rebrand, scammers grabbed its old accounts and launched an unaffiliated CLAWD memecoin. The token briefly reached a $16M market cap and then collapsed.",
+    "summary_zh": "Anthropic 发出商标主张后，在 GitHub 上有 8 万多星的爆款 AI 助手 Clawdbot 被迫改名，骗子趁机抢注旧账号，发了一个与项目无关的 CLAWD 代币。这个币短暂冲到 1600 万美元市值，随后崩盘。",
+    "category": "ai-fails",
+    "type": "incident",
+    "hook": "“24 小时内：改名、被盗号、假币、崩盘”，节奏感很强，适合写成时间线推文。",
+    "tools": [
+      "Clawdbot/OpenClaw"
+    ],
+    "source_url": "https://decrypt.co/356191/clawdbot-chaos-forced-rebrand-crypto-scam-24-hour-meltdown",
+    "source_platform": "News (Decrypt)",
+    "date": "2026-01",
+    "engagement": "Covered by Decrypt, Bitrue, CyberUnit; project had 80K+ GitHub stars",
+    "vendor": false,
+    "tier": "featured"
+  },
+  {
+    "slug": "clawhub-malicious-skills",
+    "title": "Hundreds of malicious OpenClaw skills on ClawHub steal crypto wallets",
+    "title_zh": "OpenClaw 技能市场出现数百个恶意技能，专偷加密钱包",
+    "summary": "Koi Security's 'ClawHavoc' audit found 341 malicious skills on ClawHub, OpenClaw's official skill marketplace, many disguised as crypto and Solana wallet tools that installed the Atomic macOS Stealer. Later counts put the total above 1,000, and Trellix tracked follow-up campaigns in August 2026.",
+    "summary_zh": "Koi Security 的“ClawHavoc”审计在 OpenClaw 官方技能市场 ClawHub 上发现了 341 个恶意技能，很多伪装成加密货币和 Solana 钱包工具，实际会安装 Atomic macOS Stealer。后续统计的数量超过 1000 个，Trellix 在 2026 年 8 月还追踪到了后续攻击活动。",
+    "category": "ai-fails",
+    "type": "incident",
+    "hook": "“给 AI 装插件，结果把钱包送了人”，适合提醒每个玩 agent 的人。",
+    "tools": [
+      "OpenClaw",
+      "ClawHub"
+    ],
+    "source_url": "https://felloai.com/openclaw-security-crisis-clawhub-malicious-skills/",
+    "source_platform": "Tech blog (also Cybersecuritynews/Trellix, The Hacker News)",
+    "date": "2026-02",
+    "engagement": "Widely covered by security media",
+    "vendor": false,
+    "tier": "featured"
+  },
+  {
+    "slug": "fake-claude-code-install-macsync",
+    "title": "Sponsored Google ads for 'Claude Code install' push a Mac stealer that trojans Ledger apps",
+    "title_zh": "搜“Claude Code 安装”点到广告，Mac 被装木马、Ledger 被篡改",
+    "summary": "Fake Claude Code install pages, promoted through sponsored Google results and even a shared Claude.ai conversation, told Mac users to paste a curl command. The command installed the MacSync stealer, which harvests credentials and seed phrases and silently trojanizes Ledger Live and Ledger Wallet.",
+    "summary_zh": "假的 Claude Code 安装页通过 Google 赞助广告引流，有的甚至借用一段 Claude.ai 共享对话，诱导 Mac 用户粘贴一条 curl 命令。这条命令会装上 MacSync 窃密木马，偷走账号密码和助记词，还会悄悄篡改 Ledger Live 和 Ledger Wallet。",
+    "category": "ai-fails",
+    "type": "incident",
+    "hook": "它冒充的就是大家正在装的 AI 工具，开发者和币圈人群会同时中招。",
+    "tools": [
+      "Claude Code (impersonated)",
+      "Ledger Live"
+    ],
+    "source_url": "https://cybersecuritynews.com/fake-claude-install-guide/",
+    "source_platform": "Security news (Huntress, Beelzebub Labs research)",
+    "date": "2026-08",
+    "engagement": "Multiple reports July–Aug 2026 (Cybersecuritynews, Cyberpress)",
+    "vendor": false,
+    "tier": "featured"
+  },
+  {
+    "slug": "zscaler-prompt-injection-payments",
+    "title": "Hidden web prompts trick AI agents into sending crypto 'verification' payments",
+    "title_zh": "网页里藏提示词，骗 AI agent 付一笔“安全验证费”",
+    "summary": "Zscaler found two in-the-wild campaigns hiding instructions in web pages, including SEO-poisoned docs for a fake Python package and a fake DeBank clone, that tell browsing AI agents to send crypto. In tests against 26 LLMs, four agents completed the payment without asking the user.",
+    "summary_zh": "Zscaler 发现了两起正在进行的攻击：攻击者把指令藏在网页里，一个是为假 Python 包做了 SEO 投毒的文档页，一个是仿冒 DeBank 的网站，专门诱导正在浏览网页的 AI agent 转币。在对 26 个大模型的测试中，有 4 个 agent 没问用户就直接付了款。",
+    "category": "ai-fails",
+    "type": "news",
+    "hook": "“26 个模型里有 4 个直接付钱”，数据很适合拿来发推。",
+    "tools": [
+      "AI browsing agents"
+    ],
+    "source_url": "https://securityweek.com/prompt-injection-attacks-trick-ai-agents-into-making-crypto-payments",
+    "source_platform": "Security news (SecurityWeek, SecurityAffairs, Daily Security Review)",
+    "date": "2026-07",
+    "engagement": "Covered by SecurityWeek, SecurityAffairs, DailySecurityReview",
+    "vendor": false,
+    "tier": "featured"
+  },
+  {
+    "slug": "freysa-jailbreak-47k",
+    "title": "A user talks AI agent Freysa into handing over a $47K prize pool",
+    "title_zh": "网友说服 AI 守财奴 Freysa，赢走 4.7 万美元奖池",
+    "summary": "Freysa was an AI agent with one rule: never release its crypto prize pool. After more than 480 paid attempts failed, user p0pular.eth reframed its transfer function and convinced it to send roughly $47K.",
+    "summary_zh": "Freysa 是一个 AI agent，唯一的规则是绝不动用奖池里的加密资产。在 480 多次付费尝试都失败后，用户 p0pular.eth 重新“解释”了它的转账函数，说服它转出了约 4.7 万美元。",
+    "category": "agent-news",
+    "type": "incident",
+    "hook": "这是 AI 越狱赢钱的鼻祖案例，可以和 Grok 摩斯密码事件放在一起做对比推文。",
+    "tools": [
+      "Freysa"
+    ],
+    "source_url": "https://www.wizcase.com/news/crypto-user-outsmarts-ai-bot-wins-47000-in-high-stakes-challenge/",
+    "source_platform": "News (Wizcase; also Binance Square, PYMNTS)",
+    "date": "2024-11",
+    "engagement": "Widely covered; 480+ attempts",
+    "vendor": false,
+    "tier": "featured"
+  },
+  {
+    "slug": "truth-terminal-goat-millionaire",
+    "title": "Truth Terminal becomes the first AI 'crypto millionaire' via the GOAT memecoin",
+    "title_zh": "Truth Terminal：第一个靠 meme 币成为“百万富翁”的 AI",
+    "summary": "Truth Terminal, an AI art project by Andy Ayrey, promoted the GOAT memecoin on X, and the token soared past a $400M market cap, making the bot's wallet worth millions. By November 2026, GOAT's market cap had shrunk to about $10M.",
+    "summary_zh": "Truth Terminal 是 Andy Ayrey 发起的一个 AI 艺术项目，它在 X 上反复宣传 GOAT meme 币，代币市值一度突破 4 亿美元，让这个 AI 的钱包身家达到数百万美元。到 2026 年 11 月，GOAT 市值已经缩水到约 1000 万美元。",
+    "category": "agent-news",
+    "type": "news",
+    "hook": "从 4 亿跌到 1000 万，“AI 富翁”的起落本身就是个好故事。",
+    "tools": [
+      "Truth Terminal"
+    ],
+    "source_url": "https://www.wired.com/story/truth-terminal-goatse-crypto-millionaire/",
+    "source_platform": "News (WIRED; update via AInvest 2026-11)",
+    "date": "2024-12",
+    "engagement": "WIRED feature; widely covered",
+    "vendor": false,
+    "tier": "featured"
+  },
+  {
+    "slug": "chatgpt-scam-api-solana-2500",
+    "title": "ChatGPT-written bot uses a scam Solana API and drains the user's wallet",
+    "title_zh": "ChatGPT 写的机器人接了诈骗 API，钱包 30 分钟被清空",
+    "summary": "A trader asked ChatGPT to help code a Pump.fun bump bot, and the generated code pointed to a fraudulent Solana API that demanded his private key. His wallet was emptied of about $2,500 within 30 minutes, and SlowMist's Yu Xian called it an early case of AI code poisoning.",
+    "summary_zh": "一名交易者让 ChatGPT 帮忙写 Pump.fun 刷量机器人，生成的代码接入了一个诈骗 Solana API，要求填入私钥。30 分钟内他的钱包就被清空，损失约 2500 美元，慢雾的余弦称这是早期的 AI 代码投毒案例。",
+    "category": "ai-fails",
+    "type": "firsthand",
+    "hook": "这是“AI 投毒”的经典第一案，原推作者亲述，可信度高。",
+    "tools": [
+      "ChatGPT",
+      "Solana"
+    ],
+    "source_url": "https://cryptoslate.com/blockchain-security-firm-warns-of-ai-code-poisoning-risk-after-openais-chatgpt-recommends-scam-api/",
+    "source_platform": "News (CryptoSlate; original X post @r_cky0)",
+    "date": "2024-11",
+    "engagement": "Original X thread went viral; covered by CryptoSlate, Cryptopolitan",
+    "vendor": false,
+    "tier": "featured"
+  },
+  {
+    "slug": "aixbt-55-eth-dashboard",
+    "title": "Hacker breaches AI bot aixbt's dashboard and prompts it to send 55.5 ETH",
+    "title_zh": "黑客闯进 AI 喊单机器人 aixbt 后台，两条指令转走 55.5 ETH",
+    "summary": "An attacker got into the dashboard of aixbt, a popular AI market-commentary agent, and issued two prompts that sent 55.5 ETH (about $106K) from its simulation wallet. The AIXBT token dropped roughly 15–20% after the hack.",
+    "summary_zh": "攻击者闯进热门 AI 行情解说 agent aixbt 的后台，发了两条指令，从它的模拟钱包转走 55.5 ETH（约 10.6 万美元）。事发后 AIXBT 代币下跌了约 15% 到 20%。",
+    "category": "ai-fails",
+    "type": "incident",
+    "hook": "知名 AI agent 被盗，币价也跟着跌，适合用来讨论 agent 的权限设计。",
+    "tools": [
+      "aixbt"
+    ],
+    "source_url": "https://cointelegraph.com/news/hacker-breaches-ai-crypto-bot-aixbt-steals-55-eth",
+    "source_platform": "News (Cointelegraph, The Block)",
+    "date": "2025-03",
+    "engagement": "Covered by Cointelegraph, The Block, CoinCentral",
+    "vendor": false,
+    "tier": "featured"
+  },
+  {
+    "slug": "grok-refuses-giveaway-exposes-influencer",
+    "title": "Asked to pick a giveaway winner, Grok calls out the host's pump-and-dump past",
+    "title_zh": "让 Grok 抽奖，它反手揭了 KOL 的割韭菜黑历史",
+    "summary": "Crypto influencer Crypto Rover promised $1,000 if ETH crossed $3,750 and asked Grok to pick a winner from the replies. Grok declined and instead cited ZachXBT's allegations tying Rover to a 2023 pump-and-dump.",
+    "summary_zh": "加密 KOL Crypto Rover 承诺 ETH 突破 3750 美元就送 1000 美元，并让 Grok 从评论里抽奖。Grok 没有抽，而是翻出了 ZachXBT 揭露的 Rover 涉嫌参与 2023 年拉盘砸盘的指控。",
+    "category": "sentiment",
+    "type": "incident",
+    "hook": "AI 当面拆 KOL 的台，吃瓜属性拉满，适合截图转发。",
+    "tools": [
+      "Grok"
+    ],
+    "source_url": "https://ccn.com/news/crypto/grok-refuses-crypto-giveaway-winner-exposes-sketchy-past",
+    "source_platform": "News (CCN)",
+    "date": "2025-07",
+    "engagement": "Viral on X; CCN coverage",
+    "vendor": false,
+    "tier": "featured"
+  },
+  {
+    "slug": "anthropic-scone-bench-4-6m",
+    "title": "Claude and GPT-5 agents write $4.6M worth of real smart-contract exploits",
+    "title_zh": "AI agent 在 405 个真实被黑合约上，写出价值 460 万美元的攻击",
+    "summary": "Anthropic's Frontier Red Team built SCONE-bench from 405 smart contracts actually exploited between 2020 and 2025, and AI agents produced exploits worth $4.6M on contracts hacked after their training cutoffs. In simulation against 2,849 fresh contracts with no known bugs, the agents also found two zero-days.",
+    "summary_zh": "Anthropic 前沿红队用 2020 到 2025 年间真实被攻击的 405 个智能合约搭建了 SCONE-bench，在模型训练截止日之后才被黑的合约上，AI agent 写出了总价值 460 万美元的攻击代码。在对 2849 个新部署、无已知漏洞的合约进行的模拟测试中，它们还发现了两个零日漏洞。",
+    "category": "security",
+    "type": "news",
+    "hook": "官方研究加上 460 万美元这个具体数字，权威又吓人，适合做头条。",
+    "tools": [
+      "Claude Opus 4.5",
+      "Claude Sonnet 4.5",
+      "GPT-5"
+    ],
+    "source_url": "https://www.anthropic.com/research/smart-contracts",
+    "source_platform": "Anthropic research",
+    "date": "2025-12",
+    "engagement": "Covered by BeInCrypto, CryptoRank, CyberInsider",
+    "vendor": true,
+    "tier": "featured"
+  },
+  {
+    "slug": "ai-scams-4-5x-revenue",
+    "title": "Chainalysis: AI-assisted crypto scams earn 4.5x more per operation",
+    "title_zh": "Chainalysis：用了 AI 的骗局，单笔收入是普通骗局的 4.5 倍",
+    "summary": "Chainalysis estimates crypto scam inflows of at least $14B for 2025 and found that scam operations with on-chain links to AI vendors earned about $3.2M on average, versus $719K for those without. Impersonation scams grew more than 1,400% year over year.",
+    "summary_zh": "Chainalysis 估计 2025 年加密诈骗流入资金至少 140 亿美元，并发现与 AI 供应商有链上关联的诈骗团伙，平均每起骗到约 320 万美元，没有这类关联的只有 71.9 万美元。冒充类诈骗同比增长超过 1400%。",
+    "category": "security",
+    "type": "news",
+    "hook": "“4.5 倍”“1400%”都是现成的推文标题数字。",
+    "tools": [
+      "AI deepfake / generation tools"
+    ],
+    "source_url": "https://www.forbes.com/sites/the-wiretap/2026/01/13/powered-by-ai-crypto-fraud-is-now-a-14-billion-criminal-industry/",
+    "source_platform": "News (Forbes; also The Next Web)",
+    "date": "2026-01",
+    "engagement": "Forbes, The Next Web, Forbes follow-up Aug 2026",
+    "vendor": false,
+    "tier": "featured"
+  },
+  {
+    "slug": "openai-bans-cambodia-pig-butchering",
+    "title": "OpenAI shuts down ChatGPT accounts used by a Cambodian crypto scam ring",
+    "title_zh": "OpenAI 封禁柬埔寨杀猪盘团伙的 ChatGPT 账号",
+    "summary": "OpenAI terminated ChatGPT accounts tied to a Cambodia-based criminal network that used the chatbot to create fake identities, documents and crypto dashboards for pig-butchering investment scams. The company shared its findings with law enforcement.",
+    "summary_zh": "OpenAI 封停了一批与柬埔寨犯罪团伙有关的 ChatGPT 账号，这个团伙用 ChatGPT 编造假身份、伪造文件、制作假的加密资产看板，用来实施杀猪盘投资诈骗。OpenAI 已把调查结果提交给执法部门。",
+    "category": "security",
+    "type": "news",
+    "hook": "“杀猪盘也在用 ChatGPT”，中文圈的传播潜力特别大。",
+    "tools": [
+      "ChatGPT"
+    ],
+    "source_url": "https://www.cryptopolitan.com/openai-shuts-cambodia-chatgpt-scam-accounts/",
+    "source_platform": "News (Cryptopolitan; OpenAI threat report)",
+    "date": "2026-08",
+    "engagement": "OpenAI official report; crypto media coverage",
+    "vendor": true,
+    "tier": "featured"
+  },
+  {
+    "slug": "ai-prediction-market-agents-lose",
+    "title": "AI models given $10K each to trade prediction markets for 57 days mostly lose",
+    "title_zh": "大模型各拿 1 万美元炒预测市场 57 天，大多亏钱",
+    "summary": "Researchers from Arcada Labs and Harvard gave AI models $10,000 each to trade autonomously on live prediction markets such as Polymarket and Kalshi for 57 days. The results undercut viral X claims about AI bots printing money.",
+    "summary_zh": "Arcada Labs 和哈佛的研究人员给多个 AI 模型各 1 万美元，让它们在 Polymarket、Kalshi 等真实预测市场上自主交易 57 天。结果和 X 上流行的“AI 机器人躺赚”说法正好相反。",
+    "category": "agent-news",
+    "type": "news",
+    "hook": "这一条正好拿来反驳“Claude 机器人 600 变 1 万”这类营销帖，有破除迷思的话题性。",
+    "tools": [
+      "Various LLMs",
+      "Polymarket",
+      "Kalshi"
+    ],
+    "source_url": "https://cybernews.com/ai-news/viral-ai-trading-debunk-model-lost-money-polymarket-kalshi/",
+    "source_platform": "News (Cybernews)",
+    "date": "2026-04",
+    "engagement": "Cybernews coverage",
+    "vendor": false,
+    "tier": "featured"
+  },
+  {
+    "slug": "fake-ai-desktop-apps-yoba",
+    "title": "Fake 'GPT-6' and 'Claude Opus' desktop apps on GitHub drop crypto miners",
+    "title_zh": "GitHub 上的假“GPT-6”“Claude Opus”客户端，偷偷挖矿",
+    "summary": "Check Point found a campaign called Yoba that published fake GitHub projects posing as desktop apps such as 'GPT-6 Astra' and 'Claude Opus'. The downloads sideload YobaLoader next to real signed OpenAI and Anthropic executables to deploy cryptocurrency miners.",
+    "summary_zh": "Check Point 发现了一个名为 Yoba 的攻击活动，攻击者在 GitHub 上发布冒充“GPT-6 Astra”“Claude Opus”等桌面客户端的假项目。下载后，YobaLoader 会借助 OpenAI 和 Anthropic 的正版签名程序进行 DLL 侧加载，再部署挖矿程序。",
+    "category": "ai-fails",
+    "type": "incident",
+    "hook": "“GPT-6 抢先下载”这种诱饵本身就很好笑，也很有警示意义。",
+    "tools": [
+      "ChatGPT/Claude (impersonated)"
+    ],
+    "source_url": "https://thehackernews.com/2026/10/fake-chatgpt-and-claude-apps-abuse.html",
+    "source_platform": "Security news (The Hacker News / Check Point)",
+    "date": "2026-10",
+    "engagement": "The Hacker News coverage",
+    "vendor": false,
+    "tier": "featured"
+  },
+  {
+    "slug": "fake-claude-pro-plugx",
+    "title": "Fake 'Claude Pro' download site installs PlugX remote-access malware",
+    "title_zh": "假“Claude Pro”下载站，装上的是远控木马",
+    "summary": "Malwarebytes found a lookalike Claude site offering 'Claude-Pro-windows-x64.zip', which installs a working copy of Claude while quietly deploying a PlugX malware chain. The chain gives attackers remote access to the machine.",
+    "summary_zh": "Malwarebytes 发现一个仿冒 Claude 的网站在提供“Claude-Pro-windows-x64.zip”下载，安装后 Claude 能正常使用，后台却悄悄部署了 PlugX 恶意程序链。攻击者可以借此远程控制这台电脑。",
+    "category": "ai-fails",
+    "type": "incident",
+    "hook": "“软件能正常用”才是最可怕的地方，可以和 MacSync 那条合并成一条“假 AI 安装包”推文。",
+    "tools": [
+      "Claude (impersonated)"
+    ],
+    "source_url": "https://www.malwarebytes.com/fr/blog/scams/2026/04/fake-claude-site-installs-malware-that-gives-attackers-access-to-your-computer",
+    "source_platform": "Security blog (Malwarebytes)",
+    "date": "2026-04",
+    "engagement": "Malwarebytes research",
+    "vendor": false,
+    "tier": "featured"
+  },
+  {
+    "slug": "x402-100m-agent-payments",
+    "title": "AI agents cross 100 million x402 payments on Base",
+    "title_zh": "AI agent 在 Base 链上完成的 x402 支付突破 1 亿笔",
+    "summary": "Chainalysis reports that agentic payments over Coinbase's x402 protocol on Base passed 100 million transactions in about three quarters, though much of the early growth came from memecoin farming. Payments of $1 or more now make up 95% of the volume transferred.",
+    "summary_zh": "Chainalysis 报告称，Base 链上通过 Coinbase x402 协议完成的 AI agent 支付在大约三个季度里突破了 1 亿笔，不过早期增长有很大一部分来自 meme 币刷量。目前 1 美元及以上的支付已占转账总额的 95%。",
+    "category": "agent-news",
+    "type": "news",
+    "hook": "“机器给机器付钱破 1 亿笔”是一个里程碑型数据，适合配增长曲线图。",
+    "tools": [
+      "x402",
+      "Base",
+      "Coinbase"
+    ],
+    "source_url": "https://www.chainalysis.com/blog/x402-agentic-payments-adoption/",
+    "source_platform": "Chainalysis blog",
+    "date": "2026-06",
+    "engagement": "Chainalysis report; follow-ups by AInvest",
+    "vendor": true,
+    "tier": "featured"
+  },
+  {
+    "slug": "moltbook-agents-trade-crypto",
+    "title": "Moltbook: a social network where AI agents trade crypto with each other",
+    "title_zh": "Moltbook：一个只给 AI 用的社交网络，agent 之间自己交易加密资产",
+    "summary": "Moltbook launched in February 2026 as a social network whose users are AI agents, and agents on it can hold wallets and execute on-chain trades. Its fast growth raised questions about inflated user numbers and security risks.",
+    "summary_zh": "Moltbook 于 2026 年 2 月上线，是一个用户全是 AI agent 的社交网络，上面的 agent 可以持有钱包并在链上执行交易。它增长得很快，也引发了用户数是否注水和安全风险的质疑。",
+    "category": "agent-news",
+    "type": "news",
+    "hook": "“没有人类的社交网络”自带科幻感，适合当首页的话题引子。",
+    "tools": [
+      "Moltbook"
+    ],
+    "source_url": "https://www.ccn.com/education/crypto/moltbook-ai-agents-crypto-trades-bitcoin-fall-below-70000-risks-explained",
+    "source_platform": "News (CCN; arXiv study)",
+    "date": "2026-02",
+    "engagement": "CCN, Phemex, arXiv paper",
+    "vendor": false,
+    "tier": "featured"
+  },
+  {
+    "slug": "analyze-defi-protocol-risk-with-claude-code-skill",
+    "title": "Analyze a DeFi protocol's contract, governance and track-record risk with a Claude Code skill",
+    "summary": "A developer built a Claude Code skill after the April 2026 Drift Protocol hack to score DeFi protocols across contract, off-chain governance and incident-history risk. It surfaces red flags rather than claiming to be a formal audit.",
+    "summary_zh": "开发者在 Drift 被黑后做了一个 Claude Code 技能，从合约、治理和历史事件三方面评估 DeFi 协议风险。",
+    "category": "security",
+    "tools": [
+      "Claude Code"
+    ],
+    "source_url": "https://github.com/truenorth-lj/crypto-project-security-skill",
+    "source_platform": "GitHub",
+    "date": "2026-04",
+    "vendor": false,
+    "title_zh": null,
+    "type": "tool",
+    "tier": "base",
+    "needs_translation": true
+  },
+  {
+    "slug": "block-scam-contracts-before-ai-agent-transactions",
+    "title": "Block honeypots and rug-pull contracts before an AI coding agent sends a transaction",
+    "summary": "CryptoGuard is an open-source pre-transaction hook for Claude Code, Codex and Cursor that checks smart contracts for honeypot, blacklist and rug-pull patterns. It stops the agent before a risky interaction happens.",
+    "summary_zh": "开源的交易前钩子，让 Claude Code 等代理在交互前自动检查合约是否为貔貅盘、黑名单或跑路合约。",
+    "category": "security",
+    "tools": [
+      "Claude Code",
+      "Codex",
+      "Cursor"
+    ],
+    "source_url": "https://github.com/momenbasel/CryptoGuard",
+    "source_platform": "GitHub",
+    "date": "2026",
+    "vendor": false,
+    "title_zh": null,
+    "type": "tool",
+    "tier": "base",
+    "needs_translation": true
+  },
+  {
+    "slug": "check-token-honeypot-via-mcp",
+    "title": "Check whether a token is a honeypot from inside Claude via an MCP server",
+    "summary": "An open-source MCP server lets Claude query whether a token address on Ethereum, BSC or Base is a honeypot that can be bought but not sold. Users ask in chat and get the risk analysis back.",
+    "summary_zh": "通过 MCP 服务器让 Claude 直接检测 ETH/BSC/Base 上的代币是否为只能买不能卖的貔貅盘。",
+    "category": "security",
+    "tools": [
+      "Claude",
+      "MCP"
+    ],
+    "source_url": "https://github.com/kukapay/honeypot-detector-mcp",
+    "source_platform": "GitHub",
+    "date": "2025",
+    "vendor": false,
+    "title_zh": null,
+    "type": "tool",
+    "tier": "base",
+    "needs_translation": true
+  },
+  {
+    "slug": "audit-solidity-with-claude-code-subagents",
+    "title": "Audit a Solidity codebase with 33 specialized Claude Code subagents",
+    "summary": "A developer published Claude Code skills that crawl a Solidity repo and pick relevant subagents for attack surfaces like reentrancy and flash loans. It is aimed at security auditing and protocol research.",
+    "summary_zh": "用 Claude Code 技能自动挑选 33 个专项子代理审计 Solidity 合约（重入、闪电贷等）。",
+    "category": "security",
+    "tools": [
+      "Claude Code"
+    ],
+    "source_url": "https://github.com/mnedelchev-vn/solidity-claude-setup",
+    "source_platform": "GitHub",
+    "date": "2026",
+    "vendor": false,
+    "title_zh": null,
+    "type": "tool",
+    "tier": "base",
+    "needs_translation": true
+  },
+  {
+    "slug": "scan-solidity-for-36-vulnerability-classes",
+    "title": "Scan a Solidity repo for 36 known vulnerability classes with a Claude Code skill",
+    "summary": "SCV Scan has Claude load a cheatsheet of 36 smart-contract vulnerability types, then sweep the codebase syntactically and semantically. It outputs findings mapped to those known classes.",
+    "summary_zh": "Claude Code 技能按 36 类已知漏洞清单扫描 Solidity 代码。",
+    "category": "security",
+    "tools": [
+      "Claude Code"
+    ],
+    "source_url": "https://github.com/kadenzipfel/scv-scan",
+    "source_platform": "GitHub",
+    "date": "2026",
+    "vendor": false,
+    "title_zh": null,
+    "type": "tool",
+    "tier": "base",
+    "needs_translation": true
+  },
+  {
+    "slug": "orchestrate-slither-mythril-audit-with-claude",
+    "title": "Run Slither, Mythril, Echidna and more in one Claude Code audit pass",
+    "summary": "SolidSecs is a Claude Code plugin that orchestrates many static and fuzzing tools plus manual review across 100+ vulnerability classes. It merges results into a severity-ranked report.",
+    "summary_zh": "Claude Code 插件统一调度 Slither、Mythril 等工具并输出按严重度排序的审计报告。",
+    "category": "security",
+    "tools": [
+      "Claude Code"
+    ],
+    "source_url": "https://github.com/carni-ships/SolidSecs",
+    "source_platform": "GitHub",
+    "date": "2026",
+    "vendor": false,
+    "title_zh": null,
+    "type": "tool",
+    "tier": "base",
+    "needs_translation": true
+  },
+  {
+    "slug": "generate-exploit-pocs-for-contracts-with-claude",
+    "title": "Generate exploit PoCs and fork simulations for a smart contract in Claude Code",
+    "summary": "RugProof turns Claude Code into a contract auditor that detects vulnerabilities, writes working exploit proofs-of-concept and simulates on a mainnet fork. It supports Solidity and Vyper across major EVM chains.",
+    "summary_zh": "RugProof 让 Claude Code 检测合约漏洞、写出可运行的攻击 PoC 并在主网分叉上模拟。",
+    "category": "security",
+    "tools": [
+      "Claude Code",
+      "MCP"
+    ],
+    "source_url": "https://github.com/omermaksutii/RugProof",
+    "source_platform": "GitHub",
+    "date": "2026",
+    "vendor": false,
+    "title_zh": null,
+    "type": "tool",
+    "tier": "base",
+    "needs_translation": true
+  },
+  {
+    "slug": "verify-audit-findings-with-devils-advocate-agents",
+    "title": "Hunt and verify smart contract bugs with parallel agents in Claude Code or Codex",
+    "summary": "sc-auditor maps a Solidity codebase, dispatches six parallel agents to hunt different bug classes, then runs a 'devil's advocate' check that demands proof. This cuts false positives before findings are confirmed.",
+    "summary_zh": "sc-auditor 用六个并行代理找漏洞，再用“反方”流程要求证据，减少误报。",
+    "category": "security",
+    "tools": [
+      "Claude Code",
+      "Codex"
+    ],
+    "source_url": "https://github.com/Archethect/sc-auditor",
+    "source_platform": "GitHub",
+    "date": "2026",
+    "vendor": false,
+    "title_zh": null,
+    "type": "tool",
+    "tier": "base",
+    "needs_translation": true
+  },
+  {
+    "slug": "benchmark-ai-agents-on-real-contract-exploits",
+    "title": "Measure how well AI agents find exploitable bugs in real smart contracts",
+    "summary": "Anthropic Fellows researchers built SCONE-bench from 405 contracts exploited in 2020–2025 and found agents could reproduce about $4.6M of exploits. The work frames AI as both a threat and a defensive audit tool.",
+    "summary_zh": "Anthropic 研究用 405 个真实被黑合约测评 AI 代理，发现其可复现约 460 万美元的漏洞利用。",
+    "category": "security",
+    "tools": [
+      "Claude"
+    ],
+    "source_url": "https://www.anthropic.com/research/smart-contracts",
+    "source_platform": "Anthropic blog",
+    "date": "2025-12",
+    "vendor": true,
+    "title_zh": null,
+    "type": "tool",
+    "tier": "base",
+    "needs_translation": true
+  },
+  {
+    "slug": "ask-grok-about-influencer-rug-pull-history",
+    "title": "Ask Grok and get a warning about an influencer's rug-pull history",
+    "summary": "When influencer Crypto Rover asked Grok for help, it declined and cited his past token dumps and aggressive promotions. Media covered it as an example of the chatbot surfacing on-chain reputation risk.",
+    "summary_zh": "Grok 拒绝协助网红 Crypto Rover，并指出其过去的跑路和砸盘记录。",
+    "category": "security",
+    "tools": [
+      "Grok"
+    ],
+    "source_url": "https://www.cryptopolitan.com/grok-refuses-help-influencer-crypto-rover/",
+    "source_platform": "Cryptopolitan",
+    "date": "2025-07",
+    "vendor": false,
+    "title_zh": null,
+    "type": "tool",
+    "tier": "base",
+    "needs_translation": true
+  },
+  {
+    "slug": "audit-ethereum-contract-inside-claude-via-mcp",
+    "title": "Audit a deployed Ethereum contract and analyze wallets inside Claude with MCP tools",
+    "summary": "An open-source MCP toolkit gives Claude Ethereum analysis tools, including smart-contract audit and wallet analysis. Users run the checks conversationally instead of reading the explorer by hand.",
+    "summary_zh": "开源 MCP 工具包让 Claude 在对话中审计以太坊合约、分析钱包。",
+    "category": "security",
+    "tools": [
+      "Claude",
+      "MCP"
+    ],
+    "source_url": "https://github.com/0xGval/evm-mcp-tools",
+    "source_platform": "GitHub",
+    "date": "2025",
+    "vendor": false,
+    "title_zh": null,
+    "type": "tool",
+    "tier": "base",
+    "needs_translation": true
+  },
+  {
+    "slug": "inspect-verified-contract-with-etherscan-claude-connector",
+    "title": "Inspect a verified smart contract in plain language with the Etherscan Claude connector",
+    "summary": "Etherscan's read-only Claude connector lets users ask about contracts, wallets and transactions in chat without an API key. A suggested first prompt is to inspect a verified contract.",
+    "summary_zh": "Etherscan 官方 Claude 连接器，可直接用自然语言检查已验证合约和钱包。",
+    "category": "security",
+    "tools": [
+      "Claude"
+    ],
+    "source_url": "https://docs.etherscan.io/build-with-ai/claude-connector",
+    "source_platform": "Etherscan docs",
+    "date": "2026",
+    "vendor": true,
+    "title_zh": null,
+    "type": "tool",
+    "tier": "base",
+    "needs_translation": true
+  },
+  {
+    "slug": "check-wallet-address-risk-before-sending",
+    "title": "Check whether a wallet address is risky before sending funds",
+    "summary": "A hackathon team built WalletGuard AI so ordinary users can check an address from a DM-style 'airdrop' request before sending. It uses AI to explain the address's risk signals in plain language.",
+    "summary_zh": "黑客松项目，转账前用 AI 检查对方地址是否可疑（如假空投私信）。",
+    "category": "security",
+    "tools": [
+      "Gemini"
+    ],
+    "source_url": "https://devpost.com/software/walletguard-ai",
+    "source_platform": "Devpost",
+    "date": "2026",
+    "vendor": false,
+    "title_zh": null,
+    "type": "tool",
+    "tier": "base",
+    "needs_translation": true
+  },
+  {
+    "slug": "screen-solana-memecoins-with-rugcheck-and-ai",
+    "title": "Screen new Solana memecoins with RugCheck data and AI summaries in Telegram",
+    "summary": "A developer built a Node.js screener combining Helius, DexScreener and RugCheck with Groq-hosted LLM analysis. Results arrive in Telegram so risky tokens are flagged early.",
+    "summary_zh": "Solana meme 币筛选器结合 RugCheck 和 LLM 分析，通过 Telegram 推送风险提示。",
+    "category": "security",
+    "tools": [
+      "Groq"
+    ],
+    "source_url": "https://github.com/Denzz102/memecoin-agent",
+    "source_platform": "GitHub",
+    "date": "2025",
+    "vendor": false,
+    "title_zh": null,
+    "type": "tool",
+    "tier": "base",
+    "needs_translation": true
+  },
+  {
+    "slug": "harden-ai-trading-agent-with-wallet-access",
+    "title": "Apply spend limits and pre-send simulation to an AI agent that holds a wallet",
+    "summary": "An open skill documents security patterns for autonomous agents with transaction authority: prompt-injection defenses, spend caps, simulation before sending and key handling. Agents use it to review their own setup.",
+    "summary_zh": "为持有钱包的 AI 代理提供防提示注入、限额、发送前模拟等安全规范。",
+    "category": "security",
+    "tools": [
+      "Claude Code"
+    ],
+    "source_url": "https://github.com/affaan-m/ECC/blob/main/skills/llm-trading-agent-security/SKILL.md",
+    "source_platform": "GitHub",
+    "date": "2026",
+    "vendor": false,
+    "title_zh": null,
+    "type": "tool",
+    "tier": "base",
+    "needs_translation": true
+  },
+  {
+    "slug": "connect-crypto-tax-software-to-ai-via-mcp",
+    "title": "Let an AI agent read your crypto tax account via MCP to explain transactions",
+    "summary": "Awaken explains how MCP lets ChatGPT or Claude read wallets and exchange history from tax software instead of guessing. Users can ask the agent to label confusing DeFi transfers.",
+    "summary_zh": "Awaken 介绍通过 MCP 让 AI 读取报税软件中的交易，帮你标注看不懂的 DeFi 记录。",
+    "category": "tax",
+    "tools": [
+      "ChatGPT",
+      "Claude",
+      "MCP"
+    ],
+    "source_url": "https://awaken.tax/media/article/crypto-taxes-with-ai-mcp",
+    "source_platform": "Awaken blog",
+    "date": "2026",
+    "vendor": true,
+    "title_zh": null,
+    "type": "tool",
+    "tier": "base",
+    "needs_translation": true
+  },
+  {
+    "slug": "investigate-thousands-of-transactions-with-claude-code",
+    "title": "Investigate thousands of crypto transactions for taxes with Claude Code scripts",
+    "summary": "Awaken's guide shows giving Claude transaction files to analyze trades and explain complex DeFi, and using Claude Code to script through large histories. An MCP link lets it work against the tax platform directly.",
+    "summary_zh": "用 Claude 和 Claude Code 分析大量交易记录、解释复杂 DeFi 以便报税。",
+    "category": "tax",
+    "tools": [
+      "Claude",
+      "Claude Code"
+    ],
+    "source_url": "https://awaken.tax/media/article/claude-crypto-taxes",
+    "source_platform": "Awaken blog",
+    "date": "2026",
+    "vendor": true,
+    "title_zh": null,
+    "type": "tool",
+    "tier": "base",
+    "needs_translation": true
+  },
+  {
+    "slug": "query-tokentax-data-from-claude-code",
+    "title": "Query your TokenTax gains and transaction data from Claude Code",
+    "summary": "TokenTax documents connecting its MCP server to Claude Code so users can pull gains, losses and transactions in the terminal. The guide is CPA-reviewed and updated November 2026.",
+    "summary_zh": "TokenTax 官方教程：在 Claude Code 中查询自己的盈亏和交易数据。",
+    "category": "tax",
+    "tools": [
+      "Claude Code",
+      "MCP"
+    ],
+    "source_url": "https://tokentax.co/blog/how-to-use-tokentax-with-claude-code",
+    "source_platform": "TokenTax blog",
+    "date": "2026-11",
+    "vendor": true,
+    "title_zh": null,
+    "type": "tool",
+    "tier": "base",
+    "needs_translation": true
+  },
+  {
+    "slug": "review-crypto-tax-data-in-chatgpt",
+    "title": "Review your crypto tax report data inside ChatGPT",
+    "summary": "TokenTax shows how to connect its data to ChatGPT to ask questions about trades and taxable events. It keeps final tax decisions with the user or a CPA.",
+    "summary_zh": "TokenTax 教程：在 ChatGPT 中查看和询问自己的加密报税数据。",
+    "category": "tax",
+    "tools": [
+      "ChatGPT",
+      "MCP"
+    ],
+    "source_url": "https://tokentax.co/blog/how-to-use-tokentax-with-chatgpt",
+    "source_platform": "TokenTax blog",
+    "date": "2026-11",
+    "vendor": true,
+    "title_zh": null,
+    "type": "tool",
+    "tier": "base",
+    "needs_translation": true
+  },
+  {
+    "slug": "check-japan-crypto-pnl-with-ai-and-cryptact",
+    "title": "Check Japanese crypto P&L for tax filing by linking Cryptact to ChatGPT or Claude",
+    "summary": "Cryptact explains which tax-filing steps AI can speed up, such as totaling P&L and checking figures, and how to connect via MCP. It warns users not to paste raw histories and to verify answers.",
+    "summary_zh": "Cryptact 介绍通过 MCP 把损益数据接入 ChatGPT/Claude，用于日本确定申告核对。",
+    "category": "tax",
+    "tools": [
+      "ChatGPT",
+      "Claude",
+      "MCP"
+    ],
+    "source_url": "https://www.cryptact.com/blog/mcp-ai-tax-filing",
+    "source_platform": "Cryptact blog",
+    "date": "2026-07",
+    "vendor": true,
+    "title_zh": null,
+    "type": "tool",
+    "tier": "base",
+    "needs_translation": true
+  },
+  {
+    "slug": "aggregate-eu-wallets-and-exchanges-for-claude",
+    "title": "Aggregate wallets, Bybit and Trading 212 holdings so Claude can summarize them",
+    "summary": "Fenek is a read-only MCP server that pulls balances from EVM chains, Solana, TON, Bitcoin and EU brokers/exchanges. Claude can then organize holdings without trading or custody.",
+    "summary_zh": "只读 MCP 汇总多链钱包和欧洲交易所持仓，供 Claude 整理。",
+    "category": "tax",
+    "tools": [
+      "Claude",
+      "MCP"
+    ],
+    "source_url": "https://github.com/Guck111/fenek-portfolio-companion",
+    "source_platform": "GitHub",
+    "date": "2026",
+    "vendor": false,
+    "title_zh": null,
+    "type": "tool",
+    "tier": "base",
+    "needs_translation": true
+  },
+  {
+    "slug": "analyze-binance-coinbase-kraken-portfolio-in-claude",
+    "title": "Analyze a Binance, Coinbase and Kraken portfolio in Claude with a read-only MCP server",
+    "summary": "A developer built a read-only MCP server with 18+ portfolio analytics tools across three major exchanges. Claude can summarize holdings and history without trade permissions.",
+    "summary_zh": "只读 MCP 服务器，让 Claude 汇总分析 Binance/Coinbase/Kraken 持仓。",
+    "category": "tax",
+    "tools": [
+      "Claude",
+      "MCP"
+    ],
+    "source_url": "https://github.com/Spoofkapoof/CryptoPortfolioMCPServer",
+    "source_platform": "GitHub",
+    "date": "2025",
+    "vendor": false,
+    "title_zh": null,
+    "type": "tool",
+    "tier": "base",
+    "needs_translation": true
+  },
+  {
+    "slug": "query-cointracking-history-from-claude",
+    "title": "Query your CoinTracking trades and balances from Claude",
+    "summary": "An open-source MCP server exposes the CoinTracking API to Claude, with keys stored in the system keychain. Users can ask about trades, balances and gains in chat.",
+    "summary_zh": "把 CoinTracking API 接入 Claude，对话查询交易、余额和收益。",
+    "category": "tax",
+    "tools": [
+      "Claude",
+      "MCP"
+    ],
+    "source_url": "https://github.com/alemuenchen/cointracking-mcp",
+    "source_platform": "GitHub",
+    "date": "2026",
+    "vendor": false,
+    "title_zh": null,
+    "type": "tool",
+    "tier": "base",
+    "needs_translation": true
+  },
+  {
+    "slug": "sync-kucoin-portfolio-to-notion-via-claude",
+    "title": "Sync a KuCoin portfolio into Notion through Claude",
+    "summary": "A developer connected Claude to their KuCoin account and Notion workspace via MCP. Claude can pull holdings and write portfolio records into Notion.",
+    "summary_zh": "通过 MCP 让 Claude 读取 KuCoin 持仓并写入 Notion 记录。",
+    "category": "tax",
+    "tools": [
+      "Claude",
+      "MCP"
+    ],
+    "source_url": "https://github.com/imchandanmohan/mcp-crypto-portfolio",
+    "source_platform": "GitHub",
+    "date": "2025",
+    "vendor": false,
+    "title_zh": null,
+    "type": "tool",
+    "tier": "base",
+    "needs_translation": true
+  },
+  {
+    "slug": "ask-claude-which-holdings-become-tax-free",
+    "title": "Ask Claude where your BTC sits and which holdings become tax-free (Germany)",
+    "summary": "owncryptofolio lets Claude Code/Desktop read your self-hosted portfolio data, e.g. 'which withdrawals lack a counterpart' or 'what becomes tax-free by Christmas'. Edits require explicit user approval.",
+    "summary_zh": "德国自托管工具让 Claude 回答“哪些币快满一年免税”“哪笔提现缺少对应记录”。",
+    "category": "tax",
+    "tools": [
+      "Claude Code",
+      "Claude"
+    ],
+    "source_url": "https://github.com/Vanixxx/owncryptofolio/blob/main/wiki/anleitungen/claude-anbinden.md",
+    "source_platform": "GitHub",
+    "date": "2026-10",
+    "vendor": false,
+    "title_zh": null,
+    "type": "tool",
+    "tier": "base",
+    "needs_translation": true
+  },
+  {
+    "slug": "build-portfolio-tracker-with-claude-code",
+    "title": "Build a personal crypto market and portfolio tracker with Claude Code",
+    "summary": "A developer built 'Ledger', a Next.js + Supabase crypto market browser and portfolio tracker, with a CLAUDE.md guiding Claude Code. It tracks holdings alongside live market data.",
+    "summary_zh": "开发者用 Claude Code 搭建个人加密行情与持仓追踪应用。",
+    "category": "tax",
+    "tools": [
+      "Claude Code"
+    ],
+    "source_url": "https://github.com/TanakritEuro/crypto-tracker",
+    "source_platform": "GitHub",
+    "date": "2026",
+    "vendor": false,
+    "title_zh": null,
+    "type": "tool",
+    "tier": "base",
+    "needs_translation": true
+  },
+  {
+    "slug": "run-multi-agent-crypto-intel-desk-in-claude",
+    "title": "Run a multi-agent crypto intelligence desk inside Claude Code",
+    "summary": "crypto-claude-desk is a Claude Code plugin with agents, MCP servers and a dashboard for market and on-chain intelligence. It packages research and monitoring into slash commands.",
+    "summary_zh": "Claude Code 多代理加密情报台插件，聚合行情与链上信息。",
+    "category": "sentiment",
+    "tools": [
+      "Claude Code",
+      "MCP"
+    ],
+    "source_url": "https://github.com/hugoguerrap/crypto-claude-desk",
+    "source_platform": "GitHub",
+    "date": "2026",
+    "vendor": false,
+    "title_zh": null,
+    "type": "tool",
+    "tier": "base",
+    "needs_translation": true
+  },
+  {
+    "slug": "push-ai-crypto-news-to-telegram-bot",
+    "title": "Get AI-answered crypto news from RSS feeds in a personal Telegram bot",
+    "summary": "A developer open-sourced a personal Telegram bot on Cloudflare Workers with Groq-powered AI replies and RSS/Atom feed monitoring. It pushes updates and answers questions in chat.",
+    "summary_zh": "个人 Telegram 机器人，监控 RSS 新闻并用 AI 回答问题。",
+    "category": "sentiment",
+    "tools": [
+      "Groq"
+    ],
+    "source_url": "https://github.com/zkreations/whale",
+    "source_platform": "GitHub",
+    "date": "2025",
+    "vendor": false,
+    "title_zh": null,
+    "type": "tool",
+    "tier": "base",
+    "needs_translation": true
+  },
+  {
+    "slug": "rebalance-portfolio-on-whale-flow-signals",
+    "title": "Get Telegram portfolio insights from whale transactions and exchange flows",
+    "summary": "AgentV, an ETHGlobal project, uses an LLM with Coinbase AgentKit to read on-chain whale transactions and exchange flows plus indicators. It reports insights and rebalance suggestions in Telegram.",
+    "summary_zh": "ETHGlobal 项目，用 LLM 读取巨鲸交易和交易所流向，在 Telegram 给出组合建议。",
+    "category": "sentiment",
+    "tools": [
+      "GPT-4o",
+      "Coinbase AgentKit"
+    ],
+    "source_url": "https://ethglobal.com/showcase/agentv-bot-o5zfm",
+    "source_platform": "ETHGlobal",
+    "date": "2025",
+    "vendor": false,
+    "title_zh": null,
+    "type": "tool",
+    "tier": "base",
+    "needs_translation": true
+  },
+  {
+    "slug": "give-openclaw-real-time-crypto-data",
+    "title": "Feed OpenClaw real-time crypto data for Telegram alerts and reports",
+    "summary": "CoinGecko shows connecting OpenClaw to its API so the agent stops hallucinating prices and can do monitoring, price alerts and reports in Telegram. OpenClaw lacks crypto data out of the box.",
+    "summary_zh": "CoinGecko 教程：给 OpenClaw 接入实时数据，实现 Telegram 盯盘提醒。",
+    "category": "sentiment",
+    "tools": [
+      "OpenClaw"
+    ],
+    "source_url": "https://www.coingecko.com/learn/how-to-connect-coingecko-openclaw-crypto-data",
+    "source_platform": "CoinGecko Learn",
+    "date": "2026-04",
+    "vendor": true,
+    "title_zh": null,
+    "type": "tool",
+    "tier": "base",
+    "needs_translation": true
+  },
+  {
+    "slug": "send-telegram-alerts-from-local-openclaw-agent",
+    "title": "Send price, RSI and regime-change alerts from a local OpenClaw agent to Telegram",
+    "summary": "A developer walks through bridging a locally running OpenClaw agent to a Telegram bot. The agent pushes formatted price alerts and signal notifications to the phone.",
+    "summary_zh": "开发者教程：本地 OpenClaw 代理把价格和指标提醒推送到 Telegram。",
+    "category": "sentiment",
+    "tools": [
+      "OpenClaw"
+    ],
+    "source_url": "https://dev.to/paarthurnax_3f967358857ce/how-to-get-telegram-crypto-alerts-from-your-local-ai-agent-23a1",
+    "source_platform": "DEV.to",
+    "date": "2026-03",
+    "vendor": false,
+    "title_zh": null,
+    "type": "tool",
+    "tier": "base",
+    "needs_translation": true
+  },
+  {
+    "slug": "post-daily-gpt-crypto-news-digest-to-telegram",
+    "title": "Post a daily GPT-curated crypto news digest to a Telegram channel",
+    "summary": "An n8n creator built a workflow that pulls CoinDesk, Cointelegraph and Decrypt RSS, dedupes it and has GPT-4 pick and translate top stories. The digest posts on a schedule within Telegram's length limit.",
+    "summary_zh": "n8n 工作流：GPT-4 从多源 RSS 选出要闻，定时推送到 Telegram。",
+    "category": "sentiment",
+    "tools": [
+      "GPT-4",
+      "n8n"
+    ],
+    "source_url": "https://n8n.io/workflows/7930-automated-crypto-news-digest-to-telegram-with-rss-feeds-and-gpt-4",
+    "source_platform": "n8n",
+    "date": "2025",
+    "vendor": false,
+    "title_zh": null,
+    "type": "tool",
+    "tier": "base",
+    "needs_translation": true
+  },
+  {
+    "slug": "get-token-news-sentiment-in-telegram",
+    "title": "Get a GPT-4o news-sentiment summary for any token in Telegram",
+    "summary": "An n8n sub-agent aggregates news for a token keyword like BTC and returns a Telegram-ready summary with sentiment and headlines. It is part of a larger Binance spot-market agent.",
+    "summary_zh": "n8n 工作流：输入币种，GPT-4o 汇总新闻并给出情绪判断推送 Telegram。",
+    "category": "sentiment",
+    "tools": [
+      "GPT-4o",
+      "n8n"
+    ],
+    "source_url": "https://n8n.io/workflows/4740-analyze-crypto-news-sentiment-for-any-token-with-gpt-4o-and-telegram-alerts/",
+    "source_platform": "n8n",
+    "date": "2026",
+    "vendor": false,
+    "title_zh": null,
+    "type": "tool",
+    "tier": "base",
+    "needs_translation": true
+  },
+  {
+    "slug": "ask-telegram-agent-for-coin-news-briefing",
+    "title": "Ask a Telegram AI agent for an on-demand news briefing on any coin",
+    "summary": "Users type a coin or theme like 'Solana' to a Telegram bot, and the n8n workflow gathers articles and summarizes news and sentiment with GPT-4o. It suits quick checks without browsing sites.",
+    "summary_zh": "在 Telegram 输入币名即可获得 GPT-4o 新闻与情绪简报。",
+    "category": "sentiment",
+    "tools": [
+      "GPT-4o",
+      "n8n"
+    ],
+    "source_url": "https://n8n.io/workflows/3751",
+    "source_platform": "n8n",
+    "date": "2025",
+    "vendor": false,
+    "title_zh": null,
+    "type": "tool",
+    "tier": "base",
+    "needs_translation": true
+  },
+  {
+    "slug": "score-crypto-x-sentiment-with-grok",
+    "title": "Score crypto sentiment on X with Grok, including FUD and whale mentions",
+    "summary": "A published agent skill uses Grok's native X access to return structured JSON: bullish/bearish score, Fear & Greed category, narratives, FUD alerts and whale-mention flags. It is meant for monitoring and risk context.",
+    "summary_zh": "基于 Grok 读取 X 数据输出结构化情绪评分、FUD 预警和巨鲸提及。",
+    "category": "sentiment",
+    "tools": [
+      "Grok"
+    ],
+    "source_url": "https://lobehub.com/skills/adaptationio-skrillz-xai-crypto-sentiment",
+    "source_platform": "LobeHub",
+    "date": "2026-11",
+    "vendor": false,
+    "title_zh": null,
+    "type": "tool",
+    "tier": "base",
+    "needs_translation": true
+  },
+  {
+    "slug": "set-price-alerts-with-ai-briefing-in-perplexity",
+    "title": "Set price alerts that trigger an AI briefing in Perplexity Finance",
+    "summary": "Perplexity added price alerts that fire when an asset hits a target or move threshold. Each alert runs a custom query and sends the result by email or push.",
+    "summary_zh": "Perplexity 价格提醒：触发后自动运行查询并推送 AI 解读。",
+    "category": "sentiment",
+    "tools": [
+      "Perplexity"
+    ],
+    "source_url": "https://www.perplexity.ai/changelog/what-we-shipped-july-18th",
+    "source_platform": "Perplexity changelog",
+    "date": "2025-07",
+    "vendor": true,
+    "title_zh": null,
+    "type": "tool",
+    "tier": "base",
+    "needs_translation": true
+  },
+  {
+    "slug": "score-crypto-twitter-authors-with-chatgpt",
+    "title": "Score the sentiment of selected crypto Twitter accounts with ChatGPT",
+    "summary": "CryptoGPT is a Streamlit app using ChatGPT and LangChain to rate tweets from chosen authors on a sentiment scale. It helps track mood among accounts you follow.",
+    "summary_zh": "用 ChatGPT + LangChain 给指定加密推特账号的推文打情绪分。",
+    "category": "sentiment",
+    "tools": [
+      "ChatGPT",
+      "LangChain"
+    ],
+    "source_url": "https://github.com/curiousily/CryptoGPT-Crypto-Twitter-Sentiment-Analysis-with-ChatGPT-and-LangChain",
+    "source_platform": "GitHub",
+    "date": "2023",
+    "vendor": false,
+    "title_zh": null,
+    "type": "tool",
+    "tier": "base",
+    "needs_translation": true
+  },
+  {
+    "slug": "chart-bitcoin-tweet-sentiment-with-openai",
+    "title": "Chart the sentiment of Bitcoin tweets with OpenAI",
+    "summary": "A developer pulled Bitcoin tweets via the Twitter API and classified each with OpenAI. Results show as a pie chart of positive, negative and undetermined.",
+    "summary_zh": "用 OpenAI 判断比特币推文情绪并生成饼图。",
+    "category": "sentiment",
+    "tools": [
+      "OpenAI"
+    ],
+    "source_url": "https://github.com/Olney1/Twitter-Bitcoin-Sentiment-Analysis-Using-OpenAI",
+    "source_platform": "GitHub",
+    "date": "2023",
+    "vendor": false,
+    "title_zh": null,
+    "type": "tool",
+    "tier": "base",
+    "needs_translation": true
+  },
+  {
+    "slug": "detect-emotion-in-crypto-tweets",
+    "title": "Detect fear and excitement in crypto tweets with a GPT model",
+    "summary": "A hackathon team built CryptoMind to classify crypto tweets by sentiment and emotions like fear or excitement. The goal is to read crowd mood, not just price trends.",
+    "summary_zh": "黑客松项目，用 GPT 模型识别加密推文中的恐惧、兴奋等情绪。",
+    "category": "sentiment",
+    "tools": [
+      "GPT-2"
+    ],
+    "source_url": "https://devpost.com/software/cryptomind-ai-human-insight-for-twitter-sentiment",
+    "source_platform": "Devpost",
+    "date": "2025",
+    "vendor": false,
+    "title_zh": null,
+    "type": "tool",
+    "tier": "base",
+    "needs_translation": true
+  },
+  {
+    "slug": "monitor-whales-and-liquidations-with-claude",
+    "title": "Ask Claude what whales are doing across exchanges and on-chain",
+    "summary": "CoinLobster offers an MCP server so Claude can watch whale trades, funding, liquidations and named wallets across 18 exchanges. Users ask in plain language and Claude picks the tool.",
+    "summary_zh": "CoinLobster MCP 让 Claude 监控 18 家交易所及链上的巨鲸、资金费率和爆仓。",
+    "category": "sentiment",
+    "tools": [
+      "Claude",
+      "MCP"
+    ],
+    "source_url": "https://coinlobster.com/agents/whale-monitor-claude",
+    "source_platform": "CoinLobster",
+    "date": "2026",
+    "vendor": true,
+    "title_zh": null,
+    "type": "tool",
+    "tier": "base",
+    "needs_translation": true
+  },
+  {
+    "slug": "build-whale-gossip-agent-for-onchain-moves",
+    "title": "Build an agent that watches the chain and narrates big whale moves",
+    "summary": "A developer built a bot that monitors large USDC moves and Uniswap entries and uses an LLM to write witty commentary. It replaces raw alerts with readable summaries.",
+    "summary_zh": "开发者做了监控链上大额转账的代理，用 LLM 写成有趣的播报。",
+    "category": "sentiment",
+    "tools": [
+      "OpenAI-compatible LLM"
+    ],
+    "source_url": "https://dev.to/harishkotra/how-i-built-a-snarky-ai-agent-that-gossips-about-crypto-whales-1l20",
+    "source_platform": "DEV.to",
+    "date": "2025",
+    "vendor": false,
+    "title_zh": null,
+    "type": "tool",
+    "tier": "base",
+    "needs_translation": true
+  },
+  {
+    "slug": "pull-santiment-social-sentiment-into-ai-agent",
+    "title": "Pull Santiment social and news sentiment into an AI agent via MCP",
+    "summary": "An open-source MCP server gives agents Santiment's aggregated social-volume and sentiment data. Users can ask Claude about sentiment shifts and trending coins.",
+    "summary_zh": "MCP 服务器让 AI 代理读取 Santiment 社交情绪和讨论热度数据。",
+    "category": "sentiment",
+    "tools": [
+      "Claude",
+      "MCP"
+    ],
+    "source_url": "https://github.com/kukapay/crypto-sentiment-mcp",
+    "source_platform": "GitHub",
+    "date": "2025",
+    "vendor": false,
+    "title_zh": null,
+    "type": "tool",
+    "tier": "base",
+    "needs_translation": true
+  },
+  {
+    "slug": "trace-funding-trails-with-claude-code",
+    "title": "Trace funding trails and spot insider buys with Claude Code as an on-chain researcher",
+    "summary": "Alchemy shows turning Claude Code into an on-chain research agent that answers questions like where money came from and who holds a token. It replaces manual block-explorer work.",
+    "summary_zh": "Alchemy 教程：用 Claude Code 追踪资金来源、发现内部人买入。",
+    "category": "sentiment",
+    "tools": [
+      "Claude Code",
+      "MCP"
+    ],
+    "source_url": "https://www.alchemy.com/blog/onchain-research-agent-claude-code",
+    "source_platform": "Alchemy blog",
+    "date": "2026-08",
+    "vendor": true,
+    "title_zh": null,
+    "type": "tool",
+    "tier": "base",
+    "needs_translation": true
+  },
+  {
+    "slug": "research-hyperliquid-state-with-claude-code",
+    "title": "Answer live Hyperliquid on-chain questions with a Claude Code research agent",
+    "summary": "Dwellir builds a Claude Code agent with an MCP read path to the chain and rules against guessing. It answers current-state questions that chat models get wrong from stale training data.",
+    "summary_zh": "Dwellir 教程：Claude Code 接实时链上数据回答 Hyperliquid 问题，避免幻觉。",
+    "category": "sentiment",
+    "tools": [
+      "Claude Code",
+      "MCP"
+    ],
+    "source_url": "https://www.dwellir.com/blog/build-onchain-research-agent-claude-code",
+    "source_platform": "Dwellir blog",
+    "date": "2026-10",
+    "vendor": true,
+    "title_zh": null,
+    "type": "tool",
+    "tier": "base",
+    "needs_translation": true
+  },
+  {
+    "slug": "analyze-ton-blockchain-data-with-claude-code",
+    "title": "Analyze TON blockchain wallets and flows with a Claude Code skill",
+    "summary": "A developer released a skill for Claude Code and Codex that queries and analyzes TON on-chain data. It helps track wallet activity and token flows in plain language.",
+    "summary_zh": "Claude Code/Codex 技能，用自然语言分析 TON 链上钱包与资金流。",
+    "category": "sentiment",
+    "tools": [
+      "Claude Code",
+      "Codex"
+    ],
+    "source_url": "https://github.com/ohld/ton-analyst",
+    "source_platform": "GitHub",
+    "date": "2026",
+    "vendor": false,
+    "title_zh": null,
+    "type": "tool",
+    "tier": "base",
+    "needs_translation": true
+  }
+]

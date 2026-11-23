@@ -1,0 +1,121 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI × Crypto Cases — Real things people did with AI in crypto</title>
+<meta name="description" content="Real, sourced cases of AI and AI agents in crypto: scams, fails, security, tax and monitoring.">
+<meta property="og:title" content="AI × Crypto Cases"><meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://tokenestimate.com/ai-crypto/">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--page-bg:#FFFFFF;--page-ink:#111111;--page-black:#000000;--page-mu:#6B6B6B;--page-rule:#E6E6E3;--page-soft:#F6F6F4;--page-blue:#0066FF;--page-red:#E2231A;
+--page-sans:"Archivo",Arial,system-ui,sans-serif;--page-mono:"JetBrains Mono",Consolas,monospace}
+*{box-sizing:border-box}body{margin:0;background:var(--page-bg);color:var(--page-ink);font:16px/1.55 var(--page-sans)}
+a{color:inherit}.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:0;background:var(--page-bg);border-bottom:1px solid var(--page-ink);z-index:5}
+.nav{display:flex;align-items:center;gap:24px;height:60px}.logo{font-weight:800;font-size:17px;text-decoration:none;cursor:pointer;letter-spacing:-.01em;white-space:nowrap}.logo b{color:var(--page-blue)}
+.nav .cats{display:flex;gap:20px;flex:1;overflow-x:auto;white-space:nowrap;min-width:0}.nav .cats a{color:var(--page-mu);text-decoration:none;font-size:14px;cursor:pointer;padding:19px 0;border-bottom:2px solid transparent}.nav .cats a.on,.nav .cats a:hover{color:var(--page-ink);border-color:var(--page-ink)}
+.lang{border:1px solid var(--page-ink);background:none;color:var(--page-ink);padding:6px 12px;cursor:pointer;font:600 12px var(--page-mono)}.lang:hover{background:var(--page-ink);color:#fff}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:40px;align-items:end;padding:64px 0 32px;border-bottom:1px solid var(--page-rule)}
+.hero h1{font-size:clamp(30px,5vw,58px);line-height:1.05;letter-spacing:-.03em;margin:0 0 16px;font-weight:800;max-width:760px}
+.hero p{color:var(--page-mu);margin:0;max-width:560px}
+.count{text-align:right}.count .n{font:600 clamp(72px,11vw,148px)/.85 var(--page-mono);color:var(--page-black);letter-spacing:-.05em}.count .l{font:12px var(--page-mono);color:var(--page-mu);margin-top:8px}
+.search{padding:20px 0;border-bottom:1px solid var(--page-rule)}#q{width:100%;padding:14px 0;border:0;border-bottom:2px solid var(--page-ink);background:none;color:var(--page-ink);font:18px var(--page-sans);outline:none}#q:focus{border-color:var(--page-blue)}
+.sec{display:grid;grid-template-columns:220px minmax(0,1fr);gap:32px;padding:40px 0;border-bottom:1px solid var(--page-rule)}
+.sec>h2{font-size:15px;margin:4px 0 0;font-weight:700}.sec>h2 small{display:block;font:12px var(--page-mono);color:var(--page-mu);font-weight:400;margin-top:6px}
+.hot{border-top:1px solid var(--page-ink)}
+.hrow{display:grid;grid-template-columns:48px minmax(0,1fr);gap:16px;padding:20px 0;border-bottom:1px solid var(--page-rule);cursor:pointer;background:none;border-left:0;border-right:0;border-top:0;text-align:left;width:100%;font:inherit;color:inherit}
+.hrow .no{font:600 14px var(--page-mono);color:var(--page-mu);padding-top:5px}.hrow h3{font-size:clamp(19px,2.2vw,24px);line-height:1.25;margin:6px 0;letter-spacing:-.01em}.hrow p{margin:0;color:var(--page-mu);font-size:15px}
+.hrow:hover h3,.item:hover h4{color:var(--page-blue)}
+.tag{display:inline-block;font:600 11px var(--page-mono);letter-spacing:.02em;padding:2px 7px;margin-right:6px;border:1px solid currentColor}
+.t-incident{color:var(--page-red)}.t-news{color:var(--page-blue)}.t-firsthand{color:var(--page-ink)}.t-tool{color:var(--page-mu)}
+.t-vendor,.t-classic,.t-tr{color:var(--page-mu);border-style:dashed}
+.sp{display:flex;align-items:center;gap:16px;background:var(--page-soft);padding:18px 20px;margin:0;flex-wrap:wrap}
+.sp .l{font:600 11px var(--page-mono);color:var(--page-mu)}.sp span{min-width:0}.sp a.btn{margin-left:auto}
+.btn{display:inline-block;background:var(--page-blue);color:#fff;border:0;padding:10px 16px;font:700 14px var(--page-sans);text-decoration:none;cursor:pointer;white-space:nowrap}.btn:hover{background:var(--page-ink)}
+.btn.ghost{background:none;color:var(--page-ink);border:1px solid var(--page-ink)}.btn.ghost:hover{background:var(--page-ink);color:#fff}
+.chips{display:flex;gap:0;flex-wrap:wrap;margin-bottom:8px;border-top:1px solid var(--page-ink)}
+.chip{border:0;border-bottom:2px solid transparent;background:none;padding:12px 14px 10px 0;margin-right:14px;cursor:pointer;font:500 14px var(--page-sans);color:var(--page-mu)}.chip b{font:12px var(--page-mono);font-weight:400;margin-left:4px}.chip.on{color:var(--page-ink);border-color:var(--page-blue)}
+.item{border-bottom:1px solid var(--page-rule);padding:18px 0;cursor:pointer}
+.item h4{margin:0 0 6px;font-size:17px;line-height:1.35}.item p{margin:0 0 10px;color:var(--page-mu);font-size:15px}.meta{font:12px var(--page-mono);color:var(--page-mu)}
+.sub{display:grid;grid-template-columns:220px minmax(0,1fr);gap:32px;padding:40px 0}
+.sub h3{margin:0;font-size:22px;letter-spacing:-.01em}.sub .f{display:flex;gap:0;max-width:520px}.sub input{flex:1;min-width:0;padding:12px;border:1px solid var(--page-ink);border-right:0;font:15px var(--page-sans);background:#fff}
+footer{border-top:1px solid var(--page-ink);color:var(--page-mu);font-size:13px;padding:28px 0 48px}footer a{margin-right:20px;cursor:pointer;color:var(--page-ink)}
+.modal{position:fixed;inset:0;background:rgba(17,17,17,.45);display:none;align-items:center;justify-content:center;z-index:10;padding:20px}.modal.on{display:flex}
+.box{background:#fff;border-top:4px solid var(--page-blue);max-width:680px;width:100%;padding:32px;max-height:88vh;overflow:auto}
+.box h2{margin:14px 0 12px;font-size:clamp(22px,3vw,30px);line-height:1.2;letter-spacing:-.02em}.box .acts{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap}.x{float:right;cursor:pointer;color:var(--page-mu);font-size:24px;line-height:1;background:none;border:0}
+.page{display:none}.page.on{display:block}.pg{padding:56px 0}.pg h2{font-size:clamp(28px,4vw,44px);letter-spacing:-.03em;margin:0 0 12px}
+.price{border-collapse:collapse;width:100%;margin-top:28px;border-top:1px solid var(--page-ink)}.price td,.price th{border-bottom:1px solid var(--page-rule);padding:14px 8px 14px 0;text-align:left}.price th{font:12px var(--page-mono);color:var(--page-mu);font-weight:400}.price td:nth-child(2){font:600 16px var(--page-mono)}
+textarea,.form input{width:100%;max-width:640px;padding:12px;border:1px solid var(--page-ink);background:#fff;margin:6px 0 16px;font:inherit;display:block}
+@media(max-width:820px){.hero,.sec,.sub{grid-template-columns:minmax(0,1fr)}.count{text-align:left}.sec{gap:16px}.hero{padding-top:40px}}
+@media (prefers-reduced-motion:no-preference){.fade{animation:f .35s ease-out both}@keyframes f{from{opacity:0}to{opacity:1}}}
+</style></head><body>
+<header><div class="wrap nav"><a class="logo" onclick="go('home')">AI<b>×</b>Crypto Cases</a><div class="cats" id="nav"></div><button class="lang" onclick="toggleLang()" id="lb">中文</button></div></header>
+<main class="wrap">
+<section class="page on" id="p-home">
+ <div class="hero"><div><h1 data-i="h1"></h1><p data-i="sub"></p></div><div class="count"><div class="n" id="stat"></div><div class="l" data-i="cases"></div></div></div>
+ <div class="search"><input id="q" oninput="render()"></div>
+ <div class="sec"><h2><span data-i="hot"></span><small data-i="hotS"></small></h2><div class="hot" id="hot"></div></div>
+ <div class="sp"><span class="l">SPONSORED</span><span data-i="spText"></span><a class="btn ghost" onclick="go('sponsor')" data-i="spBtn"></a></div>
+ <div class="sec"><h2><span data-i="all"></span><small data-i="allS"></small></h2><div><div class="chips" id="chips"></div><div id="list"></div></div></div>
+ <div class="sub"><h3 data-i="subT"></h3><div><p class="meta" data-i="subP" style="margin:0 0 12px"></p><div class="f"><input placeholder="you@email.com"><button class="btn" onclick="alert('TODO: connect Resend / Beehiiv')" data-i="subB"></button></div></div></div>
+</section>
+<section class="page pg" id="p-sponsor"><h2 data-i="spH"></h2><p data-i="spP" style="color:var(--mu)"></p>
+ <table class="price"><tr><th data-i="pos"></th><th data-i="pr"></th><th></th></tr>
+ <tr><td data-i="s1"></td><td>$99 / week</td><td><a class="btn" href="#PAYMENT_LINK_HOME">Pay</a></td></tr>
+ <tr><td data-i="s2"></td><td>$49 / week</td><td><a class="btn" href="#PAYMENT_LINK_CAT">Pay</a></td></tr>
+ <tr><td data-i="s3"></td><td>$49 / issue</td><td><a class="btn" href="#PAYMENT_LINK_NL">Pay</a></td></tr>
+ <tr><td data-i="s4"></td><td>×1.5</td><td></td></tr></table>
+ <p class="meta" data-i="spNote"></p></section>
+<section class="page pg" id="p-submit"><h2 data-i="subH"></h2><div class="form"><label data-i="f1"></label><input placeholder="https://"><label data-i="f2"></label><textarea rows="4"></textarea><button class="btn" onclick="alert('TODO: connect form endpoint')" data-i="f3"></button></div></section>
+<section class="page pg" id="p-disclaimer"><h2>Disclaimer / 免责声明</h2><p>Not financial advice. Cases are summaries of publicly reported events with source links; details marked unverified may be disputed. Sponsored content is always labeled.</p><p>本站内容不构成投资建议。所有案例均为公开报道的摘要并附来源；标注“未经证实”的细节可能存在争议。赞助内容一律标注。</p></section>
+</main>
+<footer><div class="wrap"><a onclick="go('sponsor')" data-i="nSp"></a><a onclick="go('submit')" data-i="nSu"></a><a onclick="go('disclaimer')" data-i="nDi"></a><br><br><span data-i="foot"></span></div></footer>
+<div class="modal" id="m" onclick="if(event.target===this)this.classList.remove('on')"><div class="box" id="mb"></div></div>
+<script>
+let D=[];
+const CATS=[["ai-fails","AI Fails & Exploits","AI 翻车现场"],["agent-news","Autonomous Agents","AI 自主行为"],["security","Security & Scam Defense","安全防骗"],["tax","Tax & Portfolio","报税与记账"],["sentiment","Monitoring & Sentiment","盯盘与舆情"]];
+const TYPE={incident:["AI FAIL","翻车事件"],news:["AGENT NEWS","自主行为"],firsthand:["FIRSTHAND","亲历"],tool:["TOOL / GUIDE","工具/教程"]};
+const T={en:{h1:"What AI actually did in crypto — including when it lost the money.",sub:"Real, sourced cases: AI agents tricked into sending funds, scams caught, taxes untangled, whales tracked. Every entry links to the original report.",hot:"Trending",hotS:"Most-reported this month",allS:"Filter by category",subP:"One email every Monday. Unsubscribe anytime.",all:"All cases",allc:"All",
+spText:"Your security / tax / data tool here — reach crypto users who use AI.",spBtn:"Sponsor this spot",subT:"Weekly AI × Crypto risk digest",subB:"Subscribe",
+spH:"Sponsor AI × Crypto Cases",spP:"Reach crypto users who actively use AI tools. All sponsored placements are clearly labeled.",pos:"Placement",pr:"Price",
+s1:"Homepage banner",s2:"Category page Featured",s3:"Newsletter ad",s4:"Bilingual (EN + 中文 site)",spNote:"After payment, send name, link, logo and a one-line description. Placements go live after review.",
+subH:"Submit a case",f1:"Source link (X, Reddit, article…)",f2:"What happened? (optional)",f3:"Submit",nSp:"Sponsor",nSu:"Submit a case",nDi:"Disclaimer",
+foot:"Not financial advice. © AI × Crypto Cases",cases:"sourced cases",src:"Open source",share:"Share on X",tools:"Tools",vendor:"VENDOR",classic:"CLASSIC",tr:"",q:"Search cases, tools…"},
+zh:{h1:"AI 在币圈真正做过的事，包括把钱弄丢的时候。",sub:"有来源的真实案例：被骗转账的 AI agent、识破的骗局、理清的报税记录、盯住的巨鲸。每条都链接到原始报道。",hot:"热门案例",hotS:"本月被报道最多",allS:"按分类筛选",subP:"每周一发一封，随时退订。",all:"全部案例",allc:"全部",
+spText:"你的安全 / 报税 / 数据工具可以出现在这里——触达正在用 AI 的币圈用户。",spBtn:"赞助这个位置",subT:"每周 AI × Crypto 风险周报",subB:"订阅",
+spH:"赞助 AI × Crypto Cases",spP:"触达积极使用 AI 工具的加密货币用户。所有赞助位都会明确标注。",pos:"位置",pr:"价格",
+s1:"首页横幅",s2:"分类页 Featured",s3:"Newsletter 广告",s4:"双语套餐（英文站 + 中文站）",spNote:"付款后请发送名称、链接、Logo 和一句话介绍，审核后上线。",
+subH:"提交案例",f1:"来源链接（X、Reddit、文章…）",f2:"发生了什么？（可选）",f3:"提交",nSp:"赞助",nSu:"提交案例",nDi:"免责声明",
+foot:"不构成投资建议。© AI × Crypto Cases",cases:"条有来源的案例",src:"查看来源",share:"分享到 X",tools:"工具",vendor:"厂商发布",classic:"经典回顾",tr:"待翻译",q:"搜索案例、工具…"}};
+let LS={};try{LS=window.localStorage||{}}catch(e){}
+let L=(LS.lang)||((navigator.language||"").startsWith("zh")?"zh":"en"),C="",S="";
+const t=k=>T[L][k];
+const ti=x=>L==="zh"&&x.title_zh?x.title_zh:x.title;
+const su=x=>L==="zh"&&x.summary_zh?x.summary_zh:x.summary;
+const old=x=>x.tier==="featured"&&String(x.date)<"2026";
+function tags(x){let h=`<span class="tag t-${x.type}">${TYPE[x.type][L==="zh"?1:0]}</span>`;if(x.vendor)h+=`<span class="tag t-vendor">${t("vendor")}</span>`;if(old(x))h+=`<span class="tag t-classic">${t("classic")}</span>`;if(L==="zh"&&!x.title_zh)h+=`<span class="tag t-tr">${t("tr")}</span>`;return h}
+const cn=s=>{const c=CATS.find(c=>c[0]===s);return c?c[L==="zh"?2:1]:s};
+function render(){
+ document.documentElement.lang=L==="zh"?"zh-CN":"en";document.getElementById("lb").textContent=L==="zh"?"EN":"中文";
+ document.querySelectorAll("[data-i]").forEach(e=>e.textContent=t(e.dataset.i));
+ const q=document.getElementById("q");q.placeholder=t("q");S=q.value.toLowerCase();
+ document.getElementById("stat").textContent=D.length;
+ document.getElementById("nav").innerHTML=CATS.map(c=>`<a class="${C===c[0]?'on':''}" onclick="setC('${c[0]}')">${c[L==="zh"?2:1]}</a>`).join("");
+ const hot=D.filter(x=>x.tier==="featured").slice(0,5);
+ document.getElementById("hot").innerHTML=hot.map((x,i)=>`<button class="hrow" onclick="op('${x.slug}')"><span class="no">0${i+1}</span><span>${tags(x)}<h3>${ti(x)}</h3><p>${su(x)}</p></span></button>`).join("");
+ document.getElementById("chips").innerHTML=[["","",""],...CATS].map(c=>{const n=c[0]?D.filter(x=>x.category===c[0]).length:D.length;return `<button class="chip ${C===c[0]?'on':''}" onclick="setC('${c[0]}')">${c[0]?c[L==="zh"?2:1]:t("allc")}<b>${n}</b></button>`}).join("");
+ let ls=D.filter(x=>(!C||x.category===C)&&(!S||(x.title+(x.title_zh||"")+x.summary+(x.summary_zh||"")+(x.tools||[]).join(" ")).toLowerCase().includes(S)));
+ ls.sort((a,b)=>(a.tier===b.tier?0:a.tier==="featured"?-1:1)||String(b.date).localeCompare(String(a.date)));
+ document.getElementById("list").innerHTML=ls.map(x=>`<div class="item" onclick="op('${x.slug}')"><h4>${ti(x)}</h4><p>${su(x)}</p><div class="meta">${tags(x)} ${cn(x.category)} · ${x.source_platform||""} · ${x.date||""}</div></div>`).join("");
+}
+function setC(c){C=C===c?"":c;go("home");render();try{document.getElementById("chips").scrollIntoView({behavior:"smooth"})}catch(e){}}
+function toggleLang(){L=L==="zh"?"en":"zh";try{LS.lang=L}catch(e){};render()}
+function go(p){document.querySelectorAll(".page").forEach(e=>e.classList.toggle("on",e.id==="p-"+p));window.scrollTo(0,0)}
+function op(s){const x=D.find(x=>x.slug===s);let u="";try{u=encodeURIComponent(location.href.split("#")[0]+"#u/"+s)}catch(e){}
+ document.getElementById("mb").innerHTML=`<button class="x" aria-label="close" onclick="document.getElementById('m').classList.remove('on')">×</button>${tags(x)}<h2>${ti(x)}</h2><p>${su(x)}</p>
+ <div class="meta">${t("tools")}: ${(x.tools||[]).join(", ")}<br>${cn(x.category)} · ${x.source_platform||""} · ${x.date||""}${x.engagement&&x.engagement!=="unknown"?"<br>"+x.engagement:""}</div>
+ <div class="acts"><a class="btn" href="${x.source_url}" target="_blank" rel="nofollow noopener">${t("src")} ↗</a><a class="btn ghost" target="_blank" href="https://x.com/intent/tweet?text=${encodeURIComponent(ti(x))}&url=${u}">${t("share")}</a></div>`;
+ document.getElementById("m").classList.add("on");try{history.replaceState(null,"","#u/"+s)}catch(e){}}
+fetch('/ai-crypto/data/cases.json').then(r=>r.json()).then(j=>{D=j;render();
+try{if(location.hash.startsWith("#u/"))op(location.hash.slice(3))}catch(e){}}).catch(e=>{document.getElementById('list').textContent='Failed to load data.'});
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "8cb642af9685439cbcfaf80b6bb77595"}'></script>
+</body></html>
