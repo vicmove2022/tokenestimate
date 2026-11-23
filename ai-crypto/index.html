@@ -55,15 +55,21 @@ textarea,.form input{width:100%;max-width:640px;padding:12px;border:1px solid va
  <div class="sec"><h2><span data-i="hot"></span><small data-i="hotS"></small></h2><div class="hot" id="hot"></div></div>
  <div class="sp"><span class="l">SPONSORED</span><span data-i="spText"></span><a class="btn ghost" onclick="go('sponsor')" data-i="spBtn"></a></div>
  <div class="sec"><h2><span data-i="all"></span><small data-i="allS"></small></h2><div><div class="chips" id="chips"></div><div id="list"></div></div></div>
- <div class="sub"><h3 data-i="subT"></h3><div><p class="meta" data-i="subP" style="margin:0 0 12px"></p><div class="f"><input placeholder="you@email.com"><button class="btn" onclick="alert('TODO: connect Resend / Beehiiv')" data-i="subB"></button></div></div></div>
+ <div class="sub"><h3 data-i="subT"></h3><div><p class="meta" data-i="subP" style="margin:0 0 12px"></p><form class="f" action="__NEWSLETTER_ACTION__" method="post" target="_blank" onsubmit="return subOk(this)"><input type="email" name="email" required placeholder="you@email.com" aria-label="email"><input type="hidden" name="tag" id="subtag" value="en"><button class="btn" type="submit" data-i="subB"></button></form><p class="meta" id="subMsg" style="margin:10px 0 0"></p></div></div>
 </section>
 <section class="page pg" id="p-sponsor"><h2 data-i="spH"></h2><p data-i="spP" style="color:var(--mu)"></p>
- <table class="price"><tr><th data-i="pos"></th><th data-i="pr"></th><th></th></tr>
- <tr><td data-i="s1"></td><td>$99 / week</td><td><a class="btn" href="#PAYMENT_LINK_HOME">Pay</a></td></tr>
- <tr><td data-i="s2"></td><td>$49 / week</td><td><a class="btn" href="#PAYMENT_LINK_CAT">Pay</a></td></tr>
- <tr><td data-i="s3"></td><td>$49 / issue</td><td><a class="btn" href="#PAYMENT_LINK_NL">Pay</a></td></tr>
- <tr><td data-i="s4"></td><td>×1.5</td><td></td></tr></table>
- <p class="meta" data-i="spNote"></p></section>
+ <table class="price"><tr><th data-i="pos"></th><th data-i="pr"></th></tr>
+ <tr><td data-i="s1"></td><td>99 USDT / week</td></tr>
+ <tr><td data-i="s2"></td><td>49 USDT / week</td></tr>
+ <tr><td data-i="s3"></td><td>49 USDT / issue</td></tr>
+ <tr><td data-i="s4"></td><td>×1.5</td></tr></table>
+ <div style="margin-top:32px;border-top:1px solid var(--page-ink);padding-top:20px">
+  <p style="margin:0 0 6px;font-weight:700" data-i="payH"></p>
+  <p style="margin:0 0 12px;color:var(--page-red);font:600 13px var(--page-mono)" data-i="payWarn"></p>
+  <div style="display:flex;gap:0;flex-wrap:wrap;max-width:640px"><code id="addr" style="flex:1;min-width:0;overflow-wrap:anywhere;padding:12px;border:1px solid var(--page-ink);font:14px var(--page-mono)">0x486b832f893dbc2e4e775998060cac7757bbe25b</code><button class="btn" onclick="cp()" id="cpb" data-i="copy"></button></div>
+  <p class="meta" style="margin-top:16px" data-i="spNote"></p>
+  <p style="margin:4px 0 0;font:600 14px var(--page-mono)">brad.pappas2018@gmail.com</p>
+ </div></section>
 <section class="page pg" id="p-submit"><h2 data-i="subH"></h2><div class="form"><label data-i="f1"></label><input placeholder="https://"><label data-i="f2"></label><textarea rows="4"></textarea><button class="btn" onclick="alert('TODO: connect form endpoint')" data-i="f3"></button></div></section>
 <section class="page pg" id="p-disclaimer"><h2>Disclaimer / 免责声明</h2><p>Not financial advice. Cases are summaries of publicly reported events with source links; details marked unverified may be disputed. Sponsored content is always labeled.</p><p>本站内容不构成投资建议。所有案例均为公开报道的摘要并附来源；标注“未经证实”的细节可能存在争议。赞助内容一律标注。</p></section>
 </main>
@@ -73,16 +79,16 @@ textarea,.form input{width:100%;max-width:640px;padding:12px;border:1px solid va
 let D=[];
 const CATS=[["ai-fails","AI Fails & Exploits","AI 翻车现场"],["agent-news","Autonomous Agents","AI 自主行为"],["security","Security & Scam Defense","安全防骗"],["tax","Tax & Portfolio","报税与记账"],["sentiment","Monitoring & Sentiment","盯盘与舆情"]];
 const TYPE={incident:["AI FAIL","翻车事件"],news:["AGENT NEWS","自主行为"],firsthand:["FIRSTHAND","亲历"],tool:["TOOL / GUIDE","工具/教程"]};
-const T={en:{h1:"What AI actually did in crypto — including when it lost the money.",sub:"Real, sourced cases: AI agents tricked into sending funds, scams caught, taxes untangled, whales tracked. Every entry links to the original report.",hot:"Trending",hotS:"Most-reported this month",allS:"Filter by category",subP:"One email every Monday. Unsubscribe anytime.",all:"All cases",allc:"All",
+const T={en:{h1:"What AI actually did in crypto — including when it lost the money.",sub:"Real, sourced cases: AI agents tricked into sending funds, scams caught, taxes untangled, whales tracked. Every entry links to the original report.",hot:"Trending",hotS:"Most-reported this month",allS:"Filter by category",subP:"One email every Monday. Unsubscribe anytime.",subDone:"Check your inbox to confirm your subscription.",subSoon:"Subscriptions open soon.",all:"All cases",allc:"All",
 spText:"Your security / tax / data tool here — reach crypto users who use AI.",spBtn:"Sponsor this spot",subT:"Weekly AI × Crypto risk digest",subB:"Subscribe",
 spH:"Sponsor AI × Crypto Cases",spP:"Reach crypto users who actively use AI tools. All sponsored placements are clearly labeled.",pos:"Placement",pr:"Price",
-s1:"Homepage banner",s2:"Category page Featured",s3:"Newsletter ad",s4:"Bilingual (EN + 中文 site)",spNote:"After payment, send name, link, logo and a one-line description. Placements go live after review.",
+s1:"Homepage banner",s2:"Category page Featured",s3:"Newsletter ad",s4:"Bilingual (EN + 中文 site)",payH:"Pay with USDT",payWarn:"USDT on BNB Smart Chain (BEP-20) only. Other networks or tokens will be lost.",copy:"Copy address",copied:"Copied",spNote:"After paying, send the transaction hash, placement, name, link, logo and a one-line description to the contact below. Placements go live within 24 hours after review.",
 subH:"Submit a case",f1:"Source link (X, Reddit, article…)",f2:"What happened? (optional)",f3:"Submit",nSp:"Sponsor",nSu:"Submit a case",nDi:"Disclaimer",
 foot:"Not financial advice. © AI × Crypto Cases",cases:"sourced cases",src:"Open source",share:"Share on X",tools:"Tools",vendor:"VENDOR",classic:"CLASSIC",tr:"",q:"Search cases, tools…"},
-zh:{h1:"AI 在币圈真正做过的事，包括把钱弄丢的时候。",sub:"有来源的真实案例：被骗转账的 AI agent、识破的骗局、理清的报税记录、盯住的巨鲸。每条都链接到原始报道。",hot:"热门案例",hotS:"本月被报道最多",allS:"按分类筛选",subP:"每周一发一封，随时退订。",all:"全部案例",allc:"全部",
+zh:{h1:"AI 在币圈真正做过的事，包括把钱弄丢的时候。",sub:"有来源的真实案例：被骗转账的 AI agent、识破的骗局、理清的报税记录、盯住的巨鲸。每条都链接到原始报道。",hot:"热门案例",hotS:"本月被报道最多",allS:"按分类筛选",subP:"每周一发一封，随时退订。",subDone:"请到邮箱里点确认链接，完成订阅。",subSoon:"订阅功能即将开放。",all:"全部案例",allc:"全部",
 spText:"你的安全 / 报税 / 数据工具可以出现在这里——触达正在用 AI 的币圈用户。",spBtn:"赞助这个位置",subT:"每周 AI × Crypto 风险周报",subB:"订阅",
 spH:"赞助 AI × Crypto Cases",spP:"触达积极使用 AI 工具的加密货币用户。所有赞助位都会明确标注。",pos:"位置",pr:"价格",
-s1:"首页横幅",s2:"分类页 Featured",s3:"Newsletter 广告",s4:"双语套餐（英文站 + 中文站）",spNote:"付款后请发送名称、链接、Logo 和一句话介绍，审核后上线。",
+s1:"首页横幅",s2:"分类页 Featured",s3:"Newsletter 广告",s4:"双语套餐（英文站 + 中文站）",payH:"使用 USDT 付款",payWarn:"仅支持 BNB Smart Chain（BEP-20）网络的 USDT，转其他网络或其他币将无法找回。",copy:"复制地址",copied:"已复制",spNote:"付款后，请把交易哈希、赞助位置、名称、链接、Logo 和一句话介绍发到下面的联系方式。审核通过后 24 小时内上线。",
 subH:"提交案例",f1:"来源链接（X、Reddit、文章…）",f2:"发生了什么？（可选）",f3:"提交",nSp:"赞助",nSu:"提交案例",nDi:"免责声明",
 foot:"不构成投资建议。© AI × Crypto Cases",cases:"条有来源的案例",src:"查看来源",share:"分享到 X",tools:"工具",vendor:"厂商发布",classic:"经典回顾",tr:"待翻译",q:"搜索案例、工具…"}};
 let LS={};try{LS=window.localStorage||{}}catch(e){}
@@ -106,6 +112,8 @@ function render(){
  ls.sort((a,b)=>(a.tier===b.tier?0:a.tier==="featured"?-1:1)||String(b.date).localeCompare(String(a.date)));
  document.getElementById("list").innerHTML=ls.map(x=>`<div class="item" onclick="op('${x.slug}')"><h4>${ti(x)}</h4><p>${su(x)}</p><div class="meta">${tags(x)} ${cn(x.category)} · ${x.source_platform||""} · ${x.date||""}</div></div>`).join("");
 }
+function cp(){const a=document.getElementById("addr").textContent;const b=document.getElementById("cpb");const done=()=>{b.textContent=t("copied");setTimeout(()=>b.textContent=t("copy"),1500)};try{navigator.clipboard.writeText(a).then(done,done)}catch(e){done()}}
+function subOk(f){if(f.action.indexOf("__NEWSLETTER")>-1){document.getElementById("subMsg").textContent=t("subSoon");return false}document.getElementById("subtag").value=L;setTimeout(()=>{document.getElementById("subMsg").textContent=t("subDone");f.reset()},300);return true}
 function setC(c){C=C===c?"":c;go("home");render();try{document.getElementById("chips").scrollIntoView({behavior:"smooth"})}catch(e){}}
 function toggleLang(){L=L==="zh"?"en":"zh";try{LS.lang=L}catch(e){};render()}
 function go(p){document.querySelectorAll(".page").forEach(e=>e.classList.toggle("on",e.id==="p-"+p));window.scrollTo(0,0)}
@@ -116,6 +124,4 @@ function op(s){const x=D.find(x=>x.slug===s);let u="";try{u=encodeURIComponent(l
  document.getElementById("m").classList.add("on");try{history.replaceState(null,"","#u/"+s)}catch(e){}}
 fetch('/ai-crypto/data/cases.json').then(r=>r.json()).then(j=>{D=j;render();
 try{if(location.hash.startsWith("#u/"))op(location.hash.slice(3))}catch(e){}}).catch(e=>{document.getElementById('list').textContent='Failed to load data.'});
-</script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "8cb642af9685439cbcfaf80b6bb77595"}'></script>
-</body></html>
+</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "8cb642af9685439cbcfaf80b6bb77595"}'></script></body></html>
