@@ -58,8 +58,11 @@ def money(v):
 
 
 def row(m):
+    mark = ""
+    if "Unverified as of 2026-11-24" in str(m.get("note") or ""):
+        mark = ' <span class="tag unverified">未核实 / Unverified</span>'
     return (
-        f'<tr><td><a href="/models/{slug(m["id"])}/">{m["label"]}</a></td>'
+        f'<tr><td><a href="/models/{slug(m["id"])}/">{m["label"]}</a>{mark}</td>'
         f'<td>{m["provider"]}</td>'
         f'<td><span class="tag">{"exact" if str(m.get("tokenizer","")).startswith("tiktoken") else "estimate"}</span></td>'
         f'<td>{m.get("contextWindow") or "—"}</td>'
@@ -128,6 +131,7 @@ HEAD = """<!DOCTYPE html>
     .note {{ background: var(--bg-soft); border-left: 3px solid var(--accent); border-radius: var(--radius-sm); padding: 13px 16px; margin: 18px 0 22px; font-size: .92rem; color: var(--text-dim); }}
     .note b {{ color: var(--text); }}
     .tag {{ font-size: .68rem; }}
+    .tag.unverified {{ display: inline-block; margin-left: 6px; padding: 1px 7px; border-radius: 6px; background: #fff6e5; border: 1px solid #f0d7a2; color: #8a5a00; font-weight: 650; }}
     .breadcrumb {{ font-size: .82rem; color: var(--text-faint); margin-bottom: 16px; }}
     .calc {{ margin: 26px 0 8px; }}
     .calc iframe {{ display: block; width: 100%; height: 660px; border: 1px solid #dfe6f1; border-radius: 16px; background: #fff; }}
@@ -174,7 +178,7 @@ TAIL = """      </article>
         Free, private token counting and API cost estimation for {total} AI models.
       </div>
       <div>
-        List prices last verified {human}.<br>
+        List prices: {human}.<br>
         <a href="/privacy.html">Privacy Policy</a> · <a href="/models/">All models</a> ·
         <a href="/api.html">Pricing JSON</a> · <a href="/compare/">Compare</a> · © 2026 TokenCalc.
       </div>
@@ -199,8 +203,9 @@ def main():
     models = data["models"]
     total = len(models)
     iso = data["_meta"]["lastVerified"]
-    y, mth, d = (int(x) for x in iso.split("-"))
-    human = f"{d} {MONTHS[mth - 1]} {y}"
+    y = int(iso.split("-")[0])
+    unverified_n = sum(1 for m in models if "Unverified as of 2026-11-24" in str(m.get("note") or ""))
+    human = f"{total - unverified_n} of {total} models were verified on {iso}; {unverified_n} remain unverified"
 
     # Purge first. robocopy and build.py never delete, so a renamed or removed
     # cut would otherwise linger as a duplicate-title page forever.
@@ -217,7 +222,7 @@ def main():
     # ---------------------------------------------------------------- hub
     hub = f"""        <div class="breadcrumb"><a href="/">Home</a> / Compare</div>
         <h1>Cheapest LLM API Pricing, Answered</h1>
-        <p class="meta">{total} models · {len(priced)} with published list rates · verified {human}</p>
+        <p class="meta">{total} models · {len(priced)} with published list rates · {human}</p>
 
         <p>Everyone else publishes a pricing <em>table</em>. This is a sorted
         <em>answer</em>, cut by the constraint that actually decides which model you
@@ -266,7 +271,7 @@ def main():
         "path": "/compare/cheapest-input/",
         "h1": "Cheapest LLM APIs by Input Price",
         "title": f"Cheapest LLM API by Input Token Price ({y}) — {total} Models Sorted",
-        "desc": "The cheapest models per 1M input tokens, sorted. Long prompts, RAG corpora and document ingestion are input-dominated workloads, so this is the cut that matters there. Verified " + human + ".",
+        "desc": "The cheapest models per 1M input tokens, sorted. Long prompts, RAG corpora and document ingestion are input-dominated workloads, so this is the cut that matters there. " + human + ".",
         "kw": "cheapest llm input price, cheapest model per 1m input tokens, cheapest api for long context, cheap llm for rag",
         "sort": "input",
         "note": "Input-heavy means your prompts, retrieved documents or uploaded files dominate the bill. If your model returns long answers, read the output cut instead — on most models output costs 3–8× more per token.",
@@ -277,7 +282,7 @@ def main():
         "path": "/compare/cheapest-output/",
         "h1": "Cheapest LLM APIs by Output Price",
         "title": f"Cheapest LLM API by Output Token Price ({y}) — {total} Models Sorted",
-        "desc": "The cheapest models per 1M output tokens, sorted. Output usually costs 3-8x input, so this is the cut that decides most production bills. Verified " + human + ".",
+        "desc": "The cheapest models per 1M output tokens, sorted. Output usually costs 3-8x input, so this is the cut that decides most production bills. " + human + ".",
         "kw": "cheapest llm output price, cheapest model per 1m output tokens, cheap llm for long generation, llm cost per output token",
         "sort": "output",
         "note": "This is the column that decides most bills. If a model is cheap to read from and expensive to write to, a chat workload will cost you far more than the input rate suggests.",
@@ -288,7 +293,7 @@ def main():
         "path": "/compare/cheapest-long-context/",
         "h1": "Cheapest Models With 200K+ Context",
         "title": f"Cheapest LLM API With 200K+ Token Context ({y})",
-        "desc": "Cheapest models that accept at least 200K tokens of context, sorted by input price. When the context window is the hard constraint, the cheapest model outside your window is not cheap. Verified " + human + ".",
+        "desc": "Cheapest models that accept at least 200K tokens of context, sorted by input price. When the context window is the hard constraint, the cheapest model outside your window is not cheap. " + human + ".",
         "kw": "cheapest long context llm, cheapest 200k context model, cheap llm for long documents, long context model pricing",
         "sort": "input",
         "pool": long_ctx,
@@ -300,7 +305,7 @@ def main():
         "path": "/compare/cheapest-1m-context/",
         "h1": "Cheapest Models With 1M+ Token Context",
         "title": f"Cheapest LLM API With 1M+ Token Context ({y})",
-        "desc": "Cheapest models with a million-token or larger context window, sorted by input price. Whole-repository analysis, long agent histories and very large documents. Verified " + human + ".",
+        "desc": "Cheapest models with a million-token or larger context window, sorted by input price. Whole-repository analysis, long agent histories and very large documents. " + human + ".",
         "kw": "cheapest 1m context llm, cheapest million token context model, cheap llm for whole repo analysis, 1m context window pricing",
         "sort": "output",
         "pool": mega_ctx,
@@ -313,7 +318,7 @@ def main():
         "path": "/compare/openai-cheapest/",
         "h1": "Cheapest OpenAI Models — Where Counts Are Exact",
         "title": f"Cheapest OpenAI Models by Price ({y}) — With Exact Token Counts",
-        "desc": "OpenAI models sorted by input price, with one advantage the others cannot match: token counts are exact, computed with the same tiktoken tokenizer the API bills with. Verified " + human + ".",
+        "desc": "OpenAI models sorted by input price, with one advantage the others cannot match: token counts are exact, computed with the same tiktoken tokenizer the API bills with. " + human + ".",
         "kw": "cheapest openai model, openai model pricing comparison, gpt pricing comparison, cheapest gpt model",
         "sort": "input",
         "pool": oa,
@@ -333,7 +338,7 @@ def main():
         faq = [
             (f"What is the cheapest {'input' if col == 'input' else 'output'} per 1M tokens right now?",
              f"{win['label']} at {money(win['priceInputPer1M'] if col == 'input' else win['priceOutputPer1M'])} per 1M "
-             f"{col} tokens, from {win['provider']}, as verified on {human}."),
+             f"{col} tokens, from {win['provider']}, ({human})."),
             ("Are these list prices?",
              f"Yes. Public list prices only. Batch rates, committed-use discounts and enterprise contracts are cheaper and are not modelled here. {_meta_lastmod()}"),
             ("Are the token counts exact?",
@@ -347,7 +352,7 @@ def main():
 
         body = f"""        <div class="breadcrumb"><a href="/">Home</a> / <a href="/compare/">Compare</a> / {c["h1"]}</div>
         <h1>{c["h1"]}</h1>
-        <p class="meta">{len(pool)} models qualify · sorted by {col} price · verified {human}</p>
+        <p class="meta">{len(pool)} models qualify · sorted by {col} price · {human}</p>
 
         <p>The cheapest is <strong>{win["label"]}</strong> at
         <strong>{money(win["priceInputPer1M" if col == "input" else "priceOutputPer1M"])}</strong>
@@ -357,7 +362,7 @@ def main():
         <div class="note"><b>Before you switch.</b> {c["note"]}</div>
 
         <h2>Full ranking</h2>
-{table([row(x) for x in top], caption=f"Top {len(top)} of {len(pool)}, ascending by {col} price per 1M tokens. Verified {human}.")}
+{table([row(x) for x in top], caption=f"Top {len(top)} of {len(pool)}, ascending by {col} price per 1M tokens. {human}.")}
 
         <h2>What a request actually costs</h2>
         <p>At {money(win["priceInputPer1M" if col == "input" else "priceOutputPer1M"])} per 1M {col} tokens,
@@ -411,7 +416,7 @@ def main():
 def desc_hub(total, human):
     return (f"Cheapest LLM API pricing sorted by the constraint that decides your bill: "
             f"input price, output price, long context, 1M context, or cheapest OpenAI model. "
-            f"{total} models, computed from the published dataset. Verified {human}.")
+            f"{total} models, computed from the published dataset. {human}.")
 
 
 def _meta_lastmod():

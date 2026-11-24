@@ -292,6 +292,7 @@
                 <label for="model-select">Model</label>
                 <select id="model-select"></select>
                 <p class="hint">OpenAI models use the real tiktoken tokenizer; every other provider uses a calibrated estimate.</p>
+                <p id="verify-mark" class="hint" hidden></p>
               </div>
               <div class="pricing-row">
                 <div class="field">
@@ -365,7 +366,7 @@
             <div class="copy-bar">
               <button type="button" class="btn" id="btn-copy">Copy summary</button>
               <span class="note" id="copy-feedback"></span>
-              <span class="note">List prices per 1M tokens, last verified 2026-10-02 — <b>edit them for your own contract.</b></span>
+              <span class="note">List prices per 1M tokens. 60 of 92 models were verified on 2026-11-24; 32 remain unverified — <b>edit them for your own contract.</b></span>
             </div>
           </div>
         </div>
@@ -401,7 +402,7 @@
     <section id="models" class="section">
       <div class="container">
         <h2>Supported models &amp; pricing</h2>
-        <p class="lead">Count tokens and estimate costs for 81+ models across every major AI provider. Prices are USD per 1M tokens, last verified 2026-10-02.</p>
+        <p class="lead">Count tokens and estimate costs for 81+ models across every major AI provider. Prices are USD per 1M tokens. 60 of 92 models were verified on 2026-11-24; 32 remain unverified.</p>
         
         <div class="table-wrap">
           <table>
@@ -645,7 +646,7 @@
         <p class="lead">No signup required. Your text never leaves your browser.</p>
         <a href="#tool" class="btn btn-primary">Try the calculator</a>
         <p class="lead" style="margin-top:14px">Jump straight to a model &#8212; each page opens with that model already selected:<br>
-          <a href="/models/gpt-5/">GPT-5</a> &#183; <a href="/models/claude-opus-5-5/">Claude Opus 5.5</a> &#183; <a href="/models/gemini-3-1-pro/">Gemini 3.1 Pro</a> &#183; <a href="/models/deepseek-v4-pro/">DeepSeek V4 Pro</a> &#183; <a href="/models/qwen3-max/">Qwen3 Max</a> &#183; <a href="/models/kimi-k2-6/">Kimi K2.6</a> &#183; <a href="/models/grok-4-1/">Grok 4.1</a> &#183; <a href="/models/llama-4/">Llama 4</a> &#183; <a href="/models/glm-5-1/">GLM 5.1</a> &#183;
+          <a href="/models/gpt-5/">GPT-5</a> &#183; <a href="/models/claude-opus-5-5/">Claude Opus 5.5</a> &#183; <a href="/models/gemini-3-1-pro/">Gemini 3.1 Pro</a> &#183; <a href="/models/deepseek-v4-pro/">DeepSeek V4 Pro</a> &#183; <a href="/models/qwen3-max/">Qwen3 Max</a> <span class="tag unverified">未核实 / Unverified</span> &#183; <a href="/models/kimi-k2-6/">Kimi K2.6</a> <span class="tag unverified">未核实 / Unverified</span> &#183; <a href="/models/grok-4-1/">Grok 4.1</a> <span class="tag unverified">未核实 / Unverified</span> &#183; <a href="/models/llama-4/">Llama 4</a> <span class="tag unverified">未核实 / Unverified</span> &#183; <a href="/models/glm-5-1/">GLM 5.1</a> &#183;
           <a href="/models/">all 81 models</a> &#183; <a href="/providers/">all 23 providers</a>
         </p>
         <p class="lead">Building something with these numbers? <a href="embed.html">Embed this calculator on your own site</a> with one line of HTML, or take the <a href="api.html">81-model pricing table as JSON</a> under CC BY 4.0.</p>
@@ -666,7 +667,7 @@
         </div>
       </div>
       <div>
-        Token counts are provided for reference; list prices last verified 2026-10-02.<br>
+        Token counts are provided for reference. 60 of 92 models were verified on 2026-11-24; 32 remain unverified.<br>
         <a href="privacy.html">Privacy Policy</a> · © 2026 TokenCalc (tokenestimate.com). Product names and logos are trademarks of their respective owners.
       </div>
     </div>

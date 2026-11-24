@@ -51,6 +51,31 @@ def _month(name):
     ][int(name) - 1]
 
 
+UNVERIFIED_PHRASE = "Unverified as of 2026-11-24"
+BADGE = '<span class="tag unverified">未核实 / Unverified</span>'
+VERIFY_LINE = ""
+
+
+def is_unverified(m):
+    return UNVERIFIED_PHRASE in str(m.get("note") or "")
+
+
+def badge_for(m):
+    return (" " + BADGE) if is_unverified(m) else ""
+
+
+def set_verify_line(models, iso):
+    """Dataset-level last-verified sentence. The date stays iso; the counts say who was checked."""
+    global VERIFY_LINE
+    total_n = len(models)
+    unverified_n = sum(1 for m in models if is_unverified(m))
+    verified_n = total_n - unverified_n
+    VERIFY_LINE = (
+        f"{verified_n} of {total_n} models were verified on {iso}; "
+        f"{unverified_n} remain unverified"
+    )
+
+
 def set_dates(iso):
     """Derive both the ISO and human-readable verification dates."""
     global VERIFIED, VERIFIED_HUMAN, human
@@ -247,6 +272,7 @@ HEAD = """<!DOCTYPE html>
     .article th {{ color: var(--text); font-weight: 600; }}
     .article .meta {{ color: var(--text-faint); font-size: .85rem; margin-bottom: 24px; }}
     .tag {{ font-size: .68rem; }}
+    .tag.unverified {{ display: inline-block; margin-left: 6px; padding: 1px 7px; border-radius: 6px; background: #fff6e5; border: 1px solid #f0d7a2; color: #8a5a00; font-weight: 650; }}
     code {{ font-family: var(--mono); background: var(--bg-input); border: 1px solid var(--border); border-radius: 6px; padding: 1px 6px; font-size: .88em; }}
     .cta {{ background: var(--bg-soft); border: 1px solid var(--border-soft); border-radius: var(--radius-sm); padding: 18px 22px; margin: 26px 0; }}
     .cta a {{ font-weight: 600; }}
@@ -302,7 +328,7 @@ FOOT = """      </article>
         Free, private token counting and API cost estimation for {total} AI models.
       </div>
       <div>
-        List prices last verified {human}.<br>
+        List prices: {VERIFY_LINE}.<br>
         <a href="/privacy.html">Privacy Policy</a> · <a href="/models/">All models</a> · <a href="/api.html">Pricing JSON</a> · © 2026 TokenCalc.
       </div>
     </div>
@@ -369,7 +395,7 @@ def build_model_page(m, models, vgroups):
         desc = (
             f"Free {label} token calculator for {vdisp}. Estimate {label} token counts and "
             f"API cost at {money(pin)}/1M input and {money(pout)}/1M output. 100% in-browser, "
-            f"no upload, no sign-up. Prices verified {human}."
+            f"no upload, no sign-up. {VERIFY_LINE}."
         )
         kw = f"{label} token calculator, {label} token counter, {label} tokens, {label} API pricing, {vdisp} pricing"
 
@@ -392,14 +418,14 @@ def build_model_page(m, models, vgroups):
     sibs = [x for x in vgroups.get(vslug, []) if x["id"] != mid]
     rows = []
     me = (
-        f"<tr><td><strong>{esc(label)}</strong></td>"
+        f"<tr><td><strong>{esc(label)}</strong>{badge_for(m)}</td>"
         f"<td><span class=\"tag\">{esc(tok.split(':')[-1] if exact else 'estimate')}</span></td>"
         f"<td>{esc(m.get('contextWindow') or '—')}</td>"
         f"<td>{esc(money(pin))}</td><td>{esc(money(pout))}</td></tr>"
     )
     for s in sibs:
         rows.append(
-            f"<tr><td><a href=\"/models/{model_slug(s['id'])}/\">{esc(s['label'])}</a></td>"
+            f"<tr><td><a href=\"/models/{model_slug(s['id'])}/\">{esc(s['label'])}</a>{badge_for(s)}</td>"
             f"<td><span class=\"tag\">{'cl100k' if 'cl100k' in s.get('tokenizer','') else ('o200k' if exact else 'estimate')}</span></td>"
             f"<td>{esc(s.get('contextWindow') or '—')}</td>"
             f"<td>{esc(money(s.get('priceInputPer1M')))}</td>"
@@ -469,7 +495,7 @@ def build_model_page(m, models, vgroups):
             f"What does {label} cost per 1M tokens?",
             (
                 f"{label} is listed at {money(pin)} per 1M input tokens and {money(pout)} per 1M output "
-                f"tokens as of {human}."
+                f"tokens as of {VERIFIED}. {VERIFY_LINE}."
                 if pin
                 else f"{label} is currently free on {vdisp}, at 0 per 1M input and output tokens."
             ),
@@ -527,7 +553,7 @@ def build_model_page(m, models, vgroups):
     intro = (
         f"The <strong>{esc(label)} token calculator</strong> below counts {esc(label)} tokens and prices "
         f"them at {esc(vdisp)}'s published rates — {esc(money(pin))} per 1M input tokens and "
-        f"{esc(money(pout))} per 1M output tokens, last verified {human}. "
+        f"{esc(money(pout))} per 1M output tokens. {VERIFY_LINE}. "
     )
     if exact:
         intro += (
@@ -570,7 +596,7 @@ def build_model_page(m, models, vgroups):
 
     body = f"""        <div class="breadcrumb"><a href="/">Home</a> / <a href="/models/">Models</a> / {esc(label)}</div>
         <h1>{esc(label)} Token Calculator</h1>
-        <p class="meta">{esc(vdisp)} · {esc(tok.split(':')[-1] if exact else 'calibrated estimate')} · prices verified {human}</p>
+        <p class="meta">{esc(vdisp)} · {esc(tok.split(':')[-1] if exact else 'calibrated estimate')} · {VERIFY_LINE}</p>
 
 <p>{intro}</p>
 {note_callout}
@@ -585,7 +611,7 @@ def build_model_page(m, models, vgroups):
 
         <h2>{esc(label)} token cost at a glance</h2>
 {scen_table}
-        <p>Figures are list prices per 1M tokens, verified {human}. Enterprise contracts and volume tiers
+        <p>Figures are list prices per 1M tokens, {VERIFY_LINE}. Enterprise contracts and volume tiers
         differ — edit the rates in the calculator if your deal is not list.</p>
 
         <h2>How accurate is the {esc(label)} count?</h2>
@@ -617,7 +643,7 @@ def build_model_page(m, models, vgroups):
         Free, private token counting and API cost estimation for {total} AI models.
       </div>
       <div>
-        List prices last verified {human}.<br>
+        List prices: {VERIFY_LINE}.<br>
         <a href="/privacy.html">Privacy Policy</a> · <a href="/models/">All models</a> · <a href="/api.html">Pricing JSON</a> · © 2026 TokenCalc.
       </div>
     </div>
@@ -639,7 +665,7 @@ def build_provider_page(vslug, group, models, vgroups):
     rows = []
     for m in group:
         rows.append(
-            f"<tr><td><a href=\"/models/{model_slug(m['id'])}/\">{esc(m['label'])}</a></td>"
+            f"<tr><td><a href=\"/models/{model_slug(m['id'])}/\">{esc(m['label'])}</a>{badge_for(m)}</td>"
             f"<td><span class=\"tag\">{'cl100k' if 'cl100k' in m.get('tokenizer','') else ('o200k' if is_exact(m) else 'estimate')}</span></td>"
             f"<td>{esc(m.get('contextWindow') or '—')}</td>"
             f"<td>{esc(money(m.get('priceInputPer1M')))}</td>"
@@ -673,7 +699,7 @@ def build_provider_page(vslug, group, models, vgroups):
         ),
         (
             f"Which {vdisp} model is cheapest per 1M input tokens?",
-            f"Among the models tracked here: {cheapest_in_txt}. Prices verified {human}.",
+            f"Among the models tracked here: {cheapest_in_txt}. {VERIFY_LINE}.",
         ),
     ]
     faq_schema = {
@@ -691,7 +717,7 @@ def build_provider_page(vslug, group, models, vgroups):
         "@type": "Dataset",
         "name": f"{vdisp} model token pricing",
         "description": f"Input and output price per 1M tokens for {len(group)} {vdisp} models, "
-        f"verified {human}.",
+        f"{VERIFY_LINE}.",
         "license": "https://creativecommons.org/licenses/by/4.0/",
         "creator": {"@type": "Organization", "name": "TokenCalc"},
         "distribution": {
@@ -706,13 +732,13 @@ def build_provider_page(vslug, group, models, vgroups):
     else:
         note_html = (
             "        <p>Every rate below is list pricing per 1M tokens, cross-checked against "
-            f"{esc(vdisp)}'s published docs and re-verified on {human}. The same data is available as "
+            f"{esc(vdisp)}'s published docs and re-checked on {VERIFIED}. {VERIFY_LINE}. The same data is available as "
             "<a href=\"/api.html\">machine-readable JSON under CC BY 4.0</a> if you would rather not scrape it.</p>\n"
         )
 
     body = f"""        <div class="breadcrumb"><a href="/">Home</a> / <a href="/providers/">Providers</a> / {esc(vdisp)}</div>
         <h1>{esc(vdisp)} Pricing &amp; Token Calculator</h1>
-        <p class="meta">{len(group)} models · prices verified {human}</p>
+        <p class="meta">{len(group)} models · {VERIFY_LINE}</p>
 
         <p>All {len(group)} {esc(vdisp)} models on one page: context windows, tokenizer behaviour and
         list price per 1M input and output tokens. Each row links to a dedicated calculator already
@@ -753,7 +779,7 @@ def build_provider_page(vslug, group, models, vgroups):
         Free, private token counting and API cost estimation for {total} AI models.
       </div>
       <div>
-        List prices last verified {human}.<br>
+        List prices: {VERIFY_LINE}.<br>
         <a href="/privacy.html">Privacy Policy</a> · <a href="/models/">All models</a> · <a href="/api.html">Pricing JSON</a> · © 2026 TokenCalc.
       </div>
     </div>
@@ -772,7 +798,7 @@ def build_model_hub(models, vgroups):
     rows = []
     for m in models:
         rows.append(
-            f"<tr><td><a href=\"/models/{model_slug(m['id'])}/\">{esc(m['label'])}</a></td>"
+            f"<tr><td><a href=\"/models/{model_slug(m['id'])}/\">{esc(m['label'])}</a>{badge_for(m)}</td>"
             f"<td>{esc(VENDOR_DISPLAY.get(vendor_slug(m), vendor_of(m)))}</td>"
             f"<td><span class=\"tag\">{'exact' if is_exact(m) else 'estimate'}</span></td>"
             f"<td>{esc(m.get('contextWindow') or '—')}</td>"
@@ -781,7 +807,7 @@ def build_model_hub(models, vgroups):
         )
     body = f"""        <div class="breadcrumb"><a href="/">Home</a> / Models</div>
         <h1>All {total} AI Model Token Calculators</h1>
-        <p class="meta">prices verified {human}</p>
+        <p class="meta">{VERIFY_LINE}</p>
 
         <p>One page per model, each with a working calculator already set to that model. OpenAI models are
         counted with the official tiktoken tokenizer and return exact counts; every other vendor is marked
@@ -811,7 +837,7 @@ def build_model_hub(models, vgroups):
         Free, private token counting and API cost estimation for {total} AI models.
       </div>
       <div>
-        List prices last verified {human}.<br>
+        List prices: {VERIFY_LINE}.<br>
         <a href="/privacy.html">Privacy Policy</a> · <a href="/providers/">All providers</a> · <a href="/api.html">Pricing JSON</a> · © 2026 TokenCalc.
       </div>
     </div>
@@ -835,10 +861,10 @@ def build_provider_hub(vgroups):
         )
     body = f"""        <div class="breadcrumb"><a href="/">Home</a> / Providers</div>
         <h1>AI API Pricing by Provider</h1>
-        <p class="meta">{len(vgroups)} providers · {total} models · prices verified {human}</p>
+        <p class="meta">{len(vgroups)} providers · {total} models · {VERIFY_LINE}</p>
 
         <p>Every vendor's list pricing in one place: input and output rate per 1M tokens, context window
-        size, and whether TokenCalc can count it exactly or only estimate. Numbers verified {human}.</p>
+        size, and whether TokenCalc can count it exactly or only estimate. {VERIFY_LINE}.</p>
 
         <h2>Providers</h2>
         <div class="grid">
@@ -869,7 +895,7 @@ def build_provider_hub(vgroups):
         Free, private token counting and API cost estimation for {total} AI models.
       </div>
       <div>
-        List prices last verified {human}.<br>
+        List prices: {VERIFY_LINE}.<br>
         <a href="/models/">All models</a> · <a href="/api.html">Pricing JSON</a> · <a href="/privacy.html">Privacy Policy</a> · © 2026 TokenCalc.
       </div>
     </div>
@@ -931,7 +957,7 @@ def build_llms_full(models, vgroups):
     )
     out.append(f"Home: {SITE_URL}/  ·  Models: {SITE_URL}/models/  ·  Providers: {SITE_URL}/providers/")
     out.append(f"Pricing data (CC BY 4.0): {SITE_URL}/data/model-prices.json")
-    out.append(f"List prices last verified {human}. Source of record for citation.\n")
+    out.append(f"List prices: {VERIFY_LINE}. Source of record for citation.\n")
     out.append("## Exact vs estimated counting\n")
     out.append(
         "- **Exact**: OpenAI models, counted with the official tiktoken BPE tokenizer (o200k_base / cl100k_base) in-browser.\n"
@@ -942,7 +968,7 @@ def build_llms_full(models, vgroups):
     out.append("|---|---|---|---|---|---|---|")
     for m in models:
         out.append(
-            f"| {m['label']} | {VENDOR_DISPLAY.get(vendor_slug(m), vendor_of(m))} | "
+            f"| {m['label']}{' 未核实 / Unverified' if is_unverified(m) else ''} | {VENDOR_DISPLAY.get(vendor_slug(m), vendor_of(m))} | "
             f"{'exact' if is_exact(m) else 'estimate'} | {m.get('contextWindow') or '—'} | "
             f"{money(m.get('priceInputPer1M'))} | {money(m.get('priceOutputPer1M'))} | "
             f"{SITE_URL}/models/{model_slug(m['id'])}/ |"
@@ -966,6 +992,7 @@ def main():
     set_dates(data["_meta"]["lastVerified"])
     models = data["models"]
     total = len(models)
+    set_verify_line(models, data["_meta"]["lastVerified"])
 
     vgroups = {}
     for m in models:
@@ -1022,7 +1049,7 @@ def main():
                 title=esc(f"{vdisp} Pricing — {len(group)} Models, Rates &amp; Token Calculator (2026)"),
                 desc=esc(
                     f"All {len(group)} {vdisp} models: list price per 1M input and output tokens, context "
-                    f"windows and tokenizer behaviour, verified {human}. Free in-browser calculators for each model."
+                    f"windows and tokenizer behaviour, {VERIFY_LINE}. Free in-browser calculators for each model."
                 ),
                 kw=esc(f"{vdisp} pricing, {vdisp} API pricing, {vdisp} token cost, {vdisp} models list"),
                 url=url,
@@ -1044,7 +1071,7 @@ def main():
         head_fmt(
             title=f"Every AI Model Token Calculator — {total} Models & Prices (2026)",
             desc=f"Browse all {total} AI model token calculators with list pricing per 1M tokens and context "
-            f"windows, verified {human}. OpenAI models counted exactly, others estimated.",
+            f"windows, {VERIFY_LINE}. OpenAI models counted exactly, others estimated.",
             kw="AI model token calculator, all models, LLM pricing comparison, token cost per model",
             url=u,
             schema=dump_schema({"@context": "https://schema.org", "@type": "CollectionPage", "name": "AI model token calculators", "url": u}),
@@ -1061,7 +1088,7 @@ def main():
         head_fmt(
             title=f"AI API Pricing by Provider — {len(vgroups)} Vendors Compared (2026)",
             desc=f"List pricing for {total} AI models across {len(vgroups)} providers: input and output rate "
-            f"per 1M tokens, context windows, exact vs estimated counting. Verified {human}.",
+            f"per 1M tokens, context windows, exact vs estimated counting. {VERIFY_LINE}.",
             kw="AI API pricing, LLM pricing comparison, provider pricing, cost per million tokens",
             url=u,
             schema=dump_schema({"@context": "https://schema.org", "@type": "CollectionPage", "name": "AI API pricing by provider", "url": u}),
@@ -1158,7 +1185,7 @@ def desc_of(m, total, human):
     return (
         f"Free {label} token calculator for {vdisp}. Estimate {label} token counts and API cost at "
         f"{money(pi)}/1M input and {money(po)}/1M output. 100% in-browser, no upload, no sign-up. "
-        f"Prices verified {human}."
+        f"{VERIFY_LINE}."
     )
 
 

@@ -79,7 +79,7 @@
         "name": "What is a token in Gemini?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A token is the smallest unit of text Gemini's tokenizer processes — roughly one English word equals 1.25 tokens. Gemini 3.1 Pro's 2M context window is measured in tokens, so an accurate count tells you how much text fits in a prompt."
+          "text": "A token is the smallest unit of text Gemini's tokenizer processes — roughly one English word equals 1.25 tokens. Gemini 3.1 Pro's 1M context window is measured in tokens, so an accurate count tells you how much text fits in a prompt."
         }
       },
       {
@@ -135,7 +135,7 @@
       <article class="article">
         <div class="breadcrumb"><a href="index.html">Home</a> / Gemini Token Counter</div>
         <h1>Gemini Token Counter — Count Tokens &amp; Estimate Google AI API Cost</h1>
-        <p class="meta">AI Token Calculator — updated October 2026</p>
+        <p class="meta">AI Token Calculator — updated 2026-11-24 — 60 of 92 models verified, 32 unverified</p>
 
         <p><strong>Gemini Token Counter</strong> is a free, browser-based developer tool that estimates token counts for Google's Gemini 2.5, Gemini 3 and Gemini 3.1 Pro models and forecasts API costs in real time. Unlike word-based counters, it calibrates counts on Gemini's known tokenizer behavior and works entirely in your browser: no uploads, no API keys, no sign-up. It is one of <strong>92 models</strong> covered by TokenCalc, a free AI token calculator for developers.</p>
 
@@ -149,18 +149,19 @@
             <tr><th>Model</th><th>Token count</th><th>Input / 1M tokens</th><th>Output / 1M tokens</th><th>Context window</th></tr>
           </thead>
           <tbody>
-            <tr><td>Gemini 3.1 Pro</td><td><span class="tag">estimate</span></td><td>$2.00</td><td>$12.00</td><td>2M</td></tr>
-            <tr><td>Gemini 3.5 Flash</td><td><span class="tag">estimate</span></td><td>$1.50</td><td>$9.00</td><td>1M</td></tr>
-            <tr><td>Gemini 3 Pro (preview)</td><td><span class="tag">estimate</span></td><td>$2.00</td><td>$12.00</td><td>1M</td></tr>
-            <tr><td>Gemini 2.5 Pro / Flash</td><td><span class="tag">estimate</span></td><td>$1.25 / $0.30</td><td>$10.00 / $2.50</td><td>1M</td></tr>
+            <tr><td>Gemini 3.1 Pro</td><td><span class="tag">estimate</span></td><td>$2.00</td><td>$12.00</td><td>1M</td></tr>
+            <tr><td>Gemini 3.5 Flash <span class="tag unverified">未核实 / Unverified</span></td><td><span class="tag">estimate</span></td><td>$1.50</td><td>$9.00</td><td>1M</td></tr>
+            <tr><td>Gemini 3 Flash</td><td><span class="tag">estimate</span></td><td>$0.50</td><td>$3.00</td><td>1M</td></tr>
+            <tr><td>Gemini 2.5 Pro</td><td><span class="tag">estimate</span></td><td>$1.25</td><td>$10.00</td><td>2M</td></tr>
+            <tr><td>Gemini 2.5 Flash</td><td><span class="tag">estimate</span></td><td>$0.30</td><td>$2.50</td><td>1M</td></tr>
           </tbody>
         </table>
-        <p class="meta">Gemini counts are proven estimates. Gemini also bills image/video input in tokens — this counter covers text.</p>
+        <p class="meta">Gemini counts are proven estimates. Gemini also bills image/video input in tokens — this counter covers text. Gemini 3.5 Flash is marked 未核实 / Unverified: no official USD list price was found on 2026-11-24, and the stored rate was left unchanged.</p>
 
         <h2>Gemini token counter by the numbers</h2>
         <ul>
           <li><strong>70+</strong> LLM tokenizers supported in one free tool</li>
-          <li><strong>2M</strong> token context window on Gemini 3.1 Pro</li>
+          <li><strong>1M</strong> token context window on Gemini 3.1 Pro (<strong>2M</strong> on Gemini 2.5 Pro)</li>
           <li><strong>1.25</strong> average tokens per English word</li>
           <li><strong>$2.00 / $12.00</strong> per 1M input / output tokens for Gemini 3.1 Pro</li>
           <li><strong>100%</strong> in-browser — your text never leaves the device</li>
@@ -177,9 +178,9 @@
         </ul>
 
         <h2>Why count Gemini tokens?</h2>
-        <p>Google bills by tokens, and Gemini's context windows are huge — up to 2M tokens on 3.1 Pro. Counting accurately matters because:</p>
+        <p>Google bills by tokens, and Gemini's context windows are large — 1M tokens on Gemini 3.1 Pro and 2M on Gemini 2.5 Pro. Counting accurately matters because:</p>
         <ul>
-          <li><strong>Context budgets</strong> — a 2M window still has a limit; a document that looks small in words can be surprisingly large in tokens.</li>
+          <li><strong>Context budgets</strong> — a 1M window on Gemini 3.1 Pro still has a limit; a document that looks small in words can be surprisingly large in tokens.</li>
           <li><strong>Cost control</strong> — output tokens on 3.1 Pro cost $12 per 1M, so long generations add up fast.</li>
           <li><strong>Model comparison</strong> — the same text tokenizes differently between Gemini, GPT-5 and Claude; the cheapest model for a job isn't always obvious.</li>
         </ul>
@@ -198,7 +199,7 @@
         <h3>Does the Gemini token counter upload my text?</h3>
         <p>No. Everything runs in your browser. Your text is never sent to any server.</p>
         <h3>What is a token in Gemini?</h3>
-        <p>A token is the smallest unit of text Gemini's tokenizer processes — roughly one English word equals 1.25 tokens. Gemini 3.1 Pro's 2M context window is measured in tokens, so an accurate count tells you how much text fits in a prompt.</p>
+        <p>A token is the smallest unit of text Gemini's tokenizer processes — roughly one English word equals 1.25 tokens. Gemini 3.1 Pro's 1M context window is measured in tokens, so an accurate count tells you how much text fits in a prompt.</p>
         <h3>How does the Gemini token counter compare to Google's own tokenizer API?</h3>
         <p>Google's tokenizer is available via its API, but that requires sending text to Google. Our counter runs locally with a proven estimate — no network calls — and also covers 70+ other models in the same tool.</p>
       </article>

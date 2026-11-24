@@ -11,13 +11,13 @@
     "currency": "USD",
     "unit": "price per 1,000,000 tokens",
     "citation": "TokenCalc, \"AI Model Token Pricing Data\", tokenestimate.com, 2026.",
-    "notes": "Public list prices, not contract or batch/discounted rates. Verify against the provider before publishing; refresh the date when you reuse it.",
+    "notes": "Public list prices, not contract or batch/discounted rates. Verify against the provider before publishing; refresh the date when you reuse it. 60 of 92 models were verified on 2026-11-24; 32 remain unverified.",
     "counting": {
       "exact": "OpenAI models are counted with the official tiktoken BPE tokenizer (js-tiktoken, o200k_base / cl100k_base) running client-side.",
       "estimate": "Other providers use a calibrated character-ratio estimate, accurate to roughly 5-10%. tokenizer field says which."
     },
     "previousLastVerified": "2026-10-02",
-    "revisionNote": "Updated 2026-11-24: 0 models added, 8 models with price corrections. Per-model sources are listed in CHANGELOG.md. Cite this date, not the old one.",
+    "revisionNote": "Updated 2026-11-24: 0 models added, 8 models with price corrections. Per-model sources are listed in CHANGELOG.md. Cite this date, not the old one. 60 of 92 models were verified on 2026-11-24; 32 remain unverified.",
     "revisions": [
       {
         "date": "2026-10-02",
@@ -394,7 +394,8 @@
       },
       "contextWindow": "1M",
       "priceInputPer1M": 1.5,
-      "priceOutputPer1M": 9
+      "priceOutputPer1M": 9,
+      "note": "Unverified as of 2026-11-24"
     },
     {
       "id": "gemini-3-flash",
@@ -478,7 +479,8 @@
       },
       "contextWindow": "1M",
       "priceInputPer1M": 0.2,
-      "priceOutputPer1M": 1
+      "priceOutputPer1M": 1,
+      "note": "Unverified as of 2026-11-24"
     },
     {
       "id": "llama-4",
@@ -493,7 +495,7 @@
       "contextWindow": "1M",
       "priceInputPer1M": 0.15,
       "priceOutputPer1M": 0.45,
-      "note": "open-weight"
+      "note": "open-weight. Unverified as of 2026-11-24"
     },
     {
       "id": "mistral-large",
@@ -508,7 +510,7 @@
       "contextWindow": "256K",
       "priceInputPer1M": 0.5,
       "priceOutputPer1M": 1.5,
-      "note": "Deprecated 2026-10-31, retires 2027-04-30. The model card still lists $0.50/$1.50. Absent from the current generalist price table; replacement is Mistral Large 4."
+      "note": "Deprecated / 已下线. Deprecated 2026-10-31 (Mistral Large 3 model card / previous changelog), retires 2027-04-30. The model card still lists $0.50/$1.50. Absent from the current generalist price table; replacement is Mistral Large 4."
     },
     {
       "id": "amazon-nova-pro",
@@ -522,7 +524,8 @@
       },
       "contextWindow": "300K",
       "priceInputPer1M": 0.8,
-      "priceOutputPer1M": 3.2
+      "priceOutputPer1M": 3.2,
+      "note": "Unverified as of 2026-11-24"
     },
     {
       "id": "deepseek-v4-pro",
@@ -568,7 +571,8 @@
       },
       "contextWindow": "128K",
       "priceInputPer1M": 0.35,
-      "priceOutputPer1M": 0.42
+      "priceOutputPer1M": 0.42,
+      "note": "Unverified as of 2026-11-24"
     },
     {
       "id": "deepseek-r1",
@@ -583,7 +587,7 @@
       "contextWindow": "64K",
       "priceInputPer1M": 0.56,
       "priceOutputPer1M": 2.5,
-      "note": "reasoning"
+      "note": "reasoning. Unverified as of 2026-11-24"
     },
     {
       "id": "qwen3-max",
@@ -597,7 +601,8 @@
       },
       "contextWindow": "262K",
       "priceInputPer1M": 0.78,
-      "priceOutputPer1M": 3.9
+      "priceOutputPer1M": 3.9,
+      "note": "Unverified as of 2026-11-24"
     },
     {
       "id": "qwen3-plus",
@@ -611,7 +616,8 @@
       },
       "contextWindow": "128K",
       "priceInputPer1M": 0.4,
-      "priceOutputPer1M": 1.2
+      "priceOutputPer1M": 1.2,
+      "note": "Unverified as of 2026-11-24"
     },
     {
       "id": "qwen3-flash",
@@ -625,7 +631,8 @@
       },
       "contextWindow": "128K",
       "priceInputPer1M": 0.15,
-      "priceOutputPer1M": 1.5
+      "priceOutputPer1M": 1.5,
+      "note": "Unverified as of 2026-11-24"
     },
     {
       "id": "qwen3-coder",
@@ -640,7 +647,7 @@
       "contextWindow": "128K",
       "priceInputPer1M": 0.3,
       "priceOutputPer1M": 0.9,
-      "note": "coding"
+      "note": "coding. Unverified as of 2026-11-24"
     },
     {
       "id": "glm-5",
@@ -698,7 +705,7 @@
       "contextWindow": "128K",
       "priceInputPer1M": 0,
       "priceOutputPer1M": 0,
-      "note": "free"
+      "note": "free. Unverified as of 2026-11-24"
     },
     {
       "id": "kimi-k2.6",
@@ -713,7 +720,7 @@
       "contextWindow": "256K",
       "priceInputPer1M": 1,
       "priceOutputPer1M": 2.5,
-      "note": "tiered"
+      "note": "tiered. Unverified as of 2026-11-24"
     },
     {
       "id": "kimi-k2.5",
@@ -727,7 +734,8 @@
       },
       "contextWindow": "128K",
       "priceInputPer1M": 0.6,
-      "priceOutputPer1M": 3
+      "priceOutputPer1M": 3,
+      "note": "Unverified as of 2026-11-24"
     },
     {
       "id": "kimi-k3",
@@ -757,7 +765,8 @@
       },
       "contextWindow": "256K",
       "priceInputPer1M": 0.11,
-      "priceOutputPer1M": 0.45
+      "priceOutputPer1M": 0.45,
+      "note": "Unverified as of 2026-11-24"
     },
     {
       "id": "doubao-1.6-flash",
@@ -772,7 +781,7 @@
       "contextWindow": "128K",
       "priceInputPer1M": 0.01,
       "priceOutputPer1M": 0.11,
-      "note": "cheapest"
+      "note": "cheapest. Unverified as of 2026-11-24"
     },
     {
       "id": "doubao-1.6-lite",
@@ -786,7 +795,8 @@
       },
       "contextWindow": "128K",
       "priceInputPer1M": 0.02,
-      "priceOutputPer1M": 0.04
+      "priceOutputPer1M": 0.04,
+      "note": "Unverified as of 2026-11-24"
     },
     {
       "id": "ernie-4.5",
@@ -800,7 +810,8 @@
       },
       "contextWindow": "128K",
       "priceInputPer1M": 0.2,
-      "priceOutputPer1M": 0.55
+      "priceOutputPer1M": 0.55,
+      "note": "Unverified as of 2026-11-24"
     },
     {
       "id": "ernie-x1",
@@ -815,7 +826,7 @@
       "contextWindow": "128K",
       "priceInputPer1M": 0.006,
       "priceOutputPer1M": 0.02,
-      "note": "reasoning · ultra cheap"
+      "note": "reasoning · ultra cheap. Unverified as of 2026-11-24"
     },
     {
       "id": "hunyuan-2-pro",
@@ -829,7 +840,8 @@
       },
       "contextWindow": "128K",
       "priceInputPer1M": 1,
-      "priceOutputPer1M": 4
+      "priceOutputPer1M": 4,
+      "note": "Unverified as of 2026-11-24"
     },
     {
       "id": "hunyuan-lite",
@@ -844,7 +856,7 @@
       "contextWindow": "32K",
       "priceInputPer1M": 0,
       "priceOutputPer1M": 0,
-      "note": "free"
+      "note": "free. Unverified as of 2026-11-24"
     },
     {
       "id": "spark-max-x1",
@@ -858,7 +870,8 @@
       },
       "contextWindow": "128K",
       "priceInputPer1M": 0.5,
-      "priceOutputPer1M": 1.7
+      "priceOutputPer1M": 1.7,
+      "note": "Unverified as of 2026-11-24"
     },
     {
       "id": "spark-lite",
@@ -873,7 +886,7 @@
       "contextWindow": "32K",
       "priceInputPer1M": 0,
       "priceOutputPer1M": 0,
-      "note": "free"
+      "note": "free. Unverified as of 2026-11-24"
     },
     {
       "id": "minimax-2.5",
@@ -888,7 +901,7 @@
       "contextWindow": "197K",
       "priceInputPer1M": 0.29,
       "priceOutputPer1M": 1.18,
-      "note": "agent"
+      "note": "Deprecated / 已下线. MiniMax M2.5 retired 2026-11-18 and is no longer on the current official price table. agent. Unverified as of 2026-11-24."
     },
     {
       "id": "yi-lightning",
@@ -902,7 +915,8 @@
       },
       "contextWindow": "128K",
       "priceInputPer1M": 0.4,
-      "priceOutputPer1M": 1.2
+      "priceOutputPer1M": 1.2,
+      "note": "Official price is ¥0.99 per 1M tokens as one combined CNY rate, not converted into the USD input/output fields. Unverified as of 2026-11-24"
     },
     {
       "id": "step-3",
@@ -916,7 +930,8 @@
       },
       "contextWindow": "128K",
       "priceInputPer1M": 0.5,
-      "priceOutputPer1M": 1.5
+      "priceOutputPer1M": 1.5,
+      "note": "Unverified as of 2026-11-24"
     },
     {
       "id": "sensetime-5.1",
@@ -930,7 +945,8 @@
       },
       "contextWindow": "128K",
       "priceInputPer1M": 0.04,
-      "priceOutputPer1M": 0.7
+      "priceOutputPer1M": 0.7,
+      "note": "Unverified as of 2026-11-24"
     },
     {
       "id": "baichuan-4",
@@ -944,7 +960,8 @@
       },
       "contextWindow": "128K",
       "priceInputPer1M": 1.2,
-      "priceOutputPer1M": 2.8
+      "priceOutputPer1M": 2.8,
+      "note": "Unverified as of 2026-11-24"
     },
     {
       "id": "skyclaw-1.0",
@@ -959,7 +976,7 @@
       "contextWindow": "1M",
       "priceInputPer1M": 0.5,
       "priceOutputPer1M": 1.5,
-      "note": "agent"
+      "note": "agent. Unverified as of 2026-11-24"
     },
     {
       "id": "mimo-v2.5-pro",
@@ -973,7 +990,8 @@
       },
       "contextWindow": "1M",
       "priceInputPer1M": 0.44,
-      "priceOutputPer1M": 0.87
+      "priceOutputPer1M": 0.87,
+      "note": "Unverified as of 2026-11-24"
     },
     {
       "id": "mimo-v2.5",
@@ -987,7 +1005,8 @@
       },
       "contextWindow": "1M",
       "priceInputPer1M": 0.14,
-      "priceOutputPer1M": 0.28
+      "priceOutputPer1M": 0.28,
+      "note": "Unverified as of 2026-11-24"
     },
     {
       "id": "pangu-4.7",
@@ -1001,7 +1020,8 @@
       },
       "contextWindow": "128K",
       "priceInputPer1M": 0.5,
-      "priceOutputPer1M": 1.5
+      "priceOutputPer1M": 1.5,
+      "note": "Unverified as of 2026-11-24"
     },
     {
       "id": "gpt-5.6-sol",
@@ -1251,7 +1271,7 @@
       "contextWindow": "1M",
       "priceInputPer1M": 0.75,
       "priceOutputPer1M": 3.75,
-      "note": "Same promotional rate as 3.8 Flash: $0.75/$3.75 now, doubling to $1.50/$7.50 on 2027-01-01. Note this contradicts what we previously published for 3.6 Flash, which we had recorded at the post-promo rate."
+      "note": "Same promotional rate as 3.8 Flash: $0.75/$3.75 now, doubling to $1.50/$7.50 on 2027-01-01. Note this contradicts what we previously published for 3.6 Flash, which we had recorded at the post-promo rate. Unverified as of 2026-11-24"
     },
     {
       "id": "gemini-3.1-flash-lite",

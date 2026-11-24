@@ -142,6 +142,16 @@ Official price not found. The stored number was left unchanged.
 | `mimo-v2.5` | no rate in the fetched page | Same page. |
 | `pangu-4.7` | no token price on the product page | huaweicloud.com PanGu page does not list a per-million-token rate. |
 
+### Notes, labels, and landing pages
+
+No prices were invented or changed in this pass. `_meta.lastVerified` stays `2026-11-24`.
+
+Each of the 32 models with no official USD list price now includes `Unverified as of 2026-11-24` in its `note` (existing notes kept, including Yi-Lightning's ¥0.99 combined CNY rate). The calculator and price tables show a visible **未核实 / Unverified** mark on those models. `_meta.notes` and `_meta.revisionNote` now read: 60 of 92 models were verified on 2026-11-24; 32 remain unverified.
+
+`mistral-large` is marked `Deprecated / 已下线` (deprecated 2026-10-31, per the Mistral Large 3 model card / previous changelog). `minimax-2.5` is marked `Deprecated / 已下线` (retired 2026-11-18 and no longer on the current official price table). Both rows stay in the data file.
+
+Eight existing landing pages were updated in place so the prices they show match `data/model-prices.json`. Their URLs did not change: `gpt-5-token-calculator.html`, `gpt-4o-token-calculator.html`, `o1-o3-token-calculator.html`, `claude-token-counter.html`, `gemini-token-counter.html`, `llama-token-counter.html`, `deepseek-token-calculator.html`, `qwen-token-counter.html`.
+
 ## 2026-10-02
 
 Prices re-verified against provider pages. Previous snapshot: `2026-09-30`.
