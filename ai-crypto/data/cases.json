@@ -692,10 +692,10 @@
     "source_platform": "GitHub",
     "date": "2025",
     "vendor": false,
-    "title_zh": null,
+    "title_zh": "用 MCP 在 Claude 里审计已上线的以太坊合约、分析钱包",
     "type": "tool",
     "tier": "base",
-    "needs_translation": true
+    "needs_translation": false
   },
   {
     "slug": "inspect-verified-contract-with-etherscan-claude-connector",
@@ -710,10 +710,10 @@
     "source_platform": "Etherscan docs",
     "date": "2026",
     "vendor": true,
-    "title_zh": null,
+    "title_zh": "用 Etherscan 的 Claude 连接器，用口语查看已验证合约",
     "type": "tool",
     "tier": "base",
-    "needs_translation": true
+    "needs_translation": false
   },
   {
     "slug": "check-wallet-address-risk-before-sending",
@@ -728,10 +728,10 @@
     "source_platform": "Devpost",
     "date": "2026",
     "vendor": false,
-    "title_zh": null,
+    "title_zh": "转账前先用 AI 检查对方钱包地址是否有风险",
     "type": "tool",
     "tier": "base",
-    "needs_translation": true
+    "needs_translation": false
   },
   {
     "slug": "screen-solana-memecoins-with-rugcheck-and-ai",
@@ -746,10 +746,10 @@
     "source_platform": "GitHub",
     "date": "2025",
     "vendor": false,
-    "title_zh": null,
+    "title_zh": "在 Telegram 里用 RugCheck 和 AI 摘要筛选新的 Solana meme 币",
     "type": "tool",
     "tier": "base",
-    "needs_translation": true
+    "needs_translation": false
   },
   {
     "slug": "harden-ai-trading-agent-with-wallet-access",
@@ -764,10 +764,10 @@
     "source_platform": "GitHub",
     "date": "2026",
     "vendor": false,
-    "title_zh": null,
+    "title_zh": "给持有钱包的 AI 交易代理加上限额和发送前模拟",
     "type": "tool",
     "tier": "base",
-    "needs_translation": true
+    "needs_translation": false
   },
   {
     "slug": "connect-crypto-tax-software-to-ai-via-mcp",
@@ -1459,6 +1459,80 @@
     "source_platform": "News (The Block; HKMA speech by Raymond Chan)",
     "date": "2026-11",
     "engagement": "The Block, Nov 18, 2026; HKMA speech dated Nov 17, 2026",
+    "vendor": false,
+    "tier": "base"
+  },
+  {
+    "slug": "binance-tradertraitor-internal-ai-tool-heist",
+    "title": "Binance says attackers used an internal AI tool in a roughly $6.3 billion hot-wallet theft",
+    "title_zh": "据 Binance 称，攻击者利用其内部 AI 工具，参与约 63 亿美元热钱包盗窃",
+    "summary": "According to the BBC and The Verge on 3 November 2026, citing Binance's postmortem, attackers the FBI identified as North Korea's TraderTraitor unit compromised engineers with a tampered installer in June and a fake job-interview assignment in September, then on 20 October used a compromised computer and Binance's internal AI tool to take control of two other engineers' machines. On 29 October they launched a theft of about $6.3 billion involving Binance hot wallets; Binance said no user would bear the loss and that 98% of impacted tokens had been replenished, North Korea denied involvement, and the reports give little detail on how the internal AI tool was used.",
+    "summary_zh": "据 BBC 和 The Verge 2026 年 11 月 3 日的报道，援引 Binance 当天的事后说明，FBI 认定攻击者属于朝鲜 TraderTraitor 组织：他们先在 6 月通过被篡改的安装包、9 月通过假招聘面试作业侵入工程师电脑，再于 10 月 20 日利用一台被控电脑和 Binance 自己的内部 AI 工具，接管另外两名工程师的设备。10 月 29 日他们发动了约 63 亿美元、涉及热钱包的盗窃；Binance 称用户不会承担损失，当时已补回 98% 受影响代币，朝方否认参与，而这些报道对内部 AI 工具究竟如何被利用着墨很少。",
+    "category": "security",
+    "type": "incident",
+    "tools": [],
+    "source_url": "https://www.bbc.com/news/articles/ck5ynwz9gy67o",
+    "source_platform": "News (BBC; Binance 3 Nov 2026 postmortem, also reported by The Verge)",
+    "date": "2026-10",
+    "engagement": "BBC and The Verge, 3 Nov 2026, citing Binance's postmortem",
+    "vendor": false,
+    "tier": "featured"
+  },
+  {
+    "slug": "cert-in-crafty-falcon-ai-exchange-attacks",
+    "title": "India's CERT-In warns that AI-assisted group CRAFTY FALCON is stealing crypto wallet keys",
+    "title_zh": "印度 CERT-In 预警：AI 辅助组织 CRAFTY FALCON 正在盗取加密钱包密钥",
+    "summary": "According to Cointelegraph on 5 November 2026, citing CERT-In advisory CIAD-2026-0058 dated 4 November 2026, the agency said an AI-assisted actor it calls CRAFTY FALCON has escalated attacks on financial firms and cryptocurrency exchanges, including stealing wallet keys and siphoning funds. The advisory lists publicly available AI tools including ARTEX, PentAGI, Cairn and CyberStrikeAI and says the campaign is active; it names no affected exchange and gives no loss total.",
+    "summary_zh": "据 Cointelegraph 2026 年 11 月 5 日报道，印度 CERT-In 在 11 月 4 日的通报 CIAD-2026-0058 中称，一个被命名为 CRAFTY FALCON 的 AI 辅助威胁组织正在加码攻击金融机构和加密货币交易所，其中包括窃取钱包密钥并转走资金。通报列出了 ARTEX、PentAGI、Cairn、CyberStrikeAI 等公开的 AI 攻击工具，并称行动仍在持续；但没有点名受害交易所，也没有给出损失金额。",
+    "category": "security",
+    "type": "news",
+    "tools": [
+      "ARTEX",
+      "PentAGI",
+      "Cairn",
+      "CyberStrikeAI"
+    ],
+    "source_url": "https://cointelegraph.com/news/india-warns-ai-powered-hackers-targeting-crypto-exchanges-at-machine-speed",
+    "source_platform": "News (Cointelegraph; CERT-In advisory CIAD-2026-0058, 4 Nov 2026)",
+    "date": "2026-11",
+    "engagement": "Cointelegraph, 5 Nov 2026; CERT-In advisory CIAD-2026-0058, 4 Nov 2026",
+    "vendor": false,
+    "tier": "featured"
+  },
+  {
+    "slug": "mastercard-agent-pay-machines-x402",
+    "title": "Mastercard opens early access to Agent Pay for Machines after Coinbase and Base pilots",
+    "title_zh": "Mastercard 在与 Coinbase、Base 试点后，开放「机器代理支付」早期访问",
+    "summary": "According to The Block on 20 October 2026, Mastercard opened early access to Agent Pay for Machines so AI agents can pay for digital services with the x402 protocol, including a Cloudflare Connect demonstration that stayed inside a budget the customer had approved. Coinbase Developer Platform provided the wallet infrastructure in that pilot, Base handled on-chain settlement, and Mastercard said the APIs remain in a pilot stage and are not yet commercially available.",
+    "summary_zh": "据 The Block 2026 年 10 月 20 日报道，Mastercard 开放了 Agent Pay for Machines 的早期访问，AI 代理可通过 x402 协议支付数字服务，Cloudflare Connect 上的演示被限制在客户已批准的预算内。该试点中 Coinbase Developer Platform 提供钱包基础设施，Base 负责链上结算；Mastercard 称相关 API 仍处于试点阶段，尚未正式商用。",
+    "category": "agent-news",
+    "type": "news",
+    "tools": [
+      "x402"
+    ],
+    "source_url": "https://www.theblock.co/news/business/2026-10-20-mastercard-opens-early-access-to-ai-agent-payments-following-pilots-with-coinbase-base-and-cloudflare-421406",
+    "source_platform": "News (The Block; Mastercard announcement, 20 Oct 2026)",
+    "date": "2026-10",
+    "engagement": "The Block, 20 Oct 2026",
+    "vendor": false,
+    "tier": "base"
+  },
+  {
+    "slug": "aaif-agent-commerce-standards-x402",
+    "title": "OpenAI, Anthropic and rivals back shared rules for agents that pay, including stablecoins",
+    "title_zh": "OpenAI、Anthropic 等联手制定代理支付规则，稳定币也被纳入讨论",
+    "summary": "According to CoinDesk on 21 November 2026, the Linux Foundation's Agentic AI Foundation, backed by OpenAI, Anthropic, Google and Microsoft, is writing shared standards so AI agents can communicate, verify identity and make payments. Executive director Mazin Gilbert said working groups are looking at how agents would use bank cards and stablecoins, and CoinDesk reported that the groups are also developing guidance on spending limits, customer authorization and emergency controls; Coinbase developed the x402 payments protocol in this ecosystem.",
+    "summary_zh": "据 CoinDesk 2026 年 11 月 21 日报道，Linux 基金会旗下的 Agentic AI Foundation 在 OpenAI、Anthropic、Google、Microsoft 支持下，正在制定 AI 代理之间通信、身份校验和付款的共同标准。执行董事 Mazin Gilbert 表示，工作组正在研究代理如何使用银行卡和稳定币；CoinDesk 还写道，这些工作组在制定支出限额、用户授权和紧急控制方面的指引，同一生态里 Coinbase 贡献了 x402 支付协议。",
+    "category": "agent-news",
+    "type": "news",
+    "tools": [
+      "MCP",
+      "x402"
+    ],
+    "source_url": "https://www.coindesk.com/tech/2026/11/21/openai-anthropic-and-rivals-seek-ai-agent-rules-to-prevent-commerce-chaos",
+    "source_platform": "News (CoinDesk)",
+    "date": "2026-11",
+    "engagement": "CoinDesk, 21 Nov 2026",
     "vendor": false,
     "tier": "base"
   }
