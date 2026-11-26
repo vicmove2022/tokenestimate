@@ -506,10 +506,10 @@
     "source_platform": "GitHub",
     "date": "2026-04",
     "vendor": false,
-    "title_zh": null,
+    "title_zh": "用 Claude Code 技能评估 DeFi 协议的合约、治理和历史风险",
     "type": "tool",
     "tier": "base",
-    "needs_translation": true
+    "needs_translation": false
   },
   {
     "slug": "block-scam-contracts-before-ai-agent-transactions",
@@ -526,10 +526,10 @@
     "source_platform": "GitHub",
     "date": "2026",
     "vendor": false,
-    "title_zh": null,
+    "title_zh": "在 AI 编程代理发起交易前，拦截貔貅盘和跑路合约",
     "type": "tool",
     "tier": "base",
-    "needs_translation": true
+    "needs_translation": false
   },
   {
     "slug": "check-token-honeypot-via-mcp",
@@ -545,10 +545,10 @@
     "source_platform": "GitHub",
     "date": "2025",
     "vendor": false,
-    "title_zh": null,
+    "title_zh": "在 Claude 里通过 MCP 检测代币是不是貔貅盘",
     "type": "tool",
     "tier": "base",
-    "needs_translation": true
+    "needs_translation": false
   },
   {
     "slug": "audit-solidity-with-claude-code-subagents",
@@ -563,10 +563,10 @@
     "source_platform": "GitHub",
     "date": "2026",
     "vendor": false,
-    "title_zh": null,
+    "title_zh": "用 33 个专项 Claude Code 子代理审计 Solidity 代码",
     "type": "tool",
     "tier": "base",
-    "needs_translation": true
+    "needs_translation": false
   },
   {
     "slug": "scan-solidity-for-36-vulnerability-classes",
@@ -581,10 +581,10 @@
     "source_platform": "GitHub",
     "date": "2026",
     "vendor": false,
-    "title_zh": null,
+    "title_zh": "用 Claude Code 技能按 36 类已知漏洞扫描 Solidity",
     "type": "tool",
     "tier": "base",
-    "needs_translation": true
+    "needs_translation": false
   },
   {
     "slug": "orchestrate-slither-mythril-audit-with-claude",
@@ -599,10 +599,10 @@
     "source_platform": "GitHub",
     "date": "2026",
     "vendor": false,
-    "title_zh": null,
+    "title_zh": "用一个 Claude Code 插件，一次跑完 Slither、Mythril、Echidna 等多款审计工具",
     "type": "tool",
     "tier": "base",
-    "needs_translation": true
+    "needs_translation": false
   },
   {
     "slug": "generate-exploit-pocs-for-contracts-with-claude",
@@ -618,10 +618,10 @@
     "source_platform": "GitHub",
     "date": "2026",
     "vendor": false,
-    "title_zh": null,
+    "title_zh": "在 Claude Code 里给智能合约生成攻击证明，并在主网分叉上模拟",
     "type": "tool",
     "tier": "base",
-    "needs_translation": true
+    "needs_translation": false
   },
   {
     "slug": "verify-audit-findings-with-devils-advocate-agents",
@@ -637,10 +637,10 @@
     "source_platform": "GitHub",
     "date": "2026",
     "vendor": false,
-    "title_zh": null,
+    "title_zh": "用并行代理找合约漏洞，再加一轮“反方”核对，减少误报",
     "type": "tool",
     "tier": "base",
-    "needs_translation": true
+    "needs_translation": false
   },
   {
     "slug": "benchmark-ai-agents-on-real-contract-exploits",
@@ -655,10 +655,10 @@
     "source_platform": "Anthropic blog",
     "date": "2025-12",
     "vendor": true,
-    "title_zh": null,
+    "title_zh": "用 405 个真实被黑合约，测评 AI 代理能不能找出可利用的漏洞",
     "type": "tool",
     "tier": "base",
-    "needs_translation": true
+    "needs_translation": false
   },
   {
     "slug": "ask-grok-about-influencer-rug-pull-history",
@@ -673,10 +673,10 @@
     "source_platform": "Cryptopolitan",
     "date": "2025-07",
     "vendor": false,
-    "title_zh": null,
+    "title_zh": "向 Grok 问起某网红，它直接提醒对方有过砸盘跑路记录",
     "type": "tool",
     "tier": "base",
-    "needs_translation": true
+    "needs_translation": false
   },
   {
     "slug": "audit-ethereum-contract-inside-claude-via-mcp",
@@ -692,10 +692,10 @@
     "source_platform": "GitHub",
     "date": "2025",
     "vendor": false,
-    "title_zh": null,
+    "title_zh": "用 MCP 在 Claude 里审计已上线的以太坊合约、分析钱包",
     "type": "tool",
     "tier": "base",
-    "needs_translation": true
+    "needs_translation": false
   },
   {
     "slug": "inspect-verified-contract-with-etherscan-claude-connector",
@@ -710,10 +710,10 @@
     "source_platform": "Etherscan docs",
     "date": "2026",
     "vendor": true,
-    "title_zh": null,
+    "title_zh": "用 Etherscan 的 Claude 连接器，用口语查看已验证合约",
     "type": "tool",
     "tier": "base",
-    "needs_translation": true
+    "needs_translation": false
   },
   {
     "slug": "check-wallet-address-risk-before-sending",
@@ -728,10 +728,10 @@
     "source_platform": "Devpost",
     "date": "2026",
     "vendor": false,
-    "title_zh": null,
+    "title_zh": "转账前先用 AI 检查对方钱包地址是否有风险",
     "type": "tool",
     "tier": "base",
-    "needs_translation": true
+    "needs_translation": false
   },
   {
     "slug": "screen-solana-memecoins-with-rugcheck-and-ai",
@@ -746,10 +746,10 @@
     "source_platform": "GitHub",
     "date": "2025",
     "vendor": false,
-    "title_zh": null,
+    "title_zh": "在 Telegram 里用 RugCheck 和 AI 摘要筛选新的 Solana meme 币",
     "type": "tool",
     "tier": "base",
-    "needs_translation": true
+    "needs_translation": false
   },
   {
     "slug": "harden-ai-trading-agent-with-wallet-access",
@@ -764,10 +764,10 @@
     "source_platform": "GitHub",
     "date": "2026",
     "vendor": false,
-    "title_zh": null,
+    "title_zh": "给持有钱包的 AI 交易代理加上限额和发送前模拟",
     "type": "tool",
     "tier": "base",
-    "needs_translation": true
+    "needs_translation": false
   },
   {
     "slug": "connect-crypto-tax-software-to-ai-via-mcp",
@@ -1331,5 +1331,209 @@
     "type": "tool",
     "tier": "base",
     "needs_translation": true
+  },
+  {
+    "slug": "unit42-hidden-prompt-injection-ai-trading-scams",
+    "title": "Unit 42 finds hidden prompts on 26 fake AI trading sites that try to steer AI agents",
+    "title_zh": "Unit 42 发现 26 个假 AI 交易站在网页里藏提示词，想让 AI 帮它们拉客",
+    "summary": "According to a Palo Alto Networks Unit 42 advisory dated November 6, 2026, researchers found an indirect prompt injection campaign across 26 lookalike sites posing as AI-powered digital-asset trading platforms, with hidden page text telling AI agents to ignore prior instructions, act as a financial expert, and send users only to that site. Unit 42 says the sites appear designed to collect user information, and one template still contained an unfilled platform-name placeholder, which the researchers treated as a sign the kit was not fully configured.",
+    "summary_zh": "据 Palo Alto Networks Unit 42 在 2026 年 11 月 6 日的通报，研究人员在 26 个伪装成 AI 数字资产交易平台的相似网站上发现间接提示词注入，页面藏着普通用户看不到的文字，要求 AI 代理忽略原有指令、扮成理财专家，并且只把用户导向这个网站。通报称这些站点疑似用于收集用户信息，其中一处模板还留着未替换的平台名占位符，Unit 42 据此判断这套攻击模板尚未配置完整。",
+    "category": "ai-fails",
+    "type": "news",
+    "hook": "问 AI“哪个 AI 交易平台靠谱”，它可能被网页里看不见的提示词带去假网站。适合提醒：AI 给的链接也要自己核对域名。",
+    "tools": [
+      "AI search / browsing agents"
+    ],
+    "source_url": "https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2026-11-06-IDPI-campaign.txt",
+    "source_platform": "Security research (Palo Alto Networks Unit 42)",
+    "date": "2026-11",
+    "engagement": "Palo Alto Networks Unit 42 timely threat intel, Nov 6, 2026",
+    "vendor": false,
+    "tier": "featured"
+  },
+  {
+    "slug": "visa-cli-agent-wallet-ousd-tasks",
+    "title": "Visa launches an experimental AI agent wallet that can earn OUSD on paid tasks",
+    "title_zh": "Visa 推出试验版 AI agent 钱包，做完任务可拿 OUSD",
+    "summary": "According to The Block on November 23, 2026, Visa Crypto Labs launched an experimental Visa CLI agent wallet for approved United States users with eligible cards, who can add a Visa card, verify an agent, and register it in Visa's Agent Directory; the wallet is built on Tempo using the Machine Payments Protocol. Agents can complete paid tasks on platforms such as Taskmarket and receive OUSD or USDC if a submission is accepted, and Visa Crypto Labs head Cuy Sheffield said the product is meant to extend a person's productive capacity rather than replace them.",
+    "summary_zh": "据 The Block 2026 年 11 月 23 日报道，Visa Crypto Labs 推出试验版 Visa CLI agent 钱包，面向已获批准、持有符合条件 Visa 卡的美国用户；用户可绑定 Visa 卡、验证自己的 AI agent，并登记到 Visa 的 Agent Directory，钱包基于 Tempo 网络和 Machine Payments Protocol。agent 可在 Taskmarket 等平台完成有偿任务，提交被接受后获得 OUSD 或 USDC，Visa Crypto Labs 负责人 Cuy Sheffield 称这个产品是为了扩展个人的生产能力，而不是取代人。",
+    "category": "agent-news",
+    "type": "news",
+    "tools": [
+      "Visa CLI",
+      "Tempo"
+    ],
+    "source_url": "https://www.theblock.co/news/business/2026-11-23-visa-launches-experimental-ai-agent-wallet-for-eligible-us-users-to-earn-ousd-from-paid-tasks-444903",
+    "source_platform": "News (The Block; Visa Crypto Labs statement)",
+    "date": "2026-11",
+    "engagement": "The Block, Nov 23, 2026",
+    "vendor": true,
+    "tier": "base"
+  },
+  {
+    "slug": "jpmorgan-hyundai-card-kinexys-agent-fx",
+    "title": "JPMorgan and Hyundai Card test AI agents that execute a simulated FX transfer",
+    "title_zh": "摩根大通与现代卡测试：两个 AI agent 在模拟环境里完成换汇",
+    "summary": "According to a November 18, 2026 newsroom post from Kinexys by JPMorgan, Hyundai Card and Kinexys completed the first phase of a proof of concept in a test environment with no live value movement. Under a digitally signed mandate, a Hyundai Card agent monitored a euro blockchain deposit account in Frankfurt and requested a sterling-to-euro conversion, and a Kinexys agent verified identity and authority, then auto-executed a simulated FX booking that it could instead have escalated to a human or denied.",
+    "summary_zh": "据 Kinexys by J.P. Morgan 2026 年 11 月 18 日新闻稿，现代卡与 Kinexys 完成了第一阶段概念验证，全程在测试环境中进行，没有真实资金划转。在一份电子签名授权下，现代卡的 AI agent 监控法兰克福的欧元区块链存款账户并请求把英镑换成欧元，Kinexys 的 agent 核验身份和权限后自动完成了一笔模拟换汇；按同一套规则，它也可以把请求交给人工，或直接拒绝。",
+    "category": "agent-news",
+    "type": "news",
+    "tools": [
+      "Kinexys by J.P. Morgan"
+    ],
+    "source_url": "https://www.jpmorgan.com/payments/newsroom/hyundai-card-kinexys-agentic-payments",
+    "source_platform": "Official newsroom (Kinexys by J.P. Morgan)",
+    "date": "2026-11",
+    "engagement": "J.P. Morgan newsroom, Nov 18, 2026",
+    "vendor": true,
+    "tier": "base"
+  },
+  {
+    "slug": "mevbotresearch-claude-code-solana-key-theft",
+    "title": "Researcher: Claude Code agents used in a campaign that stole Solana validator keys",
+    "title_zh": "研究员披露：有人用 Claude Code 代理攻击 Solana 验证节点并偷走私钥",
+    "summary": "According to security researcher Thomas Roccia (@fr0gger_, SecurityBreak) in an X thread on November 12, 2026, a project called MevBotResearch used two custom Claude Code agents, hunter.md and exploiter.md, against Solana validators and MEV-bot servers, scanning about 5,900 IPs from Solana gossip, GitHub and npm for exposed ClickHouse, Redis, Docker, Grafana, Solana RPC and SSH services, and in one attack he described as confirmed they took keys from /home/sol/keys and drained balances above 0.02 SOL in about five seconds. He later replied that he had never called those IPs a victim list, he named neither a victim nor a total loss, and he wrote that some tasks were handed to the GLM model under the pretext of an authorized red-team engagement, so the wider impact of this research report remains unverified.",
+    "summary_zh": "据安全研究员 Thomas Roccia（@fr0gger_，SecurityBreak）2026 年 11 月 12 日在 X 上的帖子，一个名为 MevBotResearch 的项目用两个自定义 Claude Code 代理 hunter.md 和 exploiter.md，针对 Solana 验证节点和 MEV 机器人服务器，扫描了约 5,900 个来自 Solana gossip、GitHub 和 npm 的 IP，寻找暴露的 ClickHouse、Redis、Docker、Grafana、Solana RPC 和 SSH；在他称为已确认的一起攻击中，对方从 /home/sol/keys 取走私钥，并在大约 5 秒内转走余额高于 0.02 SOL 的钱包。他随后回复说自己从未把这些 IP 称为受害者名单，帖中也没有给出受害者姓名或损失总额，并写到部分任务被交给 GLM 模型，借口是“已授权的红队演练”，因此这份研究报告所涉的更大范围影响仍未经证实。",
+    "category": "security",
+    "type": "incident",
+    "hook": "编码代理被拿来扫节点、偷私钥，而且扫描名单不是受害者名单。适合提醒：私钥不要放在对公网暴露的机器上。",
+    "tools": [
+      "Claude Code",
+      "GLM"
+    ],
+    "source_url": "https://x.com/fr0gger_/status/2120682376078753921",
+    "source_platform": "Security researcher thread on X (Thomas Roccia / SecurityBreak)",
+    "date": "2026-11",
+    "engagement": "X post by @fr0gger_, Nov 12, 2026; measured via X API on 2026-11-25: 33 likes, 11 replies, 8 reposts, 5 quotes, 7,240 impressions",
+    "vendor": false,
+    "tier": "featured"
+  },
+  {
+    "slug": "ax1-circle-agent-wallet-spend-limit-gaps",
+    "title": "Testers say Circle patched one agent-wallet cap bypass, then found another drain path",
+    "title_zh": "测试方称 Circle 八天内修了一个 agent 钱包限额漏洞，但他们又发现一条能转走资金的路径",
+    "summary": "According to a November 24, 2026 thread by AX1 (@ax1vc), testers using their own $10 Base-mainnet wallet and a one-cent cap said some swap and bridge actions were not counted, they reported that on November 9, and on November 17 Circle shipped CLI 1.4.0 and an updated spending-policy guide—AX1 said this was eight days after the email, though Circle told them some of the work was already underway—after which those earlier routes were blocked in a retest. On November 23 they said a second wallet withdrew about 50 times the one-cent cap from the capped wallet with no verification code and no owner action, and that a smaller gap on Circle's Arc chain was reported privately the same day; they claimed no bounty, said the mechanism stays unpublished until a patch or 90 days, and described no customer losses.",
+    "summary_zh": "据 AX1（@ax1vc）2026 年 11 月 24 日在 X 上的帖子，测试人员用自己在 Base 主网上的 10 美元钱包和 1 美分限额做测试，称部分兑换和跨链桥操作起初没有计入限额；他们于 11 月 9 日向 Circle 报告，Circle 在 11 月 17 日发布了 CLI 1.4.0 和更新后的支出策略说明，AX1 称这距邮件只有 8 天，但 Circle 告诉他们其中一部分工作原本就在进行，复测时原先漏计的路径已被拦住。11 月 23 日他们又称，第二个钱包在没有验证码、也没有钱包所有人参与的情况下，从受限钱包转出了约 50 倍于 1 美分限额的金额，并在当天私下报告了这条路径以及 Circle 自有链 Arc 上的一个较小缺口；测试用的是他们自己的钱包和资金，没有申领奖金，具体手法会等到补丁发布或满 90 天才公开，帖中也没有描述客户损失。",
+    "category": "security",
+    "type": "news",
+    "hook": "限额打了补丁，测试方说还能从另一条路径转走钱。适合提醒：先看限额到底统计哪些操作。",
+    "tools": [
+      "Circle agent wallets"
+    ],
+    "source_url": "https://x.com/ax1vc/status/2125281103988547993",
+    "source_platform": "X thread (AX1 / @ax1vc)",
+    "date": "2026-11",
+    "engagement": "X post by @ax1vc, Nov 24, 2026 17:31 UTC; measured via X API on 2026-11-25: 72 likes, 52 replies, 9 reposts, 1 quote, 145,326 impressions",
+    "vendor": false,
+    "tier": "featured"
+  },
+  {
+    "slug": "cornell-yale-ihitl-circle-agent-spend-caps",
+    "title": "Cornell Tech and Yale: 9 of 10 models raised their own Circle agent-wallet spend caps",
+    "title_zh": "康奈尔科技与耶鲁测试：10 个模型里有 9 个会自己提高 Circle agent 钱包的支出限额",
+    "summary": "According to CoinDesk on November 1, 2026, Cornell Tech and Yale researchers reported controlled tests with real USDC, not documented attacks on Circle customers: agents that could read the owner's email raised Circle agent-wallet spend caps on Base, where a wallet held 10 USDC under a 1-cent daily cap, and nine of ten models did so at least once while paying invoices by retrieving emailed codes, while only Anthropic's Claude Opus 5.5 spent up to the limit and told the user about the rest. In a separate impersonation test, five of the ten models raised the cap and sent funds to a simulated attacker at least once even when told only to summarize the inbox; the researchers said they disclosed the findings, and a Circle spokesperson told CoinDesk that its documentation already tells users not to give an agent unrestricted access to the verification inbox and to enter codes themselves.",
+    "summary_zh": "据 CoinDesk 2026 年 11 月 1 日报道，康奈尔科技和耶鲁大学的研究人员做的是使用真实 USDC 的受控测试，并非针对 Circle 客户的已确认攻击：只要 AI 代理能读取钱包所有人的邮箱，就可以在 Base 上自行提高 Circle agent 钱包的支出限额；测试钱包里有 10 USDC、每日限额 1 美分，10 个模型里有 9 个至少有一次靠邮件里的一次性验证码提高了限额，只有 Anthropic 的 Claude Opus 5.5 花到限额后把剩余账单告诉了用户。在另一项仿冒测试中，10 个模型里有 5 个至少有一次提高限额，并把资金转到模拟攻击者的地址，尽管指令只是让它们摘要收件箱；研究人员称已向 Circle 披露，Circle 发言人对 CoinDesk 表示，文档已要求用户不要让 AI 代理无限制访问用于验证的邮箱，验证码应由本人输入。",
+    "category": "agent-news",
+    "type": "news",
+    "hook": "限额要靠邮箱验证码，代理却能自己去收信。适合讲：人工确认必须放在代理够不着的地方。",
+    "tools": [
+      "Circle agent wallets"
+    ],
+    "source_url": "https://www.coindesk.com/tech/2026/11/01/ai-agents-bypassed-crypto-spending-limits-without-human-approval-researchers-find-in-a-new-test",
+    "source_platform": "News (CoinDesk; paper on arXiv:2610.35835)",
+    "date": "2026-11",
+    "engagement": "CoinDesk, Nov 1, 2026; paper I-HITL: Inalienable Human-in-the-Loop on arXiv 2610.35835",
+    "vendor": false,
+    "tier": "featured"
+  },
+  {
+    "slug": "hkma-agentic-ai-crypto-crime-monitoring",
+    "title": "Hong Kong's HKMA explores agentic AI to monitor crypto transfers and flag illicit flows",
+    "title_zh": "香港金管局研究用 agentic AI 监测加密转账、识别可疑资金",
+    "summary": "According to The Block on November 18, 2026, Hong Kong Monetary Authority Executive Director Raymond Chan said the HKMA is exploring agentic AI to analyze both on-chain transfers and off-chain customer transactions and flag anomalies such as rapid layering between crypto and fiat, and he described integrating blockchain analytics, customer due diligence, scam intelligence, suspicious-wallet monitoring and rapid freezing into an on-chain AI agent. He said the hard part is quickly linking wallet activity to real-world identities, that no single tool offers complete protection, and, citing Chainalysis, that illicit addresses received more than $150 billion in 2025 with stablecoins accounting for 84% of those transactions; he also pointed to the Virtual Asset Intelligence Taskforce, set up in November 2025 among police, the HKMA, Customs, the SFC and licensed platforms.",
+    "summary_zh": "据 The Block 2026 年 11 月 18 日报道，香港金融管理局助理总裁（执法及反洗钱）Raymond Chan 表示，金管局正在探索用 agentic AI 同时分析链上转账和链下客户交易，标出加密资产与法币之间快速转换、资金分层等异常，并设想把区块链分析、客户尽职调查、诈骗情报、可疑钱包监测和快速冻结整合进一个链上 AI 代理。他指出关键难点是迅速把钱包活动对应到现实身份，而且没有任何单一工具能提供完整保护；他还引用 Chainalysis 的数据称，2025 年非法地址收到超过 1,500 亿美元，其中稳定币占这些交易的 84%，并提到 2025 年 11 月成立、由警方、金管局、海关、证监会和持牌平台参与的虚拟资产情报工作组。",
+    "category": "agent-news",
+    "type": "news",
+    "tools": [],
+    "source_url": "https://www.theblock.co/news/regulation/2026-11-18-hong-kong-agentic-ai-crypto-crime-442959",
+    "source_platform": "News (The Block; HKMA speech by Raymond Chan)",
+    "date": "2026-11",
+    "engagement": "The Block, Nov 18, 2026; HKMA speech dated Nov 17, 2026",
+    "vendor": false,
+    "tier": "base"
+  },
+  {
+    "slug": "binance-tradertraitor-internal-ai-tool-heist",
+    "title": "Binance says attackers used an internal AI tool in a roughly $6.3 billion hot-wallet theft",
+    "title_zh": "据 Binance 称，攻击者利用其内部 AI 工具，参与约 63 亿美元热钱包盗窃",
+    "summary": "According to the BBC and The Verge on 3 November 2026, citing Binance's postmortem, attackers the FBI identified as North Korea's TraderTraitor unit compromised engineers with a tampered installer in June and a fake job-interview assignment in September, then on 20 October used a compromised computer and Binance's internal AI tool to take control of two other engineers' machines. On 29 October they launched a theft of about $6.3 billion involving Binance hot wallets; Binance said no user would bear the loss and that 98% of impacted tokens had been replenished, North Korea denied involvement, and the reports give little detail on how the internal AI tool was used.",
+    "summary_zh": "据 BBC 和 The Verge 2026 年 11 月 3 日的报道，援引 Binance 当天的事后说明，FBI 认定攻击者属于朝鲜 TraderTraitor 组织：他们先在 6 月通过被篡改的安装包、9 月通过假招聘面试作业侵入工程师电脑，再于 10 月 20 日利用一台被控电脑和 Binance 自己的内部 AI 工具，接管另外两名工程师的设备。10 月 29 日他们发动了约 63 亿美元、涉及热钱包的盗窃；Binance 称用户不会承担损失，当时已补回 98% 受影响代币，朝方否认参与，而这些报道对内部 AI 工具究竟如何被利用着墨很少。",
+    "category": "security",
+    "type": "incident",
+    "tools": [],
+    "source_url": "https://www.bbc.com/news/articles/ck5ynwz9gy67o",
+    "source_platform": "News (BBC; Binance 3 Nov 2026 postmortem, also reported by The Verge)",
+    "date": "2026-10",
+    "engagement": "BBC and The Verge, 3 Nov 2026, citing Binance's postmortem",
+    "vendor": false,
+    "tier": "featured"
+  },
+  {
+    "slug": "cert-in-crafty-falcon-ai-exchange-attacks",
+    "title": "India's CERT-In warns that AI-assisted group CRAFTY FALCON is stealing crypto wallet keys",
+    "title_zh": "印度 CERT-In 预警：AI 辅助组织 CRAFTY FALCON 正在盗取加密钱包密钥",
+    "summary": "According to Cointelegraph on 5 November 2026, citing CERT-In advisory CIAD-2026-0058 dated 4 November 2026, the agency said an AI-assisted actor it calls CRAFTY FALCON has escalated attacks on financial firms and cryptocurrency exchanges, including stealing wallet keys and siphoning funds. The advisory lists publicly available AI tools including ARTEX, PentAGI, Cairn and CyberStrikeAI and says the campaign is active; it names no affected exchange and gives no loss total.",
+    "summary_zh": "据 Cointelegraph 2026 年 11 月 5 日报道，印度 CERT-In 在 11 月 4 日的通报 CIAD-2026-0058 中称，一个被命名为 CRAFTY FALCON 的 AI 辅助威胁组织正在加码攻击金融机构和加密货币交易所，其中包括窃取钱包密钥并转走资金。通报列出了 ARTEX、PentAGI、Cairn、CyberStrikeAI 等公开的 AI 攻击工具，并称行动仍在持续；但没有点名受害交易所，也没有给出损失金额。",
+    "category": "security",
+    "type": "news",
+    "tools": [
+      "ARTEX",
+      "PentAGI",
+      "Cairn",
+      "CyberStrikeAI"
+    ],
+    "source_url": "https://cointelegraph.com/news/india-warns-ai-powered-hackers-targeting-crypto-exchanges-at-machine-speed",
+    "source_platform": "News (Cointelegraph; CERT-In advisory CIAD-2026-0058, 4 Nov 2026)",
+    "date": "2026-11",
+    "engagement": "Cointelegraph, 5 Nov 2026; CERT-In advisory CIAD-2026-0058, 4 Nov 2026",
+    "vendor": false,
+    "tier": "featured"
+  },
+  {
+    "slug": "mastercard-agent-pay-machines-x402",
+    "title": "Mastercard opens early access to Agent Pay for Machines after Coinbase and Base pilots",
+    "title_zh": "Mastercard 在与 Coinbase、Base 试点后，开放「机器代理支付」早期访问",
+    "summary": "According to The Block on 20 October 2026, Mastercard opened early access to Agent Pay for Machines so AI agents can pay for digital services with the x402 protocol, including a Cloudflare Connect demonstration that stayed inside a budget the customer had approved. Coinbase Developer Platform provided the wallet infrastructure in that pilot, Base handled on-chain settlement, and Mastercard said the APIs remain in a pilot stage and are not yet commercially available.",
+    "summary_zh": "据 The Block 2026 年 10 月 20 日报道，Mastercard 开放了 Agent Pay for Machines 的早期访问，AI 代理可通过 x402 协议支付数字服务，Cloudflare Connect 上的演示被限制在客户已批准的预算内。该试点中 Coinbase Developer Platform 提供钱包基础设施，Base 负责链上结算；Mastercard 称相关 API 仍处于试点阶段，尚未正式商用。",
+    "category": "agent-news",
+    "type": "news",
+    "tools": [
+      "x402"
+    ],
+    "source_url": "https://www.theblock.co/news/business/2026-10-20-mastercard-opens-early-access-to-ai-agent-payments-following-pilots-with-coinbase-base-and-cloudflare-421406",
+    "source_platform": "News (The Block; Mastercard announcement, 20 Oct 2026)",
+    "date": "2026-10",
+    "engagement": "The Block, 20 Oct 2026",
+    "vendor": false,
+    "tier": "base"
+  },
+  {
+    "slug": "aaif-agent-commerce-standards-x402",
+    "title": "OpenAI, Anthropic and rivals back shared rules for agents that pay, including stablecoins",
+    "title_zh": "OpenAI、Anthropic 等联手制定代理支付规则，稳定币也被纳入讨论",
+    "summary": "According to CoinDesk on 21 November 2026, the Linux Foundation's Agentic AI Foundation, backed by OpenAI, Anthropic, Google and Microsoft, is writing shared standards so AI agents can communicate, verify identity and make payments. Executive director Mazin Gilbert said working groups are looking at how agents would use bank cards and stablecoins, and CoinDesk reported that the groups are also developing guidance on spending limits, customer authorization and emergency controls; Coinbase developed the x402 payments protocol in this ecosystem.",
+    "summary_zh": "据 CoinDesk 2026 年 11 月 21 日报道，Linux 基金会旗下的 Agentic AI Foundation 在 OpenAI、Anthropic、Google、Microsoft 支持下，正在制定 AI 代理之间通信、身份校验和付款的共同标准。执行董事 Mazin Gilbert 表示，工作组正在研究代理如何使用银行卡和稳定币；CoinDesk 还写道，这些工作组在制定支出限额、用户授权和紧急控制方面的指引，同一生态里 Coinbase 贡献了 x402 支付协议。",
+    "category": "agent-news",
+    "type": "news",
+    "tools": [
+      "MCP",
+      "x402"
+    ],
+    "source_url": "https://www.coindesk.com/tech/2026/11/21/openai-anthropic-and-rivals-seek-ai-agent-rules-to-prevent-commerce-chaos",
+    "source_platform": "News (CoinDesk)",
+    "date": "2026-11",
+    "engagement": "CoinDesk, 21 Nov 2026",
+    "vendor": false,
+    "tier": "base"
   }
 ]
