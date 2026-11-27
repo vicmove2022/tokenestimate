@@ -784,10 +784,10 @@
     "source_platform": "Awaken blog",
     "date": "2026",
     "vendor": true,
-    "title_zh": null,
+    "title_zh": "用 MCP 让 AI 读取报税软件里的交易，帮你解释记录",
     "type": "tool",
     "tier": "base",
-    "needs_translation": true
+    "needs_translation": false
   },
   {
     "slug": "investigate-thousands-of-transactions-with-claude-code",
@@ -803,10 +803,10 @@
     "source_platform": "Awaken blog",
     "date": "2026",
     "vendor": true,
-    "title_zh": null,
+    "title_zh": "用 Claude Code 脚本梳理上千笔交易，方便报税",
     "type": "tool",
     "tier": "base",
-    "needs_translation": true
+    "needs_translation": false
   },
   {
     "slug": "query-tokentax-data-from-claude-code",
@@ -822,10 +822,10 @@
     "source_platform": "TokenTax blog",
     "date": "2026-11",
     "vendor": true,
-    "title_zh": null,
+    "title_zh": "在 Claude Code 里查询自己的 TokenTax 盈亏和交易",
     "type": "tool",
     "tier": "base",
-    "needs_translation": true
+    "needs_translation": false
   },
   {
     "slug": "review-crypto-tax-data-in-chatgpt",
@@ -841,10 +841,10 @@
     "source_platform": "TokenTax blog",
     "date": "2026-11",
     "vendor": true,
-    "title_zh": null,
+    "title_zh": "在 ChatGPT 里查看和询问自己的加密报税数据",
     "type": "tool",
     "tier": "base",
-    "needs_translation": true
+    "needs_translation": false
   },
   {
     "slug": "check-japan-crypto-pnl-with-ai-and-cryptact",
@@ -861,10 +861,10 @@
     "source_platform": "Cryptact blog",
     "date": "2026-07",
     "vendor": true,
-    "title_zh": null,
+    "title_zh": "把 Cryptact 连上 ChatGPT 或 Claude，核对日本报税用的加密损益",
     "type": "tool",
     "tier": "base",
-    "needs_translation": true
+    "needs_translation": false
   },
   {
     "slug": "aggregate-eu-wallets-and-exchanges-for-claude",
@@ -1534,6 +1534,67 @@
     "date": "2026-11",
     "engagement": "CoinDesk, 21 Nov 2026",
     "vendor": false,
+    "tier": "base"
+  },
+  {
+    "slug": "hp-wolf-fake-ai-trading-agent-needle-stealer",
+    "title": "HP finds a fake AI trading agent that swaps crypto wallet extensions to steal passwords",
+    "title_zh": "据 HP 报告，假 AI 交易助手会掉包钱包插件，专门偷密码",
+    "summary": "According to HP's September 17, 2026 Threat Insights Report and official press release, covering telemetry from April–June 2026, HP Wolf Security researchers found a site, tradingclaw[.]pro, posing as an AI-powered crypto trading assistant whose name echoed a well-known AI tool; visitors who downloaded the installer labelled Trading Agent.exe received Needle Stealer. The executable was a legitimate Microsoft-signed OLEView binary used to bypass SmartScreen, loading a malicious iviewers.dll; the malware then replaced seven browser wallet extensions—Phantom, Trust Wallet, Atomic Wallet, Coinbase Wallet, OKX Wallet, MetaMask and Tonkeeper—with lookalikes that sent entered wallet passwords to attackers. HP did not publish a loss total.",
+    "summary_zh": "据 HP 2026 年 9 月 17 日发布的 Threat Insights Report 及官方新闻稿（覆盖 2026 年 4–6 月的观测），HP Wolf Security 研究人员发现网站 tradingclaw[.]pro 伪装成 AI 加密交易助手，名称刻意接近一款知名 AI 工具；用户下载名为 Trading Agent.exe 的安装包后，实际装上的是窃密木马 Needle Stealer。该可执行文件是微软签名的合法程序 OLEView，用来绕过 SmartScreen，再加载恶意的 iviewers.dll；木马随后把 Phantom、Trust Wallet、Atomic Wallet、Coinbase Wallet、OKX Wallet、MetaMask、Tonkeeper 这七款浏览器钱包插件替换成外形相似的假插件，用户输入的钱包密码会被送到攻击者手里。HP 未公布损失金额。",
+    "category": "ai-fails",
+    "type": "incident",
+    "hook": "以为下了 AI 交易助手，其实是微软签名的安装包在掉包钱包插件。适合提醒：不要从广告或搜索结果里下载所谓的 AI 交易机器人。",
+    "tools": [
+      "Needle Stealer"
+    ],
+    "source_url": "https://threatresearch.ext.hp.com/hp-wolf-security-threat-insights-report-september-2026/",
+    "source_platform": "Security research (HP Wolf Security Threat Insights Report, 17 Sept 2026; also HP official press release the same day)",
+    "date": "2026-09",
+    "engagement": "HP official press release and Threat Insights Report, 17 Sept 2026",
+    "vendor": false,
+    "tier": "featured"
+  },
+  {
+    "slug": "valory-onchainbench-agent-wallet-safety",
+    "title": "OnchainBench's first public run: flagship Claude Code and Codex setups miss the wallet safety bar",
+    "title_zh": "OnchainBench 首轮公开测试：旗舰版 Claude Code 与 Codex 未达到钱包安全门槛",
+    "summary": "According to the public OnchainBench leaderboard for its first held-out run, published with Valory's November 26, 2026 launch, seven agent setups completed 88.4% to 96.2% of 147 tasks and recorded 14 executed losses across 1,793 attack tests on forked copies of nine EVM chains, with no real funds and no human approval. Claude Code with DeepSeek V4.1 Flash completed 96.2% of tasks and had 1 loss in 262 attack tests, meeting the benchmark's safety bar; the same Claude Code harness with Anthropic's Opus 5.5 had 3 losses in 254 tests and missed it. Codex with OpenAI's GPT-5.6 Sol had 8 losses in 254 tests and missed the bar, while Codex with DeepSeek V4.1 Flash had 0 losses in 262 tests and met it; Valory, which operates the benchmark, also entered olas-ocb-agent, which had 0 losses in 263 tests.",
+    "summary_zh": "据 OnchainBench 官网首轮留出测试榜单，以及运营方 Valory 在 2026 年 11 月 26 日的发布，7 组代理配置在 9 条 EVM 链的分叉上完成了 147 项任务（完成率 88.4%–96.2%），并在 1,793 次攻击测试中出现 14 次已执行损失；测试没有真实资金，也没有人工确认。Claude Code 搭配 DeepSeek V4.1 Flash 的完成率为 96.2%，262 次攻击测试中损失 1 次，达到安全门槛；同一套 Claude Code 搭配 Anthropic 的 Opus 5.5 则为 254 次中损失 3 次，未达标。Codex 搭配 OpenAI 的 GPT-5.6 Sol 为 254 次中损失 8 次、未达标，搭配 DeepSeek V4.1 Flash 则为 262 次中损失 0 次、达标；同时参加测试的 Valory 自研 olas-ocb-agent 为 263 次中损失 0 次。",
+    "category": "security",
+    "type": "news",
+    "hook": "同一套代理软件，换一个模型，安全门槛就能从达标变成未达标。测试在分叉链上进行，没有真金被转走。",
+    "tools": [
+      "Claude Code",
+      "Codex",
+      "DeepSeek V4.1 Flash",
+      "Opus 5.5",
+      "GPT-5.6 Sol",
+      "OnchainBench"
+    ],
+    "source_url": "https://onchainbench.ai/",
+    "source_platform": "Official leaderboard (OnchainBench; launched by Valory, 26 Nov 2026)",
+    "date": "2026-11",
+    "engagement": "OnchainBench public leaderboard, first held-out run; Valory launch 26 Nov 2026",
+    "vendor": true,
+    "tier": "featured"
+  },
+  {
+    "slug": "coinbase-agent-controls-trade-limits",
+    "title": "Coinbase adds server-side trade limits and an auto-stop for AI agents",
+    "title_zh": "Coinbase 为 AI 代理加上服务端交易限额和自动停手",
+    "summary": "According to a Coinbase blog post dated November 11, 2026, Coinbase for Agents is adding Agent Controls that run on Coinbase's servers rather than inside the agent, so the agent cannot change or bypass them: a maximum USD size per trade, a rolling 24-hour volume cap, and an auto-stop that pauses new agent trades if a portfolio falls past a percentage-loss threshold the user sets, until the user turns trading back on in the Coinbase app or on the web. Product-category permissions, such as allowing crypto but not derivatives, were listed as coming soon. The post is a product announcement and does not report an incident or loss figure.",
+    "summary_zh": "据 Coinbase 2026 年 11 月 11 日的官方博客，Coinbase for Agents 正在上线 Agent Controls：单笔交易美元上限、滚动 24 小时成交额上限，以及当投资组合跌破用户设定的亏损比例时自动停止代理下单，直到用户在 Coinbase 应用或网页里重新打开。这些控制跑在 Coinbase 的服务器上，而不是写在代理内部，因此代理自己改不了、也绕不过；按产品类别授权（例如只许交易加密、不许做衍生品）当时仍标为即将推出。这是产品公告，没有公布相关事故或损失数字。",
+    "category": "agent-news",
+    "type": "news",
+    "tools": [
+      "Coinbase for Agents"
+    ],
+    "source_url": "https://www.coinbase.com/blog/agent-controls",
+    "source_platform": "Official blog (Coinbase, 11 Nov 2026)",
+    "date": "2026-11",
+    "engagement": "Coinbase blog, 11 Nov 2026",
+    "vendor": true,
     "tier": "base"
   }
 ]
