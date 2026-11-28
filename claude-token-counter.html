@@ -79,7 +79,7 @@
         "name": "What is a token in Claude?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A token is the smallest unit of text Claude's tokenizer processes — roughly one English word equals 1.25 tokens. Claude's 200K context window is measured in tokens, so an accurate count tells you how much text fits in a prompt."
+          "text": "A token is the smallest unit of text Claude's tokenizer processes — roughly one English word equals 1.25 tokens. Claude's context window is measured in tokens (200K on Opus 5, 1M on Sonnet 5), so an accurate count tells you how much text fits in a prompt."
         }
       },
       {
@@ -135,7 +135,7 @@
       <article class="article">
         <div class="breadcrumb"><a href="index.html">Home</a> / Claude Token Counter</div>
         <h1>Claude Token Counter — Count Tokens &amp; Estimate Anthropic API Cost</h1>
-        <p class="meta">AI Token Calculator — updated October 2026</p>
+        <p class="meta">AI Token Calculator — updated 2026-11-24 — 60 of 92 models verified, 32 unverified</p>
 
         <p><strong>Claude Token Counter</strong> is a free, browser-based developer tool that estimates token counts for Anthropic's Claude Opus, Sonnet and Haiku models and forecasts API costs in real time. Unlike word-based counters, it calibrates counts on Claude's known tokenizer behavior and works entirely in your browser: no uploads, no API keys, no sign-up. It is one of <strong>92 models</strong> covered by TokenCalc, a free AI token calculator for developers.</p>
 
@@ -151,9 +151,10 @@
           <tbody>
             <tr><td>Claude Opus 5.5</td><td><span class="tag">estimate</span></td><td>$4.00</td><td>$20.00</td><td>1M</td></tr>
             <tr><td>Claude Opus 5</td><td><span class="tag">estimate</span></td><td>$5.00</td><td>$25.00</td><td>200K</td></tr>
-            <tr><td>Claude Sonnet 5</td><td><span class="tag">estimate</span></td><td>$2.00</td><td>$10.00</td><td>200K</td></tr>
+            <tr><td>Claude Sonnet 5</td><td><span class="tag">estimate</span></td><td>$2.00</td><td>$10.00</td><td>1M</td></tr>
             <tr><td>Claude Haiku 4.5</td><td><span class="tag">estimate</span></td><td>$1.00</td><td>$5.00</td><td>200K</td></tr>
-            <tr><td>Claude Opus 4 / Sonnet 4</td><td><span class="tag">estimate</span></td><td>$15.00 / $3.00</td><td>$75.00 / $15.00</td><td>200K</td></tr>
+            <tr><td>Claude Opus 4.6</td><td><span class="tag">estimate</span></td><td>$5.00</td><td>$25.00</td><td>1M</td></tr>
+            <tr><td>Claude Sonnet 4.6</td><td><span class="tag">estimate</span></td><td>$3.00</td><td>$15.00</td><td>1M</td></tr>
           </tbody>
         </table>
         <p class="meta">Claude counts are proven estimates — Anthropic doesn't ship an offline tokenizer, so we calibrate on known token behavior.</p>
@@ -161,7 +162,7 @@
         <h2>Claude token counter by the numbers</h2>
         <ul>
           <li><strong>70+</strong> LLM tokenizers supported in one free tool</li>
-          <li><strong>200K</strong> token context window on Claude Opus 5 and Sonnet 5</li>
+          <li><strong>200K</strong> on Claude Opus 5 and <strong>1M</strong> on Claude Sonnet 5</li>
           <li><strong>1.25</strong> average tokens per English word</li>
           <li><strong>$5.00 / $25.00</strong> per 1M input / output tokens for Claude Opus 5</li>
           <li><strong>100%</strong> in-browser — your text never leaves the device</li>
@@ -178,9 +179,9 @@
         </ul>
 
         <h2>Why count Claude tokens?</h2>
-        <p>Anthropic bills by tokens and Claude's context window is 200K tokens. Without an accurate count you risk:</p>
+        <p>Anthropic bills by tokens. Claude Opus 5's context window is 200K tokens and Claude Sonnet 5's is 1M. Without an accurate count you risk:</p>
         <ul>
-          <li><strong>Oversized prompts</strong> — a document that doesn't fit the 200K window gets truncated or rejected.</li>
+          <li><strong>Oversized prompts</strong> — a document that doesn't fit the model's window (200K on Opus 5, 1M on Sonnet 5) gets truncated or rejected.</li>
           <li><strong>Surprise invoices</strong> — output tokens on Opus 5 cost $25 per 1M, so long generations add up fast.</li>
           <li><strong>Model mismatch</strong> — the same text tokenizes differently between Claude, GPT-5 and Gemini; the cheapest model for a job isn't always obvious.</li>
         </ul>
@@ -199,7 +200,7 @@
         <h3>Does the Claude token counter upload my text?</h3>
         <p>No. Everything runs in your browser. Your text is never sent to any server.</p>
         <h3>What is a token in Claude?</h3>
-        <p>A token is the smallest unit of text Claude's tokenizer processes — roughly one English word equals 1.25 tokens. Claude's 200K context window is measured in tokens, so an accurate count tells you how much text fits in a prompt.</p>
+        <p>A token is the smallest unit of text Claude's tokenizer processes — roughly one English word equals 1.25 tokens. Claude's context window is measured in tokens (200K on Opus 5, 1M on Sonnet 5), so an accurate count tells you how much text fits in a prompt.</p>
         <h3>How does the Claude token counter compare to Anthropic's own API?</h3>
         <p>Anthropic does not ship an offline, browser-runnable tokenizer. Our counter uses a proven estimate calibrated on Claude's token behavior — accurate enough for context budgeting and cost forecasting, while OpenAI models on the same tool return exact official counts.</p>
       </article>

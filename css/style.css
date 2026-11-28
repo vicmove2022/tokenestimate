@@ -420,6 +420,7 @@ td.mono { font-family: var(--mono); color: var(--text); }
   background: var(--bg-input); border: 1px solid var(--border); color: var(--text-dim);
 }
 .tag.ok { background: #eafbea; border-color: #bde3bd; color: #1f7a1f; }
+.tag.unverified { background: #fff6e5; border-color: #f0d7a2; color: #8a5a00; font-weight: 650; margin-left: 6px; }
 
 /* FAQ */
 .faq details {

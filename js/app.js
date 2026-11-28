@@ -6,7 +6,7 @@ const ENGINE_LOCAL = "./ranks/lite.js";
 
 // type: "exact" = real tiktoken tokenizer | "est" = rule-of-thumb estimate
 // est.cjk  = tokens per Chinese character, est.ascii = characters per English token
-// estimated prices: public list prices per 1M tokens (USD), last verified 2026-09-30 — user-editable in the UI
+// estimated prices: public list prices per 1M tokens (USD). 60 of 92 models were verified on 2026-11-24; 32 remain unverified. User-editable in the UI.
 const MODELS = [
   // ---------- OpenAI (exact tiktoken) ----------
   { id: "gpt-5.5", label: "GPT-5.5", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 5, priceOut: 30, ctx: "1M", note: "" },
@@ -50,7 +50,7 @@ const MODELS = [
   // ---------- US / EU others ----------
   { id: "grok-4.1", label: "Grok 4.1 (xAI)", group: "US & EU", type: "est", est: { cjk: 1.2, ascii: 4 }, priceIn: 0.2, priceOut: 1, ctx: "1M", note: "" },
   { id: "llama-4", label: "Llama 4 (Meta)", group: "US & EU", type: "est", est: { cjk: 1.0, ascii: 4 }, priceIn: 0.15, priceOut: 0.45, ctx: "1M", note: "open-weight" },
-  { id: "mistral-large", label: "Mistral Large 3", group: "US & EU", type: "est", est: { cjk: 1.0, ascii: 4 }, priceIn: 0.5, priceOut: 1.5, ctx: "256K", note: "deprecated" },
+  { id: "mistral-large", label: "Mistral Large 3", group: "US & EU", type: "est", est: { cjk: 1.0, ascii: 4 }, priceIn: 0.5, priceOut: 1.5, ctx: "256K", note: "Deprecated / 已下线" },
   { id: "amazon-nova-pro", label: "Amazon Nova Pro", group: "US & EU", type: "est", est: { cjk: 1.0, ascii: 4 }, priceIn: 0.8, priceOut: 3.2, ctx: "300K", note: "" },
 
   // ---------- China ----------
@@ -86,7 +86,7 @@ const MODELS = [
   { id: "spark-max-x1", label: "Spark Max / X1 (讯飞星火)", group: "iFlytek Spark (讯飞星火)", type: "est", est: { cjk: 0.9, ascii: 3.8 }, priceIn: 0.5, priceOut: 1.7, ctx: "128K", note: "" },
   { id: "spark-lite", label: "Spark Lite", group: "iFlytek Spark (讯飞星火)", type: "est", est: { cjk: 0.9, ascii: 3.8 }, priceIn: 0, priceOut: 0, ctx: "32K", note: "free" },
 
-  { id: "minimax-2.5", label: "MiniMax M2.5", group: "MiniMax (稀宇科技)", type: "est", est: { cjk: 0.9, ascii: 3.8 }, priceIn: 0.29, priceOut: 1.18, ctx: "197K", note: "agent" },
+  { id: "minimax-2.5", label: "MiniMax M2.5", group: "MiniMax (稀宇科技)", type: "est", est: { cjk: 0.9, ascii: 3.8 }, priceIn: 0.29, priceOut: 1.18, ctx: "197K", note: "Deprecated / 已下线" },
   { id: "yi-lightning", label: "Yi-Lightning (零一万物)", group: "01.AI (零一万物)", type: "est", est: { cjk: 0.9, ascii: 3.8 }, priceIn: 0.4, priceOut: 1.2, ctx: "128K", note: "" },
   { id: "step-3", label: "Step-3 (阶跃星辰)", group: "StepFun (阶跃星辰)", type: "est", est: { cjk: 0.9, ascii: 3.8 }, priceIn: 0.5, priceOut: 1.5, ctx: "128K", note: "" },
   { id: "sensetime-5.1", label: "SenseNova 5.1 (商汤)", group: "SenseTime (商汤)", type: "est", est: { cjk: 0.9, ascii: 3.8 }, priceIn: 0.04, priceOut: 0.7, ctx: "128K", note: "" },
@@ -123,6 +123,34 @@ const MODELS = [
 { id: "gemini-3.7-flash", label: "Gemini 3.7 Flash", group: "Google Gemini", type: "est", priceIn: 0.75, priceOut: 3.75, ctx: "1M", est: { cjk: 1.2, ascii: 4 }, note: "promo until Dec 31", },
 { id: "gemini-3.1-flash-lite", label: "Gemini 3.1 Flash-Lite", group: "Google Gemini", type: "est", priceIn: 0.25, priceOut: 1.5, ctx: "1M", est: { cjk: 1.2, ascii: 4 }, }
 ];
+
+// Stored USD rates with no official list price in the 2026-11-24 audit. Prices were not changed.
+const UNVERIFIED_IDS = new Set([
+  "gemini-3.5-flash", "gemini-3.7-flash", "grok-4.1", "llama-4", "amazon-nova-pro",
+  "deepseek-v3.2", "deepseek-r1", "qwen3-max", "qwen3-plus", "qwen3-flash", "qwen3-coder",
+  "glm-4-flash", "kimi-k2.6", "kimi-k2.5", "doubao-1.6-pro", "doubao-1.6-flash", "doubao-1.6-lite",
+  "ernie-4.5", "ernie-x1", "hunyuan-2-pro", "hunyuan-lite", "spark-max-x1", "spark-lite",
+  "minimax-2.5", "yi-lightning", "step-3", "sensetime-5.1", "baichuan-4", "skyclaw-1.0",
+  "mimo-v2.5-pro", "mimo-v2.5", "pangu-4.7"
+]);
+const UNVERIFIED_MARK = "未核实 / Unverified";
+
+function isUnverified(model) {
+  return !!(model && UNVERIFIED_IDS.has(model.id));
+}
+
+function syncVerifyMark() {
+  const el = $("verify-mark");
+  if (!el) return;
+  const model = currentModel();
+  if (!isUnverified(model)) {
+    el.hidden = true;
+    el.textContent = "";
+    return;
+  }
+  el.hidden = false;
+  el.innerHTML = '<span class="tag unverified">' + UNVERIFIED_MARK + "</span> Stored price was not confirmed against an official USD list price on 2026-11-24. 60 of 92 models were verified that day; 32 remain unverified.";
+}
 
 const SAMPLE = `Tokens are how GPT models read text: nine English words usually cost about twelve tokens.
 
@@ -227,6 +255,7 @@ function syncPriceFields() {
     pOut.placeholder = "estimated";
     if (!state.pricesEdited) { pIn.value = ""; pOut.value = ""; }
     $("price-note").textContent = "Estimate mode — model rates still applied.";
+    syncVerifyMark();
     return;
   }
   if (!state.pricesEdited) {
@@ -236,6 +265,7 @@ function syncPriceFields() {
   pIn.placeholder = "USD / 1M input";
   pOut.placeholder = "USD / 1M output";
   $("price-note").textContent = state.pricesEdited ? "Custom prices shown." : "";
+  syncVerifyMark();
 }
 
 function currentPrices() {
@@ -404,7 +434,10 @@ function buildModelSelect() {
     const og = document.createElement("optgroup");
     og.label = name;
     for (const m of list) {
-      const opt = new Option(m.label + (m.note ? " — " + m.note : ""), m.id);
+      const bits = [m.label];
+      if (m.note) bits.push(m.note);
+      if (isUnverified(m)) bits.push(UNVERIFIED_MARK);
+      const opt = new Option(bits.join(" — "), m.id);
       if (m.priceIn === 0 && m.priceOut === 0) opt.title = "Free model";
       og.appendChild(opt);
     }
@@ -433,7 +466,7 @@ function buildModelTable() {
       const outDisplay = m.priceOut === 0 && m.priceIn > 0 ? "–" : money(m.priceOut);
       const tr = document.createElement("tr");
       tr.innerHTML =
-        "<td class='mono'>" + esc(m.label) + (m.note ? " <span class='tag'>" + esc(m.note) + "</span>" : "") + "</td>" +
+        "<td class='mono'>" + esc(m.label) + (m.note ? " <span class='tag'>" + esc(m.note) + "</span>" : "") + (isUnverified(m) ? " <span class='tag unverified'>" + UNVERIFIED_MARK + "</span>" : "") + "</td>" +
         "<td>" + (m.type === "exact" ? "<span class='tag ok'>exact tiktoken</span>" : "<span class='tag'>estimate</span>") + "</td>" +
         "<td>" + m.ctx + "</td>" +
         "<td>" + money(m.priceIn) + "</td>" +
@@ -473,6 +506,7 @@ function init() {
   document.addEventListener("drop", onDrop);
   updateCharCount();
   syncPriceFields();
+  syncVerifyMark();
   scheduleCalc(true);
   setTimeout(() => ensureTokenizer().catch(() => {}), 500);
 }

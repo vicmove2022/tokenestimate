@@ -68,7 +68,7 @@ print("verified:", data["_meta"]["lastVerified"])
 const res = await fetch("https://tokenestimate.com/data/model-prices.json");
 const { models, _meta } = await res.json();
 console.log(`${models.length} models, verified ${_meta.lastVerified}`);
-// → 92 models, verified 2026-10-02
+// → 92 models, lastVerified 2026-11-24 (60 verified, 32 unverified)
 ```
 
 ## Schema
@@ -109,14 +109,14 @@ long-context surcharges and enterprise contracts are not modelled.
 |---|---|
 | OpenAI counts | Exact. `js/ranks/` vendors the real tiktoken rank tables, so it works offline. |
 | Everyone else's counts | Estimate, ~5–10%. Labelled as such everywhere, never dressed up as exact. |
-| Price accuracy | Only as good as `_meta.lastVerified`. Check it. |
+| Price accuracy | Only as good as `_meta.lastVerified` (2026-11-24). 60 of 92 models were verified that day; 32 remain unverified. |
 | Coverage | 92 models, 23 vendors. Not exhaustive, and we say so rather than padding it. |
 
 ## Citations
 
 > TokenCalc, "AI Model Token Pricing Data", tokenestimate.com, 2026. CC BY 4.0.
 >
-> TokenCalc, "LLM Pricing Changelog", tokenestimate.com, 2026-10-02.
+> TokenCalc, "LLM Pricing Changelog", tokenestimate.com, 2026-11-24.
 
 ## Embed the counter
 

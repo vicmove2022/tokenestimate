@@ -6,7 +6,7 @@
 
   <!-- ===== SEO: title & description ===== -->
   <title>AI Model Pricing Data — Free JSON for 92 LLMs (CC BY 4.0)</title>
-  <meta name="description" content="Free machine-readable JSON of input and output prices per 1M tokens for 92 AI models across 26 providers: OpenAI, Anthropic, Google, DeepSeek, Qwen, GLM, Kimi, Doubao and more. CC BY 4.0, cited by name, verified 2026-10-02.">
+  <meta name="description" content="Free machine-readable JSON of input and output prices per 1M tokens for 92 AI models across 26 providers: OpenAI, Anthropic, Google, DeepSeek, Qwen, GLM, Kimi, Doubao and more. CC BY 4.0, cited by name. 60 of 92 models were verified on 2026-11-24; 32 remain unverified.">
   <meta name="keywords" content="LLM pricing data, AI API prices JSON, model pricing dataset, token price per 1M, OpenAI pricing JSON, Claude pricing, Gemini pricing, DeepSeek pricing, LLM cost data, free pricing API">
   <meta name="author" content="TokenCalc">
   <meta name="robots" content="index, follow, max-image-preview:large">
@@ -50,11 +50,11 @@
     "@context": "https://schema.org",
     "@type": "Dataset",
     "name": "AI Model Token Pricing Data",
-    "description": "USD input and output list prices per 1,000,000 tokens, context windows and tokenizer information for 92 LLMs across 26 providers, verified against provider list prices on 2026-10-02.",
+    "description": "USD input and output list prices per 1,000,000 tokens, context windows and tokenizer information for 92 LLMs across 26 providers. 60 of 92 models were verified on 2026-11-24; 32 remain unverified.",
     "url": "https://tokenestimate.com/data/model-prices.json",
     "license": "https://creativecommons.org/licenses/by/4.0/",
     "creator": { "@type": "Organization", "name": "TokenCalc", "url": "https://tokenestimate.com/" },
-    "dateModified": "2026-10-02",
+    "dateModified": "2026-11-24",
     "keywords": "LLM pricing, token prices, API cost, OpenAI, Anthropic Claude, Google Gemini, DeepSeek, Qwen",
     "measurementTechnique": "public provider list price collection"
   }
@@ -77,7 +77,7 @@
       "name": "How many models and providers does the dataset cover?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "92 models across 26 provider groups as of 2026-10-02, spanning OpenAI, Anthropic, Google, Meta, xAI, Mistral, Amazon and the major Chinese labs (DeepSeek, Qwen, GLM, Kimi, Doubao, ERNIE, Hunyuan, Spark, MiniMax, 01.AI, StepFun, SenseTime, Baichuan, Kunlun, Xiaomi, Huawei)."
+        "text": "92 models across 26 provider groups as of 2026-11-24 (60 of 92 models were verified that day; 32 remain unverified), spanning OpenAI, Anthropic, Google, Meta, xAI, Mistral, Amazon and the major Chinese labs (DeepSeek, Qwen, GLM, Kimi, Doubao, ERNIE, Hunyuan, Spark, MiniMax, 01.AI, StepFun, SenseTime, Baichuan, Kunlun, Xiaomi, Huawei)."
       }
     },
     {
@@ -85,7 +85,7 @@
       "name": "Are the prices exact?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "They are the providers' published list prices, verified 2026-10-02, in USD per 1M tokens. Discounted tiers — batch, cached input, long-context surcharges, contract pricing — are not modelled, so check the provider page before you publish a number or send a bill."
+        "text": "They are the providers' published list prices in USD per 1M tokens. 60 of 92 models were verified on 2026-11-24; 32 remain unverified. Discounted tiers — batch, cached input, long-context surcharges, contract pricing — are not modelled, so check the provider page before you publish a number or send a bill."
       }
     },
     {
@@ -172,7 +172,7 @@
       <article class="article">
         <div class="breadcrumb"><a href="index.html">Home</a> / Pricing data</div>
         <h1>AI Model Pricing Data — 81 Models, One JSON File</h1>
-        <p class="meta">CC BY 4.0 · USD per 1M tokens · prices verified 2026-10-02</p>
+        <p class="meta">CC BY 4.0 · USD per 1M tokens · 60 of 92 models were verified on 2026-11-24; 32 remain unverified</p>
 
         <p>A single static JSON file with the <strong>input and output price per 1,000,000 tokens</strong>, context window and tokenizer for <strong>92 models across 26 providers</strong> — OpenAI, Anthropic, Google, Meta, xAI, Mistral, Amazon, DeepSeek, Qwen, GLM, Kimi, Doubao, ERNIE, Hunyuan, Spark and more. Free to reuse in your app, dashboard, docs or article, no key and no rate limit. It is the same dataset that powers the <a href="index.html#tool">AI Token Calculator</a>.</p>
 
@@ -217,7 +217,7 @@ for m in data["models"]:
     "name": "AI model token pricing table",
     "endpoint": "https://tokenestimate.com/data/model-prices.json",
     "license": "CC BY 4.0",
-    "lastVerified": "2026-10-02",
+    "lastVerified": "2026-11-24",
     "currency": "USD",
     "unit": "price per 1,000,000 tokens",
     "citation": "TokenCalc, \"AI Model Token Pricing Data\", tokenestimate.com, 2026."
@@ -287,15 +287,15 @@ for m in data["models"]:
         </div>
 
         <h2>How the numbers are gathered</h2>
-        <p>Each price is the provider's <strong>public list price</strong> in USD, read from the vendor's own pricing page and cross-checked against a second source where one exists. The verification date in <code>_meta.lastVerified</code> applies to the whole file. Not included: batch, cached-input, fine-tuned, provisioned-throughput or contract rates, and image/video/audio billing that some providers express per second or per image instead of per token. Prices move — treat this as a dated snapshot, not a live feed.</p>
+        <p>Each price is the provider's <strong>public list price</strong> in USD, read from the vendor's own pricing page and cross-checked against a second source where one exists. <code>_meta.lastVerified</code> is 2026-11-24. 60 of 92 models were verified on that date; 32 remain unverified. Not included: batch, cached-input, fine-tuned, provisioned-throughput or contract rates, and image/video/audio billing that some providers express per second or per image instead of per token. Prices move — treat this as a dated snapshot, not a live feed.</p>
 
         <h2>Pricing data FAQ</h2>
         <h3>Is the AI model pricing JSON free to use?</h3>
         <p>Yes. It is licensed CC BY 4.0: use it commercially, modify it, redistribute it. The only requirement is attribution — a link to tokenestimate.com or the citation line <code>TokenCalc, "AI Model Token Pricing Data", tokenestimate.com, 2026.</code></p>
         <h3>How many models and providers does the dataset cover?</h3>
-        <p>92 models across 26 provider groups as of 2026-10-02, spanning OpenAI, Anthropic, Google, Meta, xAI, Mistral, Amazon and the major Chinese labs (DeepSeek, Qwen, GLM, Kimi, Doubao, ERNIE, Hunyuan, Spark, MiniMax, 01.AI, StepFun, SenseTime, Baichuan, Kunlun, Xiaomi, Huawei).</p>
+        <p>92 models across 26 provider groups as of 2026-11-24 (60 of 92 models were verified that day; 32 remain unverified), spanning OpenAI, Anthropic, Google, Meta, xAI, Mistral, Amazon and the major Chinese labs (DeepSeek, Qwen, GLM, Kimi, Doubao, ERNIE, Hunyuan, Spark, MiniMax, 01.AI, StepFun, SenseTime, Baichuan, Kunlun, Xiaomi, Huawei).</p>
         <h3>Are the prices exact?</h3>
-        <p>They are the providers' published list prices, verified 2026-10-02, in USD per 1M tokens. Discounted tiers — batch, cached input, long-context surcharges, contract pricing — are not modelled, so check the provider page before you publish a number or send a bill.</p>
+        <p>They are the providers' published list prices in USD per 1M tokens. 60 of 92 models were verified on 2026-11-24; 32 remain unverified. Discounted tiers — batch, cached input, long-context surcharges, contract pricing — are not modelled, so check the provider page before you publish a number or send a bill.</p>
         <h3>How often is the dataset updated?</h3>
         <p>Whenever model pricing changes; the file carries its own <code>_meta.lastVerified</code> date, so you can decide for yourself whether a value is current instead of trusting a changelog.</p>
         <h3>Why do some records say "estimate" in the tokenizer field?</h3>
