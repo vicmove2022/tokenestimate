@@ -31,7 +31,7 @@ const MODELS = [
   // ---------- Anthropic ----------
   { id: "claude-opus-5-5", label: "Claude Opus 5.5", group: "Anthropic Claude", type: "est", est: { cjk: 1.2, ascii: 4 }, priceIn: 4, priceOut: 20, ctx: "1M", note: "flagship, from 2026-09-22" },
   { id: "claude-opus-5", label: "Claude Opus 5", group: "Anthropic Claude", type: "est", est: { cjk: 1.2, ascii: 4 }, priceIn: 5, priceOut: 25, ctx: "200K", note: "" },
-  { id: "claude-sonnet-5", label: "Claude Sonnet 5", group: "Anthropic Claude", type: "est", est: { cjk: 1.2, ascii: 4 }, priceIn: 2, priceOut: 10, ctx: "1M", note: "intro pricing" },
+  { id: "claude-sonnet-5", label: "Claude Sonnet 5", group: "Anthropic Claude", type: "est", est: { cjk: 1.2, ascii: 4 }, priceIn: 2, priceOut: 10, ctx: "1M", note: "standard price" },
   { id: "claude-haiku-4.5", label: "Claude Haiku 4.5", group: "Anthropic Claude", type: "est", est: { cjk: 1.2, ascii: 4 }, priceIn: 1, priceOut: 5, ctx: "200K", note: "" },
   { id: "claude-fable-5", label: "Claude Fable 5", group: "Anthropic Claude", type: "est", est: { cjk: 1.2, ascii: 4 }, priceIn: 10, priceOut: 50, ctx: "1M", note: "agentic" },
   { id: "claude-opus-4.6", label: "Claude Opus 4.6", group: "Anthropic Claude", type: "est", est: { cjk: 1.2, ascii: 4 }, priceIn: 5, priceOut: 25, ctx: "1M", note: "" },
@@ -50,12 +50,12 @@ const MODELS = [
   // ---------- US / EU others ----------
   { id: "grok-4.1", label: "Grok 4.1 (xAI)", group: "US & EU", type: "est", est: { cjk: 1.2, ascii: 4 }, priceIn: 0.2, priceOut: 1, ctx: "1M", note: "" },
   { id: "llama-4", label: "Llama 4 (Meta)", group: "US & EU", type: "est", est: { cjk: 1.0, ascii: 4 }, priceIn: 0.15, priceOut: 0.45, ctx: "1M", note: "open-weight" },
-  { id: "mistral-large", label: "Mistral Large 3", group: "US & EU", type: "est", est: { cjk: 1.0, ascii: 4 }, priceIn: 2, priceOut: 6, ctx: "128K", note: "" },
+  { id: "mistral-large", label: "Mistral Large 3", group: "US & EU", type: "est", est: { cjk: 1.0, ascii: 4 }, priceIn: 0.5, priceOut: 1.5, ctx: "256K", note: "deprecated" },
   { id: "amazon-nova-pro", label: "Amazon Nova Pro", group: "US & EU", type: "est", est: { cjk: 1.0, ascii: 4 }, priceIn: 0.8, priceOut: 3.2, ctx: "300K", note: "" },
 
   // ---------- China ----------
-  { id: "deepseek-v4-pro", label: "DeepSeek V4 Pro", group: "DeepSeek (深度求索)", type: "est", est: { cjk: 0.6, ascii: 3.3 }, priceIn: 0.44, priceOut: 0.87, ctx: "128K", note: "deepseek-chat" },
-  { id: "deepseek-v4-flash", label: "DeepSeek V4 Flash", group: "DeepSeek (深度求索)", type: "est", est: { cjk: 0.6, ascii: 3.3 }, priceIn: 0.14, priceOut: 0.28, ctx: "400K", note: "" },
+  { id: "deepseek-v4-pro", label: "DeepSeek V4 Pro", group: "DeepSeek (深度求索)", type: "est", est: { cjk: 0.6, ascii: 3.3 }, priceIn: 1.32, priceOut: 3.96, ctx: "1M", note: "peak cache-miss" },
+  { id: "deepseek-v4-flash", label: "DeepSeek V4 Flash", group: "DeepSeek (深度求索)", type: "est", est: { cjk: 0.6, ascii: 3.3 }, priceIn: 0.3, priceOut: 1.2, ctx: "1M", note: "routes to V4.1 Flash" },
   { id: "deepseek-v3.2", label: "DeepSeek V3.2", group: "DeepSeek (深度求索)", type: "est", est: { cjk: 0.6, ascii: 3.3 }, priceIn: 0.35, priceOut: 0.42, ctx: "128K", note: "" },
   { id: "deepseek-r1", label: "DeepSeek R1", group: "DeepSeek (深度求索)", type: "est", est: { cjk: 0.6, ascii: 3.3 }, priceIn: 0.56, priceOut: 2.5, ctx: "64K", note: "reasoning" },
 
@@ -65,13 +65,13 @@ const MODELS = [
   { id: "qwen3-coder", label: "Qwen3 Coder", group: "Alibaba Qwen (阿里通义)", type: "est", est: { cjk: 0.9, ascii: 3.8 }, priceIn: 0.3, priceOut: 0.9, ctx: "128K", note: "coding" },
 
   { id: "glm-5", label: "GLM-5 (智谱)", group: "Zhipu GLM (智谱)", type: "est", est: { cjk: 0.9, ascii: 3.8 }, priceIn: 1, priceOut: 3.2, ctx: "200K", note: "" },
-  { id: "glm-5.1", label: "GLM-5.1", group: "Zhipu GLM (智谱)", type: "est", est: { cjk: 0.9, ascii: 3.8 }, priceIn: 0.98, priceOut: 3.08, ctx: "200K", note: "" },
-  { id: "glm-4.7", label: "GLM-4.7", group: "Zhipu GLM (智谱)", type: "est", est: { cjk: 0.9, ascii: 3.8 }, priceIn: 0.5, priceOut: 2.2, ctx: "200K", note: "" },
+  { id: "glm-5.1", label: "GLM-5.1", group: "Zhipu GLM (智谱)", type: "est", est: { cjk: 0.9, ascii: 3.8 }, priceIn: 1.4, priceOut: 4.4, ctx: "200K", note: "" },
+  { id: "glm-4.7", label: "GLM-4.7", group: "Zhipu GLM (智谱)", type: "est", est: { cjk: 0.9, ascii: 3.8 }, priceIn: 0.6, priceOut: 2.2, ctx: "200K", note: "" },
   { id: "glm-4-flash", label: "GLM-4-Flash", group: "Zhipu GLM (智谱)", type: "est", est: { cjk: 0.9, ascii: 3.8 }, priceIn: 0, priceOut: 0, ctx: "128K", note: "free" },
 
   { id: "kimi-k2.6", label: "Kimi K2.6 (月之暗面)", group: "Moonshot Kimi (月之暗面)", type: "est", est: { cjk: 0.9, ascii: 3.8 }, priceIn: 1, priceOut: 2.5, ctx: "256K", note: "tiered" },
   { id: "kimi-k2.5", label: "Kimi K2.5", group: "Moonshot Kimi (月之暗面)", type: "est", est: { cjk: 0.9, ascii: 3.8 }, priceIn: 0.6, priceOut: 3, ctx: "128K", note: "" },
-  { id: "kimi-k3", label: "Kimi K3", group: "Moonshot Kimi (月之暗面)", type: "est", est: { cjk: 0.9, ascii: 3.8 }, priceIn: 7, priceOut: 14, ctx: "256K", note: "premium" },
+  { id: "kimi-k3", label: "Kimi K3", group: "Moonshot Kimi (月之暗面)", type: "est", est: { cjk: 0.9, ascii: 3.8 }, priceIn: 3, priceOut: 15, ctx: "1M", note: "list price" },
 
   { id: "doubao-1.6-pro", label: "Doubao 1.6 Pro (豆包)", group: "ByteDance Doubao (火山引擎)", type: "est", est: { cjk: 0.9, ascii: 3.8 }, priceIn: 0.11, priceOut: 0.45, ctx: "256K", note: "" },
   { id: "doubao-1.6-flash", label: "Doubao 1.6 Flash", group: "ByteDance Doubao (火山引擎)", type: "est", est: { cjk: 0.9, ascii: 3.8 }, priceIn: 0.01, priceOut: 0.11, ctx: "128K", note: "cheapest" },
@@ -98,19 +98,19 @@ const MODELS = [
 
   { id: "custom", label: "Custom (any model)", group: "Custom", type: "exact", encoding: "o200k_base", priceIn: 1.0, priceOut: 1.0, ctx: "–", note: "" }
 ,
-{ id: "gpt-5.6-sol", label: "GPT-5.6 Sol", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 4, priceOut: 20, ctx: "1M", note: "promo price", },
+{ id: "gpt-5.6-sol", label: "GPT-5.6 Sol", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 4, priceOut: 20, ctx: "1M", note: "promo through Nov 30", },
 { id: "gpt-5.6-terra", label: "GPT-5.6 Terra", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 2, priceOut: 12, ctx: "1M", note: "price cut Jul 2026", },
 { id: "gpt-5.6-luna", label: "GPT-5.6 Luna", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 0.2, priceOut: 1.2, ctx: "1M", note: "cheapest GPT-5.6", },
 { id: "gpt-5.4", label: "GPT-5.4", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 2.5, priceOut: 15, ctx: "400K", },
 { id: "gpt-5.4-mini", label: "GPT-5.4 mini", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 0.75, priceOut: 4.5, ctx: "400K", },
 { id: "gpt-5.4-nano", label: "GPT-5.4 nano", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 0.2, priceOut: 1.25, ctx: "400K", },
 { id: "claude-opus-4.7", label: "Claude Opus 4.7", group: "Anthropic Claude", type: "est", priceIn: 5, priceOut: 25, ctx: "1M", est: { cjk: 1.2, ascii: 4 }, note: "tokenizer changed", },
-{ id: "claude-opus-4.8", label: "Claude Opus 4.8", group: "Anthropic Claude", type: "est", priceIn: 5, priceOut: 25, ctx: "1M", est: { cjk: 1.2, ascii: 4 }, note: "Fast Mode available", },
+{ id: "claude-opus-4.8", label: "Claude Opus 4.8", group: "Anthropic Claude", type: "est", priceIn: 5, priceOut: 25, ctx: "1M", est: { cjk: 1.2, ascii: 4 }, note: "Fast Mode 2x", },
 { id: "claude-fable-5.1", label: "Claude Fable 5.1", group: "Anthropic Claude", type: "est", priceIn: 10, priceOut: 50, ctx: "1M", est: { cjk: 1.2, ascii: 4 }, note: "latest Fable", },
 { id: "grok-4.5", label: "Grok 4.5", group: "US & EU", type: "est", priceIn: 2, priceOut: 6, ctx: "500K", est: { cjk: 1.2, ascii: 4 }, note: "xAI flagship", },
 { id: "grok-4.3", label: "Grok 4.3", group: "US & EU", type: "est", priceIn: 1.25, priceOut: 2.5, ctx: "1M", est: { cjk: 1.2, ascii: 4 }, note: "bigger context, cheaper", },
 { id: "claude-sonnet-5.5", label: "Claude Sonnet 5.5", group: "Anthropic Claude", type: "est", priceIn: 2, priceOut: 10, ctx: "1M", est: { cjk: 1.2, ascii: 4 }, },
-{ id: "claude-mythos-5", label: "Claude Mythos 5", group: "Anthropic Claude", type: "est", priceIn: 11, priceOut: 55, ctx: "1M", est: { cjk: 1.2, ascii: 4 }, },
+{ id: "claude-mythos-5", label: "Claude Mythos 5", group: "Anthropic Claude", type: "est", priceIn: 10, priceOut: 50, ctx: "1M", est: { cjk: 1.2, ascii: 4 }, },
 { id: "claude-opus-5-fast", label: "Claude Opus 5 (Fast mode)", group: "Anthropic Claude", type: "est", priceIn: 10, priceOut: 50, ctx: "1M", est: { cjk: 1.2, ascii: 4 }, }
 ,
 { id: "gpt-6-luna", label: "GPT-6 Luna", group: "OpenAI", type: "exact", encoding: "o200k_base", priceIn: 0.1, priceOut: 0.5, ctx: "1M", },

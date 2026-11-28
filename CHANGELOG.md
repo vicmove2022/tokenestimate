@@ -15,11 +15,132 @@ moves only when someone has actually re-checked a provider page.
 them publish *movement*. If you are writing about how LLM prices are changing,
 this is the citable record:
 
-> TokenCalc, "LLM Pricing Changelog", tokenestimate.com, 2026-10-02e
+> TokenCalc, "LLM Pricing Changelog", tokenestimate.com, 2026-11-24
 
-**Totals so far:** 22 models added, 6 corrections, 14 entries flagged unverified.
+**Totals so far:** 22 models added, 27 corrections, 46 entries flagged unverified.
 
 ---
+
+## 2026-11-24
+
+Prices re-verified against provider pages on 2026-11-24. Previous snapshot: `2026-10-02`. 92 models checked. This entry was written with the audit; `gen_changelog.py` only reads `pricing-patch` files, and this pass did not add one.
+
+### Corrected
+
+| Model | Field | Was | Now | Why |
+|---|---|---|---|---|
+| `claude-sonnet-5.5` | `priceCachedInputPer1M` | `0.2` | `0.1` | Official cache hits are 0.05× input ($0.10), not the 0.1× rate used by older Sonnets. Input/output stay $2/$10. |
+| `claude-mythos-5` | `priceInputPer1M` | `11` | `10` | Anthropic's pricing page now lists Mythos 5 at $10/$50. The $11/$55 figure was a single non-official tracker. |
+| `claude-mythos-5` | `priceOutputPer1M` | `55` | `50` | Same official row. |
+| `deepseek-v4-pro` | `priceInputPer1M` | `0.44` | `1.32` | Peak cache-miss list price. Off-peak is half ($0.66). The file stores the undiscounted list rate. |
+| `deepseek-v4-pro` | `priceOutputPer1M` | `0.87` | `3.96` | Peak output. Off-peak is $1.98. |
+| `deepseek-v4-pro` | `priceCachedInputPer1M` | — | `0.044` | Peak cache-hit. Off-peak cache-hit is $0.022. |
+| `deepseek-v4-pro` | `contextWindow` | `128K` | `1M` | Official model card on the pricing page. |
+| `deepseek-v4-flash` | `priceInputPer1M` | `0.14` | `0.3` | The legacy id routes to DeepSeek-V4.1-Flash and is billed at Flash peak cache-miss. Off-peak input is $0.15. |
+| `deepseek-v4-flash` | `priceOutputPer1M` | `0.28` | `1.2` | Flash peak output. Off-peak is $0.60. |
+| `deepseek-v4-flash` | `priceCachedInputPer1M` | — | `0.006` | Flash peak cache-hit. |
+| `deepseek-v4-flash` | `contextWindow` | `400K` | `1M` | Official context for the model that now serves this id. |
+| `mistral-large` | `priceInputPer1M` | `2` | `0.5` | Mistral Large 3 model card. Deprecated 2026-10-31; the current generalist table no longer lists it. |
+| `mistral-large` | `priceOutputPer1M` | `6` | `1.5` | Same model card. |
+| `mistral-large` | `contextWindow` | `128K` | `256K` | Same model card. |
+| `glm-5.1` | `priceInputPer1M` | `0.98` | `1.4` | Z.ai USD list price. Mainland bigmodel.cn is a separate CNY tier and was not converted. |
+| `glm-5.1` | `priceOutputPer1M` | `3.08` | `4.4` | Same USD row. |
+| `glm-4.7` | `priceInputPer1M` | `0.5` | `0.6` | Z.ai USD list price. Output stays $2.20. |
+| `kimi-k3` | `priceInputPer1M` | `7` | `3` | Price card on the official Kimi API platform. |
+| `kimi-k3` | `priceOutputPer1M` | `14` | `15` | Same card. |
+| `kimi-k3` | `priceCachedInputPer1M` | — | `0.3` | Cache hit on the same card. |
+| `kimi-k3` | `contextWindow` | `256K` | `1M` | K3 series context is 1,048,576 tokens. |
+
+**`claude-sonnet-5.5` source**
+- https://platform.claude.com/docs/en/about-claude/pricing
+
+**`claude-mythos-5` source**
+- https://platform.claude.com/docs/en/about-claude/pricing
+
+**`deepseek-v4-pro` source**
+- https://api-docs.deepseek.com/quick_start/pricing/
+
+**`deepseek-v4-flash` source**
+- https://api-docs.deepseek.com/quick_start/pricing/
+
+**`mistral-large` source**
+- https://docs.mistral.ai/models/mistral-large-3-25-12
+
+**`glm-5.1` source**
+- https://docs.z.ai/guides/overview/pricing
+
+**`glm-4.7` source**
+- https://docs.z.ai/guides/overview/pricing
+
+**`kimi-k3` source**
+- https://platform.kimi.ai/
+
+### Promo and note checks
+
+Prices below did not change. The note was wrong about whether a promo was still the list price.
+
+| Model | What the official page says | Price fields |
+|---|---|---|
+| `gpt-5.6-sol` | Promotional $4 / $20 / $0.40 cached is still the standard-table rate, now through 2026-11-30. The August note said "at least through 2026-11-21". The promo has not expired. Post-promo standard tier remains $5/$30. | unchanged |
+| `claude-sonnet-5` | $2/$10 is now the standard price. The intro window ended and the scheduled rise to $3/$15 on 2026-09-01 will not occur. | unchanged |
+| `claude-opus-4.8` | Fast mode is $10/$50, which is 2× standard, and is deprecated for Opus 4.8. The old note called that "3× cheaper". | unchanged |
+| `gemini-3.8-flash` | Official promo is $0.75/$3.75 through 2026-12-31, then $1.50/$7.50. Still inside the promo window. | unchanged |
+| `gemini-3.6-flash` | Same promo window and the same $0.75/$3.75 on the Gemini pricing page. | unchanged |
+
+**`gpt-5.6-sol` source**
+- https://developers.openai.com/api/docs/pricing
+- https://developers.openai.com/api/docs/models/gpt-5.6-sol
+
+**`claude-sonnet-5` source**
+- https://platform.claude.com/docs/en/about-claude/pricing
+
+**`claude-opus-4.8` source**
+- https://platform.claude.com/docs/en/about-claude/pricing
+
+**`gemini-3.8-flash` source**
+- https://ai.google.dev/gemini-api/docs/pricing
+
+**`gemini-3.6-flash` source**
+- https://ai.google.dev/gemini-api/docs/pricing
+
+### Published but unverified
+
+Official price not found. The stored number was left unchanged.
+
+| Model | Status | Why not filled in |
+|---|---|---|
+| `gemini-3.5-flash` | not on the Gemini pricing page | ai.google.dev lists 3.5 Flash-Lite at $0.30/$2.50, not a 3.5 Flash row. |
+| `gemini-3.7-flash` | not on the Gemini pricing page | 3.8 Flash and 3.6 Flash are listed. 3.7 Flash is not. |
+| `grok-4.1` | not on the xAI pricing page | docs.x.ai lists 4.7, 4.6, 4.5, 4.3, and the 4.20 snapshots. No 4.1 row. |
+| `llama-4` | no first-party API list price | Meta's Llama pages do not publish a hosted token price. |
+| `amazon-nova-pro` | price table did not render | aws.amazon.com/bedrock/pricing and aws.amazon.com/nova/pricing did not include a Nova Pro per-token rate in the fetched page text. |
+| `deepseek-v3.2` | not on the current DeepSeek price card | Only deepseek-flash and deepseek-v4-pro are listed. |
+| `deepseek-r1` | not on the current DeepSeek price card | Same page. |
+| `qwen3-max` | id not on the Model Studio price page | alibabacloud.com model pricing, updated 2026-11-24, has no qwen3-max row. Nearby Max ids were not substituted. |
+| `qwen3-plus` | id not on the Model Studio price page | qwen-plus is $0.40/$1.20 internationally, which is a different id. |
+| `qwen3-flash` | id not on the Model Studio price page | qwen-flash international is $0.05/$0.40, a different id. |
+| `qwen3-coder` | id not on the Model Studio price page | qwen3-coder-flash is tiered from $0.30/$1.50, a different id. |
+| `glm-4-flash` | exact name not on the Z.ai USD page | GLM-4.7-Flash and GLM-4.5-Flash are listed Free. The stored $0 was left as-is. |
+| `kimi-k2.6` | price table empty | platform.kimi.ai/docs/pricing/chat rendered empty K2 price tables. Homepage cards price only the K3 series. |
+| `kimi-k2.5` | price table empty | Same page. The model list marks kimi-k2.5 deprecated. |
+| `doubao-1.6-pro` | price table not in the fetched doc | volcengine.com 模型价格 is a client-rendered shell. |
+| `doubao-1.6-flash` | price table not in the fetched doc | Same page. |
+| `doubao-1.6-lite` | price table not in the fetched doc | Same page. |
+| `ernie-4.5` | no rate in the fetched Qianfan doc | cloud.baidu.com Qianfan doc did not include a token rate. |
+| `ernie-x1` | no rate in the fetched Qianfan doc | Same page. |
+| `hunyuan-2-pro` | price page not readable | cloud.tencent.com Hunyuan pricing doc did not return a price table. |
+| `hunyuan-lite` | price page not readable | Same page. |
+| `spark-max-x1` | no rate in the fetched Spark doc | xfyun.cn Spark HTTP doc had no token price for this id. |
+| `spark-lite` | no rate in the fetched Spark doc | Same page. |
+| `minimax-2.5` | retired, no current list price | Retired 2026-11-18. Absent from platform.minimax.io pricing overview. |
+| `yi-lightning` | official price is CNY, not a USD pair | platform.lingyiwanwu.com lists ¥0.99 per 1M tokens as one combined rate. Not converted. |
+| `step-3` | no official pricing page found | platform.stepfun.com pricing paths returned 404. |
+| `sensetime-5.1` | no official pricing page found | platform.sensenova.cn/pricing returned 404. |
+| `baichuan-4` | no rate in the fetched page | platform.baichuan-ai.com did not include a token price. |
+| `skyclaw-1.0` | no official pricing page found | No Kunlun price page with this model. |
+| `mimo-v2.5-pro` | no rate in the fetched page | platform.xiaomimimo.com is a client app; the banner is V2.6, not V2.5. |
+| `mimo-v2.5` | no rate in the fetched page | Same page. |
+| `pangu-4.7` | no token price on the product page | huaweicloud.com PanGu page does not list a per-million-token rate. |
 
 ## 2026-10-02
 

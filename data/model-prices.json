@@ -7,7 +7,7 @@
     "embed": "https://tokenestimate.com/embed.html",
     "license": "CC BY 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-    "lastVerified": "2026-10-02",
+    "lastVerified": "2026-11-24",
     "currency": "USD",
     "unit": "price per 1,000,000 tokens",
     "citation": "TokenCalc, \"AI Model Token Pricing Data\", tokenestimate.com, 2026.",
@@ -17,7 +17,7 @@
       "estimate": "Other providers use a calibrated character-ratio estimate, accurate to roughly 5-10%. tokenizer field says which."
     },
     "previousLastVerified": "2026-10-02",
-    "revisionNote": "Updated 2026-10-02: 0 models added, 0 field corrections. Per-model sources are listed in the repository's pricing-patch files. Cite this date, not the old one.",
+    "revisionNote": "Updated 2026-11-24: 0 models added, 8 models with price corrections. Per-model sources are listed in CHANGELOG.md. Cite this date, not the old one.",
     "revisions": [
       {
         "date": "2026-10-02",
@@ -48,6 +48,12 @@
         "added": 0,
         "corrected": 0,
         "patchFile": "pricing-patch-2026-10-02e.json"
+      },
+      {
+        "date": "2026-11-24",
+        "added": 0,
+        "corrected": 8,
+        "note": "Official-page audit. Sources in CHANGELOG.md. No pricing-patch file."
       }
     ],
     "fields": {
@@ -288,7 +294,7 @@
       "contextWindow": "1M",
       "priceInputPer1M": 2,
       "priceOutputPer1M": 10,
-      "note": "intro pricing"
+      "note": "Standard price. The $2/$10 launch rate, announced as introductory through 2026-08-31, was kept; the scheduled rise to $3/$15 on 2026-09-01 did not happen."
     },
     {
       "id": "claude-haiku-4.5",
@@ -499,9 +505,10 @@
         "tokensPerCJKChar": 1,
         "charsPerToken": 4
       },
-      "contextWindow": "128K",
-      "priceInputPer1M": 2,
-      "priceOutputPer1M": 6
+      "contextWindow": "256K",
+      "priceInputPer1M": 0.5,
+      "priceOutputPer1M": 1.5,
+      "note": "Deprecated 2026-10-31, retires 2027-04-30. The model card still lists $0.50/$1.50. Absent from the current generalist price table; replacement is Mistral Large 4."
     },
     {
       "id": "amazon-nova-pro",
@@ -527,10 +534,11 @@
         "tokensPerCJKChar": 0.6,
         "charsPerToken": 3.3
       },
-      "contextWindow": "128K",
-      "priceInputPer1M": 0.44,
-      "priceOutputPer1M": 0.87,
-      "note": "deepseek-chat"
+      "contextWindow": "1M",
+      "priceInputPer1M": 1.32,
+      "priceOutputPer1M": 3.96,
+      "priceCachedInputPer1M": 0.044,
+      "note": "Peak cache-miss list price. Off-peak (most hours, including weekends and Chinese public holidays) is half: $0.66 input / $1.98 output. Cache-hit peak $0.044, off-peak $0.022. The deepseek-chat alias was discontinued 2026-07-24."
     },
     {
       "id": "deepseek-v4-flash",
@@ -542,9 +550,11 @@
         "tokensPerCJKChar": 0.6,
         "charsPerToken": 3.3
       },
-      "contextWindow": "400K",
-      "priceInputPer1M": 0.14,
-      "priceOutputPer1M": 0.28
+      "contextWindow": "1M",
+      "priceInputPer1M": 0.3,
+      "priceOutputPer1M": 1.2,
+      "priceCachedInputPer1M": 0.006,
+      "note": "Legacy id routes to DeepSeek-V4.1-Flash and is billed at Flash rates. Peak cache-miss $0.30 / output $1.20. Off-peak is half: $0.15 / $0.60. Cache-hit peak $0.006."
     },
     {
       "id": "deepseek-v3.2",
@@ -657,8 +667,9 @@
         "charsPerToken": 3.8
       },
       "contextWindow": "200K",
-      "priceInputPer1M": 0.98,
-      "priceOutputPer1M": 3.08
+      "priceInputPer1M": 1.4,
+      "priceOutputPer1M": 4.4,
+      "note": "USD list price on docs.z.ai. Mainland bigmodel.cn bills a separate CNY tier."
     },
     {
       "id": "glm-4.7",
@@ -671,7 +682,7 @@
         "charsPerToken": 3.8
       },
       "contextWindow": "200K",
-      "priceInputPer1M": 0.5,
+      "priceInputPer1M": 0.6,
       "priceOutputPer1M": 2.2
     },
     {
@@ -728,10 +739,11 @@
         "tokensPerCJKChar": 0.9,
         "charsPerToken": 3.8
       },
-      "contextWindow": "256K",
-      "priceInputPer1M": 7,
-      "priceOutputPer1M": 14,
-      "note": "premium"
+      "contextWindow": "1M",
+      "priceInputPer1M": 3,
+      "priceOutputPer1M": 15,
+      "priceCachedInputPer1M": 0.3,
+      "note": "Official platform list price. Cache hits $0.30/M. Context window is 1,048,576 tokens."
     },
     {
       "id": "doubao-1.6-pro",
@@ -1001,7 +1013,7 @@
       "priceInputPer1M": 4,
       "priceOutputPer1M": 20,
       "priceCachedInputPer1M": 0.4,
-      "note": "Promotional rate, published by OpenAI as available at least through 2026-11-21. Standard tier is $5/$30. Flag this on the page so nobody hard-codes $4 into a budget."
+      "note": "Promotional rate, still the published standard-table price through 2026-11-30 (OpenAI pricing page; earlier copy said at least through 2026-11-21). Standard tier after the promo is $5/$30. Flag this on the page so nobody hard-codes $4 into a budget."
     },
     {
       "id": "gpt-5.6-terra",
@@ -1084,7 +1096,7 @@
       "priceOutputPer1M": 25,
       "priceCachedInputPer1M": 0.5,
       "maxOutputTokens": "300K",
-      "note": "Released 2026-05-28. Same $5/$25 as 4.7. Fast Mode is 3x cheaper per token at $10/$50."
+      "note": "Released 2026-05-28. Same $5/$25 as 4.7. Fast mode is $10/$50 (2× the standard token price) and Anthropic lists it as deprecated for Opus 4.8."
     },
     {
       "id": "claude-fable-5.1",
@@ -1133,9 +1145,9 @@
       "contextWindow": "1M",
       "priceInputPer1M": 2,
       "priceOutputPer1M": 10,
-      "priceCachedInputPer1M": 0.2,
+      "priceCachedInputPer1M": 0.1,
       "maxOutputTokens": "128K",
-      "note": "Released 2026-09-28, four days before this snapshot, which is why it was missing from the first pass. Anthropic says up to 30% less per task than Sonnet 5; the per-token rate is the same $2/$10. Two independent trackers updated Sep 29 2026 agree on both figures."
+      "note": "Released 2026-09-28, four days before this snapshot, which is why it was missing from the first pass. Anthropic says up to 30% less per task than Sonnet 5; the per-token rate is the same $2/$10. Two independent trackers updated Sep 29 2026 agree on both figures. Cache hits are $0.10/M (0.05× input), not the 0.1× rate used by older Sonnets."
     },
     {
       "id": "claude-mythos-5",
@@ -1144,10 +1156,10 @@
       "provider": "Anthropic Claude",
       "tokenizer": "estimate",
       "contextWindow": "1M",
-      "priceInputPer1M": 11,
-      "priceOutputPer1M": 55,
+      "priceInputPer1M": 10,
+      "priceOutputPer1M": 50,
       "maxOutputTokens": "128K",
-      "note": "Restricted frontier tier above Fable. Single source; treat the rate as indicative until Anthropic publishes it on a public pricing page."
+      "note": "Limited availability. Official list price is $10/$50, with cache hits at $1/MTok. Previously recorded at $11/$55 from a single non-official tracker."
     },
     {
       "id": "claude-opus-5-fast",
@@ -1228,7 +1240,7 @@
       "contextWindow": "1M",
       "priceInputPer1M": 0.75,
       "priceOutputPer1M": 3.75,
-      "note": "Promotional rate, 50% off through 2026-12-31 per costgoat. Three independent trackers agree on $0.75/$3.75 today. Budget against $1.50/$7.50 unless you can confirm the promo renews."
+      "note": "Promotional rate on the official Gemini pricing page: $0.75/$3.75 through 2026-12-31, then $1.50/$7.50. Budget against the post-promo rate unless the promo renews."
     },
     {
       "id": "gemini-3.7-flash",
